@@ -1,0 +1,1 @@
+export const realCity={name:'Luxembourg · Grund',center:{lat:49.6102,lon:6.1359},data:{buildings:'ACT BD-L-BATI3D LOD 2.2',roads:'BD-L-GeoBase',license:'CC0'},propertyRules:{commercial:['bakery','cafe','restaurant','retail'],allowBuy:true,allowRent:true}};
