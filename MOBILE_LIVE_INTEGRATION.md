@@ -1,0 +1,2 @@
+# v0.9.2 live integration
+The mobile controls module and live bridge are present. The game client must import `wireMobile` and invoke it with the existing `keys`, camera yaw/pitch callback, and bakery interaction callback. Desktop pointer-lock controls remain unchanged.

@@ -1,0 +1,1 @@
+import{installTouchControls}from'./touch-controls-v092.js';export function wireMobile(keys,moveCamera,interact){installTouchControls(keys,moveCamera,interact)}
