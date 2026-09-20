@@ -1,0 +1,2 @@
+# Lux City v1.0 playable integration
+The stable Beckerich v0.9 world remains intact. bakery-v10-runtime.js now provides a persistent bakery management layer with production queues, finished-goods inventory, supplier orders, express purchasing, employee hiring, and editable selling prices. Demand elasticity remains intentionally hidden from the player.
