@@ -1,0 +1,1 @@
+import{installV10}from'./bakery-v10-runtime.js';export function connectLuxV10(api){installV10(api.getState,api.save,api.refresh)};

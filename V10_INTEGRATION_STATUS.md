@@ -1,0 +1,2 @@
+# v1.0 integration status
+The persistent bakery economy modules are now complete as isolated modules and a bridge is prepared. The stable v0.9 client has deliberately not been overwritten because its full current source must be patched rather than replaced to preserve controls, login, collisions and visuals.
