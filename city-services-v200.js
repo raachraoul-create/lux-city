@@ -14,7 +14,7 @@ function init(){
   if(d.garage){for(let i=0;i<d.garage;i++){let x=(i-(d.garage-1)/2)*(w/(d.garage+1));add(new T.BoxGeometry(w/(d.garage+1)-.45,h*.55,.16),M(0x353b40),x,h*.3,l/2+.09,g)}}
   else {add(new T.BoxGeometry(2,3,.18),M(0x4c3428),0,1.5,l/2+.1,g);for(let x of[-w*.28,w*.28])add(new T.BoxGeometry(2.2,1.6,.16),M(0x75a9c0,.2),x,h*.55,l/2+.1,g)}
   let sg=sign(d.name,Math.min(13,Math.max(7,w*.72)));sg.position.set(0,h-.9,l/2+.12);g.add(sg);
-  g.position.set(d.x,0,d.z);S.add(g);W.obstacles.push({x:d.x,z:d.z,r:Math.min(w,l)*.38});return g
+  g.position.set(d.x,0,d.z);S.add(g);return g
  }
  const defs=[
  {id:"bakery",name:"BÄCKEREI",x:-92,z:-92,w:13,l:11,h:7,color:0xd5b48c},
