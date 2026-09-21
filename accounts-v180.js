@@ -12,5 +12,15 @@ async function bankUI(){if(!session)return authUI();let ps=(await sb.from('profi
 $('#send').onclick=async()=>{let {error}=await sb.rpc('transfer_money',{to_user:$('#to').value,amt:+$('#amt').value,note:$('#note').value});alert(error?error.message:'Überweisung ausgeführt.');if(!error)location.reload()};if($('#grant'))$('#grant').onclick=async()=>{let {error}=await sb.rpc('admin_grant_money',{to_user:$('#ato').value,amt:+$('#aamt').value});alert(error?error.message:'Testgeld vergeben.');if(!error)location.reload()}}
 async function homesUI(){if(!session)return authUI();let hs=(await sb.from('homes').select('*').order('id')).data||[];modal('<h2>🏠 Wohnen</h2><p>60 Wohnmöglichkeiten. Der erste Spielmonat ist als Startwohnung vorgesehen.</p>'+hs.map(h=>'<div class="row"><b>'+esc(h.label)+'</b> · '+(h.kind==='wohnung'?'Wohnung':'Haus')+'<br>Miete '+Number(h.rent).toLocaleString('de-DE')+' €/Monat · Kauf '+Number(h.buy_price).toLocaleString('de-DE')+' €<br>'+(h.owner||h.tenant?'Belegt':'Frei')+'</div>').join(''))}
 await load();sb.auth.onAuthStateChange(async(e)=>{if(e==='PASSWORD_RECOVERY'){let p=prompt('Neues Passwort (mindestens 8 Zeichen)');if(p){let {error}=await sb.auth.updateUser({password:p});alert(error?error.message:'Passwort geändert.')}}});
+async function startup(){
+ const login=$('#login'),hud=$('#hud'),st=$('#loginStatus'),email=$('#email'),pass=$('#pass'),pn=$('#playerName');
+ const show=()=>{login.hidden=false;hud.hidden=true}, enter=async()=>{await load();if(!session)return show();login.hidden=true;hud.hidden=false;$('#who').textContent=profile?.player_name||session.user.email;$('#money').textContent=Number(profile?.cash||0).toLocaleString('de-DE')+' €';if(profile?.is_admin&&!$('#testAdmin')){let b=document.createElement('button');b.id='testAdmin';b.textContent='TEST';b.onclick=bankUI;hud.appendChild(b)}};
+ if(!session)show();else await enter();
+ $('#go').onclick=async()=>{let {error}=await sb.auth.signInWithPassword({email:email.value.trim(),password:pass.value});st.textContent=error?error.message:'';if(!error)await enter()};
+ $('#register').onclick=async()=>{let {error}=await sb.auth.signUp({email:email.value.trim(),password:pass.value,options:{data:{player_name:pn.value.trim()||'Spieler'}}});st.textContent=error?error.message:'Konto erstellt. Bitte E-Mail bestätigen.'};
+ $('#forgot').onclick=async()=>{let {error}=await sb.auth.resetPasswordForEmail(email.value.trim(),{redirectTo:location.origin+location.pathname});st.textContent=error?error.message:'E-Mail zum Zurücksetzen wurde gesendet.'};
+ $('#logout').onclick=async()=>{await sb.auth.signOut();location.reload()};
+}
+await startup();
 let h=$('#hud');if(h){for(let [txt,fn] of [['KONTO',authUI],['ÜBERWEISEN',bankUI],['WOHNEN',homesUI]]){let b=document.createElement('button');b.textContent=txt;b.onclick=fn;h.appendChild(b)}}
 window.LuxAccounts={open:authUI,bank:bankUI,homes:homesUI,get profile(){return profile},canCredit(){return(profile?.employment_months||0)>=6}};
