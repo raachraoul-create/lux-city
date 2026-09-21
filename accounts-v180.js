@@ -2,7 +2,7 @@ import{createClient}from"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+e
 const sb=createClient("https://vrugwznymkyggijwpprd.supabase.co","sb_publishable_hPmeWT0ZKpJ-H__ZU5FcAA_gptC6L1E");
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let session=null,profile=null;
-function modal(html){let m=$('#modal'),b=$('#modalBody');if(m&&b){b.innerHTML=html;m.style.display='block'}}
+function modal(html){let m=$('#modal'),b=$('#modalBody');if(m&&b){b.innerHTML=html;m.hidden=false;m.style.display='block'}}
 async function load(){let {data}=await sb.auth.getSession();session=data.session;if(session){let r=await sb.from('profiles').select('*').eq('id',session.user.id).maybeSingle();profile=r.data;if(!profile){await sb.from('profiles').insert({id:session.user.id,player_name:session.user.user_metadata?.player_name||session.user.email.split('@')[0]});r=await sb.from('profiles').select('*').eq('id',session.user.id).single();profile=r.data}window.LuxAccount={sb,session,profile};localStorage.setItem('luxcity_last_user',profile.player_name)}}
 function authUI(){modal('<h2>Lux City Konto</h2><input id="ae" type="email" placeholder="E-Mail"><input id="ap" type="password" placeholder="Passwort"><input id="an" placeholder="Spielername (bei Registrierung)"><p><button id="ali">ANMELDEN</button> <button id="asu">REGISTRIEREN</button></p><button id="afr">Passwort vergessen?</button><div id="amsg"></div>');let msg=t=>$('#amsg').textContent=t;
 $('#ali').onclick=async()=>{let {error}=await sb.auth.signInWithPassword({email:$('#ae').value.trim(),password:$('#ap').value});msg(error?error.message:'Angemeldet.');if(!error)location.reload()};
