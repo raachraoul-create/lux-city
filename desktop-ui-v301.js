@@ -37,7 +37,7 @@ function organize(){
 organize();
 new MutationObserver(organize).observe(hud,{childList:true});
 
-const map={arrowup:'w',arrowdown:'s',arrowleft:'d',arrowright:'a'};
+const map={arrowup:'w',arrowdown:'s',arrowleft:'a',arrowright:'d'};
 function keyboard(e,down){
  const k=e.key.toLowerCase(),mapped=map[k];
  if(!mapped)return;
@@ -49,5 +49,5 @@ addEventListener('keydown',e=>keyboard(e,true),{capture:true});
 addEventListener('keyup',e=>keyboard(e,false),{capture:true});
 addEventListener('blur',()=>{if(window.LuxWorld?.keys)for(const k of ['w','a','s','d'])window.LuxWorld.keys[k]=0});
 
-window.LuxDesktopUI={version:'3.0.2',organize};
+window.LuxDesktopUI={version:'3.0.3',organize};
 })();
