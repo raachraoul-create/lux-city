@@ -1,0 +1,1 @@
+import{installBusinessUI}from'./business-economy-v096.js';let n=0;const t=setInterval(()=>{if(document.querySelector('#bank')){clearInterval(t);installBusinessUI()}if(++n>100)clearInterval(t)},100);
