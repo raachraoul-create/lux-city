@@ -1,0 +1,2 @@
+# Lux City v0.9.4
+Bakery ownership visibility: animated yellow marker/ring, customer foot traffic and two delivery vans. Existing v0.9.3 management retains Backen, Lager, Angestellte and Preise tabs for desktop/iPhone/iPad.
