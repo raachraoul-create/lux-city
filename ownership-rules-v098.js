@@ -1,0 +1,2 @@
+// one-business ownership migration/guard
+import{loadEconomy}from'./economy-v097.js';setTimeout(()=>{let s=loadEconomy(),seen={};for(const[id,o]of Object.entries(s.owners||{})){if(!o?.player)continue;let k=o.player+'|'+id;if(seen[k])delete s.owners[id];else seen[k]=1}localStorage.setItem('luxcity_economy_v097',JSON.stringify(s))},500);
