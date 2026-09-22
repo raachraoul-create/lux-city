@@ -1,0 +1,1 @@
+(()=>{let q=setInterval(()=>{if(!window.LuxBank405)return;clearInterval(q);if(window.LuxV400){LuxV400.loan=LuxBank405.take;LuxV400.bank=LuxBank405.bank}if(window.LuxComplete350?.state){LuxComplete350.state.loanBalance=0}let old=document.getElementById('life400');if(old)old.textContent='IMMOBILIEN / FIRMA';window.LuxEconomyClean405={active:true}},400)})();
