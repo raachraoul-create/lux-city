@@ -1,0 +1,1 @@
+(()=>{let q=setInterval(()=>{if(!window.LuxCivic404)return;clearInterval(q);for(let id of['housing340','home340']){let b=document.getElementById(id);if(b)b.remove()}setInterval(()=>{for(let id of['housing340','home340']){let b=document.getElementById(id);if(b)b.remove()}},1200);window.LuxInteriorCleanup411=true},300)})();
