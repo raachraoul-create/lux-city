@@ -1,0 +1,1 @@
+(()=>{let q=setInterval(()=>{if(!window.LuxWorld||!window.LuxCollision471)return;clearInterval(q);let W=LuxWorld,C=LuxCollision471;W.hit=(x,z)=>{let driving=!!window.LuxPlayerCar400?.driving;return C.blocked(x,z,driving?1.05:.43,{cars:true,npcs:true})};window.LuxStability471={ok:true,collision:C}},160)})();
