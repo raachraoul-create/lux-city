@@ -1,13 +1,12 @@
 {
-  "version": "7.8.3",
-  "released_at": "2026-09-23T17:23:00+02:00",
-  "title": "Wohnungsstart und Straßenoptik überarbeitet",
+  "version": "7.8.4",
+  "released_at": "2026-09-23T17:31:00+02:00",
+  "title": "Wohnungsstart erzwungen und Zebrastreifen korrigiert",
   "notes": [
-    "Wohnungsstart gilt jetzt für normale Konten mit zugewiesenem Wohnsitz und hängt nicht mehr von Adminstatus oder vorhandenem Fahrzeug ab.",
-    "Wohnungs-Selbsttest prüft beim Spielen Innenraumstatus, Wandkollision, Spielerposition und Innenkamera und korrigiert fehlerhafte Zustände automatisch.",
-    "Wohnung optisch ergänzt: Deckenabschluss, zusätzliche Innenbeleuchtung, Eingangs-Läufer und Wanddetails.",
-    "Ampeln auf realistischere Größe skaliert.",
-    "Zebrastreifen neu aufgebaut: kompaktere Breite, gleichmäßige Abstände und sauberer Asphaltuntergrund.",
-    "Login und bestehende Steuerungsrichtung wurden nicht verändert."
+    "Nach dem Login wird einmalig die zugewiesene Wohnung gestartet; falls noch kein Wohnsitz geladen ist, wird für den Test die Standardwohnung verwendet.",
+    "Der Startschutz läuft ganz am Ende der Ladefolge und beendet sich danach, damit normales Verlassen der Wohnung weiterhin funktioniert.",
+    "Zebrastreifen um 90 Grad korrigiert: die Balken liegen jetzt parallel zur Fahrtrichtung und werden quer über den Fußgängerweg wiederholt.",
+    "Die alten falsch orientierten Streifen werden mit sauberem Asphalt überdeckt und durch kompaktere Streifen ersetzt.",
+    "Bestehende Wohnungskollision, Kamera, Login und Steuerung wurden nicht verändert."
   ]
 }
