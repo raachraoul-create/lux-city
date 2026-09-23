@@ -1,11 +1,13 @@
 (()=>{const DONE=[
-'Figur realistischer','KI-Menschen realistischer','Häuser abwechslungsreicher','Öffentliche Gebäude überarbeiten','Fenster & Türen realistischer','Grundstücke & Zufahrten verbessern','Straßen realistischer','Ampeln überarbeiten','Zebrastreifen verbessern','Autos deutlich realistischer','Elektro/Benzin/Diesel optisch unterscheiden','KI-Verkehr verbessern','Beleuchtung realistischer','Performance optimieren','Abschlussprüfung & Fehlerbehebung','Innenräume weiter realistischer','Bewohner mit Tagesabläufen'
+'Figur realistischer','KI-Menschen realistischer','Häuser abwechslungsreicher','Öffentliche Gebäude überarbeiten','Fenster & Türen realistischer','Grundstücke & Zufahrten verbessern','Straßen realistischer','Ampeln überarbeiten','Zebrastreifen verbessern','Autos deutlich realistischer','Elektro/Benzin/Diesel optisch unterscheiden','KI-Verkehr verbessern','Beleuchtung realistischer','Performance optimieren','Abschlussprüfung & Fehlerbehebung','Innenräume weiter realistischer','Bewohner mit Tagesabläufen','Parken, Garagen & Fahrzeugnutzung','Geschäfte mit sichtbaren Kundenabläufen','Weitere Performance- und Bugtests'
 ],NEXT=[
-'Parken, Garagen & Fahrzeugnutzung',
-'Geschäfte mit sichtbaren Kundenabläufen',
-'Weitere Performance- und Bugtests'
+'Fahrzeughändler & Werkstatt als echte Betriebe',
+'Mehr Berufe mit sichtbaren Arbeitsabläufen',
+'Wohnungen & Häuser individuell einrichten',
+'KI-Fahrzeuge parken und Grundstücke nutzen',
+'Wetter & Straßenverkehr weiter verfeinern'
 ];
-const STATUS={'Parken, Garagen & Fahrzeugnutzung':'work','Geschäfte mit sichtbaren Kundenabläufen':'planned','Weitere Performance- und Bugtests':'planned'};
+const STATUS={'Fahrzeughändler & Werkstatt als echte Betriebe':'planned','Mehr Berufe mit sichtbaren Arbeitsabläufen':'planned','Wohnungen & Häuser individuell einrichten':'planned','KI-Fahrzeuge parken und Grundstücke nutzen':'planned','Wetter & Straßenverkehr weiter verfeinern':'planned'};
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
