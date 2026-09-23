@@ -1,11 +1,11 @@
 {
-  "version": "7.3.1",
-  "released_at": "2026-09-23T07:38:00+02:00",
-  "title": "Kompakter Update-Hinweis rechts",
+  "version": "7.3.2",
+  "released_at": "2026-09-23T07:41:00+02:00",
+  "title": "Update-Karte ohne Überschriften-Überdeckung",
   "notes": [
-    "Update-Kästchen nach oben rechts verschoben.",
-    "Breite, Schrift und Abstände verkleinert.",
-    "Logo und Login-Bereich bleiben frei.",
-    "MEHR ANZEIGEN bleibt erhalten."
+    "Update-Karte deutlich schmaler.",
+    "Nur zwei nächste Punkte direkt sichtbar.",
+    "Lux-City-Überschrift bleibt frei.",
+    "MEHR ANZEIGEN öffnet weiterhin die vollständige Liste."
   ]
 }
