@@ -1,12 +1,13 @@
 {
-  "version": "7.8.5",
-  "released_at": "2026-09-23T17:54:00+02:00",
-  "title": "Wohnungsstart gegen spätes Überschreiben abgesichert",
+  "version": "7.8.6",
+  "released_at": "2026-09-23T18:03:00+02:00",
+  "title": "Grundfunktionen bereinigt und Konflikte entfernt",
   "notes": [
-    "Der Onboarding-Code öffnet die Gemeinde weiterhin, verschiebt die Spielfigur beim Login aber nicht mehr zur Gemeinde.",
-    "Der Wohnungsstart prüft nach dem Login mehrere Sekunden lang, ob Spieler, Innenraum und eigener Wohnsitz wirklich übereinstimmen.",
-    "Wenn der Server-Wohnsitz etwas später geladen wird, wechselt der Startschutz während der Startphase automatisch auf das richtige Haus bzw. die richtige Wohnung.",
-    "Nach spätestens zwölf Sekunden beendet sich der Startschutz vollständig; normales Verlassen und spätere Bewegung bleiben unverändert.",
-    "Wohnungskollision, Innenkamera, Login, Steuerung und Straßenoptik wurden nicht verändert."
+    "Startseite meldet eine vorhandene Sitzung nicht mehr automatisch ins Spiel ein; ANMELDEN muss bewusst gedrückt werden.",
+    "Der Wohnungsstart wird ausschließlich nach dem manuellen Login ausgelöst. Das zweite konkurrierende Personal-Spawn-System wurde aus der Ladefolge entfernt.",
+    "Links/Rechts wird in einer eigenen Eingabeschicht korrigiert, ohne Bewegungs-, Kamera- oder Kollisionscode umzubauen.",
+    "Zebrastreifen werden jetzt direkt im Verkehrssystem korrekt ausgerichtet erzeugt; der alte Übermal-Patch wurde entfernt.",
+    "KI- und Spielerautos bekommen eine feste Rad-/Straßenhöhe, ohne Fahrphysik oder Routen zu verändern.",
+    "Die bereits funktionierende Wohnungskollision und Innenkamera bleiben unverändert."
   ]
 }

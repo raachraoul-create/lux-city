@@ -1,0 +1,1 @@
+(()=>{let q=setInterval(()=>{let W=window.LuxWorld,PC=window.LuxPlayerCar750||window.LuxPlayerCar740;if(!W?.cars?.length||!W.registerTick||!PC?.car)return;clearInterval(q);W.registerTick(()=>{for(let v of W.cars)if(v)v.position.y=.055;if(PC.car)PC.car.position.y=.07});window.LuxVehicleGround786={aiY:.055,playerY:.07}},220)})();
