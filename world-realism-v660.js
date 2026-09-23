@@ -11,7 +11,7 @@ function bench(x,z,rot=0){let g=new T.Group();A(new T.BoxGeometry(2.3,.13,.55),M
 // bus shelters
 function shelter(x,z,rot=0){let g=new T.Group();A(new T.BoxGeometry(4,.14,1.8),M(0x444b50,.4,.5),0,2.35,0,g);for(let xx of[-1.8,1.8])A(new T.BoxGeometry(.1,2.3,.1),M(0x42484c,.4,.6),xx,1.15,0,g);A(new T.BoxGeometry(3.8,1.9,.08),new T.MeshStandardMaterial({color:0x9bc3d2,transparent:true,opacity:.35,roughness:.15}),0,1.25,.78,g);A(new T.BoxGeometry(2.4,.13,.5),M(0x6f513a,.8),0,.62,0,g);g.position.set(x,0,z);g.rotation.y=rot;S.add(g)}shelter(-16,-106,0);shelter(16,106,Math.PI);
 // parking aprons with marked bays near civic buildings
-function parking(x,z,w=13,l=8){A(new T.BoxGeometry(w,.07,l),M(0x555a5d,.9),x,.055,z);for(let xx=x-w/2+2;xx<x+w/2;xx+=3)A(new T.BoxGeometry(.08,.025,l-1),white,xx,.102,z)}parking(-108,-34,13,7);parking(-88,24,14,7);parking(-143,52,14,7);
+const parkingWhite=M(0xe9e7de,.62);function parking(x,z,w=13,l=8){A(new T.BoxGeometry(w,.07,l),M(0x555a5d,.9),x,.055,z);for(let xx=x-w/2+2;xx<x+w/2;xx+=3)A(new T.BoxGeometry(.08,.025,l-1),parkingWhite,xx,.102,z)}parking(-108,-34,13,7);parking(-88,24,14,7);parking(-143,52,14,7);
 // outer farmland and hedgerows make the edge of town less like an empty green plane
 for(let [x,z,c] of[[-285,-285,0x8f9251],[285,-285,0xa28d57],[-285,285,0x7d8b50],[285,285,0x9a8550]]){let f=A(new T.BoxGeometry(145,.035,90),M(c,.98),x,.02,z);for(let zz=-35;zz<=35;zz+=8)A(new T.BoxGeometry(135,.012,.16),M(c===0x8f9251?0xb1a35c:0x665e3c,.98),x,.043,z+zz)}
 window.LuxWorldRealism450=window.LuxWorldRealism630=window.LuxWorldRealism660={version:'6.6.0',legacyOverlaysRemoved:true,crosswalkStripesRemoved:true}},260);
