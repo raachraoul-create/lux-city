@@ -1,14 +1,11 @@
 {
-  "version": "7.7.0",
-  "released_at": "2026-09-23T10:08:00+02:00",
-  "title": "Wetter-Verkehr & echte Arbeitsaufgaben",
+  "version": "7.7.1",
+  "released_at": "2026-09-23T10:04:00+02:00",
+  "title": "Wohnungskollision gehärtet",
   "notes": [
-    "Trockene Straßen bleiben wieder dunkel statt durch das Wettermodul weiß zu werden.",
-    "Regen, Schnee und Nebel verändern Asphalt, Boden, Sichtweite und Niederschlag realistischer.",
-    "KI-Verkehr passt Geschwindigkeit und Sicherheitsabstand an Wetter, Nacht und Berufsverkehr an.",
-    "Passive Schichten wurden durch vier echte Arbeitsaufgaben pro Beruf ersetzt.",
-    "Arbeitsaufgaben gibt es für Bäckerei, Verkauf, Fahrer, Gastronomie, Polizei, Feuerwehr, Rettung, Werkstatt, Fahrzeughandel, Pflege, Büro, Elektrik und Produktion.",
-    "Startseite zeigt zusätzlich dauerhafte große Ziele für Grafik, Fahrzeuge, Steuern, Versicherungen, Vegetation und KI-Eigenleben.",
-    "Fertige Roadmap-Punkte wurden entfernt; Fahrzeugdesign und Kfz-Steuer/Versicherung sind nach oben gerückt."
+    "Außenwände sind wieder echte Collider.",
+    "Innenwände, Möbel und Fensterbereiche werden zusätzlich hart geprüft.",
+    "Anti-Tunneling-Wächter merkt die letzte sichere Position und verhindert Durchspringen.",
+    "Fix basiert auf dem aktuellen V7.7-Stand ohne andere neue Systeme zurückzusetzen."
   ]
 }
