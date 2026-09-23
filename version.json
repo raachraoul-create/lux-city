@@ -1,11 +1,14 @@
 {
-  "version": "7.3.2",
-  "released_at": "2026-09-23T07:41:00+02:00",
-  "title": "Update-Karte ohne Überschriften-Überdeckung",
+  "version": "7.4.0",
+  "released_at": "2026-09-23T07:59:00+02:00",
+  "title": "Parken, Garagen, Kundenabläufe & Stabilität",
   "notes": [
-    "Update-Karte deutlich schmaler.",
-    "Nur zwei nächste Punkte direkt sichtbar.",
-    "Lux-City-Überschrift bleibt frei.",
-    "MEHR ANZEIGEN öffnet weiterhin die vollständige Liste."
+    "Eigene Fahrzeuge können an festen Stellplätzen und Garagen geparkt werden.",
+    "Parkpositionen werden lokal und für Serverfahrzeuge dauerhaft gespeichert.",
+    "Öffentliche Parkplätze bei wichtigen Betrieben und Wohn-Stellplätze ergänzt.",
+    "Kunden stehen an, betreten Geschäfte, bestellen, sitzen im Café/Kneipe und verlassen das Gebäude sichtbar.",
+    "Kunden-NPCs sind von Bewohner-Tagesabläufen getrennt.",
+    "iPhone-Performance und Laufzeit-Fehlerwächter verbessert.",
+    "Roadmap mit nächsten großen Updates automatisch fortgeführt."
   ]
 }
