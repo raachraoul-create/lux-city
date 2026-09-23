@@ -1,13 +1,11 @@
 {
   "version": "7.8.8",
   "released_at": "2026-09-23T21:10:00+02:00",
-  "title": "Startkapital überall auf 2.500 € vereinheitlicht",
+  "title": "Startkapital auf 2.500 € vereinheitlicht",
   "notes": [
-    "Neues Profil-Startkapital in Supabase ist jetzt 2.500 € statt 25.000 €.",
-    "Onboarding setzt neue Spieler ebenfalls ausschließlich auf 2.500 €.",
-    "Profil-/HUD-Anzeige und Spielgeld verwenden damit denselben Startbetrag.",
-    "QA-Vorschau mit dem festen Lux City QA Tester bestand 6 von 6 Prüfungen für diesen Fehler.",
-    "Login bleibt manuell: vorhandene Sitzung startet das Spiel erst nach Klick auf ANMELDEN.",
-    "Wohnung, Steuerung, Kamera, Kollision, Fahrzeuge und Straßenlogik wurden nicht verändert."
+    "Neue Spieler starten jetzt überall mit 2.500 € statt 25.000 €.",
+    "Die Gemeinde zeigt das Startkapital ebenfalls korrekt als 2.500 € an.",
+    "Alte neue-Spieler-Startstände mit exakt 25.000 € und ohne Arbeits-/Wohnfortschritt werden einmalig auf 2.500 € korrigiert.",
+    "Login, Wohnung, Steuerung, Kamera, Kollision, Fahrzeuge und Straßenoptik wurden nicht verändert."
   ]
 }
