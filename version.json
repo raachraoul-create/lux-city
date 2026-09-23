@@ -1,15 +1,12 @@
 {
-  "version": "7.9.0-qa",
-  "released_at": "2026-09-23T23:35:00+02:00",
-  "title": "Handy, Fahrzeugversicherung, Steuern und Einsatzparkplätze",
+  "version": "7.9.0-qa2",
+  "released_at": "2026-09-24T00:10:00+02:00",
+  "title": "QA2 Wohnungsstart und Handy-Systeme",
   "notes": [
-    "Das nicht gewünschte Kolosseum-/Fehlgebäude neben der Feuerwehr wird nicht mehr geladen.",
-    "Polizeiauto, Feuerwehrauto und Rettungswagen stehen an Polizei, Feuerwehr und Krankenhaus; die Rettungsdienst-Basisroute startet am Krankenhaus.",
-    "H öffnet ein Spieler-Handy; für Touch-Geräte gibt es zusätzlich HANDY / H.",
-    "Bank-App zeigt Privatkonto, nimmt eingehende Überweisungen an und ermöglicht Überweisungen an andere Spieler.",
-    "Vier fiktive Kfz-Versicherungen mit unterschiedlichen Preisen, Selbstbeteiligungen und Leistungen können verglichen und gewählt werden.",
-    "Kfz-Steuer unterscheidet Elektro, Benzin und Diesel sowie Fahrzeugklasse.",
-    "Rechnungs-App enthält Wasser, Müll, Versicherung und Kfz-Steuer mit offen/bezahlt-Status.",
-    "Bestehende Wohnungs-, Kamera-, Kollisions- und Bewegungsgrundsysteme wurden nicht verändert."
+    "Wohnungsstart wurde vereinfacht: nach bewusstem Login wird genau einmal die eigene bzw. Gemeinde-Startwohnung geöffnet.",
+    "Neue Spieler erhalten für den bestehenden Startermonat die Gemeinde-Startwohnung als aktiven Wohnsitz.",
+    "Wohnungskollision und Innenkamera wurden nicht verändert.",
+    "Steuer-App zeigt ohne Fahrzeug einen ruhigen leeren Zustand statt einer Warnung.",
+    "Handy, Versicherungen, Rechnungen, Bank und Einsatzparkplätze bleiben im QA-Test."
   ]
 }

@@ -118,7 +118,7 @@
   }
   function openTax(){
     ensureBills();let taxes=state.bills.filter(b=>b.type==='Kfz-Steuer');
-    appShell('Kfz-Steuer',`<button class="lcBack">‹ Apps</button><p>Elektro, Benzin und Diesel haben unterschiedliche Steuersätze.</p>${taxes.map(b=>`<div class="lcBill"><b>${b.label}</b><span>${eur(b.amount)}</span><button data-bill="${b.id}" ${b.paid?'disabled':''}>${b.paid?'BEZAHLT':'ZAHLEN'}</button></div>`).join('')||'<p>Kein Fahrzeug angemeldet.</p>'}`);
+    appShell('Kfz-Steuer',`<button class="lcBack">‹ Apps</button><p>Elektro, Benzin und Diesel haben unterschiedliche Steuersätze.</p>${taxes.map(b=>`<div class="lcBill"><b>${b.label}</b><span>${eur(b.amount)}</span><button data-bill="${b.id}" ${b.paid?'disabled':''}>${b.paid?'BEZAHLT':'ZAHLEN'}</button></div>`).join('')||'<div class="lcCard"><b>Keine Kfz-Steuer offen</b><small>Du besitzt aktuell kein Fahrzeug. Sobald du ein Fahrzeug besitzt, erscheint die Kfz-Steuer hier automatisch.</small></div>'}`);
     $('.lcBack').onclick=home;document.querySelectorAll('[data-bill]').forEach(b=>b.onclick=()=>payBill(b.dataset.bill))
   }
   function openBills(){
