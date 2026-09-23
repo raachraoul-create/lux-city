@@ -1,12 +1,13 @@
 {
-  "version": "7.8.2",
-  "released_at": "2026-09-23T17:09:00+02:00",
-  "title": "Wohnungsstart, Kollision und Innenkamera synchronisiert",
+  "version": "7.8.3",
+  "released_at": "2026-09-23T17:23:00+02:00",
+  "title": "Wohnungsstart und Straßenoptik überarbeitet",
   "notes": [
-    "Start-Race-Condition beseitigt: Die persönliche Startwohnung wird erst betreten, wenn der detaillierte Innenraum geladen ist.",
-    "Bereits aktive alte Wohnungszustände werden automatisch in den richtigen Innenraum übernommen, ohne den Rückweg zur Haustür zu verlieren.",
-    "Wohnungskollision prüft jetzt einen größeren Spieler-Körper und kürzere Bewegungssegmente gegen Wände und Möbel.",
-    "Innenkamera wird unabhängig vom Ladezeitpunkt aktiviert und bleibt innerhalb der Wohnung statt über oder außerhalb des Raums zu landen.",
-    "Login und andere Spielsysteme wurden nicht verändert."
+    "Wohnungsstart gilt jetzt für normale Konten mit zugewiesenem Wohnsitz und hängt nicht mehr von Adminstatus oder vorhandenem Fahrzeug ab.",
+    "Wohnungs-Selbsttest prüft beim Spielen Innenraumstatus, Wandkollision, Spielerposition und Innenkamera und korrigiert fehlerhafte Zustände automatisch.",
+    "Wohnung optisch ergänzt: Deckenabschluss, zusätzliche Innenbeleuchtung, Eingangs-Läufer und Wanddetails.",
+    "Ampeln auf realistischere Größe skaliert.",
+    "Zebrastreifen neu aufgebaut: kompaktere Breite, gleichmäßige Abstände und sauberer Asphaltuntergrund.",
+    "Login und bestehende Steuerungsrichtung wurden nicht verändert."
   ]
 }
