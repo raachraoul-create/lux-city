@@ -1,13 +1,12 @@
 {
-  "version": "7.8.6",
-  "released_at": "2026-09-23T18:03:00+02:00",
-  "title": "Grundfunktionen bereinigt und Konflikte entfernt",
+  "version": "7.8.7",
+  "released_at": "2026-09-23T20:47:00+02:00",
+  "title": "Registrierung ohne E-Mail-Bestätigung",
   "notes": [
-    "Startseite meldet eine vorhandene Sitzung nicht mehr automatisch ins Spiel ein; ANMELDEN muss bewusst gedrückt werden.",
-    "Der Wohnungsstart wird ausschließlich nach dem manuellen Login ausgelöst. Das zweite konkurrierende Personal-Spawn-System wurde aus der Ladefolge entfernt.",
-    "Links/Rechts wird in einer eigenen Eingabeschicht korrigiert, ohne Bewegungs-, Kamera- oder Kollisionscode umzubauen.",
-    "Zebrastreifen werden jetzt direkt im Verkehrssystem korrekt ausgerichtet erzeugt; der alte Übermal-Patch wurde entfernt.",
-    "KI- und Spielerautos bekommen eine feste Rad-/Straßenhöhe, ohne Fahrphysik oder Routen zu verändern.",
-    "Die bereits funktionierende Wohnungskollision und Innenkamera bleiben unverändert."
+    "Neue E-Mail-Konten werden beim Erstellen automatisch bestätigt; eine Bestätigungs-Mail ist nicht mehr nötig.",
+    "Nach der Registrierung wird die neue Sitzung direkt gestartet und der Spieler kann sofort ins Spiel.",
+    "Die Startseite weist bei der Registrierung darauf hin, dass keine E-Mail-Bestätigung nötig ist.",
+    "Bestehender Login, Wohnung, Steuerung, Kollision, Fahrzeuge und Straßenoptik wurden nicht verändert.",
+    "Auf Wunsch wurde für diese Änderung kein vollständiger Spieltest ausgeführt."
   ]
 }
