@@ -1,11 +1,11 @@
 {
-  "version": "7.7.1",
-  "released_at": "2026-09-23T10:04:00+02:00",
-  "title": "Wohnungskollision gehärtet",
+  "version": "7.8.0",
+  "released_at": "2026-09-23T16:52:00+02:00",
+  "title": "Wohnung, Kamera und Kollisionsschutz überarbeitet",
   "notes": [
-    "Außenwände sind wieder echte Collider.",
-    "Innenwände, Möbel und Fensterbereiche werden zusätzlich hart geprüft.",
-    "Anti-Tunneling-Wächter merkt die letzte sichere Position und verhindert Durchspringen.",
-    "Fix basiert auf dem aktuellen V7.7-Stand ohne andere neue Systeme zurückzusetzen."
+    "Startwohnung: Durchglitchen durch Außen- und Innenwände wird mit einem dauerhaften Kollisionswächter verhindert.",
+    "Innenkamera: engerer Third-Person-Abstand, Wandabstand und automatische Kamerakorrektur verhindern Blicke außerhalb der Wohnung.",
+    "Wohnung wirkt nicht mehr wie eine offene Kiste: Decke, Sockelleisten, Vorhänge, Wanddetails und eine glaubwürdige Außenansicht hinter den Fenstern wurden ergänzt.",
+    "Der Fix wird als eigener Schutzlayer geladen, damit spätere Spielmodule Kamera und Wohnungskollision nicht wieder überschreiben."
   ]
 }
