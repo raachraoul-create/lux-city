@@ -5,7 +5,7 @@
 'Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf',
 'Pannen, Abschleppdienst & Werkstatt-Aufträge'
 ];
-const STATUS={'Wohnungen & Häuser individuell einrichten':'planned','KI-Fahrzeuge parken und Grundstücke nutzen':'planned','Wetter & Straßenverkehr weiter verfeinern':'planned','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned'};
+const STATUS={'Wohnungen & Häuser individuell einrichten':'work','KI-Fahrzeuge parken und Grundstücke nutzen':'work','Wetter & Straßenverkehr weiter verfeinern':'planned','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned'};
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
