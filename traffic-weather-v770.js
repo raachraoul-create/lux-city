@@ -1,4 +1,4 @@
-(()=>{let q=setInterval(()=>{if(!window.LuxWorld?.cars?.length||!window.LuxTraffic720||!window.LuxWeather770||!window.LuxLife)return;clearInterval(q);const W=LuxWorld,managed=new Set(window.LuxAIParking760?.managed||[]);for(let v of W.cars)if(!managed.has(v))v.userData.baseSpeedDry770=v.userData.baseSpeed||4.8;
+(()=>{let q=setInterval(()=>{if(!window.LuxWorld?.cars?.length||!window.LuxTraffic720||!window.LuxWeather770||!window.LuxLife||!window.LuxAIParking760)return;clearInterval(q);const W=LuxWorld,managed=new Set(window.LuxAIParking760?.managed||[]);for(let v of W.cars)if(!managed.has(v))v.userData.baseSpeedDry770=v.userData.baseSpeed||4.8;
 function weatherFactor(){let st=LuxWeather770.state;return st==='snow'?.56:st==='rain'?.76:st==='fog'?.72:st==='cloudy'?.94:1}
 function nightFactor(){let h=(+LuxLife.state.hour||0)+(+LuxLife.state.minute||0)/60;return(h<6||h>=22)?.88:1}
 function rushFactor(){let h=(+LuxLife.state.hour||0)+(+LuxLife.state.minute||0)/60;return(h>=7&&h<9)||(h>=16&&h<19)?.90:1}
