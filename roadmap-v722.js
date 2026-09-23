@@ -1,13 +1,11 @@
 (()=>{const DONE=[
-'Figur realistischer','KI-Menschen realistischer','Häuser abwechslungsreicher','Öffentliche Gebäude überarbeiten','Fenster & Türen realistischer','Grundstücke & Zufahrten verbessern','Straßen realistischer','Ampeln überarbeiten','Zebrastreifen verbessern','Autos deutlich realistischer','Elektro/Benzin/Diesel optisch unterscheiden','KI-Verkehr verbessern','Beleuchtung realistischer','Performance optimieren','Abschlussprüfung & Fehlerbehebung'
+'Figur realistischer','KI-Menschen realistischer','Häuser abwechslungsreicher','Öffentliche Gebäude überarbeiten','Fenster & Türen realistischer','Grundstücke & Zufahrten verbessern','Straßen realistischer','Ampeln überarbeiten','Zebrastreifen verbessern','Autos deutlich realistischer','Elektro/Benzin/Diesel optisch unterscheiden','KI-Verkehr verbessern','Beleuchtung realistischer','Performance optimieren','Abschlussprüfung & Fehlerbehebung','Innenräume weiter realistischer','Bewohner mit Tagesabläufen'
 ],NEXT=[
-'Innenräume weiter realistischer',
-'Bewohner mit Tagesabläufen',
 'Parken, Garagen & Fahrzeugnutzung',
 'Geschäfte mit sichtbaren Kundenabläufen',
 'Weitere Performance- und Bugtests'
 ];
-const STATUS={'Innenräume weiter realistischer':'work','Bewohner mit Tagesabläufen':'planned','Parken, Garagen & Fahrzeugnutzung':'planned','Geschäfte mit sichtbaren Kundenabläufen':'planned','Weitere Performance- und Bugtests':'planned'};
+const STATUS={'Parken, Garagen & Fahrzeugnutzung':'planned','Geschäfte mit sichtbaren Kundenabläufen':'planned','Weitere Performance- und Bugtests':'planned'};
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
