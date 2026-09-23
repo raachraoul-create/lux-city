@@ -1,11 +1,11 @@
 (()=>{const NEXT=[
-'Wohnungen & Häuser individuell einrichten',
-'KI-Fahrzeuge parken und Grundstücke nutzen',
 'Wetter & Straßenverkehr weiter verfeinern',
 'Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf',
-'Pannen, Abschleppdienst & Werkstatt-Aufträge'
+'Pannen, Abschleppdienst & Werkstatt-Aufträge',
+'Supermarkt & täglicher Einkauf',
+'Bus & ÖPNV wirklich nutzbar machen'
 ];
-const STATUS={'Wohnungen & Häuser individuell einrichten':'work','KI-Fahrzeuge parken und Grundstücke nutzen':'work','Wetter & Straßenverkehr weiter verfeinern':'planned','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned'};
+const STATUS={'Wetter & Straßenverkehr weiter verfeinern':'planned','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned','Supermarkt & täglicher Einkauf':'planned','Bus & ÖPNV wirklich nutzbar machen':'planned'};
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
