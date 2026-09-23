@@ -5,7 +5,7 @@
 'Supermarkt & täglicher Einkauf',
 'Bus & ÖPNV wirklich nutzbar machen'
 ];
-const STATUS={'Wetter & Straßenverkehr weiter verfeinern':'planned','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned','Supermarkt & täglicher Einkauf':'planned','Bus & ÖPNV wirklich nutzbar machen':'planned'};
+const STATUS={'Wetter & Straßenverkehr weiter verfeinern':'work','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'work','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned','Supermarkt & täglicher Einkauf':'planned','Bus & ÖPNV wirklich nutzbar machen':'planned'};const GOALS=['Grafik und Stadtbild Schritt für Schritt auf deutlich realistischeres Open-World-Niveau bringen','Spieler, KI, Häuser und Gebäude wesentlich detaillierter modellieren','Fiktive Premium-Automarken mit klar unterschiedlichen Designs und Antrieben','Eigenes Elektroauto als sportliche, Tesla-artige Limousine mit eigenem Lux-City-Logo','Kfz-Steuer für Elektro, Benzin und Diesel','Mehrere Kfz-Versicherungen mit unterschiedlichen Preisen und Leistungen','Mehr Bäume, Grünflächen, Straßen, Kreuzungen und Grundstücksdetails','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit'];
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
@@ -22,10 +22,10 @@ let style=document.createElement('style');style.textContent=
 '@media(max-width:860px){#roadmap722{right:6px;left:auto;top:42px;width:168px}#roadmap722 .rmHead{font-size:9px}#roadmap722 .rmMini div{font-size:8.5px}#roadmap722 .rmFull{max-height:46vh}}';
 document.head.appendChild(style);
 let box=document.createElement('aside');box.id='roadmap722';
-box.innerHTML='<div class="rmHead"><span>🛠️ NÄCHSTE UPDATES</span><span class="rmVer">V'+ver()+'</span></div><div class="rmMini" id="rmMini722"></div><button class="rmMoreBtn" id="rmMore722">MEHR ANZEIGEN</button><div class="rmFull"><h3>ALS NÄCHSTES</h3><div id="rmNext722"></div><div class="rmNote">Fertige Punkte verschwinden automatisch. Neue sinnvolle Updates rücken nach.</div></div>';
+box.innerHTML='<div class="rmHead"><span>🛠️ NÄCHSTE UPDATES</span><span class="rmVer">V'+ver()+'</span></div><div class="rmMini" id="rmMini722"></div><button class="rmMoreBtn" id="rmMore722">MEHR ANZEIGEN</button><div class="rmFull"><h3>ALS NÄCHSTES</h3><div id="rmNext722"></div><h3>GROSSE ZIELE</h3><div id="rmGoals722"></div><div class="rmNote">Fertige Punkte verschwinden automatisch. Neue sinnvolle Updates rücken nach.</div></div>';
 host.appendChild(box);
 document.getElementById('rmMini722').innerHTML=NEXT.slice(0,2).map(t=>'<div>'+t+'</div>').join('');
-document.getElementById('rmNext722').innerHTML=NEXT.map((t,i)=>{let st=STATUS[t]||'planned',cl=st==='work'?'tagWork':'tagPlan',tx=st==='work'?'IN ARBEIT':'GEPLANT';return '<div class="rmRow"><span class="tag '+cl+'">'+tx+'</span><span>'+(i+1)+'. '+t+'</span></div>'}).join('');
+document.getElementById('rmNext722').innerHTML=NEXT.map((t,i)=>{let st=STATUS[t]||'planned',cl=st==='work'?'tagWork':'tagPlan',tx=st==='work'?'IN ARBEIT':'GEPLANT';return '<div class="rmRow"><span class="tag '+cl+'">'+tx+'</span><span>'+(i+1)+'. '+t+'</span></div>'}).join('');document.getElementById('rmGoals722').innerHTML=GOALS.map(t=>'<div class="rmRow"><span class="tag tagPlan">ZIEL</span><span>'+t+'</span></div>').join('');
 
 let b=document.getElementById('rmMore722');b.onclick=()=>{box.classList.toggle('open');b.textContent=box.classList.contains('open')?'WENIGER ANZEIGEN':'MEHR ANZEIGEN'};
-window.LuxRoadmap722={next:NEXT,status:STATUS}})();
+window.LuxRoadmap722={next:NEXT,status:STATUS,goals:GOALS}})();
