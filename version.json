@@ -1,13 +1,13 @@
 {
-  "version": "7.5.0",
-  "released_at": "2026-09-23T08:08:00+02:00",
-  "title": "Fahrzeughandel, Werkstatt & sichtbare Berufe",
+  "version": "7.6.0",
+  "released_at": "2026-09-23T08:26:00+02:00",
+  "title": "Individuelle Wohnungen & KI-Parken auf Grundstücken",
   "notes": [
-    "Neuer physischer Fahrzeughändler mit Ausstellung und Auslieferungsplatz.",
-    "Fahrzeugkauf ist nicht mehr überall im AUTO-Menü möglich, sondern direkt beim Händler.",
-    "Neue Werkstatt mit Servicebuchten und Reparatur-/Kleinservice.",
-    "Neue Berufe: Mechaniker, Autoverkäufer, Pflegekraft, Büroangestellter, Elektriker und Produktionsmitarbeiter.",
-    "Sichtbare Arbeitsabläufe bei Werkstatt, Händler, Post, Krankenhaus, Polizei, Feuerwehr, Fabrik, Mühle, Gemeinde und Bäckerei.",
-    "Fertige Roadmap-Punkte werden vollständig entfernt und automatisch durch neue nächste Updates ersetzt."
+    "Eigene Wohnungen und Häuser lassen sich mit mehreren Stil-, Sofa- und Dekovarianten einrichten.",
+    "Die Einrichtung wird pro Wohnsitz dauerhaft gespeichert.",
+    "Einrichtungsmenü ist nur im eigenen Wohnsitz verfügbar.",
+    "Ein Teil der KI-Fahrzeuge verlässt die Straße, nutzt Hauszufahrten und öffentliche Parkplätze.",
+    "KI-Autos parken, warten und fahren danach wieder zurück in den Verkehr.",
+    "Fertige Roadmap-Punkte wurden automatisch entfernt und durch neue offene Updates ersetzt."
   ]
 }
