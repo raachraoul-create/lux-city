@@ -30,4 +30,4 @@ if(d.id==='bakery'||d.id==='cafe'||d.id==='pub'){let aw=A(new T.BoxGeometry(5.8,
 if(d.factory){for(let x of[-d.w*.30,0,d.w*.30])A(new T.BoxGeometry(2.5,.10,.52),metal,x,.08,front+.80,g)}
 for(let sx of[-1,1])A(new T.CylinderGeometry(.04,.05,Math.max(3.4,d.h-.3),8),metal,sx*(d.w/2-.24),Math.max(3.4,d.h-.3)/2,front+.04,g);
 g.position.set(d.x,0,d.z);S.add(g)}
-window.LuxPropertyRealism720={groups:detailGroups}},420);
+window.LuxPropertyRealism720={groups:detailGroups,windowMaterial:glass,darkWindowMaterial:darkGlass}},420);
