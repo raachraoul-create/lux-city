@@ -1,9 +1,12 @@
 {
-  "version": "7.8.1",
-  "released_at": "2026-09-23T17:00:00+02:00",
-  "title": "Login-Darstellung repariert",
+  "version": "7.8.2",
+  "released_at": "2026-09-23T17:09:00+02:00",
+  "title": "Wohnungsstart, Kollision und Innenkamera synchronisiert",
   "notes": [
-    "Fehlendes Anführungszeichen im Build-Meta-Tag repariert, damit das vorhandene Login-Design wieder vollständig geladen wird.",
-    "Wohnung, Kamera, Kollision und sonstige Spielsysteme aus v7.8.0 wurden nicht verändert."
+    "Start-Race-Condition beseitigt: Die persönliche Startwohnung wird erst betreten, wenn der detaillierte Innenraum geladen ist.",
+    "Bereits aktive alte Wohnungszustände werden automatisch in den richtigen Innenraum übernommen, ohne den Rückweg zur Haustür zu verlieren.",
+    "Wohnungskollision prüft jetzt einen größeren Spieler-Körper und kürzere Bewegungssegmente gegen Wände und Möbel.",
+    "Innenkamera wird unabhängig vom Ladezeitpunkt aktiviert und bleibt innerhalb der Wohnung statt über oder außerhalb des Raums zu landen.",
+    "Login und andere Spielsysteme wurden nicht verändert."
   ]
 }
