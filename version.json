@@ -1,11 +1,9 @@
 {
-  "version": "7.8.0",
-  "released_at": "2026-09-23T16:52:00+02:00",
-  "title": "Wohnung, Kamera und Kollisionsschutz überarbeitet",
+  "version": "7.8.1",
+  "released_at": "2026-09-23T17:00:00+02:00",
+  "title": "Login-Darstellung repariert",
   "notes": [
-    "Startwohnung: Durchglitchen durch Außen- und Innenwände wird mit einem dauerhaften Kollisionswächter verhindert.",
-    "Innenkamera: engerer Third-Person-Abstand, Wandabstand und automatische Kamerakorrektur verhindern Blicke außerhalb der Wohnung.",
-    "Wohnung wirkt nicht mehr wie eine offene Kiste: Decke, Sockelleisten, Vorhänge, Wanddetails und eine glaubwürdige Außenansicht hinter den Fenstern wurden ergänzt.",
-    "Der Fix wird als eigener Schutzlayer geladen, damit spätere Spielmodule Kamera und Wohnungskollision nicht wieder überschreiben."
+    "Fehlendes Anführungszeichen im Build-Meta-Tag repariert, damit das vorhandene Login-Design wieder vollständig geladen wird.",
+    "Wohnung, Kamera, Kollision und sonstige Spielsysteme aus v7.8.0 wurden nicht verändert."
   ]
 }
