@@ -11,4 +11,4 @@ function shelter(x,z,rot=0){let g=detail(new T.Group());A(new T.BoxGeometry(3.9,
 for(let [x,z,c] of[[-285,-285,0x8f9251],[285,-285,0xa28d57],[-285,285,0x7d8b50],[285,285,0x9a8550]]){A(new T.BoxGeometry(145,.035,90),M(c,.98),x,.02,z);for(let zz=-34;zz<=34;zz+=10)A(new T.BoxGeometry(135,.01,.10),M(c===0x8f9251?0xa89b58:0x706742,.98),x,.041,z+zz)}
 let metal=M(0x4c5256,.48,.48),drains=[];for(let r of W.roads){let hx=r.l/2,hz=r.w/2,vertical=hz>hx;if(vertical){for(let z=r.z-hz+22;z<r.z+hz-18;z+=42)for(let side of[-1,1])drains.push([r.x+side*(hx-.5),z,0])}else{for(let x=r.x-hx+22;x<r.x+hx-18;x+=42)for(let side of[-1,1])drains.push([x,r.z+side*(hz-.5),Math.PI/2])}}
 let dummy=new T.Object3D(),dg=new T.BoxGeometry(.42,.018,.14),im=new T.InstancedMesh(dg,metal,drains.length);drains.forEach((d,i)=>{dummy.position.set(d[0],.152,d[1]);dummy.rotation.set(0,d[2],0);dummy.updateMatrix();im.setMatrixAt(i,dummy.matrix)});S.add(im);
-window.LuxWorldRealism720={details,lamps:lampLights}},300);
+window.LuxWorldRealism720={details,lamps:lampLights,lampBulbMaterial:bulbMat}},300);
