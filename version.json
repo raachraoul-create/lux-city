@@ -1,16 +1,15 @@
 {
-  "version": "7.9.0-QA",
-  "released_at": "2026-09-23T21:38:00+02:00",
-  "title": "QA: Handy, Fahrzeugverwaltung und Einsatzfahrzeuge",
+  "version": "7.9.0-qa",
+  "released_at": "2026-09-23T23:35:00+02:00",
+  "title": "Handy, Fahrzeugversicherung, Steuern und Einsatzparkplätze",
   "notes": [
-    "Das nicht beauftragte Kolosseum direkt neben der Feuerwehr ist aus der Ladefolge entfernt.",
-    "Polizeiauto, Feuerwehrauto und Krankenwagen stehen im Ruhezustand vor Polizei, Feuerwehr und Krankenhaus.",
-    "H öffnet das neue Lux City Phone; auf Touch-Geräten gibt es zusätzlich HANDY / H im HUD.",
-    "Bank-App zeigt Privatgeld, erlaubt Spielerüberweisungen und öffnet Kredite/Bonität.",
-    "Vier fiktive Versicherungen mit unterschiedlichen Preisen, Leistungen und Selbstbeteiligungen sind vergleichbar.",
-    "Kfz-Steuer wird je nach Elektro/Benzin/Diesel und Fahrzeugklasse berechnet und kann im Handy bezahlt werden.",
-    "Gemeinde-Rechnungen für Wasser und Müll sowie Versicherungsrechnungen erscheinen im Rechnungsbereich.",
-    "Handydaten werden in den bestehenden Cloud-Spielstand aufgenommen.",
-    "Bestehende Wohnung, Kamera, Kollision und Bewegungssteuerung wurden nicht verändert."
+    "Das nicht gewünschte Kolosseum-/Fehlgebäude neben der Feuerwehr wird nicht mehr geladen.",
+    "Polizeiauto, Feuerwehrauto und Rettungswagen stehen an Polizei, Feuerwehr und Krankenhaus; die Rettungsdienst-Basisroute startet am Krankenhaus.",
+    "H öffnet ein Spieler-Handy; für Touch-Geräte gibt es zusätzlich HANDY / H.",
+    "Bank-App zeigt Privatkonto, nimmt eingehende Überweisungen an und ermöglicht Überweisungen an andere Spieler.",
+    "Vier fiktive Kfz-Versicherungen mit unterschiedlichen Preisen, Selbstbeteiligungen und Leistungen können verglichen und gewählt werden.",
+    "Kfz-Steuer unterscheidet Elektro, Benzin und Diesel sowie Fahrzeugklasse.",
+    "Rechnungs-App enthält Wasser, Müll, Versicherung und Kfz-Steuer mit offen/bezahlt-Status.",
+    "Bestehende Wohnungs-, Kamera-, Kollisions- und Bewegungsgrundsysteme wurden nicht verändert."
   ]
 }
