@@ -1,12 +1,13 @@
 {
-  "version": "7.9.0-qa2",
-  "released_at": "2026-09-24T00:10:00+02:00",
-  "title": "QA2 Wohnungsstart und Handy-Systeme",
+  "version": "7.9.0-qa3",
+  "released_at": "2026-09-24T00:31:00+02:00",
+  "title": "Cloud-Sync Login-Fortsetzung",
   "notes": [
-    "Wohnungsstart wurde vereinfacht: nach bewusstem Login wird genau einmal die eigene bzw. Gemeinde-Startwohnung geöffnet.",
-    "Neue Spieler erhalten für den bestehenden Startermonat die Gemeinde-Startwohnung als aktiven Wohnsitz.",
-    "Wohnungskollision und Innenkamera wurden nicht verändert.",
-    "Steuer-App zeigt ohne Fahrzeug einen ruhigen leeren Zustand statt einer Warnung.",
-    "Handy, Versicherungen, Rechnungen, Bank und Einsatzparkplätze bleiben im QA-Test."
+    "Cloud-Sync startet erst nachdem ANMELDEN bewusst gedrückt und das Spiel geöffnet wurde.",
+    "Ein notwendiger interner Cloud-Neuladevorgang setzt den bereits bewusst gestarteten Login einmalig fort, statt wieder auf der Startseite hängen zu bleiben.",
+    "Beim normalen Öffnen von Lux City bleibt die Startseite bestehen; vorhandene Sitzungen starten das Spiel weiterhin nicht automatisch.",
+    "Ausloggen entfernt interne Fortsetzungsmarker.",
+    "Wohnung, Kamera, Kollision, Steuerung, Fahrzeuge und die neuen Handy-Systeme wurden dabei nicht verändert.",
+    "Auf Wunsch wurde dieser QA-Stand noch nicht erneut im Browser getestet."
   ]
 }
