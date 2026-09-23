@@ -1,11 +1,11 @@
 (()=>{const NEXT=[
-'Wetter & Straßenverkehr weiter verfeinern',
-'Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf',
+'Fiktive Premium-Automarken & Tesla-artiges Spielerauto',
+'Kfz-Steuer & mehrere Versicherungen',
 'Pannen, Abschleppdienst & Werkstatt-Aufträge',
 'Supermarkt & täglicher Einkauf',
 'Bus & ÖPNV wirklich nutzbar machen'
 ];
-const STATUS={'Wetter & Straßenverkehr weiter verfeinern':'work','Spieler-Berufe mit echten Aufgaben statt nur Schichtknopf':'work','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned','Supermarkt & täglicher Einkauf':'planned','Bus & ÖPNV wirklich nutzbar machen':'planned'};const GOALS=['Grafik und Stadtbild Schritt für Schritt auf deutlich realistischeres Open-World-Niveau bringen','Spieler, KI, Häuser und Gebäude wesentlich detaillierter modellieren','Fiktive Premium-Automarken mit klar unterschiedlichen Designs und Antrieben','Eigenes Elektroauto als sportliche, Tesla-artige Limousine mit eigenem Lux-City-Logo','Kfz-Steuer für Elektro, Benzin und Diesel','Mehrere Kfz-Versicherungen mit unterschiedlichen Preisen und Leistungen','Mehr Bäume, Grünflächen, Straßen, Kreuzungen und Grundstücksdetails','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit'];
+const STATUS={'Fiktive Premium-Automarken & Tesla-artiges Spielerauto':'planned','Kfz-Steuer & mehrere Versicherungen':'planned','Pannen, Abschleppdienst & Werkstatt-Aufträge':'planned','Supermarkt & täglicher Einkauf':'planned','Bus & ÖPNV wirklich nutzbar machen':'planned'};const GOALS=['Grafik und Stadtbild Schritt für Schritt auf deutlich realistischeres Open-World-Niveau bringen','Spieler, KI, Häuser und Gebäude wesentlich detaillierter modellieren','Fiktive Premium-Automarken mit klar unterschiedlichen Designs und Antrieben','Eigenes Elektroauto als sportliche, Tesla-artige Limousine mit eigenem Lux-City-Logo','Kfz-Steuer für Elektro, Benzin und Diesel','Mehrere Kfz-Versicherungen mit unterschiedlichen Preisen und Leistungen','Mehr Bäume, Grünflächen, Straßen, Kreuzungen und Grundstücksdetails','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit'];
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
