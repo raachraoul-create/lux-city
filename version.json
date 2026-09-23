@@ -1,11 +1,11 @@
 {
-  "version": "7.2.2",
-  "released_at": "2026-09-23T07:27:00+02:00",
-  "title": "Kompakte Update-Vorschau oben links",
+  "version": "7.3.0",
+  "released_at": "2026-09-23T07:33:00+02:00",
+  "title": "Realistischere Innenräume & Bewohner-Tagesabläufe",
   "notes": [
-    "Update-Kästchen klein und fest oben links.",
-    "Vier nächste Punkte sofort sichtbar.",
-    "MEHR ANZEIGEN öffnet die vollständige Liste.",
-    "Login-Seite wird durch das Kästchen nicht mehr verschoben."
+    "Wohnungen mit echten Zimmeraufteilungen, Türdurchgängen und sauberer Innenraum-Kollision.",
+    "Geschäfts- und öffentliche Innenräume mit zusätzlichen Details.",
+    "Bewohner mit Tagesphasen für Zuhause, Arbeitsweg, Arbeit, Mittag und Freizeit.",
+    "Roadmap aktualisiert: die ersten zwei Punkte sind erledigt."
   ]
 }
