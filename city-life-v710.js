@@ -1,6 +1,9 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';const wait=setInterval(()=>{if(window.LuxWorld&&window.LuxCityServices){clearInterval(wait);init()}},180);function init(){const W=LuxWorld,S=W.scene,M=(c,r=.72,m=.03)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m}),add=(g,m,x,y,z,p=S)=>{let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=false;o.receiveShadow=true;p.add(o);return o};
-// Gehwege bleiben; der Kreisverkehr wurde vollständig entfernt.
-for(let x of[-10,10])add(new T.BoxGeometry(3,.11,650),M(0xb8b8b2),x,.075,0);for(let x of[-132,-118,118,132])add(new T.BoxGeometry(3,.11,470),M(0xb8b8b2),x,.075,0);for(let z of[-142,-128,128,142])add(new T.BoxGeometry(350,.11,3),M(0xb8b8b2),0,.075,z);
+// Gehwege enden vor Kreuzungen statt quer über die Fahrbahn zu laufen.
+const walkMat=M(0xb8b8b2,.88,.01);function vWalk(x,z1,z2){let l=z2-z1;add(new T.BoxGeometry(3,.11,l),walkMat,x,.075,(z1+z2)/2)}function hWalk(z,x1,x2){let l=x2-x1;add(new T.BoxGeometry(l,.11,3),walkMat,(x1+x2)/2,.075,z)}
+for(let x of[-10,10]){vWalk(x,-325,-147);vWalk(x,-123,123);vWalk(x,147,325)}
+for(let x of[-132,-118,118,132]){vWalk(x,-235,-147);vWalk(x,-123,123);vWalk(x,147,235)}
+for(let z of[-142,-128,128,142]){hWalk(z,-175,-137);hWalk(z,-113,-12);hWalk(z,12,113);hWalk(z,137,175)}
 const intersections=[[-125,-135],[0,-135],[125,-135],[-125,135],[0,135],[125,135]],signals=[],traffic={nsGreen:true,ewGreen:false,nsAmber:false,ewAmber:false,phaseName:'NS Grün'};
 function signal(x,z,axis,ox,oz,rot){let g=new T.Group(),metal=M(0x555b5f,.44,.50),black=M(0x101315,.32,.34);
 add(new T.CylinderGeometry(.038,.052,3.15,10),metal,0,1.575,0,g);
