@@ -1,0 +1,13 @@
+(()=>{const CURRENT=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'0.0.0';
+function cmp(a,b){let A=String(a).split('.').map(Number),B=String(b).split('.').map(Number);for(let i=0;i<Math.max(A.length,B.length);i++){let x=A[i]||0,y=B[i]||0;if(x!==y)return x-y}return 0}
+let style=document.createElement('style');style.textContent=
+'#luxVersion721{position:fixed;z-index:155;right:14px;top:14px;background:#0b1118e8;color:#fff;border:1px solid #ffffff25;border-radius:10px;padding:7px 10px;font:800 12px Inter,Arial,sans-serif;box-shadow:0 8px 24px #0007;backdrop-filter:blur(12px)}'+
+'#luxUpdate721{position:fixed;z-index:170;left:50%;top:14px;transform:translateX(-50%);display:none;align-items:center;gap:9px;background:#f0a51a;color:#10151b;border-radius:12px;padding:9px 12px;font:900 13px Inter,Arial,sans-serif;box-shadow:0 12px 34px #0008}'+
+'#luxUpdate721 button{padding:7px 10px!important;border-radius:8px!important;background:#111923!important;color:#fff!important;font-size:12px!important}'+
+'body.game-ready #luxVersion721{top:auto;right:10px;bottom:10px;background:#10151bcf;font-size:11px}@media(max-width:860px){#luxVersion721{top:8px;right:8px;font-size:10px;padding:6px 8px}#luxUpdate721{top:8px;max-width:88vw;font-size:11px}}';
+document.head.appendChild(style);
+let badge=document.createElement('div');badge.id='luxVersion721';badge.textContent='AKTUELL · V'+CURRENT();document.body.appendChild(badge);
+let bar=document.createElement('div');bar.id='luxUpdate721';bar.innerHTML='<span id="luxUpdateText721">Neue Version verfügbar</span><button id="luxReload721">NEU LADEN</button>';document.body.appendChild(bar);
+document.getElementById('luxReload721').onclick=async()=>{try{if('caches'in window){for(let k of await caches.keys())await caches.delete(k)}}catch{}location.reload()};
+async function check(){try{let r=await fetch('version.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;let j=await r.json(),remote=String(j.version||'');badge.textContent='AKTUELL · V'+CURRENT();if(remote&&cmp(remote,CURRENT())>0){document.getElementById('luxUpdateText721').textContent='Neue Version V'+remote+' verfügbar';bar.style.display='flex'}else bar.style.display='none'}catch{}}
+check();setInterval(check,60000);window.addEventListener('focus',check);document.addEventListener('visibilitychange',()=>{if(!document.hidden)check()});window.LuxVersion721={check,current:CURRENT}},0)();
