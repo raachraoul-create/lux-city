@@ -1,14 +1,13 @@
 {
-  "version": "7.4.0",
-  "released_at": "2026-09-23T07:59:00+02:00",
-  "title": "Parken, Garagen, Kundenabläufe & Stabilität",
+  "version": "7.5.0",
+  "released_at": "2026-09-23T08:08:00+02:00",
+  "title": "Fahrzeughandel, Werkstatt & sichtbare Berufe",
   "notes": [
-    "Eigene Fahrzeuge können an festen Stellplätzen und Garagen geparkt werden.",
-    "Parkpositionen werden lokal und für Serverfahrzeuge dauerhaft gespeichert.",
-    "Öffentliche Parkplätze bei wichtigen Betrieben und Wohn-Stellplätze ergänzt.",
-    "Kunden stehen an, betreten Geschäfte, bestellen, sitzen im Café/Kneipe und verlassen das Gebäude sichtbar.",
-    "Kunden-NPCs sind von Bewohner-Tagesabläufen getrennt.",
-    "iPhone-Performance und Laufzeit-Fehlerwächter verbessert.",
-    "Roadmap mit nächsten großen Updates automatisch fortgeführt."
+    "Neuer physischer Fahrzeughändler mit Ausstellung und Auslieferungsplatz.",
+    "Fahrzeugkauf ist nicht mehr überall im AUTO-Menü möglich, sondern direkt beim Händler.",
+    "Neue Werkstatt mit Servicebuchten und Reparatur-/Kleinservice.",
+    "Neue Berufe: Mechaniker, Autoverkäufer, Pflegekraft, Büroangestellter, Elektriker und Produktionsmitarbeiter.",
+    "Sichtbare Arbeitsabläufe bei Werkstatt, Händler, Post, Krankenhaus, Polizei, Feuerwehr, Fabrik, Mühle, Gemeinde und Bäckerei.",
+    "Fertige Roadmap-Punkte werden vollständig entfernt und automatisch durch neue nächste Updates ersetzt."
   ]
 }
