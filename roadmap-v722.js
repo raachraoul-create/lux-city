@@ -5,7 +5,7 @@
 'Geschäfte mit sichtbaren Kundenabläufen',
 'Weitere Performance- und Bugtests'
 ];
-const STATUS={'Parken, Garagen & Fahrzeugnutzung':'planned','Geschäfte mit sichtbaren Kundenabläufen':'planned','Weitere Performance- und Bugtests':'planned'};
+const STATUS={'Parken, Garagen & Fahrzeugnutzung':'work','Geschäfte mit sichtbaren Kundenabläufen':'planned','Weitere Performance- und Bugtests':'planned'};
 const host=document.getElementById('login');if(!host)return;
 const ver=()=>document.querySelector('meta[name="lux-city-build"]')?.content||'–';
 let style=document.createElement('style');style.textContent=
