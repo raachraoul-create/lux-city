@@ -1,0 +1,8 @@
+import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+let q=setInterval(()=>{if(!window.LuxWorld||!window.LuxHomes520)return;clearInterval(q);const W=LuxWorld,H=LuxHomes520,C={x:-620,z:0},sizes={studio:[10,8],flat:[14,10],family:[18,12]},base=[[-5,3.8,3,2],[3,3.6,3,1.1],[2.8,-2,2.2,1.3],[1.9,-2,.65,.65],[3.7,-2,.65,.65],[-4,-4.8,5,1],[6.8,-4.5,1.7,1.7],[5,-4.8,1.4,.7],[-7.4,-4.7,1.2,1],[-7.4,2.8,2.4,.8],[7.1,-2.5,1,1],[4.15,-4.8,.15,2.2],[4.15,-1.5,.15,2.2]];let last=null;
+function cfg(){let id=H.currentHomeId||'family',s=sizes[id]||sizes.family;return{id,w:s[0],d:s[1],sx:s[0]/18,sz:s[1]/12}}
+function blocked(x,z){if(!H.inside)return false;let c=cfg(),lx=x-C.x,lz=z-C.z;if(Math.abs(lx)>c.w/2-.58||Math.abs(lz)>c.d/2-.58)return true;for(let b of base){let bx=b[0]*c.sx,bz=b[1]*c.sz,bw=b[2]*c.sx/2+.30,bd=b[3]*c.sz/2+.30;if(Math.abs(lx-bx)<bw&&Math.abs(lz-bz)<bd)return true}return false}
+function clampRoom(x,z){let c=cfg();return{x:Math.max(C.x-c.w/2+.62,Math.min(C.x+c.w/2-.62,x)),z:Math.max(C.z-c.d/2+.62,Math.min(C.z+c.d/2-.62,z))}}
+function camera(){if(!H.inside)return;let c=cfg(),yaw=W.yaw,dist=2.55,px=W.player.position.x,pz=W.player.position.z,wantX=px-Math.sin(yaw)*dist,wantZ=pz-Math.cos(yaw)*dist,cp={x:Math.max(C.x-c.w/2+.28,Math.min(C.x+c.w/2-.28,wantX)),z:Math.max(C.z-c.d/2+.28,Math.min(C.z+c.d/2-.28,wantZ))};W.camera.position.set(cp.x,2.18,cp.z);W.camera.lookAt(px,1.42,pz)}
+W.registerTick(()=>{if(!H.inside){last=null;return}let p=W.player.position;if(!last)last={x:p.x,z:p.z};let cl=clampRoom(p.x,p.z);p.x=cl.x;p.z=cl.z;if(blocked(p.x,p.z)){p.x=last.x;p.z=last.z}else last={x:p.x,z:p.z};camera()});
+window.LuxHomePhysics670={blocked,camera,cfg}},320);
