@@ -1,17 +1,13 @@
 {
-  "version": "8.0.0",
-  "released_at": "2026-09-24T17:56:00+02:00",
-  "title": "Navigation, Wohnen, Fahrzeuge, Smartphone, KI und Grafik",
+  "version": "8.0.1-qa1",
+  "released_at": "2026-09-24T20:59:00+02:00",
+  "title": "Touch-Kamera und Eingabesteuerung repariert",
   "notes": [
-    "Die Minimap ist dauerhaft sichtbar, nach Norden ausgerichtet und zeigt die Blickrichtung des Spielers.",
-    "Zum eigenen Zuhause oder gesetzten Ziel zeigt die Minimap Richtung und Entfernung; die große Karte nutzt die echten Straßen und Hauspositionen.",
-    "Das Smartphone-Layout wurde neu geordnet: Minimap oben rechts, freier E-Knopf, direkte Karte/Handy-Tasten und vier große Fahrknöpfe.",
-    "Eigene Wohnungen und Häuser erhalten einen eindeutigen Zugang; beim Verlassen kehrt der Spieler zum selben Gebäude zurück.",
-    "Die Wohnungseingangstür wurde visuell geöffnet, damit kein geschlossener Tür-Glitch mehr dargestellt wird.",
-    "Rückwärtsfahren, Bremsen, Kollisionsbefreiung und sicheres Aussteigen des Spielerautos wurden überarbeitet.",
-    "Spieler-Fahrzeug-Kollision verhindert, dass die Figur durch oder über Fahrzeuge läuft.",
-    "Die KI-Fußgänger wurden erweitert und auf ein Gehweg-/Zebrastreifen-Netz gesetzt; direkte Legacy-Routen über Straßen werden überschrieben.",
-    "Grafikpolitur ergänzt Straßenmarkierungen, Bordsteine, Pflanzen, Vorgärten und weitere Stadtdetails.",
-    "Motor-, Fahrbahn-, Schritt-, Tür- und Kollisionsgeräusche wurden überarbeitet; H bleibt für das Handy, die Hupe liegt auf J."
+    "Auf Smartphones dreht Fingerziehen auf der rechten/zentralen Bildschirmfläche die Kamera jetzt direkt statt über künstliche Mausbewegungen.",
+    "Vertikale Touch-Kamerabewegung ist ebenfalls direkt angebunden.",
+    "Joystick schreibt W/A/S/D zusätzlich direkt in den Spielzustand und behält A=links, D=rechts.",
+    "Minimap bleibt über der unsichtbaren Touch-Kamerafläche antippbar; Interaktions-, Karten- und Handyknöpfe bleiben darüber bedienbar.",
+    "Die Desktop-Maussteuerung mit echtem Pointer-Lock wurde nicht ersetzt und bleibt erhalten.",
+    "Im Spielkern wurden nur getter/setter für die vorhandene Kameraneigung ergänzt; Bewegungslogik und Links/Rechts-Zuordnung wurden nicht verändert."
   ]
 }
