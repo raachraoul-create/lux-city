@@ -1,15 +1,15 @@
 {
-  "version": "8.0.0-qa2",
-  "released_at": "2026-09-24T17:25:00+02:00",
-  "title": "Smartphone-Steuerung und Karte überarbeitet",
+  "version": "8.0.0-qa3",
+  "released_at": "2026-09-24T17:41:00+02:00",
+  "title": "Navigation, KI-Fußgänger, Fahrzeugkollision und Grafikpolitur",
   "notes": [
-    "Auf Touch-Geräten sitzt die Minimap jetzt oben rechts und kann den E-/Interaktionsknopf nicht mehr überdecken.",
-    "Die Smartphone-Steuerung hat einen eigenen Joystick, eine langsamere Touch-Kamera, einen festen E-Knopf sowie direkte Buttons für Karte und Handy.",
-    "Beim Autofahren erscheinen vier große Touch-Tasten: links, rechts, Bremse/Rückwärts und Gas.",
-    "Die normalen Lauf-Touchflächen werden während der Fahrt ausgeblendet, damit sich keine Steuerungen überlagern.",
-    "Die große Karte zeigt Häuser als klare Gebäude-Markierungen statt als unübersichtliche Punktwolke; das eigene Zuhause bleibt gold hervorgehoben.",
-    "Die Minimap bleibt antippbar und öffnet die große Karte.",
-    "Die bestehende korrekte A/D- und Links/Rechts-Logik wurde nicht verändert.",
-    "Wohnungs-, Fahrzeug- und Soundverbesserungen aus qa1 bleiben enthalten."
+    "Die Minimap ist jetzt fest nach Norden ausgerichtet; der Spielerpfeil dreht sich mit der Blickrichtung.",
+    "Zum eigenen Zuhause oder gesetzten Wegpunkt wird dauerhaft eine goldene Richtungslinie mit Entfernung und Richtungspfeil angezeigt.",
+    "Die große Karte nutzt die echten Straßen und alle tatsächlich generierten Häuser; eigenes Zuhause und Firmen bleiben klar hervorgehoben.",
+    "Die spätere KI-Tagesroutine darf keine direkten Straßenwege mehr erzeugen; Fußgänger werden auf ein festes Gehweg-/Zebrastreifen-Netz gesetzt.",
+    "Die sichtbare Fußgängerzahl wurde von 24 auf bis zu 42 KI-Personen erweitert, abhängig von Tageszeit und bestehender Dichte-Steuerung.",
+    "Zusätzliche Spieler-Auto-Kollision verhindert, dass die Figur in, durch oder über KI- und Spielerfahrzeuge läuft; bei Überlappung wird sie auf die letzte sichere Position gesetzt.",
+    "Grafikpolitur ergänzt Straßenmittellinien, Bordsteinkanten, Pflanzkübel, kleine Vorgartendetails und zusätzliche Stadtdetails.",
+    "Smartphone-Layout aus qa2 bleibt erhalten: Minimap oben rechts, E frei, direkte Karte/Handy-Tasten und vier Fahrknöpfe."
   ]
 }
