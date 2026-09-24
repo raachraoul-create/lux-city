@@ -1,12 +1,14 @@
 {
-  "version": "8.0.1",
-  "released_at": "2026-09-24T21:09:00+02:00",
-  "title": "Touch-Kamera und Eingabesteuerung Hotfix",
+  "version": "8.0.2-qa1",
+  "released_at": "2026-09-24T21:18:00+02:00",
+  "title": "Wohlbefinden-HUD und Login-Stabilität",
   "notes": [
-    "Fingerziehen auf Smartphones steuert die Kamera jetzt direkt horizontal und vertikal statt über künstliche Mausbewegungen.",
-    "Der Touch-Joystick schreibt Bewegungszustände direkt und behält A/links sowie D/rechts korrekt.",
-    "Minimap und Touch-Aktionsknöpfe bleiben anklickbar und werden nicht von der unsichtbaren Kamera-Fläche blockiert.",
-    "Desktop-Maussteuerung mit Pointer-Lock bleibt unverändert aktiv.",
-    "Desktop-Regressionsprüfung bestanden: Spielansicht, A/Links, D/Rechts, Maussteuerung und Kartenaufruf funktionieren."
+    "Essen, Trinken, Energie und Hygiene stehen jetzt kompakt oben mittig statt unten links bei der Smartphone-Steuerung.",
+    "Die Bedürfnisse bleiben antippbar; Details öffnen weiterhin im Wohlbefinden-Fenster.",
+    "Bedürfniswarnungen erscheinen unter der neuen Leiste statt über den unteren Steuerungselementen.",
+    "Automatische Cloud-Neuladungen sind pro Benutzer und Browser-Sitzung auf höchstens eine begrenzt.",
+    "Nach einer bereits manuell gestarteten Spielsitzung wird derselbe Benutzer nach einem internen Reload automatisch wieder ins Spiel gesetzt, statt erneut die Login-Seite zu zeigen.",
+    "Explizites AUSLOGGEN löscht diese Sitzungsmarker weiterhin vollständig.",
+    "Account-Token-Aktualisierungen sollen eine laufende game-ready-Sitzung nicht mehr sichtbar zwischen Login und Spiel umschalten."
   ]
 }
