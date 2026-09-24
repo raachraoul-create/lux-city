@@ -1,13 +1,12 @@
 {
-  "version": "8.0.1-qa1",
-  "released_at": "2026-09-24T20:59:00+02:00",
-  "title": "Touch-Kamera und Eingabesteuerung repariert",
+  "version": "8.0.1",
+  "released_at": "2026-09-24T21:09:00+02:00",
+  "title": "Touch-Kamera und Eingabesteuerung Hotfix",
   "notes": [
-    "Auf Smartphones dreht Fingerziehen auf der rechten/zentralen Bildschirmfläche die Kamera jetzt direkt statt über künstliche Mausbewegungen.",
-    "Vertikale Touch-Kamerabewegung ist ebenfalls direkt angebunden.",
-    "Joystick schreibt W/A/S/D zusätzlich direkt in den Spielzustand und behält A=links, D=rechts.",
-    "Minimap bleibt über der unsichtbaren Touch-Kamerafläche antippbar; Interaktions-, Karten- und Handyknöpfe bleiben darüber bedienbar.",
-    "Die Desktop-Maussteuerung mit echtem Pointer-Lock wurde nicht ersetzt und bleibt erhalten.",
-    "Im Spielkern wurden nur getter/setter für die vorhandene Kameraneigung ergänzt; Bewegungslogik und Links/Rechts-Zuordnung wurden nicht verändert."
+    "Fingerziehen auf Smartphones steuert die Kamera jetzt direkt horizontal und vertikal statt über künstliche Mausbewegungen.",
+    "Der Touch-Joystick schreibt Bewegungszustände direkt und behält A/links sowie D/rechts korrekt.",
+    "Minimap und Touch-Aktionsknöpfe bleiben anklickbar und werden nicht von der unsichtbaren Kamera-Fläche blockiert.",
+    "Desktop-Maussteuerung mit Pointer-Lock bleibt unverändert aktiv.",
+    "Desktop-Regressionsprüfung bestanden: Spielansicht, A/Links, D/Rechts, Maussteuerung und Kartenaufruf funktionieren."
   ]
 }
