@@ -1,12 +1,15 @@
 {
-  "version": "7.9.0-qa5",
-  "released_at": "2026-09-24T06:40:00+02:00",
-  "title": "Handy-Konflikt entfernt",
+  "version": "7.9.0-qa6",
+  "released_at": "2026-09-24T06:58:00+02:00",
+  "title": "Wohnungs-Grundsystem stabilisiert",
   "notes": [
-    "Das alte phone-v100-System wird nicht mehr geladen und kann H nicht mehr vor der neuen Handy-Auswahl abfangen.",
-    "Beim ersten H soll jetzt ausschließlich die Auswahl zwischen Glass OS und Droid UI erscheinen.",
-    "Nach der einmaligen Auswahl öffnet H direkt das dauerhaft gespeicherte Handy.",
-    "Bank, vier Versicherungen, Steuern, Rechnungen und die Startseiten-Hinweise bleiben unverändert im neuen Handy-System.",
-    "Andere Spielsysteme wurden nicht verändert."
+    "Studio und normale Wohnung verwenden jetzt dasselbe stabile Standard-Wohnungsmodell; Wohnungen bleiben deutlich kleiner als das separate Hausmodell.",
+    "Die doppelte Innenkamera-Steuerung wurde entfernt. In Wohnungen arbeitet nur noch ein Kamera-System.",
+    "Beim Eintritt wird Wohnung, Spieler, Kamera und Spielfläche sofort sichtbar gesetzt, um schwarze Ansichten beim ersten Login zu vermeiden.",
+    "Der Wohnungsstart repariert nicht mehr in einer langen Schleife, sondern nutzt höchstens wenige kontrollierte Versuche.",
+    "Für Wohnungen gibt es zusätzlich einen immer sichtbaren WOHNUNG VERLASSEN-Knopf als sicheren Ausgang.",
+    "Kollision, Startposition und Kamera verwenden für alle Wohnungen dieselben Maße.",
+    "Das Hausmodell bleibt separat.",
+    "Die Startseite führt die Wohnungsstabilisierung unter NÄCHSTE UPDATES als IN ARBEIT."
   ]
 }
