@@ -3,12 +3,12 @@
   "released_at": "2026-09-24T21:31:00+02:00",
   "title": "Wohlbefinden-HUD und Login-Stabilität",
   "notes": [
-    "Essen, Trinken, Energie und Hygiene stehen kompakt oben mittig statt unten links bei der Smartphone-Steuerung.",
-    "Die Bedürfnisse bleiben antippbar und öffnen weiterhin die Wohlbefinden-Details.",
-    "Bedürfniswarnungen erscheinen unter der neuen Leiste statt über den unteren Steuerungselementen.",
+    "Essen, Trinken, Energie und Hygiene stehen kompakt oben mittig statt in der unteren Steuerungsecke.",
+    "Die Wohlbefinden-Leiste bleibt antippbar und öffnet weiterhin die Detailansicht.",
+    "Bedürfniswarnungen erscheinen unterhalb der neuen Leiste und überdecken keine Lauf- oder Fahrsteuerung.",
     "Automatische Cloud-Neuladungen sind pro Benutzer und Browser-Sitzung auf höchstens eine begrenzt.",
     "Eine bereits manuell gestartete Spielsitzung kehrt nach internem Reload automatisch wieder ins Spiel zurück.",
-    "Explizites AUSLOGGEN löscht die Sitzungsmarker weiterhin vollständig.",
-    "Gezielter QA-Test: stabile Spielsitzung vor und nach Reload, neues HUD, A/Links, D/Rechts, M und H bestanden."
+    "Explizites AUSLOGGEN löscht die Sitzungsmarker vollständig.",
+    "QA bestanden: 25 Sekunden stabil, Reload, weitere 20 Sekunden stabil, kein Login-/Logout-Loop, A/Links und D/Rechts korrekt, M und H funktionieren."
   ]
 }
