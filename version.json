@@ -1,14 +1,12 @@
 {
-  "version": "7.9.0-qa4",
-  "released_at": "2026-09-24T06:31:00+02:00",
-  "title": "Handy-Systemwahl und aktuelle Update-Hinweise",
+  "version": "7.9.0-qa5",
+  "released_at": "2026-09-24T06:40:00+02:00",
+  "title": "Handy-Konflikt entfernt",
   "notes": [
-    "Beim ersten Öffnen des Handys wird einmal zwischen Glass OS (iOS-inspirierter Stil) und Droid UI (Android-inspirierter Stil) gewählt.",
-    "Die Auswahl wird dauerhaft im Spielerprofil gespeichert und nicht bei jedem Öffnen erneut abgefragt.",
-    "Beide Designs verwenden eigene Lux-City-Oberflächen ohne Apple- oder Samsung-Logos.",
-    "Bank, Versicherungen, Steuern und Rechnungen bleiben in beiden Handy-Designs identisch nutzbar.",
-    "Die Startseite zeigt jetzt die tatsächlich in Arbeit befindlichen Punkte für das nächste Update.",
-    "Nach Veröffentlichung eines markierten Versionspakets verschwinden dessen erledigte Punkte auf der öffentlichen Startseite automatisch und die nächsten Punkte rücken nach.",
-    "Auf Wunsch wurde dieser QA-Stand noch nicht im Browser getestet."
+    "Das alte phone-v100-System wird nicht mehr geladen und kann H nicht mehr vor der neuen Handy-Auswahl abfangen.",
+    "Beim ersten H soll jetzt ausschließlich die Auswahl zwischen Glass OS und Droid UI erscheinen.",
+    "Nach der einmaligen Auswahl öffnet H direkt das dauerhaft gespeicherte Handy.",
+    "Bank, vier Versicherungen, Steuern, Rechnungen und die Startseiten-Hinweise bleiben unverändert im neuen Handy-System.",
+    "Andere Spielsysteme wurden nicht verändert."
   ]
 }
