@@ -1,17 +1,12 @@
 {
-  "version": "8.0.0",
-  "released_at": "2026-09-24T17:56:00+02:00",
-  "title": "Navigation, Wohnen, Fahrzeuge, Smartphone, KI und Grafik",
+  "version": "8.0.1",
+  "released_at": "2026-09-24T21:09:00+02:00",
+  "title": "Touch-Kamera und Eingabesteuerung Hotfix",
   "notes": [
-    "Die Minimap ist dauerhaft sichtbar, nach Norden ausgerichtet und zeigt die Blickrichtung des Spielers.",
-    "Zum eigenen Zuhause oder gesetzten Ziel zeigt die Minimap Richtung und Entfernung; die große Karte nutzt die echten Straßen und Hauspositionen.",
-    "Das Smartphone-Layout wurde neu geordnet: Minimap oben rechts, freier E-Knopf, direkte Karte/Handy-Tasten und vier große Fahrknöpfe.",
-    "Eigene Wohnungen und Häuser erhalten einen eindeutigen Zugang; beim Verlassen kehrt der Spieler zum selben Gebäude zurück.",
-    "Die Wohnungseingangstür wurde visuell geöffnet, damit kein geschlossener Tür-Glitch mehr dargestellt wird.",
-    "Rückwärtsfahren, Bremsen, Kollisionsbefreiung und sicheres Aussteigen des Spielerautos wurden überarbeitet.",
-    "Spieler-Fahrzeug-Kollision verhindert, dass die Figur durch oder über Fahrzeuge läuft.",
-    "Die KI-Fußgänger wurden erweitert und auf ein Gehweg-/Zebrastreifen-Netz gesetzt; direkte Legacy-Routen über Straßen werden überschrieben.",
-    "Grafikpolitur ergänzt Straßenmarkierungen, Bordsteine, Pflanzen, Vorgärten und weitere Stadtdetails.",
-    "Motor-, Fahrbahn-, Schritt-, Tür- und Kollisionsgeräusche wurden überarbeitet; H bleibt für das Handy, die Hupe liegt auf J."
+    "Fingerziehen auf Smartphones steuert die Kamera jetzt direkt horizontal und vertikal statt über künstliche Mausbewegungen.",
+    "Der Touch-Joystick schreibt Bewegungszustände direkt und behält A/links sowie D/rechts korrekt.",
+    "Minimap und Touch-Aktionsknöpfe bleiben anklickbar und werden nicht von der unsichtbaren Kamera-Fläche blockiert.",
+    "Desktop-Maussteuerung mit Pointer-Lock bleibt unverändert aktiv.",
+    "Desktop-Regressionsprüfung bestanden: Spielansicht, A/Links, D/Rechts, Maussteuerung und Kartenaufruf funktionieren."
   ]
 }
