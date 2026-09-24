@@ -1,14 +1,12 @@
 {
-  "version": "8.0.2",
-  "released_at": "2026-09-24T21:31:00+02:00",
-  "title": "Wohlbefinden-HUD und Login-Stabilität",
+  "version": "8.1.0",
+  "released_at": "2026-09-24T23:43:00+02:00",
+  "title": "Feuerwehr Block 1 – realistischere Wache",
   "notes": [
-    "Essen, Trinken, Energie und Hygiene stehen kompakt oben mittig statt in der unteren Steuerungsecke.",
-    "Die Wohlbefinden-Leiste bleibt antippbar und öffnet weiterhin die Detailansicht.",
-    "Bedürfniswarnungen erscheinen unterhalb der neuen Leiste und überdecken keine Lauf- oder Fahrsteuerung.",
-    "Automatische Cloud-Neuladungen sind pro Benutzer und Browser-Sitzung auf höchstens eine begrenzt.",
-    "Eine bereits manuell gestartete Spielsitzung kehrt nach internem Reload automatisch wieder ins Spiel zurück.",
-    "Explizites AUSLOGGEN löscht die Sitzungsmarker vollständig.",
-    "QA bestanden: 25 Sekunden stabil, Reload, weitere 20 Sekunden stabil, kein Login-/Logout-Loop, A/Links und D/Rechts korrekt, M und H funktionieren."
+    "Die Feuerwehrwache wurde mit drei deutlich erkennbaren Fahrzeugtoren, dunkler/roter Front und klarer CGDIS/CIS/112-Beschriftung neu gestaltet.",
+    "Die Tore besitzen Segmentierung, Sichtfenster, Rahmen und Stellplatznummern; zusätzlich gibt es Personalzugang, Beleuchtung, Antennen- und Pollerdetails.",
+    "Der Vorplatz ist jetzt als echter Feuerwehr-Ausrückbereich ausgebaut und auf die vorhandene Einsatzfahrzeugposition abgestimmt.",
+    "Eine sichtbare asphaltierte Zufahrt verbindet die Wache direkt mit dem bestehenden Straßennetz und folgt der vorhandenen Feuerwehr-Einsatzroute.",
+    "QA 8/8 bestanden: Station sichtbar, drei Tore, Beschriftung, Vorplatz, Straßenanschluss, begehbare Geometrie, kein schwarzer Bildschirm sowie A/Links und D/Rechts unverändert korrekt."
   ]
 }
