@@ -1,15 +1,15 @@
 {
-  "version": "7.9.0-qa7",
-  "released_at": "2026-09-24T07:14:00+02:00",
-  "title": "Stadtkarte und Zuhause-Wegpunkt",
+  "version": "7.9.0-qa8",
+  "released_at": "2026-09-24T07:28:00+02:00",
+  "title": "Dauerhafte Minimap und Links/Rechts korrigiert",
   "notes": [
-    "M öffnet eine neue Lux-City-Spielkarte; auf Smartphone gibt es zusätzlich KARTE / M im HUD.",
-    "Die Karte zeigt alle aktuell tatsächlich vorhandenen Wohngebäude sowie Gemeinde, Polizei, Feuerwehr und Krankenhaus zur Orientierung.",
-    "Die Gemeinde-Startwohnung wird als Zuhause hervorgehoben, solange der Spieler dort wohnt.",
-    "Nach Miete oder Kauf wechselt die Markierung automatisch auf das aktuelle eigene Zuhause.",
-    "MEIN ZUHAUSE kann als Wegpunkt gesetzt werden; danach zeigt ein Richtungspfeil Entfernung und Richtung.",
-    "Die Karte ist zusätzlich als fünfte App im Lux-City-Handy eingebaut.",
-    "Häuser und Wohnungen werden anhand der bestehenden echten Spielkoordinaten markiert; es werden keine nicht vorhandenen Gebäude erfunden.",
-    "Die Startseite führt die Stadtkarte unter NÄCHSTE UPDATES als IN ARBEIT."
+    "Eine kleine Minimap bleibt während des Spielens dauerhaft sichtbar und bewegt sich mit dem Spieler mit.",
+    "Die Minimap zeigt den Spieler, eigene/gemietete Wohnungen oder Häuser sowie eigene Firmen.",
+    "Die nächstgelegene eigene Immobilie oder Firma wird mit Entfernung unter der Minimap angezeigt.",
+    "Beim Aufenthalt in der Wohnung bleibt die Außenposition des Zuhauses auf der Minimap erhalten, damit die Orientierung nicht verloren geht.",
+    "Ein Tipp/Klick auf die Minimap öffnet weiterhin die große Stadtkarte.",
+    "Der fehlerhafte Steuerungs-Patch control-direction-v786 wurde entfernt. A und Pfeil-links werden wieder als links, D und Pfeil-rechts wieder als rechts verarbeitet.",
+    "Das funktionierende Grundsystem game-core-v710 wurde dafür nicht verändert.",
+    "Die Startseite zeigt Minimap und Steuerungsschutz unter NÄCHSTE UPDATES als IN ARBEIT."
   ]
 }
