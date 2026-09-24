@@ -1,15 +1,15 @@
 {
-  "version": "7.9.0-qa8",
-  "released_at": "2026-09-24T07:28:00+02:00",
-  "title": "Dauerhafte Minimap und Links/Rechts korrigiert",
+  "version": "7.9.0-qa9",
+  "released_at": "2026-09-24T07:39:00+02:00",
+  "title": "Navigation neu aufgebaut",
   "notes": [
-    "Eine kleine Minimap bleibt während des Spielens dauerhaft sichtbar und bewegt sich mit dem Spieler mit.",
-    "Die Minimap zeigt den Spieler, eigene/gemietete Wohnungen oder Häuser sowie eigene Firmen.",
-    "Die nächstgelegene eigene Immobilie oder Firma wird mit Entfernung unter der Minimap angezeigt.",
-    "Beim Aufenthalt in der Wohnung bleibt die Außenposition des Zuhauses auf der Minimap erhalten, damit die Orientierung nicht verloren geht.",
-    "Ein Tipp/Klick auf die Minimap öffnet weiterhin die große Stadtkarte.",
-    "Der fehlerhafte Steuerungs-Patch control-direction-v786 wurde entfernt. A und Pfeil-links werden wieder als links, D und Pfeil-rechts wieder als rechts verarbeitet.",
-    "Das funktionierende Grundsystem game-core-v710 wurde dafür nicht verändert.",
-    "Die Startseite zeigt Minimap und Steuerungsschutz unter NÄCHSTE UPDATES als IN ARBEIT."
+    "Die fehlerhafte Karteninitialisierung aus qa8 wurde ersetzt.",
+    "Ein einziges Navigationssystem erzeugt jetzt Minimap und große Karte und wartet nicht mehr auf Wohnung/Firma als Startvoraussetzung.",
+    "Die Minimap wird nach erfolgreichem Spieleintritt dauerhaft eingeblendet und aktualisiert die Spielerposition laufend.",
+    "Eigene/gemietete Immobilien und eigene Firmen werden automatisch als Marker ergänzt, sobald die jeweiligen Systeme verfügbar sind.",
+    "M sowie Tipp/Klick auf die Minimap öffnen die große Karte.",
+    "Wegpunkte können für eigene Immobilien und Firmen gesetzt werden.",
+    "A/Pfeil-links und D/Pfeil-rechts bleiben über das unveränderte Grundsystem korrekt; der invertierende Patch bleibt entfernt.",
+    "qa8 Browser-Test bestätigte bereits: A/Links bewegt sichtbar links und D/Rechts sichtbar rechts."
   ]
 }
