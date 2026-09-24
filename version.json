@@ -1,14 +1,14 @@
 {
-  "version": "8.0.2-qa1",
-  "released_at": "2026-09-24T21:18:00+02:00",
+  "version": "8.0.2",
+  "released_at": "2026-09-24T21:31:00+02:00",
   "title": "Wohlbefinden-HUD und Login-Stabilität",
   "notes": [
-    "Essen, Trinken, Energie und Hygiene stehen jetzt kompakt oben mittig statt unten links bei der Smartphone-Steuerung.",
-    "Die Bedürfnisse bleiben antippbar; Details öffnen weiterhin im Wohlbefinden-Fenster.",
+    "Essen, Trinken, Energie und Hygiene stehen kompakt oben mittig statt unten links bei der Smartphone-Steuerung.",
+    "Die Bedürfnisse bleiben antippbar und öffnen weiterhin die Wohlbefinden-Details.",
     "Bedürfniswarnungen erscheinen unter der neuen Leiste statt über den unteren Steuerungselementen.",
     "Automatische Cloud-Neuladungen sind pro Benutzer und Browser-Sitzung auf höchstens eine begrenzt.",
-    "Nach einer bereits manuell gestarteten Spielsitzung wird derselbe Benutzer nach einem internen Reload automatisch wieder ins Spiel gesetzt, statt erneut die Login-Seite zu zeigen.",
-    "Explizites AUSLOGGEN löscht diese Sitzungsmarker weiterhin vollständig.",
-    "Account-Token-Aktualisierungen sollen eine laufende game-ready-Sitzung nicht mehr sichtbar zwischen Login und Spiel umschalten."
+    "Eine bereits manuell gestartete Spielsitzung kehrt nach internem Reload automatisch wieder ins Spiel zurück.",
+    "Explizites AUSLOGGEN löscht die Sitzungsmarker weiterhin vollständig.",
+    "Gezielter QA-Test: stabile Spielsitzung vor und nach Reload, neues HUD, A/Links, D/Rechts, M und H bestanden."
   ]
 }
