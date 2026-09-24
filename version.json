@@ -1,15 +1,17 @@
 {
-  "version": "7.9.0-qa9",
-  "released_at": "2026-09-24T07:39:00+02:00",
-  "title": "Navigation neu aufgebaut",
+  "version": "8.0.0",
+  "released_at": "2026-09-24T17:56:00+02:00",
+  "title": "Navigation, Wohnen, Fahrzeuge, Smartphone, KI und Grafik",
   "notes": [
-    "Die fehlerhafte Karteninitialisierung aus qa8 wurde ersetzt.",
-    "Ein einziges Navigationssystem erzeugt jetzt Minimap und große Karte und wartet nicht mehr auf Wohnung/Firma als Startvoraussetzung.",
-    "Die Minimap wird nach erfolgreichem Spieleintritt dauerhaft eingeblendet und aktualisiert die Spielerposition laufend.",
-    "Eigene/gemietete Immobilien und eigene Firmen werden automatisch als Marker ergänzt, sobald die jeweiligen Systeme verfügbar sind.",
-    "M sowie Tipp/Klick auf die Minimap öffnen die große Karte.",
-    "Wegpunkte können für eigene Immobilien und Firmen gesetzt werden.",
-    "A/Pfeil-links und D/Pfeil-rechts bleiben über das unveränderte Grundsystem korrekt; der invertierende Patch bleibt entfernt.",
-    "qa8 Browser-Test bestätigte bereits: A/Links bewegt sichtbar links und D/Rechts sichtbar rechts."
+    "Die Minimap ist dauerhaft sichtbar, nach Norden ausgerichtet und zeigt die Blickrichtung des Spielers.",
+    "Zum eigenen Zuhause oder gesetzten Ziel zeigt die Minimap Richtung und Entfernung; die große Karte nutzt die echten Straßen und Hauspositionen.",
+    "Das Smartphone-Layout wurde neu geordnet: Minimap oben rechts, freier E-Knopf, direkte Karte/Handy-Tasten und vier große Fahrknöpfe.",
+    "Eigene Wohnungen und Häuser erhalten einen eindeutigen Zugang; beim Verlassen kehrt der Spieler zum selben Gebäude zurück.",
+    "Die Wohnungseingangstür wurde visuell geöffnet, damit kein geschlossener Tür-Glitch mehr dargestellt wird.",
+    "Rückwärtsfahren, Bremsen, Kollisionsbefreiung und sicheres Aussteigen des Spielerautos wurden überarbeitet.",
+    "Spieler-Fahrzeug-Kollision verhindert, dass die Figur durch oder über Fahrzeuge läuft.",
+    "Die KI-Fußgänger wurden erweitert und auf ein Gehweg-/Zebrastreifen-Netz gesetzt; direkte Legacy-Routen über Straßen werden überschrieben.",
+    "Grafikpolitur ergänzt Straßenmarkierungen, Bordsteine, Pflanzen, Vorgärten und weitere Stadtdetails.",
+    "Motor-, Fahrbahn-, Schritt-, Tür- und Kollisionsgeräusche wurden überarbeitet; H bleibt für das Handy, die Hupe liegt auf J."
   ]
 }
