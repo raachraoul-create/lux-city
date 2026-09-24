@@ -1,15 +1,17 @@
 {
-  "version": "7.9.0-qa9",
-  "released_at": "2026-09-24T07:39:00+02:00",
-  "title": "Navigation neu aufgebaut",
+  "version": "8.0.0-qa1",
+  "released_at": "2026-09-24T09:08:00+02:00",
+  "title": "Wohnung, Fahrverhalten, Navigation und Sound",
   "notes": [
-    "Die fehlerhafte Karteninitialisierung aus qa8 wurde ersetzt.",
-    "Ein einziges Navigationssystem erzeugt jetzt Minimap und große Karte und wartet nicht mehr auf Wohnung/Firma als Startvoraussetzung.",
-    "Die Minimap wird nach erfolgreichem Spieleintritt dauerhaft eingeblendet und aktualisiert die Spielerposition laufend.",
-    "Eigene/gemietete Immobilien und eigene Firmen werden automatisch als Marker ergänzt, sobald die jeweiligen Systeme verfügbar sind.",
-    "M sowie Tipp/Klick auf die Minimap öffnen die große Karte.",
-    "Wegpunkte können für eigene Immobilien und Firmen gesetzt werden.",
-    "A/Pfeil-links und D/Pfeil-rechts bleiben über das unveränderte Grundsystem korrekt; der invertierende Patch bleibt entfernt.",
-    "qa8 Browser-Test bestätigte bereits: A/Links bewegt sichtbar links und D/Rechts sichtbar rechts."
+    "Eigene Wohnungen/Häuser bekommen einen eindeutigen Zugang mit E und Touch-Schaltfläche; Server-Besitz wird direkt mit der Außentür verbunden.",
+    "Beim Verlassen landet der Spieler wieder an genau dem Gebäude, das er betreten hat.",
+    "Die Innen-Eingangstür steht sichtbar offen statt als durchlaufbare geschlossene Tür zu glitchen.",
+    "Rückwärtsfahren besitzt eigene Beschleunigung, stärkere Bremslogik und eine kleine Kollisionsbefreiung, wenn das Fahrzeug an einem Objekt festhängt.",
+    "Beim Aussteigen wird eine freie Position neben dem Fahrzeug gesucht.",
+    "Die Minimap rotiert jetzt mit der Fahr-/Laufrichtung und verwendet die echten Straßen und tatsächlich generierten Häuser der Spielwelt.",
+    "Eigene Immobilie und eigene Firmen werden hervorgehoben; Wegpunkte bleiben erhalten.",
+    "Sounds wurden neu aufgebaut: weichere Schritte, Türgeräusch, Kollisionsschlag, Straßenrauschen und unterschiedliche Elektro-/Benzin-/Diesel-Motorcharakteristik.",
+    "H bleibt für das Handy reserviert; die Hupe liegt jetzt auf J.",
+    "Passanten geben gelegentlich kurze, unaufdringliche Kommentare ab, damit die Stadt lebendiger wirkt."
   ]
 }
