@@ -1,16 +1,17 @@
 {
-  "version": "8.0.0-qa4",
-  "released_at": "2026-09-24T17:57:00+02:00",
-  "title": "Finale Navigation und höhere Fußgängerdichte",
+  "version": "8.0.0",
+  "released_at": "2026-09-24T17:56:00+02:00",
+  "title": "Navigation, Wohnen, Fahrzeuge, Smartphone, KI und Grafik",
   "notes": [
-    "Die Minimap zeigt zum Zuhause oder Wegpunkt jetzt zusätzlich einen großen weißen Richtungspfeil auf dem goldenen Zielmarker.",
-    "Die sichtbare KI-Fußgängerdichte wurde über alle Tageszeiten erhöht; die sicheren Gehweg-/Zebrastreifen-Routen bleiben bestehen.",
-    "Die Minimap ist jetzt fest nach Norden ausgerichtet; der Spielerpfeil dreht sich mit der Blickrichtung.",
-    "Zum eigenen Zuhause oder gesetzten Wegpunkt wird dauerhaft eine goldene Richtungslinie mit Entfernung und Richtungspfeil angezeigt.",
-    "Die große Karte nutzt die echten Straßen und alle tatsächlich generierten Häuser; eigenes Zuhause und Firmen bleiben klar hervorgehoben.",
-    "Die spätere KI-Tagesroutine darf keine direkten Straßenwege mehr erzeugen; Fußgänger werden auf ein festes Gehweg-/Zebrastreifen-Netz gesetzt.",
-    "Die sichtbare Fußgängerzahl wurde von 24 auf bis zu 42 KI-Personen erweitert, abhängig von Tageszeit und bestehender Dichte-Steuerung.",
-    "Zusätzliche Spieler-Auto-Kollision verhindert, dass die Figur in, durch oder über KI- und Spielerfahrzeuge läuft; bei Überlappung wird sie auf die letzte sichere Position gesetzt.",
-    "Smartphone-Steuerung bleibt frei von Überlagerungen: Minimap oben rechts, E unten rechts, Karte/Handy separat und vier Fahrknöpfe."
+    "Die Minimap ist dauerhaft sichtbar, nach Norden ausgerichtet und zeigt die Blickrichtung des Spielers.",
+    "Zum eigenen Zuhause oder gesetzten Ziel zeigt die Minimap Richtung und Entfernung; die große Karte nutzt die echten Straßen und Hauspositionen.",
+    "Das Smartphone-Layout wurde neu geordnet: Minimap oben rechts, freier E-Knopf, direkte Karte/Handy-Tasten und vier große Fahrknöpfe.",
+    "Eigene Wohnungen und Häuser erhalten einen eindeutigen Zugang; beim Verlassen kehrt der Spieler zum selben Gebäude zurück.",
+    "Die Wohnungseingangstür wurde visuell geöffnet, damit kein geschlossener Tür-Glitch mehr dargestellt wird.",
+    "Rückwärtsfahren, Bremsen, Kollisionsbefreiung und sicheres Aussteigen des Spielerautos wurden überarbeitet.",
+    "Spieler-Fahrzeug-Kollision verhindert, dass die Figur durch oder über Fahrzeuge läuft.",
+    "Die KI-Fußgänger wurden erweitert und auf ein Gehweg-/Zebrastreifen-Netz gesetzt; direkte Legacy-Routen über Straßen werden überschrieben.",
+    "Grafikpolitur ergänzt Straßenmarkierungen, Bordsteine, Pflanzen, Vorgärten und weitere Stadtdetails.",
+    "Motor-, Fahrbahn-, Schritt-, Tür- und Kollisionsgeräusche wurden überarbeitet; H bleibt für das Handy, die Hupe liegt auf J."
   ]
 }
