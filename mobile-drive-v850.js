@@ -1,0 +1,12 @@
+(()=>{let q=setInterval(()=>{let W=window.LuxWorld,pc=window.LuxPlayerCar840||window.LuxPlayerCar750;if(!W||!pc)return;clearInterval(q);if(!matchMedia('(pointer:coarse)').matches)return;init(W,pc)},180);
+function init(W,pc){let box=document.createElement('div');box.id='drive850';box.innerHTML='<div class="driveSide850"><button data-k="a">◀<small>LINKS</small></button><button data-k="d">▶<small>RECHTS</small></button></div><div class="drivePedal850"><button data-k="s">▼<small>BREMSE / RÜCKWÄRTS</small></button><button data-k="w">▲<small>GAS</small></button></div>';document.body.appendChild(box);
+ let css=document.createElement('style');css.textContent=`
+ #drive850{position:fixed;left:12px;right:84px;bottom:max(10px,env(safe-area-inset-bottom));z-index:66;display:none;justify-content:space-between;align-items:end;pointer-events:none;touch-action:none}.driveSide850,.drivePedal850{display:flex;gap:8px;pointer-events:auto}.drive850dummy{}
+ #drive850 button{width:68px;height:58px;border-radius:14px;background:#18232de8;color:#fff;border:1px solid #ffffff55;padding:4px!important;font-size:22px;font-weight:900;box-shadow:0 6px 22px #0008;touch-action:none}#drive850 button small{display:block;font-size:8px;line-height:1.05;margin-top:1px}#drive850 button[data-k="w"]{background:#245f3be8}#drive850 button[data-k="s"]{background:#713636e8}
+ @media(max-height:430px) and (orientation:landscape){#drive850{left:8px;right:70px;bottom:7px}#drive850 button{width:58px;height:52px;font-size:19px}.driveSide850,.drivePedal850{gap:5px}}
+ `;document.head.appendChild(css);
+ function set(k,on){W.keys[k]=on?1:0}function pulse(){try{navigator.vibrate?.(10)}catch{}}
+ box.querySelectorAll('button').forEach(b=>{let k=b.dataset.k,down=e=>{e.preventDefault();set(k,true);pulse()},up=e=>{e.preventDefault();set(k,false)};b.addEventListener('pointerdown',down);b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('pointerleave',up)});
+ setInterval(()=>{let on=pc.driving;box.style.display=on?'flex':'none';let joy=document.getElementById('joy850');if(joy)joy.style.visibility=on?'hidden':'visible';let look=document.getElementById('look850');if(look)look.style.bottom=on?'76px':'88px';let map=document.getElementById('mapTouch850'),phone=document.getElementById('phoneTouch850');if(map)map.style.display=on?'none':'grid';if(phone)phone.style.display=on?'none':'grid';let hint=document.getElementById('mobileHint850');if(hint)hint.textContent=on?'AUSSTEIGEN':'INTERAGIEREN'},100);
+ window.LuxMobileDrive850={box}
+}})();

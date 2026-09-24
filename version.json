@@ -1,17 +1,15 @@
 {
-  "version": "8.0.0-qa1",
-  "released_at": "2026-09-24T09:08:00+02:00",
-  "title": "Wohnung, Fahrverhalten, Navigation und Sound",
+  "version": "8.0.0-qa2",
+  "released_at": "2026-09-24T17:25:00+02:00",
+  "title": "Smartphone-Steuerung und Karte überarbeitet",
   "notes": [
-    "Eigene Wohnungen/Häuser bekommen einen eindeutigen Zugang mit E und Touch-Schaltfläche; Server-Besitz wird direkt mit der Außentür verbunden.",
-    "Beim Verlassen landet der Spieler wieder an genau dem Gebäude, das er betreten hat.",
-    "Die Innen-Eingangstür steht sichtbar offen statt als durchlaufbare geschlossene Tür zu glitchen.",
-    "Rückwärtsfahren besitzt eigene Beschleunigung, stärkere Bremslogik und eine kleine Kollisionsbefreiung, wenn das Fahrzeug an einem Objekt festhängt.",
-    "Beim Aussteigen wird eine freie Position neben dem Fahrzeug gesucht.",
-    "Die Minimap rotiert jetzt mit der Fahr-/Laufrichtung und verwendet die echten Straßen und tatsächlich generierten Häuser der Spielwelt.",
-    "Eigene Immobilie und eigene Firmen werden hervorgehoben; Wegpunkte bleiben erhalten.",
-    "Sounds wurden neu aufgebaut: weichere Schritte, Türgeräusch, Kollisionsschlag, Straßenrauschen und unterschiedliche Elektro-/Benzin-/Diesel-Motorcharakteristik.",
-    "H bleibt für das Handy reserviert; die Hupe liegt jetzt auf J.",
-    "Passanten geben gelegentlich kurze, unaufdringliche Kommentare ab, damit die Stadt lebendiger wirkt."
+    "Auf Touch-Geräten sitzt die Minimap jetzt oben rechts und kann den E-/Interaktionsknopf nicht mehr überdecken.",
+    "Die Smartphone-Steuerung hat einen eigenen Joystick, eine langsamere Touch-Kamera, einen festen E-Knopf sowie direkte Buttons für Karte und Handy.",
+    "Beim Autofahren erscheinen vier große Touch-Tasten: links, rechts, Bremse/Rückwärts und Gas.",
+    "Die normalen Lauf-Touchflächen werden während der Fahrt ausgeblendet, damit sich keine Steuerungen überlagern.",
+    "Die große Karte zeigt Häuser als klare Gebäude-Markierungen statt als unübersichtliche Punktwolke; das eigene Zuhause bleibt gold hervorgehoben.",
+    "Die Minimap bleibt antippbar und öffnet die große Karte.",
+    "Die bestehende korrekte A/D- und Links/Rechts-Logik wurde nicht verändert.",
+    "Wohnungs-, Fahrzeug- und Soundverbesserungen aus qa1 bleiben enthalten."
   ]
 }
