@@ -92,7 +92,10 @@ function init(F){
  });
  // QA: position player at station and dispatch one fire mission so the full exit can be observed.
  if(new URLSearchParams(location.search).get('firetruckqa')==='1'){
-   let done=false,tries=0,t=setInterval(()=>{tries++;if(done||!document.body.classList.contains('game-ready')||!W.player){if(tries>30)clearInterval(t);return}done=true;clearInterval(t);W.player.position.set(202,0,123);W.yaw=2.25;setTimeout(()=>{let E=window.LuxEmergency501||window.LuxEmergency500;if(!E?.missions?.some(m=>m.active))E?.dispatch?.('Feuerwehr')},1200)},250)
+   let done=false,tries=0,t=setInterval(()=>{tries++;if(done||!document.body.classList.contains('game-ready')||!W.player){if(tries>30)clearInterval(t);return}done=true;clearInterval(t);
+     W.player.position.set(202,0,123);W.yaw=2.25;
+     setTimeout(()=>{let E=window.LuxEmergency501||window.LuxEmergency500;if(!E)return;for(const m of E.missions||[])if(m.active)m.active=false;F.state='base';F.mission=null;F.route=[];F.idx=0;F.v.position.set(F.base.x,0,F.base.z);F.v.rotation.y=Math.PI;E.dispatch?.('Feuerwehr')},1200)
+   },250)
  }
  window.LuxFireTruck910={vehicle:V,fleet:F,wheels,blueLights,get state(){return F.state}}
 }
