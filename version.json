@@ -1,12 +1,15 @@
 {
-  "version": "8.1.0",
-  "released_at": "2026-09-24T23:43:00+02:00",
-  "title": "Feuerwehr Block 1 – realistischere Wache",
+  "version": "8.2.0-qa1",
+  "released_at": "2026-09-25T08:42:00+02:00",
+  "title": "Feuerwehr Block 2 – Einsatzfahrzeug",
   "notes": [
-    "Die Feuerwehrwache wurde mit drei deutlich erkennbaren Fahrzeugtoren, dunkler/roter Front und klarer CGDIS/CIS/112-Beschriftung neu gestaltet.",
-    "Die Tore besitzen Segmentierung, Sichtfenster, Rahmen und Stellplatznummern; zusätzlich gibt es Personalzugang, Beleuchtung, Antennen- und Pollerdetails.",
-    "Der Vorplatz ist jetzt als echter Feuerwehr-Ausrückbereich ausgebaut und auf die vorhandene Einsatzfahrzeugposition abgestimmt.",
-    "Eine sichtbare asphaltierte Zufahrt verbindet die Wache direkt mit dem bestehenden Straßennetz und folgt der vorhandenen Feuerwehr-Einsatzroute.",
-    "QA 8/8 bestanden: Station sichtbar, drei Tore, Beschriftung, Vorplatz, Straßenanschluss, begehbare Geometrie, kein schwarzer Bildschirm sowie A/Links und D/Rechts unverändert korrekt."
+    "Das bestehende Feuerwehr-Einsatzfahrzeug wurde optisch durch ein modernes LF20/HLF20-artiges Löschfahrzeug im Luxemburger CGDIS-Stil ersetzt.",
+    "Neue Details: schwere Fahrerkabine, Geräteaufbau mit Rollläden, Dachleiter, Monitor, Trittbretter, Spiegel, große Räder, Frontgrill und Heckmarkierung.",
+    "CGDIS/112/CIS-Lux-City-Beschriftung und gelbe Hochsichtbarkeitsmarkierungen sind ohne Herstellerlogo umgesetzt.",
+    "Mehrere blaue Blitzmodule an Dach, Front und Heck blinken während eines Einsatzes.",
+    "Ein neuer zweistufiger Einsatzsirenen-Ton ist an das aktivierte Soundsystem angebunden und nur in Spielnähe hörbar.",
+    "Das Fahrzeug nutzt weiterhin die bestehende echte Feuerwehr-Einsatzlogik und fährt von der Wache über die in v8.1.0 gebaute Zufahrt zum Straßennetz.",
+    "Räder animieren sich beim Fahren; Kollisionsabmessungen wurden an den größeren Feuerwehr-Aufbau angepasst.",
+    "QA-Modus kann einen Feuerwehr-Einsatz auslösen, um Ausfahrt und Fahrbewegung real zu prüfen."
   ]
 }
