@@ -95,7 +95,7 @@ function init(F){
  if(qaMode){
    let ready=false,tries=0,followUntil=0;
    const reset=()=>{let E=window.LuxEmergency501||window.LuxEmergency500;if(!E)return null;for(const m of E.missions||[])if(m.active)m.active=false;F.state='base';F.mission=null;F.route=[];F.idx=0;F.v.position.set(F.base.x,0,F.base.z);F.v.rotation.y=Math.PI;return E};
-   let t=setInterval(()=>{tries++;if(ready||!document.body.classList.contains('game-ready')||!W.player){if(tries>40)clearInterval(t);return}ready=true;clearInterval(t);let E=reset();W.player.position.set(202,0,123);W.yaw=Math.atan2(V.position.x-W.player.position.x,V.position.z-W.player.position.z);
+   let t=setInterval(()=>{tries++;if(ready||!document.body.classList.contains('game-ready')||!W.player){if(tries>40)clearInterval(t);return}ready=true;clearInterval(t);let E=reset();if(window.LuxHomes520?.inside)window.LuxHomes520.leave?.();W.player.visible=true;W.player.position.set(202,0,123);W.yaw=Math.atan2(V.position.x-W.player.position.x,V.position.z-W.player.position.z);
      let badge=document.createElement('div');badge.id='fireTruckQa910';badge.style='position:fixed;left:50%;top:54px;transform:translateX(-50%);z-index:95;background:#101820e8;color:#fff;border:1px solid #ffffff33;border-radius:9px;padding:6px 10px;font:11px Arial;pointer-events:none';document.body.appendChild(badge);
      if(qaMode==='park'){badge.textContent='FEUERWEHR QA · PARKPOSITION';return}
      badge.textContent='FEUERWEHR QA · AUSFAHRT IN 4 SEKUNDEN';setTimeout(()=>{if(!E)return;E.dispatch?.('Feuerwehr');followUntil=Date.now()+22000;badge.textContent='FEUERWEHR QA · EINSATZFAHRT'},4000);
