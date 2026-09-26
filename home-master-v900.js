@@ -1,4 +1,4 @@
-(()=>{let q=setInterval(()=>{let W=window.LuxWorld,H=window.LuxHomes520,I=window.LuxHomeInterior800||window.LuxHomeInterior782||window.LuxHomeInterior771||window.LuxHomeInterior760;if(!W?.player||!W?.camera||!W.registerTick||!H?.enter||!H?.leave||!I?.root||!I?.isBlocked)return;clearInterval(q);init(W,H,I)},40);
+(()=>{let q=setInterval(()=>{let W=window.LuxWorld,H=window.LuxHomes520,I=window.LuxHomeInterior800||window.LuxHomeInterior782||window.LuxHomeInterior771||window.LuxHomeInterior760;if(!W?.player||!W?.camera||!W.registerTick||!H?.enter||!H?.leave||!I?.root||!I?.isBlocked)return;clearInterval(q);init(W,H,I)},25);
 function init(W,H,I){
  const C={x:-430,z:430},sizes={studio:[12,9],flat:[12,9],family:[18,12]};
  const outsideHit=W.hit;let insideHit=null,lastSafe=null,lastId=null,transitioning=false;
@@ -25,13 +25,13 @@ function init(W,H,I){
  }
  function cameraPose(){
    let p=W.player.position,y=W.yaw||0,fx=Math.sin(y),fz=Math.cos(y),rx=Math.cos(y),rz=-Math.sin(y);
-   let dist=1.05,side=.12,cx=p.x-fx*dist+rx*side,cz=p.z-fz*dist+rz*side;
-   for(let d=dist;d>=.45;d-=.10){
+   let dist=.82,side=.08,cx=p.x-fx*dist+rx*side,cz=p.z-fz*dist+rz*side;
+   for(let d=dist;d>=.34;d-=.08){
      let tx=p.x-fx*d+rx*side,tz=p.z-fz*d+rz*side;
      if(!pointBlocked(tx,tz)){cx=tx;cz=tz;break}
    }
-   W.camera.position.set(cx,1.72,cz);
-   W.camera.lookAt(p.x+fx*1.05,1.42,p.z+fz*1.05);
+   W.camera.position.set(cx,1.66,cz);
+   W.camera.lookAt(p.x+fx*1.18,1.40,p.z+fz*1.18);
  }
  function forceInside(homeId=id()){
    if(!H.inside)return false;
@@ -76,7 +76,7 @@ function init(W,H,I){
    if(lastId!==homeId){lastId=homeId;forcePlayer(homeId)}
    if(W.hit!==insideHit)W.hit=insideHit;
    let p=W.player.position;
-   if(!Number.isFinite(p.x)||!Number.isFinite(p.z)||bodyBlocked(p.x,p.z)){
+   if(!Number.isFinite(p.x)||!Number.isFinite(p.z)||outerBlocked(p.x,p.z,homeId)||bodyBlocked(p.x,p.z)){
      let s=lastSafe||spawn(homeId);p.set(s.x,0,s.z)
    }else{
      lastSafe={x:p.x,z:p.z};p.y=0
