@@ -1,12 +1,14 @@
 {
-  "version": "8.1.0",
-  "released_at": "2026-09-24T23:43:00+02:00",
-  "title": "Feuerwehr Block 1 – realistischere Wache",
+  "version": "8.1.1",
+  "released_at": "2026-09-26T20:31:00+02:00",
+  "title": "Wohnung Hotfix",
   "notes": [
-    "Die Feuerwehrwache wurde mit drei deutlich erkennbaren Fahrzeugtoren, dunkler/roter Front und klarer CGDIS/CIS/112-Beschriftung neu gestaltet.",
-    "Die Tore besitzen Segmentierung, Sichtfenster, Rahmen und Stellplatznummern; zusätzlich gibt es Personalzugang, Beleuchtung, Antennen- und Pollerdetails.",
-    "Der Vorplatz ist jetzt als echter Feuerwehr-Ausrückbereich ausgebaut und auf die vorhandene Einsatzfahrzeugposition abgestimmt.",
-    "Eine sichtbare asphaltierte Zufahrt verbindet die Wache direkt mit dem bestehenden Straßennetz und folgt der vorhandenen Feuerwehr-Einsatzroute.",
-    "QA 8/8 bestanden: Station sichtbar, drei Tore, Beschriftung, Vorplatz, Straßenanschluss, begehbare Geometrie, kein schwarzer Bildschirm sowie A/Links und D/Rechts unverändert korrekt."
+    "Beim Betreten wird die Kamera direkt in den Innenraum gesetzt; eine kurze Übergangsblende verhindert den Blick auf das Außengebäude während des Wechsels.",
+    "Die finale Wohnungs-Runtime startet erst nach Home-Access und Exit-System und übernimmt danach zuverlässig Eintritt und Austritt.",
+    "Im Zuhause-Menü stehen Essen, Trinken, Schlafen, Duschen und Wohnung verlassen direkt zur Verfügung.",
+    "Essen, Trinken, Energie und Hygiene aktualisieren sich unmittelbar nach der Aktion.",
+    "Die bisherigen E-/Enter-Interaktionen an Kühlschrank, Spüle, Bett, Dusche und Ausgang bleiben zusätzlich erhalten.",
+    "Der alte zusätzliche untere Wohnung-verlassen-Knopf wird ausgeblendet, damit die Smartphone-Steuerung nicht überladen wird.",
+    "Der Hotfix verändert keine geschützte A/D-, Maus-, Login- oder Fahrzeugsteuerung."
   ]
 }
