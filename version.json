@@ -1,14 +1,14 @@
 {
-  "version": "8.1.2",
-  "released_at": "2026-09-26T21:02:00+02:00",
-  "title": "Wohnungs-Kern zurück auf funktionierenden Stand",
+  "version": "8.1.3-qa1",
+  "released_at": "2026-09-26T21:11:00+02:00",
+  "title": "Wohnung Kamera- und Wandkollision Master-Fix",
   "notes": [
-    "Der komplette Wohnungs-Kern wurde auf den letzten bekannten funktionierenden Stand zurückgesetzt: Innenraum, Innenkamera, Wohnungsphysik, Startlogik, Selbstprüfung und Ausgang.",
-    "Die später hinzugefügte zusätzliche Home-Runtime, die Eintritt und Kamera nochmals überschrieben hat, wird nicht mehr geladen.",
-    "Beim Betreten setzt der bewährte Wohnungs-Kern den Spieler direkt in den separaten Innenraum und übernimmt sofort die Innenkamera.",
-    "Wohnungswände und Möbel nutzen wieder die dazugehörige funktionierende Innenraum-Kollision.",
-    "Essen, Trinken, Schlafen und Duschen bleiben an den Möbeln per E/Enter nutzbar.",
-    "Zusätzlich gibt es einen kleinen WOHNUNG-Knopf mit Essen, Trinken, Schlafen, Duschen und Verlassen, ohne die Kamera- oder Türlogik zu überschreiben.",
-    "Login, Smartphone-Steuerung, Karte, A/D-Steuerung und Fahrzeuge wurden bei diesem Rollback nicht verändert."
+    "Ein einzelner Master-Controller läuft als letzte Wohnungsinstanz und überschreibt keine anderen Spielsysteme.",
+    "Sobald H.inside aktiv ist, wird die Kamera in jedem Frame direkt in eine nahe Innenraumposition gesetzt; die Außenkamera kann die Ansicht nicht mehr zurückholen.",
+    "Die Kamera sitzt nur etwa einen Meter hinter der Spielfigur und bleibt innerhalb der Wohnungsgrenzen.",
+    "Die Wohnungs-Wandkollision wird als finale W.hit-Instanz durchgesetzt und nutzt zusätzlich einen Spielerradius an acht Prüfpunkten.",
+    "Bei ungültiger oder blockierter Position wird die Figur sofort auf die letzte sichere Innenraumposition zurückgesetzt.",
+    "Beim Verlassen wird die normale Außen-Kollision wiederhergestellt.",
+    "Login, Karte, Smartphone- und Fahrzeugsteuerung werden nicht verändert."
   ]
 }
