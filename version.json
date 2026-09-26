@@ -1,14 +1,14 @@
 {
-  "version": "8.1.1",
-  "released_at": "2026-09-26T20:31:00+02:00",
-  "title": "Wohnung Hotfix",
+  "version": "8.1.2",
+  "released_at": "2026-09-26T21:02:00+02:00",
+  "title": "Wohnungs-Kern zurück auf funktionierenden Stand",
   "notes": [
-    "Beim Betreten wird die Kamera direkt in den Innenraum gesetzt; eine kurze Übergangsblende verhindert den Blick auf das Außengebäude während des Wechsels.",
-    "Die finale Wohnungs-Runtime startet erst nach Home-Access und Exit-System und übernimmt danach zuverlässig Eintritt und Austritt.",
-    "Im Zuhause-Menü stehen Essen, Trinken, Schlafen, Duschen und Wohnung verlassen direkt zur Verfügung.",
-    "Essen, Trinken, Energie und Hygiene aktualisieren sich unmittelbar nach der Aktion.",
-    "Die bisherigen E-/Enter-Interaktionen an Kühlschrank, Spüle, Bett, Dusche und Ausgang bleiben zusätzlich erhalten.",
-    "Der alte zusätzliche untere Wohnung-verlassen-Knopf wird ausgeblendet, damit die Smartphone-Steuerung nicht überladen wird.",
-    "Der Hotfix verändert keine geschützte A/D-, Maus-, Login- oder Fahrzeugsteuerung."
+    "Der komplette Wohnungs-Kern wurde auf den letzten bekannten funktionierenden Stand zurückgesetzt: Innenraum, Innenkamera, Wohnungsphysik, Startlogik, Selbstprüfung und Ausgang.",
+    "Die später hinzugefügte zusätzliche Home-Runtime, die Eintritt und Kamera nochmals überschrieben hat, wird nicht mehr geladen.",
+    "Beim Betreten setzt der bewährte Wohnungs-Kern den Spieler direkt in den separaten Innenraum und übernimmt sofort die Innenkamera.",
+    "Wohnungswände und Möbel nutzen wieder die dazugehörige funktionierende Innenraum-Kollision.",
+    "Essen, Trinken, Schlafen und Duschen bleiben an den Möbeln per E/Enter nutzbar.",
+    "Zusätzlich gibt es einen kleinen WOHNUNG-Knopf mit Essen, Trinken, Schlafen, Duschen und Verlassen, ohne die Kamera- oder Türlogik zu überschreiben.",
+    "Login, Smartphone-Steuerung, Karte, A/D-Steuerung und Fahrzeuge wurden bei diesem Rollback nicht verändert."
   ]
 }
