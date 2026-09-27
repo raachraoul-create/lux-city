@@ -1,14 +1,14 @@
 {
-  "version": "8.1.3",
-  "released_at": "2026-09-26T21:17:00+02:00",
-  "title": "Wohnung Kamera- und Wandkollision repariert",
+  "version": "8.1.4",
+  "released_at": "2026-09-27T13:08:00+02:00",
+  "title": "Wohnung Kamera und Wände Hotfix",
   "notes": [
-    "Die Wohnung nutzt jetzt genau eine finale Kamera- und Kollisionsinstanz statt mehrere konkurrierende Controller.",
-    "Beim Betreten wird die Kamera sofort auf eine sehr nahe Innenansicht gesetzt; die Außenkamera kann die Ansicht nicht mehr zurückholen.",
-    "Die vorherigen separaten home-camera- und home-physics-Controller werden nicht mehr geladen, damit sie sich nicht gegenseitig überschreiben.",
-    "Die Wandkollision wird als letzte W.hit-Instanz durchgesetzt und berücksichtigt zusätzlich den Spielerradius rund um die Figur.",
-    "Wenn die Figur eine ungültige oder blockierte Innenraumposition erreicht, wird sie auf die letzte sichere Position zurückgesetzt.",
-    "Beim Verlassen wird die normale Außen-Kollision wiederhergestellt.",
-    "Login, Karte, Smartphone-Steuerung und Fahrzeuge wurden nicht verändert."
+    "Die Innenkamera sitzt jetzt extrem nah hinter der Spielfigur und wird in jedem Frame als letzte Kamera gesetzt.",
+    "Die Kamera sucht nur Positionen entlang einer freien Linie innerhalb des Innenraums und fällt notfalls fast auf die Spielerposition zurück, statt durch eine Wand nach außen zu springen.",
+    "Die Wohnungsbewegung nutzt zusätzlich zur normalen Trefferprüfung eine Swept-Kollision in 2,5-cm-Schritten zwischen letzter sicherer und neuer Position.",
+    "Dadurch wird auch schnelles Durchtunneln durch dünne Außen- oder Innenwände abgefangen.",
+    "Bei einem ungültigen Schritt wird die Figur sofort auf die letzte sichere Position zurückgesetzt.",
+    "Der zusätzliche alte Wohnungs-Selbsttest wurde entfernt, damit er nicht mehr parallel Positionen zurücksetzt.",
+    "Login, Karte, Smartphone-, A/D- und Fahrzeugsteuerung bleiben unverändert."
   ]
 }
