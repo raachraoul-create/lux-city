@@ -126,6 +126,80 @@ function init(W){
     if(tries>100)clearInterval(fleetWait);
   },250);
 
+  // Second immediate quality pass: station façade, training yard and road details.
+  const stationFront=F.z+F.l/2+.58;
+  const facadeRed=M(0xa91827,.42,.16),facadeDark=M(0x262d32,.38,.30),facadeLight=M(0xe8e4dc,.82),doorGlass=new T.MeshPhysicalMaterial({color:0x7199a9,roughness:.10,metalness:.10,transparent:true,opacity:.62});
+  // Stronger three-bay façade with visible depth instead of a flat box.
+  const bayXs=[F.x-7.35,F.x,F.x+7.35];
+  for(let i=0;i<bayXs.length;i++){
+    const bx=bayXs[i];
+    A(new T.BoxGeometry(6.35,6.15,.42),facadeRed,bx,3.08,stationFront);
+    A(new T.BoxGeometry(5.72,5.42,.24),facadeDark,bx,2.73,stationFront+.23);
+    for(let y=.48;y<5.20;y+=.58)A(new T.BoxGeometry(5.45,.055,.07),metal,bx,y,stationFront+.38);
+    for(let k=-2;k<=2;k++)A(new T.BoxGeometry(.87,.60,.055),doorGlass,bx+k*1.04,4.25,stationFront+.42);
+    A(new T.BoxGeometry(5.86,.16,.52),facadeLight,bx,5.72,stationFront+.12);
+    addLabel(root,String(i+1),bx,5.72,stationFront+.43,.48,.48);
+  }
+  // Upper station band and clear identity sign.
+  A(new T.BoxGeometry(24.7,1.52,.34),facadeDark,F.x,7.65,stationFront+.02);
+  A(new T.BoxGeometry(24.9,.22,.48),facadeRed,F.x,8.43,stationFront+.04);
+  addLabel(root,'FEUERWEHR LUX CITY',F.x,7.72,stationFront+.22,10.2,.92);
+  addLabel(root,'112',F.x+9.7,7.72,stationFront+.24,1.45,.82);
+
+  // Side personnel entrance with canopy and glass.
+  A(new T.BoxGeometry(2.35,3.15,.20),facadeRed,F.x+10.1,1.58,stationFront+.26);
+  A(new T.BoxGeometry(1.80,2.55,.08),doorGlass,F.x+10.1,1.60,stationFront+.39);
+  A(new T.BoxGeometry(4.5,.18,1.45),facadeDark,F.x+9.0,3.40,stationFront+.82);
+  A(new T.BoxGeometry(.12,2.9,.12),metal,F.x+7.15,1.45,stationFront+1.44);
+  A(new T.BoxGeometry(.12,2.9,.12),metal,F.x+10.85,1.45,stationFront+1.44);
+
+  // Training / hose-drying tower gives the fire station a recognizable silhouette.
+  const tower=new T.Group();tower.position.set(F.x+15.6,0,F.z-4.0);root.add(tower);
+  A(new T.BoxGeometry(4.0,11.8,4.0),M(0x878982,.86),0,5.9,0,tower);
+  A(new T.BoxGeometry(4.35,.40,4.35),facadeDark,0,11.85,0,tower);
+  for(const y of[2.3,5.3,8.3])for(const x of[-1.0,1.0])A(new T.BoxGeometry(.82,1.45,.10),doorGlass,x,y,2.06,tower);
+  A(new T.CylinderGeometry(.07,.09,3.0,8),metal,0,13.45,0,tower);
+  A(new T.SphereGeometry(.15,9,7),blue,0,15.02,0,tower);
+  addLabel(tower,'112',0,9.95,2.08,1.55,.65);
+
+  // Drainage, directional arrows and edge markers make the forecourt read as a real road.
+  const drainMat=M(0x3d4448,.46,.48);
+  for(let z=119.0;z<=132.0;z+=3.2){
+    const dr=A(new T.BoxGeometry(.48,.025,.18),drainMat,204.7,.142,z);dr.rotation.y=-.42;
+    const dr2=A(new T.BoxGeometry(.48,.025,.18),drainMat,215.3,.142,z);dr2.rotation.y=-.42;
+  }
+  function arrow(x,z,rot=0){
+    const g=new T.Group();g.position.set(x,.151,z);g.rotation.y=rot;root.add(g);
+    A(new T.BoxGeometry(.28,.025,2.6),white,0,0,0,g);
+    const l=A(new T.BoxGeometry(.24,.025,1.20),white,-.38,0,-1.05,g);l.rotation.y=-.62;
+    const r=A(new T.BoxGeometry(.24,.025,1.20),white,.38,0,-1.05,g);r.rotation.y=.62;
+  }
+  arrow(202.5,124.6,-.43);arrow(190.0,130.2,-.43);
+
+  // Small service yard: hose rack, equipment cages and safety cones.
+  const yard=new T.Group();yard.position.set(F.x-15.8,0,F.z+3.0);root.add(yard);
+  const fence=M(0x555e62,.42,.42);
+  for(const x of[-3.5,3.5])A(new T.BoxGeometry(.10,1.8,.10),fence,x,.9,0,yard);
+  A(new T.BoxGeometry(7.0,.08,.08),fence,0,1.62,0,yard);
+  for(let x=-3.2;x<=3.2;x+=.55)A(new T.BoxGeometry(.035,1.55,.035),fence,x,.80,0,yard);
+  for(const x of[-2.2,0,2.2]){
+    A(new T.CylinderGeometry(.12,.16,.75,10),metal,x,.38,1.0,yard);
+    const hose=A(new T.TorusGeometry(.42,.09,10,24),deep,x,1.05,1.0,yard);hose.rotation.y=Math.PI/2;
+  }
+  for(const x of[-2.8,-1.9,1.9,2.8]){
+    const cone=A(new T.ConeGeometry(.20,.72,12),M(0xe56a2a,.56),x,.36,2.3,yard);
+    A(new T.CylinderGeometry(.28,.28,.06,12),dark,x,.03,2.3,yard);
+  }
+
+  // One subtle static reserve support vehicle, while the main fire engine remains the active emergency fleet vehicle.
+  const reserve=new T.Group();reserve.name='FireReserve950';reserve.position.set(F.x-7.1,0,114.2);reserve.rotation.y=Math.PI;root.add(reserve);
+  A(new T.BoxGeometry(2.0,1.35,4.65),red,0,1.02,0,reserve);
+  A(new T.BoxGeometry(1.78,.72,1.55),glass,0,1.72,-1.25,reserve);
+  A(new T.BoxGeometry(2.04,.18,4.7),yellow,0,.76,0,reserve);
+  for(const sx of[-1,1])for(const zz of[-1.45,1.45]){const w=A(new T.CylinderGeometry(.35,.35,.24,18),dark,sx*1.03,.39,zz,reserve);w.rotation.z=Math.PI/2}
+  A(new T.BoxGeometry(1.25,.14,.24),blue,0,2.13,-.45,reserve);
+  addLabel(reserve,'112',0,1.16,2.36,1.0,.40);
+
   // Night response: make station and engine readable without over-lighting mobile.
   const stationLights=[];
   if(!mobile)for(const [x,z] of[[F.x-9.5,F.z+17.8],[F.x,F.z+17.8],[F.x+9.5,F.z+17.8],[190,130]]){
@@ -137,5 +211,5 @@ function init(W){
     const wet=(window.LuxWeather560||window.LuxWeather470)?.state==='rain';asphalt.roughness+=( (wet?.48:.88)-asphalt.roughness)*Math.min(1,dt);
   });
 
-  window.LuxFirePremium950={root,roadSegs,version:'9.5.0',get fireEngine(){return applied||fallback}};
+  window.LuxFirePremium950={root,roadSegs,version:'9.5.1',get fireEngine(){return applied||fallback}};
 }
