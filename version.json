@@ -1,12 +1,12 @@
 {
-  "version": "9.7.7",
+  "version": "9.7.8",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Fußgänger und Ampeln sicherer gemacht",
+  "title": "Spielercharakter grafisch verfeinert",
   "notes": [
-    "Fußgänger bleiben weiterhin auf den festgelegten Gehweg- und Zebrastreifenrouten.",
-    "An signalisierten Kreuzungen betreten Fußgänger den Übergang nicht mehr bei Grün oder Gelb für den kreuzenden Fahrzeugverkehr.",
-    "Fußgänger, die bereits auf dem Übergang sind, laufen weiter und bleiben nicht mitten auf der Straße stehen.",
-    "Die Figuren werden weiterhin am Boden gehalten und die vorhandenen vollständigen Charaktermodelle bleiben erhalten.",
-    "Fahrzeugsteuerung, Multiplayer und Wohnungslogik wurden für diesen Schritt nicht verändert."
+    "Schultern und Oberkörper besitzen jetzt zusätzliche Formtiefe statt einer rein kantigen Silhouette.",
+    "Kleidung hat sichtbare Säume, Gürtel, Schnalle und dezente Taschendetails.",
+    "Gesicht und Haaransatz wurden für die nahe Kamera mit zusätzlichen kleinen Details verfeinert.",
+    "Schuhe besitzen mehr Sohlen- und Profilstruktur.",
+    "Die bestehende Lauf-, Arm-, Bein- und Blinkanimation wurde nicht verändert."
   ]
 }

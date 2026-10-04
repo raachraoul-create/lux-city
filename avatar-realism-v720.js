@@ -32,8 +32,18 @@ function build(W){
   const collarL=A(new T.BoxGeometry(.18,.055,.055),white,-.085,1.59,.11);collarL.rotation.z=-.42;collarL.rotation.x=.25;
   const collarR=A(new T.BoxGeometry(.18,.055,.055),white,.085,1.59,.11);collarR.rotation.z=.42;collarR.rotation.x=.25;
   A(new T.BoxGeometry(.012,.39,.012),dark,0,1.36,.145);for(let y=1.22;y<=1.50;y+=.09)sph(.010,metal,.018,y,.154,p,.8,.8,.45);
-  for(const sx of[-1,1])sph(.078,shirt,sx*(female?.225:.255),1.49,0);
+  for(const sx of[-1,1]){
+    sph(.078,shirt,sx*(female?.225:.255),1.49,0);
+    const shoulder=A(new T.CapsuleGeometry(.040,.13,5,10),shirt,sx*(female?.232:.266),1.47,.005);shoulder.rotation.z=sx*.72;
+  }
   cap(.052,.07,skin,0,1.65,0);
+  // Clothing construction details: hem, belt, buckle and shallow pocket seams.
+  A(new T.BoxGeometry(female?.31:.35,.024,.018),dark,0,1.00,.142);
+  A(new T.BoxGeometry(female?.33:.37,.035,.19),dark,0,.91,.02);
+  A(new T.BoxGeometry(.055,.050,.022),metal,0,.91,.123);
+  for(const sx of[-1,1]){
+    const pocket=A(new T.BoxGeometry(.085,.055,.012),dark,sx*.095,.98,.143);pocket.rotation.z=-sx*.16;
+  }
 
   // Head / face.
   const head=new T.Group();head.position.set(0,1.80,0);p.add(head);parts.head=head;
@@ -53,12 +63,19 @@ function build(W){
   const upperLip=A(new T.BoxGeometry(.060,.008,.008),lip,0,-.071,.149,head);upperLip.rotation.x=.08;
   const lowerLip=A(new T.BoxGeometry(.047,.007,.007),phys(0xb06d6a,.42),0,-.082,.150,head);lowerLip.rotation.x=-.06;
   sph(.016,skin,0,-.116,.108,head,1.0,.74,.82);
+  // Tiny nostril and philtrum shading keeps the face readable at close camera distance.
+  const faceShade=phys(new T.Color(skinC).multiplyScalar(.72),.64);
+  for(const sx of[-1,1])sph(.0048,faceShade,sx*.016,-.034,.170,head,.9,.65,.55);
+  A(new T.BoxGeometry(.007,.024,.004),faceShade,0,-.050,.158,head);
   // Subtle jaw shadow / stubble without forcing a beard.
   const jawShade=phys(new T.Color(skinC).multiplyScalar(.83),.64);const js=sph(.108,jawShade,0,-.086,.004,head,.91,.56,.86);js.material.transparent=true;js.material.opacity=.13;js.material.depthWrite=false;
 
   // Hair volume with style-specific silhouette.
   const style=cfg.hair||'Kurz';
   const hc=sph(.160,hair,0,.128,-.004,head,.97,.69,.97);hc.geometry=new T.SphereGeometry(.160,30,20,0,Math.PI*2,0,Math.PI*.58);
+  // Soft hairline and sideburns prevent the hairstyle from reading like a single helmet shape.
+  const hairline=A(new T.BoxGeometry(.205,.018,.010),hair,0,.112,.149,head);hairline.rotation.x=-.10;
+  for(const sx of[-1,1]){const sideburn=A(new T.BoxGeometry(.018,.070,.016),hair,sx*.132,.060,.112,head);sideburn.rotation.z=-sx*.05}
   if(style==='Lang'){
     const back=cap(.092,.33,hair,0,-.16,-.100,head);back.scale.x=1.35;
     for(const sx of[-1,1]){const lock=cap(.040,.27,hair,sx*.120,-.10,-.055,head,5);lock.rotation.z=sx*.08}
@@ -82,6 +99,8 @@ function build(W){
     const leg=new T.Group();leg.position.set(sx*.098,.81,0);p.add(leg);cap(.073,.30,pants,0,-.145,0,leg);sph(.067,pants,0,-.382,0,leg);
     const ll=new T.Group();ll.position.set(0,-.382,0);leg.add(ll);cap(.057,.28,pants,0,-.135,.018,ll);
     const ft=new T.Group();ft.position.set(0,-.335,.067);ll.add(ft);A(new T.BoxGeometry(.162,.084,.305),shoe,0,0,.02,ft);A(new T.BoxGeometry(.150,.018,.31),white,0,-.049,.025,ft);A(new T.BoxGeometry(.120,.010,.13),dark,0,.050,.055,ft);for(let z=-.01;z<=.09;z+=.05)A(new T.BoxGeometry(.11,.010,.008),white,0,.052,z,ft);
+    A(new T.BoxGeometry(.158,.025,.060),dark,0,.008,-.135,ft);
+    for(const xx of[-.050,0,.050])A(new T.BoxGeometry(.016,.012,.18),dark,xx,-.061,.025,ft);
     L.legs.push(leg);lowerLegs.push(ll);feet.push(ft);
   }
 
@@ -101,5 +120,5 @@ function build(W){
     }
     sh.material.opacity=.16+Math.min(.08,sp*.006);
   });
-  window.LuxAvatar720=window.LuxAvatar930={config:cfg,player:p,version:'9.3.0'};
+  window.LuxAvatar720=window.LuxAvatar930=window.LuxAvatar940={config:cfg,player:p,version:'9.4.0'};
 }
