@@ -1,13 +1,12 @@
 {
-  "version": "9.7.4",
+  "version": "9.7.5",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Karte und Navigation erweitert",
+  "title": "Mobile HUD neu geordnet",
   "notes": [
-    "Die kleine Karte bleibt dauerhaft sichtbar und ist auf Touch-Geräten kompakter.",
-    "Die Gemeinde wird jetzt direkt auf der kleinen Karte markiert.",
-    "Gemeinde, Polizei, Feuerwehr und Krankenhaus erscheinen als klare Ziele auf der großen Stadtkarte.",
-    "Für diese wichtigen Orte lassen sich direkt Wegpunkte setzen.",
-    "Eigenes Zuhause und eigene Firmen bleiben weiterhin hervorgehoben.",
-    "Steuerung, Multiplayer und Fahrzeugphysik wurden für diesen Schritt nicht verändert."
+    "Auf iPhone und iPad liegt der Wohlbefinden-Balken jetzt links und nicht mehr unter der Minikarte.",
+    "Warnungen für Hunger, Durst, Energie und Hygiene bleiben ebenfalls links und verdecken die Karte nicht.",
+    "Uhrzeit, Datum und Geldanzeige wurden auf Touch-Geräten kompakter unterhalb der Bedürfnisse angeordnet.",
+    "Joystick, Kamera-Touchfläche, Interaktion, Handy und Kartenbutton bleiben im unteren Bereich frei.",
+    "Desktop-Steuerung, Multiplayer und Fahrphysik wurden für diesen Schritt nicht verändert."
   ]
 }
