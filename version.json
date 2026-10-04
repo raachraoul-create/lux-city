@@ -1,11 +1,12 @@
 {
-  "version": "9.7.10",
+  "version": "9.7.11",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "KI-Autos gegen Festfahren abgesichert",
+  "title": "Login und Schwarzbild-Schutz bereinigt",
   "notes": [
-    "KI-Autos versuchen keinen bereits belegten Parkplatz mehr dauerhaft anzufahren.",
-    "Bei längerem Stillstand erkennt das Parksystem ein festgefahrenes Fahrzeug und setzt dessen Route sinnvoll fort.",
-    "Geparkte Fahrzeuge bleiben weiterhin stehen und werden nicht durch die Anti-Festfahr-Logik verschoben.",
-    "Die normale Spieler-Fahrsteuerung wurde nicht verändert."
+    "Eine normale Seitenaktualisierung übernimmt nicht mehr dauerhaft einen alten manuellen Login-Marker.",
+    "Beim Ausloggen werden auch die aktuellen Cloud-Reload-Marker vollständig entfernt.",
+    "Die Spiel-Canvas wird beim erfolgreichen Eintritt ausdrücklich sichtbar und beim ausgeloggten Zustand ausdrücklich ausgeblendet.",
+    "Der normale Start bleibt manuell: Eine vorhandene Sitzung allein startet das Spiel nicht automatisch.",
+    "Cloud-interne Wiederaufnahme nach einem notwendigen Sync-Neuladen bleibt erhalten."
   ]
 }
