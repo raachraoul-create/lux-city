@@ -1,13 +1,12 @@
 {
-  "version": "9.7.0",
-  "released_at": "2026-10-04T08:05:00+02:00",
-  "title": "Multiplayer- und Grafik-Upgrade 9.7",
+  "version": "9.7.1",
+  "released_at": "2026-10-04T09:25:00+02:00",
+  "title": "Wohnungs-Kamera und Innenraum-Kollision stabilisiert",
   "notes": [
-    "Andere eingeloggte Spieler werden jetzt live synchronisiert und als sichtbare Figuren mit Namensschild dargestellt.",
-    "Realtime-Synchronisation nutzt zusätzlich einen Datenbank-Fallback für stabilere Multiplayer-Sichtbarkeit.",
-    "Straßen, Gehwege, Bordsteine, Abflüsse, Kanaldeckel, Markierungen und Zebrastreifen wurden grafisch aufgewertet.",
-    "Hausfassaden, Fensterrahmen, Eingänge, Stadtmöbel, Beleuchtung und Vegetation wurden detaillierter gestaltet.",
-    "Fahrzeuge erhielten zusätzliche Front- und Heckdetails, Fensterrahmen, Felgendetails, Bremsscheiben und Bremssättel.",
-    "Steuerung, Login und bestehende Spiellogik wurden für dieses Grafik-Upgrade nicht verändert."
+    "Beim Betreten startet die Figur weiter innerhalb der Wohnung und nicht mehr direkt an der Eingangswand.",
+    "Die Innenraum-Kollision berücksichtigt einen größeren Spielerradius an Wänden, Fenstern und Möbeln.",
+    "Die Innenkamera besitzt jetzt einen eigenen Kollisionsradius und zieht sich automatisch vor Wände und Möbel.",
+    "Die Kamera wird beim Betreten direkt auf die nahe Innenansicht ausgerichtet.",
+    "Multiplayer, Fahrzeuge und Außensteuerung wurden für diesen Schritt nicht verändert."
   ]
 }

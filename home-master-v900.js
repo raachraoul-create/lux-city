@@ -3,13 +3,19 @@ function init(W,H,I){
  const C={x:-430,z:430},sizes={studio:[12,9],flat:[12,9],family:[18,12]};
  const outsideHit=W.hit;let insideHit=null,lastSafe=null,lastId=null,transitioning=false;
  function id(){let v=I.activeId||H.currentHomeId||window.LuxCivic404?.state?.home?.id||'flat';return sizes[v]?v:'flat'}
- function spawn(homeId=id()){let d=(sizes[homeId]||sizes.flat)[1];return{x:C.x,z:C.z-(d/2-1.35)}}
- function outerBlocked(x,z,homeId=id()){let [w,d]=sizes[homeId]||sizes.flat,lx=x-C.x,lz=z-C.z;return Math.abs(lx)>w/2-.38||Math.abs(lz)>d/2-.38}
+ function spawn(homeId=id()){let d=(sizes[homeId]||sizes.flat)[1];return{x:C.x,z:C.z-(d/2-2.20)}}
+ function outerBlocked(x,z,homeId=id()){let [w,d]=sizes[homeId]||sizes.flat,lx=x-C.x,lz=z-C.z;return Math.abs(lx)>w/2-.48||Math.abs(lz)>d/2-.48}
  function pointBlocked(x,z){return outerBlocked(x,z)||!!I.isBlocked(x,z)}
  function bodyBlocked(x,z){
    if(pointBlocked(x,z))return true;
-   let r=.28,k=.20;
+   let r=.31,k=.22;
    for(const [ox,oz] of [[r,0],[-r,0],[0,r],[0,-r],[k,k],[k,-k],[-k,k],[-k,-k]])if(pointBlocked(x+ox,z+oz))return true;
+   return false
+ }
+ function cameraBlocked(x,z){
+   if(outerBlocked(x,z))return true;
+   let r=.14;
+   for(const [ox,oz] of [[0,0],[r,0],[-r,0],[0,r],[0,-r]])if(pointBlocked(x+ox,z+oz))return true;
    return false
  }
  function makeHit(){
@@ -25,13 +31,13 @@ function init(W,H,I){
  }
  function cameraPose(){
    let p=W.player.position,y=W.yaw||0,fx=Math.sin(y),fz=Math.cos(y),rx=Math.cos(y),rz=-Math.sin(y);
-   let dist=.82,side=.08,cx=p.x-fx*dist+rx*side,cz=p.z-fz*dist+rz*side;
-   for(let d=dist;d>=.34;d-=.08){
+   let preferred=.88,side=.06,cx=p.x-fx*.36+rx*side,cz=p.z-fz*.36+rz*side;
+   for(let d=preferred;d>=.34;d-=.06){
      let tx=p.x-fx*d+rx*side,tz=p.z-fz*d+rz*side;
-     if(!pointBlocked(tx,tz)){cx=tx;cz=tz;break}
+     if(!cameraBlocked(tx,tz)){cx=tx;cz=tz;break}
    }
-   W.camera.position.set(cx,1.66,cz);
-   W.camera.lookAt(p.x+fx*1.18,1.40,p.z+fz*1.18);
+   W.camera.position.set(cx,1.61,cz);
+   W.camera.lookAt(p.x+fx*1.35,1.38,p.z+fz*1.35);
  }
  function forceInside(homeId=id()){
    if(!H.inside)return false;
@@ -39,6 +45,7 @@ function init(W,H,I){
    homeId=id();
    if(I.root)I.root.visible=true;
    W.player.visible=true;
+   W.yaw=0;
    forcePlayer(homeId);
    makeHit();
    cameraPose();
@@ -88,5 +95,5 @@ function init(W,H,I){
    document.body.classList.add('lux-home-master-inside')
  });
  if(H.inside)setTimeout(()=>forceInside(id()),60);
- window.LuxHomeMaster900={forceInside,bodyBlocked,get active(){return!!H.inside},get safe(){return lastSafe}}
+ window.LuxHomeMaster900=window.LuxHomeMaster910={version:'9.1.0',forceInside,bodyBlocked,cameraBlocked,get active(){return!!H.inside},get safe(){return lastSafe}}
 }})();
