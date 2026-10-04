@@ -92,7 +92,7 @@ function init(W){
       const ramp=A(new T.BoxGeometry(2.6,.055,1.35),concrete,sx*7.35,.01,0,g);ramp.castShadow=false;
       for(let ix=-4;ix<=4;ix++)for(let iz=-1;iz<=1;iz++){
         const dot=A(new T.CylinderGeometry(.035,.035,.018,7),yellow,sx*7.35+ix*.20,.055,iz*.22,g);
-        dot.rotation.x=Math.PI/2;dot.castShadow=false;
+        dot.castShadow=false;
       }
     }
   }
@@ -108,7 +108,7 @@ function init(W){
     const p=A(new T.BoxGeometry(2.8,.025,7.2),patchM,x,.104,z);p.rotation.y=rot;p.castShadow=false;
   }
   for(const [x,z] of [[-2,42],[2,-47],[-123,92],[127,-98],[-64,136],[70,-134]]){
-    const mh=A(new T.CylinderGeometry(.48,.48,.035,28),manholeM,x,.126,z);mh.rotation.x=Math.PI/2;mh.castShadow=false;
+    const mh=A(new T.CylinderGeometry(.48,.48,.035,28),manholeM,x,.126,z);mh.castShadow=false;
     A(new T.TorusGeometry(.31,.025,7,28),black,x,.151,z).rotation.x=Math.PI/2;
   }
 
