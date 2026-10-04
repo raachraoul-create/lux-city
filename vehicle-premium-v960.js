@@ -52,7 +52,9 @@ function init(W,PC){
     for(let k=0;k<10;k++){
       const sp=A(new T.BoxGeometry(.024,r*.56,.035),metal,0,0,0,g);sp.rotation.x=k*Math.PI/10;
     }
+    const disc=A(new T.CylinderGeometry(r*.285,r*.285,.045,28),M(0x7d858a,.32,.72),0,0,0,g);disc.rotation.z=Math.PI/2;
     const hub=A(new T.CylinderGeometry(r*.105,r*.105,.072,20),blackMetal,0,0,0,g);hub.rotation.z=Math.PI/2;
+    A(new T.BoxGeometry(.045,r*.19,r*.10),M(0xa92a2f,.28,.30),.045,r*.15,0,g);
     for(let k=0;k<5;k++){
       const a=k*Math.PI*2/5;
       const bolt=A(new T.CylinderGeometry(.017,.017,.08,10),M(0xd0d3d5,.18,.72),0,Math.sin(a)*r*.15,Math.cos(a)*r*.15,g);bolt.rotation.z=Math.PI/2;
@@ -96,6 +98,12 @@ function init(W,PC){
       }
     }
 
+    // Front fascia, lower intakes and subtle metal trim add much more depth.
+    A(new T.BoxGeometry(w*.46,.095,.055),blackMetal,0,.59,front-.145,g);
+    for(const x of[-w*.36,w*.36]) A(new T.BoxGeometry(w*.13,.075,.06),dark,x,.55,front-.15,g);
+    A(new T.BoxGeometry(w*.72,.025,.055),metal,0,.43,front-.16,g);
+    A(new T.BoxGeometry(w*.68,.028,.05),metal,0,.45,rear+.16,g);
+
     // Modern lights with separate lenses and DRL strips.
     for(const x of[-w*.29,w*.29]){
       const hl=A(new T.BoxGeometry(w*.19,.16,.075),lens,x,.76,front-.12,g);premiumLights.push({m:hl.material,type:'head'});
@@ -106,6 +114,13 @@ function init(W,PC){
     // Light bar signature and rear reflector.
     const rearBar=A(new T.BoxGeometry(w*.56,.035,.080),tail,0,.78,rear+.13,g);premiumLights.push({m:rearBar.material,type:'tail'});
     A(new T.BoxGeometry(w*.62,.028,.078),M(0xffffff,.10,.05,0xffffff,.26),0,.82,front-.15,g);
+
+    // Window surrounds and B-pillars make the side profile read as a real road car.
+    for(const sx of[-1,1]){
+      A(new T.BoxGeometry(.028,.52,l*.38),glass,sx*(w/2+.045),roofY-.33,.05,g);
+      A(new T.BoxGeometry(.034,.56,.07),blackMetal,sx*(w/2+.058),roofY-.32,.02,g);
+      A(new T.BoxGeometry(.025,.035,l*.42),metal,sx*(w/2+.064),roofY-.05,.04,g);
+    }
 
     // Panoramic glass / roof rails depending on class.
     if(cls==='sedan'||cls==='hatch'){
@@ -151,6 +166,11 @@ function init(W,PC){
     // Continuous glass roof with metal surround.
     A(new T.BoxGeometry(1.26,.022,1.78),glass,0,1.49,.12,g);
     for(const sx of[-1,1])A(new T.BoxGeometry(.035,.040,1.88),accent,sx*.65,1.50,.12,g);
+
+    // Lower intake, splitter and side intakes give the player car a deeper premium stance.
+    A(new T.BoxGeometry(.88,.085,.06),carbon,0,.56,front-.15,g);
+    A(new T.BoxGeometry(1.42,.022,.055),accent,0,.43,front-.17,g);
+    for(const x of[-.72,.72]) A(new T.BoxGeometry(.22,.07,.06),carbon,x,.53,front-.16,g);
 
     // Premium headlight assemblies and full-width rear signature.
     for(const x of[-.57,.57]){
@@ -222,5 +242,5 @@ function init(W,PC){
     }
   });
 
-  window.LuxVehiclePremium960={version:'9.6.0',player:PC.car,traffic:W.cars};
+  window.LuxVehiclePremium960={version:'9.7.0',player:PC.car,traffic:W.cars};
 }
