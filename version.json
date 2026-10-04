@@ -1,12 +1,11 @@
 {
-  "version": "9.7.9",
+  "version": "9.7.10",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Wohnungs-Innenraum grafisch verfeinert",
+  "title": "KI-Autos gegen Festfahren abgesichert",
   "notes": [
-    "Die Wohnung besitzt jetzt zusätzliche Sockelleisten und Wandtiefe.",
-    "Eine warme Lamellenwand und eine strukturierte Küchenrückwand machen den Innenraum weniger kastenförmig.",
-    "Deckenlicht und Spots wurden optisch ergänzt, ohne die bestehende Kameralogik zu verändern.",
-    "Fensterrahmen und Fensterbank besitzen mehr sichtbare Tiefe.",
-    "Kollision, Wohnungseintritt, Multiplayer und Steuerung wurden in diesem Schritt nicht verändert."
+    "KI-Autos versuchen keinen bereits belegten Parkplatz mehr dauerhaft anzufahren.",
+    "Bei längerem Stillstand erkennt das Parksystem ein festgefahrenes Fahrzeug und setzt dessen Route sinnvoll fort.",
+    "Geparkte Fahrzeuge bleiben weiterhin stehen und werden nicht durch die Anti-Festfahr-Logik verschoben.",
+    "Die normale Spieler-Fahrsteuerung wurde nicht verändert."
   ]
 }
