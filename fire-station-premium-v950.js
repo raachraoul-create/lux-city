@@ -112,7 +112,7 @@ function init(W){
     const p=new T.Group();p.name='LuxFireFallback950';p.position.set(F.x,0,114.4);p.rotation.y=Math.PI;S.add(p);fireEngineVisual(p);return p
   }
 
-  let fallback=null,applied=null,tries=0;
+  let fallback=fallbackEngine(),applied=null,tries=0;
   const fleetWait=setInterval(()=>{
     tries++;
     const v=window.LuxEmergency501?.fleet?.Feuerwehr?.v||window.LuxEmergency500?.fleet?.Feuerwehr?.v;
@@ -120,8 +120,6 @@ function init(W){
       if(fallback){S.remove(fallback);fallback=null}
       if(applied!==v){fireEngineVisual(v);applied=v}
       if(tries>80)clearInterval(fleetWait);
-    }else if(tries===24&&!fallback){
-      fallback=fallbackEngine();
     }
     if(tries>100)clearInterval(fleetWait);
   },250);
@@ -152,15 +150,6 @@ function init(W){
   A(new T.BoxGeometry(4.5,.18,1.45),facadeDark,F.x+9.0,3.40,stationFront+.82);
   A(new T.BoxGeometry(.12,2.9,.12),metal,F.x+7.15,1.45,stationFront+1.44);
   A(new T.BoxGeometry(.12,2.9,.12),metal,F.x+10.85,1.45,stationFront+1.44);
-
-  // Training / hose-drying tower gives the fire station a recognizable silhouette.
-  const tower=new T.Group();tower.position.set(F.x+15.6,0,F.z-4.0);root.add(tower);
-  A(new T.BoxGeometry(4.0,11.8,4.0),M(0x878982,.86),0,5.9,0,tower);
-  A(new T.BoxGeometry(4.35,.40,4.35),facadeDark,0,11.85,0,tower);
-  for(const y of[2.3,5.3,8.3])for(const x of[-1.0,1.0])A(new T.BoxGeometry(.82,1.45,.10),doorGlass,x,y,2.06,tower);
-  A(new T.CylinderGeometry(.07,.09,3.0,8),metal,0,13.45,0,tower);
-  A(new T.SphereGeometry(.15,9,7),blue,0,15.02,0,tower);
-  addLabel(tower,'112',0,9.95,2.08,1.55,.65);
 
   // Drainage, directional arrows and edge markers make the forecourt read as a real road.
   const drainMat=M(0x3d4448,.46,.48);
@@ -211,5 +200,5 @@ function init(W){
     const wet=(window.LuxWeather560||window.LuxWeather470)?.state==='rain';asphalt.roughness+=( (wet?.48:.88)-asphalt.roughness)*Math.min(1,dt);
   });
 
-  window.LuxFirePremium950={root,roadSegs,version:'9.5.1',get fireEngine(){return applied||fallback}};
+  window.LuxFirePremium950={root,roadSegs,version:'9.5.2',get fireEngine(){return applied||fallback}};
 }

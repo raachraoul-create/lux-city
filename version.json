@@ -1,12 +1,12 @@
 {
-  "version": "9.7.1",
+  "version": "9.7.2",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Wohnungs-Kamera und Innenraum-Kollision stabilisiert",
+  "title": "Feuerwehr und Feuerwache bereinigt",
   "notes": [
-    "Beim Betreten startet die Figur weiter innerhalb der Wohnung und nicht mehr direkt an der Eingangswand.",
-    "Die Innenraum-Kollision berücksichtigt einen größeren Spielerradius an Wänden, Fenstern und Möbeln.",
-    "Die Innenkamera besitzt jetzt einen eigenen Kollisionsradius und zieht sich automatisch vor Wände und Möbel.",
-    "Die Kamera wird beim Betreten direkt auf die nahe Innenansicht ausgerichtet.",
-    "Multiplayer, Fahrzeuge und Außensteuerung wurden für diesen Schritt nicht verändert."
+    "Die doppelte alte Feuerwehr-Grafik wird nicht mehr geladen, damit Vorplatz und Zufahrt nicht übereinander liegen.",
+    "Die Feuerwehrzufahrt wird nur noch von der Premium-Variante aufgebaut.",
+    "Das zusätzliche unbeabsichtigt wirkende Gebäude neben der Feuerwache wurde entfernt.",
+    "Ein Feuerwehrauto ist jetzt sofort vor der Wache sichtbar und wird anschließend sauber durch das aktive Einsatzfahrzeug ersetzt.",
+    "Wohnungsfix, Multiplayer, Login und normale Fahrzeugsteuerung wurden nicht verändert."
   ]
 }
