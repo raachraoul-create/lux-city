@@ -1,13 +1,12 @@
 {
-  "version": "9.7.6",
+  "version": "9.7.7",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Account-Geldstand geräteübergreifend vereinheitlicht",
+  "title": "Fußgänger und Ampeln sicherer gemacht",
   "notes": [
-    "Der Cloud-Spielstand ist jetzt die eindeutige Geldquelle für denselben Account auf mehreren Geräten.",
-    "Ein neues Gerät überschreibt einen vorhandenen Server-Spielstand nicht mehr mit einem alten lokalen Stand.",
-    "profiles.cash wird nur noch als Spiegel des Geldes im Cloud-Spielstand verwendet.",
-    "Geldänderungen werden sofort an den Cloud-Sync gemeldet statt erst beim nächsten Intervall.",
-    "Der Server-Zeitstempel für den Spielstand ändert sich nur noch, wenn sich der Spielstand selbst ändert.",
-    "Login bleibt weiterhin manuell; es wurde kein automatisches Einloggen aktiviert."
+    "Fußgänger bleiben weiterhin auf den festgelegten Gehweg- und Zebrastreifenrouten.",
+    "An signalisierten Kreuzungen betreten Fußgänger den Übergang nicht mehr bei Grün oder Gelb für den kreuzenden Fahrzeugverkehr.",
+    "Fußgänger, die bereits auf dem Übergang sind, laufen weiter und bleiben nicht mitten auf der Straße stehen.",
+    "Die Figuren werden weiterhin am Boden gehalten und die vorhandenen vollständigen Charaktermodelle bleiben erhalten.",
+    "Fahrzeugsteuerung, Multiplayer und Wohnungslogik wurden für diesen Schritt nicht verändert."
   ]
 }
