@@ -1,12 +1,12 @@
 {
-  "version": "9.7.8",
+  "version": "9.7.9",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Spielercharakter grafisch verfeinert",
+  "title": "Wohnungs-Innenraum grafisch verfeinert",
   "notes": [
-    "Schultern und Oberkörper besitzen jetzt zusätzliche Formtiefe statt einer rein kantigen Silhouette.",
-    "Kleidung hat sichtbare Säume, Gürtel, Schnalle und dezente Taschendetails.",
-    "Gesicht und Haaransatz wurden für die nahe Kamera mit zusätzlichen kleinen Details verfeinert.",
-    "Schuhe besitzen mehr Sohlen- und Profilstruktur.",
-    "Die bestehende Lauf-, Arm-, Bein- und Blinkanimation wurde nicht verändert."
+    "Die Wohnung besitzt jetzt zusätzliche Sockelleisten und Wandtiefe.",
+    "Eine warme Lamellenwand und eine strukturierte Küchenrückwand machen den Innenraum weniger kastenförmig.",
+    "Deckenlicht und Spots wurden optisch ergänzt, ohne die bestehende Kameralogik zu verändern.",
+    "Fensterrahmen und Fensterbank besitzen mehr sichtbare Tiefe.",
+    "Kollision, Wohnungseintritt, Multiplayer und Steuerung wurden in diesem Schritt nicht verändert."
   ]
 }
