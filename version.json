@@ -1,12 +1,12 @@
 {
-  "version": "9.7.2",
+  "version": "9.7.3",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Feuerwehr und Feuerwache bereinigt",
+  "title": "Polizei- und Rettungsfahrzeuge aufgewertet",
   "notes": [
-    "Die doppelte alte Feuerwehr-Grafik wird nicht mehr geladen, damit Vorplatz und Zufahrt nicht übereinander liegen.",
-    "Die Feuerwehrzufahrt wird nur noch von der Premium-Variante aufgebaut.",
-    "Das zusätzliche unbeabsichtigt wirkende Gebäude neben der Feuerwache wurde entfernt.",
-    "Ein Feuerwehrauto ist jetzt sofort vor der Wache sichtbar und wird anschließend sauber durch das aktive Einsatzfahrzeug ersetzt.",
-    "Wohnungsfix, Multiplayer, Login und normale Fahrzeugsteuerung wurden nicht verändert."
+    "Das aktive Polizeifahrzeug besitzt jetzt einen eigenen detaillierten Premium-Aufbau mit Blaulicht, Verglasung, Felgen und klarer Beschriftung.",
+    "Der aktive Rettungswagen wurde mit eigenem Aufbau, Blaulicht, Reflexstreifen, Verglasung und 112-Kennzeichnung neu gestaltet.",
+    "Vor Polizei und Krankenhaus bleibt zusätzlich je ein Reservefahrzeug sichtbar, auch wenn das aktive Einsatzfahrzeug unterwegs ist.",
+    "Die Reservefahrzeuge besitzen eigene Kollision, damit die Spielfigur nicht durch sie hindurchlaufen kann.",
+    "Feuerwehr, Wohnung, Multiplayer und normale Fahrzeugsteuerung wurden für diesen Schritt nicht verändert."
   ]
 }
