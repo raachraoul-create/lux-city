@@ -1,12 +1,13 @@
 {
-  "version": "9.7.5",
+  "version": "9.7.6",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Mobile HUD neu geordnet",
+  "title": "Account-Geldstand geräteübergreifend vereinheitlicht",
   "notes": [
-    "Auf iPhone und iPad liegt der Wohlbefinden-Balken jetzt links und nicht mehr unter der Minikarte.",
-    "Warnungen für Hunger, Durst, Energie und Hygiene bleiben ebenfalls links und verdecken die Karte nicht.",
-    "Uhrzeit, Datum und Geldanzeige wurden auf Touch-Geräten kompakter unterhalb der Bedürfnisse angeordnet.",
-    "Joystick, Kamera-Touchfläche, Interaktion, Handy und Kartenbutton bleiben im unteren Bereich frei.",
-    "Desktop-Steuerung, Multiplayer und Fahrphysik wurden für diesen Schritt nicht verändert."
+    "Der Cloud-Spielstand ist jetzt die eindeutige Geldquelle für denselben Account auf mehreren Geräten.",
+    "Ein neues Gerät überschreibt einen vorhandenen Server-Spielstand nicht mehr mit einem alten lokalen Stand.",
+    "profiles.cash wird nur noch als Spiegel des Geldes im Cloud-Spielstand verwendet.",
+    "Geldänderungen werden sofort an den Cloud-Sync gemeldet statt erst beim nächsten Intervall.",
+    "Der Server-Zeitstempel für den Spielstand ändert sich nur noch, wenn sich der Spielstand selbst ändert.",
+    "Login bleibt weiterhin manuell; es wurde kein automatisches Einloggen aktiviert."
   ]
 }

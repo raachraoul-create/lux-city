@@ -46,10 +46,11 @@
     state.lastGenerated=m;save()
   }
   function syncCash(){
-    let L=window.LuxLife?.state,A=window.LuxAccount;
+    let L=window.LuxLife?.state;
     if(!L)return;
     $('#money')&&($('#money').textContent=eur(L.cash));
-    if(A?.sb&&A?.session?.user?.id)A.sb.from('profiles').update({cash:Math.round(L.cash)}).eq('id',A.session.user.id).then(()=>{})
+    window.dispatchEvent(new CustomEvent('luxcity:money-changed',{detail:{cash:Number(L.cash)||0}}));
+    window.LuxCloud645?.save?.()||window.LuxCloud644?.save?.()
   }
   function payBill(id){
     let b=state.bills.find(x=>x.id===id),L=window.LuxLife?.state;if(!b||b.paid||!L)return;
