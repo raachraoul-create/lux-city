@@ -1,12 +1,13 @@
 {
-  "version": "9.7.3",
+  "version": "9.7.4",
   "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Polizei- und Rettungsfahrzeuge aufgewertet",
+  "title": "Karte und Navigation erweitert",
   "notes": [
-    "Das aktive Polizeifahrzeug besitzt jetzt einen eigenen detaillierten Premium-Aufbau mit Blaulicht, Verglasung, Felgen und klarer Beschriftung.",
-    "Der aktive Rettungswagen wurde mit eigenem Aufbau, Blaulicht, Reflexstreifen, Verglasung und 112-Kennzeichnung neu gestaltet.",
-    "Vor Polizei und Krankenhaus bleibt zusätzlich je ein Reservefahrzeug sichtbar, auch wenn das aktive Einsatzfahrzeug unterwegs ist.",
-    "Die Reservefahrzeuge besitzen eigene Kollision, damit die Spielfigur nicht durch sie hindurchlaufen kann.",
-    "Feuerwehr, Wohnung, Multiplayer und normale Fahrzeugsteuerung wurden für diesen Schritt nicht verändert."
+    "Die kleine Karte bleibt dauerhaft sichtbar und ist auf Touch-Geräten kompakter.",
+    "Die Gemeinde wird jetzt direkt auf der kleinen Karte markiert.",
+    "Gemeinde, Polizei, Feuerwehr und Krankenhaus erscheinen als klare Ziele auf der großen Stadtkarte.",
+    "Für diese wichtigen Orte lassen sich direkt Wegpunkte setzen.",
+    "Eigenes Zuhause und eigene Firmen bleiben weiterhin hervorgehoben.",
+    "Steuerung, Multiplayer und Fahrzeugphysik wurden für diesen Schritt nicht verändert."
   ]
 }
