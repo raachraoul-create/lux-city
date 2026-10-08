@@ -42,7 +42,8 @@ const ITEMS=[
  {t:'Passanten mit vielfältigerer Kleidung, Frisuren, Taschen und Berufsdetails',s:'work',release:'9.7.32'},
  {t:'Wohnung visuell aufgewertet: Bilder, Kissen, Leuchten, Küchen- und Badaccessoires',s:'work',release:'9.7.33'},
  {t:'Fahrzeuginnenräume: Cockpit, Sitze, Displays, Lenkrad, Mittelkonsole und Türverkleidung',s:'work',release:'9.7.34'},
- {t:'Straßenoberflächen: Reparaturstellen, feine Risse, Kanaldeckel, Ablaufgitter und Verschleiß',s:'work',release:'9.7.35'}
+ {t:'Straßenoberflächen: Reparaturstellen, feine Risse, Kanaldeckel, Ablaufgitter und Verschleiß',s:'work',release:'9.7.35'},
+ {t:'Polizei, Rettungswache und Krankenhaus mit eigenen Einsatzbereichen und Fassaden',s:'work',release:'9.7.36'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

@@ -1,12 +1,12 @@
 {
-  "version": "9.7.35",
-  "released_at": "2026-10-08T10:00:00+02:00",
-  "title": "Straßenoberflächen realistischer und weniger steril",
+  "version": "9.7.36",
+  "released_at": "2026-10-08T10:08:00+02:00",
+  "title": "Polizei, Rettung und Krankenhaus optisch aufgewertet",
   "notes": [
-    "Straßen erhalten unregelmäßige dunkle Reparaturflächen und auf Desktop zusätzliche feine Rissspuren.",
-    "Kanaldeckel, Metallringe und seitliche Ablaufgitter ergänzen die Fahrbahn.",
-    "An wichtigen Kreuzungen erscheinen dezente Reifen-/Verschleißspuren und Wartungsdetails.",
-    "Die zusätzliche Straßenalterung ist rein visuell und verändert weder Fahrphysik noch Kollision.",
-    "Auf Mobilgeräten ist die Detailmenge reduziert."
+    "Die Polizeiwache erhält einen klareren gesicherten Vorplatz, Vordach, Beleuchtung, Poller und sichtbare Sicherheitsdetails.",
+    "Die Rettungswache bekommt eigene Ambulanz-Buchten, rote Fahrspuren, Vordach und 112-Kennzeichnung.",
+    "Das Krankenhaus erhält eine deutlich sichtbare Notaufnahme mit großem Anfahrtsbereich, markierten Rettungsspuren und Eingangsvordach.",
+    "Abend- und Nachtbeleuchtung reagiert auf die Tageszeit.",
+    "Bestehende Türen, Einsatzfahrzeuge, Dispatch-Logik und Kollisionen wurden nicht verändert."
   ]
 }
