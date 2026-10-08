@@ -1,13 +1,12 @@
 {
-  "version": "9.7.17",
+  "version": "9.7.18",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Werkstatt-Aufträge für Mechaniker eingebaut",
+  "title": "Bankkredite auf 6 Beschäftigungsmonate vereinheitlicht",
   "notes": [
-    "Mechaniker-Schichten bekommen jetzt einen konkreten Kundenauftrag mit fiktivem Fahrzeug, Fehlerbild und Auftragsnummer.",
-    "Das Kundenfahrzeug steht während des aktiven Werkstattauftrags sichtbar in der Werkstatt.",
-    "Die vier bestehenden Mechaniker-Arbeitsschritte arbeiten jetzt einen echten Auftrag ab.",
-    "Nach vollständigem Abschluss wird zusätzlich eine passende Auftragspauschale ausgezahlt.",
-    "Aktive Werkstattaufträge werden in den Cloud-Spielstand aufgenommen.",
-    "Die Startseiten-Roadmap markiert Premium-Autos, Pannen/Abschleppen/Werkstatt, Supermarkt und Bus jetzt als veröffentlichte Punkte."
+    "Privatkredite werden jetzt erst nach mindestens 6 vollständigen Beschäftigungsmonaten geprüft.",
+    "Die Bank zeigt den Fortschritt bis zur Kreditfreigabe direkt als X/6 Monate an.",
+    "Kreditangebote bleiben bis zur Mindestbeschäftigungsdauer sichtbar, sind aber noch gesperrt.",
+    "Nach 6 Monaten gelten weiterhin Bonität, regelmäßiges Einkommen und bestehende Schulden als zusätzliche Prüfung.",
+    "Die Konto-Funktion canCredit verwendet jetzt dieselbe 6-Monats-Regel wie die Bank."
   ]
 }
