@@ -1,13 +1,12 @@
 {
-  "version": "9.7.31",
-  "released_at": "2026-10-08T10:22:00+02:00",
-  "title": "Natur und Stadtrand deutlich natürlicher gestaltet",
+  "version": "9.7.32",
+  "released_at": "2026-10-08T10:32:00+02:00",
+  "title": "Passanten optisch deutlich vielfältiger",
   "notes": [
-    "Der Stadtrand erhält jetzt unregelmäßige Baumgruppen statt gleichmäßiger Reihen.",
-    "Laub- und Nadelbäume werden gemischt und mit unterschiedlichen Größen und Kronenformen verteilt.",
-    "Sträucher, kleine Gehölzgruppen, Wieseninseln und auf Desktop zusätzlich Wildblumen machen Grünflächen abwechslungsreicher.",
-    "Vegetation wird automatisch von Straßen, Häusern und wichtigen Gebäuden ferngehalten.",
-    "Die neue Natur ist rein visuell und erzeugt keine zusätzlichen Kollisionen.",
-    "Auf Mobilgeräten wird die Vegetationsdichte reduziert."
+    "Passanten erhalten zusätzliche Jacken-, Hoodie- und Oberbekleidungsvarianten.",
+    "Rucksäcke, Umhängetaschen, Mützen und Caps sorgen für stärker unterscheidbare Silhouetten.",
+    "Wenn ein Beruf hinterlegt ist, erscheinen passende kleine Details für Werkstatt, Logistik oder Bäckerei.",
+    "Die Änderungen sind rein visuell; KI-Wege, Animationen, Multiplayer und Spielersteuerung bleiben unverändert.",
+    "Auf Mobilgeräten werden zusätzliche Schatten reduziert."
   ]
 }
