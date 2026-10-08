@@ -1,13 +1,12 @@
 {
-  "version": "9.7.42",
-  "released_at": "2026-10-08T22:02:00+02:00",
-  "title": "Lux Markt außen deutlich hochwertiger gestaltet",
+  "version": "9.7.43",
+  "released_at": "2026-10-08T22:10:00+02:00",
+  "title": "Industriehöfe und Fabrikbereiche deutlich ausgebaut",
   "notes": [
-    "Der Supermarkt erhält ein klareres Eingangsportal mit eigener Markenfläche und Beleuchtung.",
-    "Eine überdachte Einkaufswagenbox und zusätzliche Fahrradständer beleben den Eingangsbereich.",
-    "Die Lieferseite bekommt Rampe, Paletten, Kisten und auf Desktop zusätzliche Lade-/Hubwagen-Details.",
-    "Auf dem Dach erscheinen zusätzliche Technik- und Lüftungselemente.",
-    "Vor dem Eingang ergänzen Poller und Produktkisten die Ladenwirkung.",
-    "Einkaufssystem, Vorräte, Öffnungszeiten und Kollisionslogik wurden nicht verändert."
+    "Mühle, Zuckerwerk und Getränkebetrieb erhalten jeweils eigene sichtbare Industriehöfe.",
+    "Zusätzliche Silos, Tanks, Rohrleitungen und Rohrbrücken machen die Fabriken technisch glaubwürdiger.",
+    "Laderampen, Paletten, markierte Ladezonen und Arbeitsbeleuchtung füllen die bisher leeren Außenflächen.",
+    "Die drei Industriebetriebe unterscheiden sich jetzt stärker voneinander.",
+    "Firmenlogik, Lieferanten, Bestellungen, Gebäudeausbau und Kollisionen wurden nicht verändert."
   ]
 }
