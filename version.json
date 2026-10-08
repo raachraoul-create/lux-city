@@ -1,13 +1,11 @@
 {
-  "version": "9.7.27",
-  "released_at": "2026-10-08T09:48:00+02:00",
-  "title": "Geschäfte und Betriebe optisch voneinander getrennt",
+  "version": "9.7.28",
+  "released_at": "2026-10-08T09:56:00+02:00",
+  "title": "Gemeinde und öffentliche Dienste visuell aufgewertet",
   "notes": [
-    "Bäckerei, Café, Kneipe, Post und Produktionsbetriebe besitzen jetzt deutlich individuellere Fassaden statt derselben Grundfront.",
-    "Die Bäckerei erhält große Schaufenster und ein markanteres Vordach, das Café eine sichtbare Außenterrasse.",
-    "Die Kneipe bekommt warme Außenlaternen und Holzdetails, die Post einen klareren Logistik- und Ladebereich.",
-    "Mühle, Zucker- und Getränkebetrieb erhalten zusätzliche Industrie-, Rohr- und Ladehofdetails.",
-    "Abendliche Schaufenster- und Außenbeleuchtung reagiert auf die Tageszeit.",
-    "Türen, Öffnungszeiten, Interaktionen und Gebäudekollisionen wurden nicht verändert."
+    "Die Gemeinde besitzt jetzt einen deutlich repräsentativeren Rathaus-Eingang mit Säulen, Vorplatz, Uhr, Lampen und Pflanzbereichen.",
+    "Bank, Arbeitsamt und Wohnungsamt erhalten große klar erkennbare Eingangsschilder und beleuchtete Zugangsbereiche.",
+    "Die zusätzlichen öffentlichen Gebäudedetails reagieren auf Abend und Nacht mit warmer Beleuchtung.",
+    "Bestehende Türen, Interaktionen, Behördenfunktionen und Kollisionen bleiben unverändert."
   ]
 }

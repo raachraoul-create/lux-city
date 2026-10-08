@@ -34,7 +34,8 @@ const ITEMS=[
  {t:'Menschlichere Animationen: Idle-Haltung, Blickbewegungen, Handy und saubere Standpose',s:'work',release:'9.7.24'},
  {t:'Wohnhäuser mit tieferen Fassaden, Balkonen, Dachrinnen und Abendbeleuchtung',s:'work',release:'9.7.25'},
  {t:'Tag/Nacht & Wetter: Sterne, Lampen-Halos, nasse Straßen und Pfützenanimation',s:'work',release:'9.7.26'},
- {t:'Geschäfte & Betriebe mit eigenen Fassaden, Schaufenstern und Außenbereichen',s:'work',release:'9.7.27'}
+ {t:'Geschäfte & Betriebe mit eigenen Fassaden, Schaufenstern und Außenbereichen',s:'work',release:'9.7.27'},
+ {t:'Gemeinde, Bank, Arbeitsamt und Wohnungsamt visuell klarer und hochwertiger',s:'work',release:'9.7.28'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
