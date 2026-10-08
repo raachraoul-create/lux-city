@@ -1,12 +1,12 @@
 {
-  "version": "9.7.34",
-  "released_at": "2026-10-08T09:52:00+02:00",
-  "title": "Fahrzeuginnenräume deutlich detaillierter",
+  "version": "9.7.35",
+  "released_at": "2026-10-08T10:00:00+02:00",
+  "title": "Straßenoberflächen realistischer und weniger steril",
   "notes": [
-    "Verkehrsfahrzeuge erhalten sichtbarere Sitze mit Kopfstützen und Nähten, Armaturenbrett, Lenkrad, Mittelkonsole und Türverkleidungen.",
-    "Instrumentenanzeigen unterscheiden sich je nach Fahrzeug und sind durch die Scheiben erkennbar.",
-    "Das LUX-E-Spielerauto erhält ein eigenes helles Premium-Interieur mit großem Zentraldisplay, Instrumentenanzeige und Metall-/Konsolendetails.",
-    "Auf Mobilgeräten werden besonders kleine Cockpitdetails reduziert.",
-    "Fahrphysik, Lenkung, Kollision und mobile Steuerung wurden nicht verändert."
+    "Straßen erhalten unregelmäßige dunkle Reparaturflächen und auf Desktop zusätzliche feine Rissspuren.",
+    "Kanaldeckel, Metallringe und seitliche Ablaufgitter ergänzen die Fahrbahn.",
+    "An wichtigen Kreuzungen erscheinen dezente Reifen-/Verschleißspuren und Wartungsdetails.",
+    "Die zusätzliche Straßenalterung ist rein visuell und verändert weder Fahrphysik noch Kollision.",
+    "Auf Mobilgeräten ist die Detailmenge reduziert."
   ]
 }
