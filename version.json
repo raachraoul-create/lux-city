@@ -1,13 +1,12 @@
 {
-  "version": "9.7.33",
-  "released_at": "2026-10-08T10:42:00+02:00",
-  "title": "Wohnungsinnenraum visuell weiter aufgewertet",
+  "version": "9.7.34",
+  "released_at": "2026-10-08T09:52:00+02:00",
+  "title": "Fahrzeuginnenräume deutlich detaillierter",
   "notes": [
-    "Wohnzimmer erhält zusätzliche Kissen, Tischobjekte und Wandbilder.",
-    "Küche bekommt Schneidebrett, Obst, Vorratsgläser und ein offenes Wandregal.",
-    "Schlafbereich erhält Nachttischleuchten und gerahmte Bilder.",
-    "Bad erhält Spiegel, Handtuchhalter und zusätzliche Materialdetails.",
-    "Familienwohnung bekommt zusätzliche Ess-/Wohnaccessoires.",
-    "Der gesamte neue Layer ist rein visuell: Innenkamera, Türen, Wandkollisionen und Wohnungsaktionen wurden nicht verändert."
+    "Verkehrsfahrzeuge erhalten sichtbarere Sitze mit Kopfstützen und Nähten, Armaturenbrett, Lenkrad, Mittelkonsole und Türverkleidungen.",
+    "Instrumentenanzeigen unterscheiden sich je nach Fahrzeug und sind durch die Scheiben erkennbar.",
+    "Das LUX-E-Spielerauto erhält ein eigenes helles Premium-Interieur mit großem Zentraldisplay, Instrumentenanzeige und Metall-/Konsolendetails.",
+    "Auf Mobilgeräten werden besonders kleine Cockpitdetails reduziert.",
+    "Fahrphysik, Lenkung, Kollision und mobile Steuerung wurden nicht verändert."
   ]
 }

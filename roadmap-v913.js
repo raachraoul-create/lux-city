@@ -40,7 +40,8 @@ const ITEMS=[
  {t:'Kreuzungen & Fahrbahn: Haltelinien, Richtungspfeile, Reflektoren und taktile Übergänge',s:'work',release:'9.7.30'},
  {t:'Natur & Stadtrand: gemischte Baumarten, Waldränder, Sträucher und Wieseninseln',s:'work',release:'9.7.31'},
  {t:'Passanten mit vielfältigerer Kleidung, Frisuren, Taschen und Berufsdetails',s:'work',release:'9.7.32'},
- {t:'Wohnung visuell aufgewertet: Bilder, Kissen, Leuchten, Küchen- und Badaccessoires',s:'work',release:'9.7.33'}
+ {t:'Wohnung visuell aufgewertet: Bilder, Kissen, Leuchten, Küchen- und Badaccessoires',s:'work',release:'9.7.33'},
+ {t:'Fahrzeuginnenräume: Cockpit, Sitze, Displays, Lenkrad, Mittelkonsole und Türverkleidung',s:'work',release:'9.7.34'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
