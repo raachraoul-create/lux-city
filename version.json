@@ -1,12 +1,12 @@
 {
-  "version": "9.7.39",
-  "released_at": "2026-10-08T21:39:00+02:00",
-  "title": "Geschäfts-Innenräume deutlich detaillierter",
+  "version": "9.7.40",
+  "released_at": "2026-10-08T21:46:00+02:00",
+  "title": "Parkplätze und Stellflächen grafisch aufgewertet",
   "notes": [
-    "Die Bäckerei erhält eine ausgearbeitete Verkaufstheke, Brotregale, zusätzliche Backöfen und sichtbare Arbeitsgeräte.",
-    "Das Café bekommt eine professionelle Kaffeemaschine, Kuchenvitrine, Tassen und wärmere Pendelleuchten.",
-    "Die Kneipe erhält Rückbuffet, Flaschen, Zapfhähne, Dartboard und dichteres Bar-Ambiente.",
-    "Post & Logistik bekommt Paket-Sortierbereiche, Arbeitsmonitore, Kisten und auf Desktop zusätzliche Rollcontainer.",
-    "Die Ausstattung ist rein visuell und verändert weder Innenraumkollisionen noch Arbeits- oder Firmenfunktionen."
+    "Öffentliche und private Stellplätze erhalten klarere Bodenmarkierungen und sichtbare Radstopper.",
+    "Ein Teil der öffentlichen Parkplätze bekommt E-Ladepunkte und passende grüne Markierungen.",
+    "Zusätzliche Parkautomaten und auf Desktop einzelne Parkplatzleuchten erhöhen die Glaubwürdigkeit.",
+    "Sonderstellplätze werden visuell deutlicher gekennzeichnet.",
+    "Parklogik, KI-Parken, Fahrzeugphysik und Kollisionen wurden nicht verändert."
   ]
 }
