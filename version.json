@@ -1,11 +1,11 @@
 {
-  "version": "9.7.20",
+  "version": "9.7.21",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Firmenkredit und Neuanfang an Beschäftigungszeit gekoppelt",
+  "title": "Handy-Versicherungen und Rechnungen in Cloud-Sync aufgenommen",
   "notes": [
-    "Beschäftigungsmonate werden jetzt auch für die Firmen-Bankbewertung korrekt fortgeschrieben.",
-    "Ein 50.000-Euro-Firmenkredit wird erst nach mindestens 6 Beschäftigungsmonaten überhaupt geprüft.",
-    "Nach einer Insolvenz beginnt der Arbeitnehmer-Neuanfang weiterhin bei 0 Beschäftigungsmonaten und kann sich real wieder hocharbeiten.",
-    "Nach Erreichen der 6 Monate entscheidet weiterhin die Firmenbonität über Genehmigung oder Ablehnung."
+    "Der benutzerspezifische Handy-Speicher wird jetzt zusammen mit dem restlichen Spielstand zwischen Geräten synchronisiert.",
+    "Ausgewählte Kfz-Versicherungen, offene und bezahlte Rechnungen sowie erzeugte Monatsabrechnungen gehören damit zum Account statt nur zum Gerät.",
+    "Beim Wechsel zwischen Accounts bleibt jeder Handy-Spielstand weiterhin sauber nach Benutzer getrennt.",
+    "Geld-, Fahrzeug- und Wohnungs-Synchronisation bleiben unverändert."
   ]
 }

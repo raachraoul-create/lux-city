@@ -1,5 +1,5 @@
 (()=> {
-  const VERSION='7.9.0';
+  const VERSION='7.9.1';
   const INSURERS=[
     {id:'luxprotect',name:'LuxProtect',base:69,deductible:750,cover:'Haftpflicht + Teilkasko'},
     {id:'mosel',name:'Mosel Assur',base:84,deductible:500,cover:'Haftpflicht + Teilkasko Plus'},
@@ -12,7 +12,7 @@
   const ym=()=>{let L=window.LuxLife?.state;return L?L.year+'-'+String(L.month).padStart(2,'0'):'0-0'};
   let state={contracts:{},bills:[],lastGenerated:''};
   function load(){try{state=Object.assign(state,JSON.parse(localStorage.getItem(key())||'{}'))}catch{};state.contracts??={};state.bills??=[]}
-  function save(){localStorage.setItem(key(),JSON.stringify(state));window.LuxCloud438?.save?.()}
+  function save(){localStorage.setItem(key(),JSON.stringify(state));window.LuxCloud646?.save?.()||window.LuxCloud645?.save?.()||window.LuxCloud438?.save?.()}
   function activeVehicle(){return window.LuxVehicles?.activeVehicle||null}
   function vehicles(){return window.LuxVehicles?.state?.owned||[]}
   function factor(v){
@@ -50,7 +50,7 @@
     if(!L)return;
     $('#money')&&($('#money').textContent=eur(L.cash));
     window.dispatchEvent(new CustomEvent('luxcity:money-changed',{detail:{cash:Number(L.cash)||0}}));
-    window.LuxCloud645?.save?.()||window.LuxCloud644?.save?.()
+    window.LuxCloud646?.save?.()||window.LuxCloud645?.save?.()||window.LuxCloud644?.save?.()
   }
   function payBill(id){
     let b=state.bills.find(x=>x.id===id),L=window.LuxLife?.state;if(!b||b.paid||!L)return;
@@ -147,5 +147,5 @@
   }
   addEventListener('keydown',e=>{if((e.code==='KeyH'||String(e.key).toLowerCase()==='h')&&!e.repeat&&!editable()){e.preventDefault();toggle()}if(e.code==='Escape'&&!$('#luxPhone790')?.hidden)toggle(false)});
   setInterval(()=>{if(document.body.classList.contains('game-ready')){build();load();ensureBills()}},900);
-  window.LuxPhone790={version:VERSION,INSURERS,toggle,home,openBank,openInsurance,openTax,openBills,premium,tax,get state(){load();return state}}
+  window.LuxPhone790=window.LuxPhone791={version:VERSION,INSURERS,toggle,home,openBank,openInsurance,openTax,openBills,premium,tax,get state(){load();return state}}
 })();
