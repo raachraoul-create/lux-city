@@ -1,12 +1,11 @@
 {
-  "version": "9.7.43",
-  "released_at": "2026-10-08T22:10:00+02:00",
-  "title": "Industriehöfe und Fabrikbereiche deutlich ausgebaut",
+  "version": "9.7.44",
+  "released_at": "2026-10-08T22:18:00+02:00",
+  "title": "Öffentliche Innenräume deutlich hochwertiger",
   "notes": [
-    "Mühle, Zuckerwerk und Getränkebetrieb erhalten jeweils eigene sichtbare Industriehöfe.",
-    "Zusätzliche Silos, Tanks, Rohrleitungen und Rohrbrücken machen die Fabriken technisch glaubwürdiger.",
-    "Laderampen, Paletten, markierte Ladezonen und Arbeitsbeleuchtung füllen die bisher leeren Außenflächen.",
-    "Die drei Industriebetriebe unterscheiden sich jetzt stärker voneinander.",
-    "Firmenlogik, Lieferanten, Bestellungen, Gebäudeausbau und Kollisionen wurden nicht verändert."
+    "Die Lux City Bank erhält zusätzliche Schalter, Beratungsplätze, Wartebereiche, Geldautomaten und einen sichtbaren Tresorbereich.",
+    "Arbeitsamt und Wohnungsamt bekommen klarere Schalterzonen, Wartebereiche und Informationsflächen.",
+    "Die Gemeinde erhält Bürgerbüro-Plätze, Sitzungstisch, Informationskiosk und repräsentativere Verwaltungsdetails.",
+    "Die neuen Elemente sind rein visuell und verändern weder Behördenfunktionen noch Innenraumkollisionen oder Türen."
   ]
 }
