@@ -1,13 +1,13 @@
 {
-  "version": "9.7.41",
-  "released_at": "2026-10-08T21:56:00+02:00",
-  "title": "Tankstelle und Ladepark optisch komplett ausgebaut",
+  "version": "9.7.42",
+  "released_at": "2026-10-08T22:02:00+02:00",
+  "title": "Lux Markt außen deutlich hochwertiger gestaltet",
   "notes": [
-    "Die Tankstelle erhält deutlich detailliertere Zapfsäulen mit Displays, Schläuchen, Schutzpollern und eigenen Inseln.",
-    "Ein großer Preispylon zeigt Benzin-, Diesel- und Ladepreise sichtbar an.",
-    "Der Ladebereich besitzt separate grüne Ladebuchten, stärkere Schnelllader und Kabeldetails.",
-    "Der Shop bekommt eine echte Glasfront, Eingang und sichtbare Produktdetails.",
-    "Auf Desktop kommen zusätzlich Service-/Waschbox-Details hinzu; die Nachtbeleuchtung reagiert auf die Uhrzeit.",
-    "Tank- und Ladepositionen, Preise, Fahrzeugenergie und Interaktionslogik wurden nicht verändert."
+    "Der Supermarkt erhält ein klareres Eingangsportal mit eigener Markenfläche und Beleuchtung.",
+    "Eine überdachte Einkaufswagenbox und zusätzliche Fahrradständer beleben den Eingangsbereich.",
+    "Die Lieferseite bekommt Rampe, Paletten, Kisten und auf Desktop zusätzliche Lade-/Hubwagen-Details.",
+    "Auf dem Dach erscheinen zusätzliche Technik- und Lüftungselemente.",
+    "Vor dem Eingang ergänzen Poller und Produktkisten die Ladenwirkung.",
+    "Einkaufssystem, Vorräte, Öffnungszeiten und Kollisionslogik wurden nicht verändert."
   ]
 }

@@ -48,7 +48,8 @@ const ITEMS=[
  {t:'Stadtzentrum: Rathausplatz mit Pflaster, Brunnen, Sitzbereichen, Grün und Abendlicht',s:'work',release:'9.7.38'},
  {t:'Geschäfts-Innenräume: Bäckerei, Café, Kneipe und Post deutlich detaillierter',s:'work',release:'9.7.39'},
  {t:'Parkplätze realistischer: Markierungen, E-Ladepunkte, Parkautomaten, Sonderplätze und Beleuchtung',s:'work',release:'9.7.40'},
- {t:'Tankstelle & Ladepark: Zapfsäulen, Schnelllader, Preistafel, Shop und Nachtbeleuchtung',s:'work',release:'9.7.41'}
+ {t:'Tankstelle & Ladepark: Zapfsäulen, Schnelllader, Preistafel, Shop und Nachtbeleuchtung',s:'work',release:'9.7.41'},
+ {t:'Lux Markt außen: Eingangsportal, Wagenbox, Fahrradständer, Lieferzone und Dachtechnik',s:'work',release:'9.7.42'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
