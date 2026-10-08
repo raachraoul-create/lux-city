@@ -24,10 +24,10 @@ const ITEMS=[
  {t:'Handy mit Bank, vier Kfz-Versicherungen, Steuern und Gemeinde-Rechnungen',s:'work',release:'7.9.0'},
  {t:'Einsatzfahrzeuge an Feuerwehr, Polizei und Krankenhaus + Fehlgebäude entfernen',s:'work',release:'7.9.0'},
  {t:'Cloud-Sync/Login-Fortsetzung und Wohnungsstart stabilisieren',s:'work',release:'7.9.0'},
- {t:'Fiktive Premium-Automarken & Tesla-artiges Spielerauto',s:'planned'},
- {t:'Pannen, Abschleppdienst & Werkstatt-Aufträge',s:'planned'},
- {t:'Supermarkt & täglicher Einkauf',s:'planned'},
- {t:'Bus & ÖPNV wirklich nutzbar machen',s:'planned'}
+ {t:'Fiktive Premium-Automarken & Tesla-artiges Spielerauto',s:'work',release:'9.7.13'},
+ {t:'Pannen, Abschleppdienst & Werkstatt-Aufträge',s:'work',release:'9.7.17'},
+ {t:'Supermarkt & täglicher Einkauf',s:'work',release:'9.7.15'},
+ {t:'Bus & ÖPNV wirklich nutzbar machen',s:'work',release:'9.7.16'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

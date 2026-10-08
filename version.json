@@ -1,13 +1,13 @@
 {
-  "version": "9.7.16",
+  "version": "9.7.17",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Bus und ÖPNV nutzbar gemacht",
+  "title": "Werkstatt-Aufträge für Mechaniker eingebaut",
   "notes": [
-    "Linie 1 ist jetzt tatsächlich nutzbar statt nur dekorativer Stadtverkehr.",
-    "An einer geöffneten Bustür kann für 2,50 € eingestiegen werden.",
-    "Während der Fahrt folgt die Kamera dem Bus und die Spielfigur bleibt korrekt im Fahrzeug.",
-    "Ein Halt kann angefordert werden; ausgestiegen wird anschließend an der nächsten Haltestelle.",
-    "Desktop nutzt E, auf Touch-Geräten erscheint derselbe Ein-/Aussteigen-Knopf direkt im Spiel.",
-    "Die bestehende Fahrzeug- und Fußgängersteuerung wurde nicht verändert."
+    "Mechaniker-Schichten bekommen jetzt einen konkreten Kundenauftrag mit fiktivem Fahrzeug, Fehlerbild und Auftragsnummer.",
+    "Das Kundenfahrzeug steht während des aktiven Werkstattauftrags sichtbar in der Werkstatt.",
+    "Die vier bestehenden Mechaniker-Arbeitsschritte arbeiten jetzt einen echten Auftrag ab.",
+    "Nach vollständigem Abschluss wird zusätzlich eine passende Auftragspauschale ausgezahlt.",
+    "Aktive Werkstattaufträge werden in den Cloud-Spielstand aufgenommen.",
+    "Die Startseiten-Roadmap markiert Premium-Autos, Pannen/Abschleppen/Werkstatt, Supermarkt und Bus jetzt als veröffentlichte Punkte."
   ]
 }
