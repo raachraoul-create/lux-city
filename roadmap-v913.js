@@ -29,7 +29,8 @@ const ITEMS=[
  {t:'Supermarkt & täglicher Einkauf',s:'work',release:'9.7.15'},
  {t:'Bus & ÖPNV wirklich nutzbar machen',s:'work',release:'9.7.16'},
  {t:'Privat- und Firmenkredite erst nach 6 Beschäftigungsmonaten',s:'work',release:'9.7.20'},
- {t:'KI-Bürger mit sicheren Tagesabläufen: Arbeit, Einkauf, Freizeit und Zuhause',s:'work',release:'9.7.22'}
+ {t:'KI-Bürger mit sicheren Tagesabläufen: Arbeit, Einkauf, Freizeit und Zuhause',s:'work',release:'9.7.22'},
+ {t:'KI-Autos mit Tagesrhythmus: morgens weg, abends nach Hause und nachts geparkt',s:'work',release:'9.7.23'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

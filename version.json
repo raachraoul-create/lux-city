@@ -1,13 +1,13 @@
 {
-  "version": "9.7.22",
-  "released_at": "2026-10-08T09:10:00+02:00",
-  "title": "KI-Bürger mit sicheren echten Tagesabläufen",
+  "version": "9.7.23",
+  "released_at": "2026-10-08T09:18:00+02:00",
+  "title": "KI-Autos fahren nach Tagesrhythmus und parken realistisch",
   "notes": [
-    "Die sichere Gehweg- und Zebrastreifenführung bleibt bestehen und akzeptiert jetzt zusätzlich daraus abgeleitete lokale Bürger-Routen.",
-    "KI-Bürger wechseln abhängig von Uhrzeit zwischen Zuhause, Arbeitsweg, Arbeit, Mittagspause, Einkauf, Freizeit und Heimweg.",
-    "Einkaufende Bürger orientieren sich am Lux Markt und tragen sichtbar Einkaufstaschen; bei Mittag und Freizeit erscheinen Getränke.",
-    "Nachts verschwinden Bürger in ihren Wohnungen statt rund um die Uhr ziellos durch die Stadt zu laufen.",
-    "Gespräche mit Bürgern reagieren jetzt auf deren aktuelle Tätigkeit.",
-    "Spielersteuerung, Fahrzeugsteuerung und Wohnungslogik wurden nicht verändert."
+    "Ein Teil der KI-Fahrzeuge besitzt jetzt einen festen Wohnparkplatz und einen öffentlichen Zielparkplatz.",
+    "Je nach Bürger-Typ fahren KI-Autos morgens bzw. tagsüber los und kehren abends wieder in Wohngebiete zurück.",
+    "Nachts stehen diese Fahrzeuge überwiegend geparkt statt dauerhaft ohne Zweck durch die Stadt zu fahren.",
+    "Fahrten benutzen die vorhandenen Hauptstraßen und Kreuzungen; vor belegten Parkplätzen wird gewartet.",
+    "Der Lux Markt erhält zusätzlich einen öffentlichen Parkplatz im regulären Parksystem.",
+    "Die Spieler-Fahrsteuerung wurde nicht verändert."
   ]
 }
