@@ -1,12 +1,13 @@
 {
-  "version": "9.7.40",
-  "released_at": "2026-10-08T21:46:00+02:00",
-  "title": "Parkplätze und Stellflächen grafisch aufgewertet",
+  "version": "9.7.41",
+  "released_at": "2026-10-08T21:56:00+02:00",
+  "title": "Tankstelle und Ladepark optisch komplett ausgebaut",
   "notes": [
-    "Öffentliche und private Stellplätze erhalten klarere Bodenmarkierungen und sichtbare Radstopper.",
-    "Ein Teil der öffentlichen Parkplätze bekommt E-Ladepunkte und passende grüne Markierungen.",
-    "Zusätzliche Parkautomaten und auf Desktop einzelne Parkplatzleuchten erhöhen die Glaubwürdigkeit.",
-    "Sonderstellplätze werden visuell deutlicher gekennzeichnet.",
-    "Parklogik, KI-Parken, Fahrzeugphysik und Kollisionen wurden nicht verändert."
+    "Die Tankstelle erhält deutlich detailliertere Zapfsäulen mit Displays, Schläuchen, Schutzpollern und eigenen Inseln.",
+    "Ein großer Preispylon zeigt Benzin-, Diesel- und Ladepreise sichtbar an.",
+    "Der Ladebereich besitzt separate grüne Ladebuchten, stärkere Schnelllader und Kabeldetails.",
+    "Der Shop bekommt eine echte Glasfront, Eingang und sichtbare Produktdetails.",
+    "Auf Desktop kommen zusätzlich Service-/Waschbox-Details hinzu; die Nachtbeleuchtung reagiert auf die Uhrzeit.",
+    "Tank- und Ladepositionen, Preise, Fahrzeugenergie und Interaktionslogik wurden nicht verändert."
   ]
 }
