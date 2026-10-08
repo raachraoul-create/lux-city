@@ -1,12 +1,13 @@
 {
-  "version": "9.7.32",
-  "released_at": "2026-10-08T10:32:00+02:00",
-  "title": "Passanten optisch deutlich vielfältiger",
+  "version": "9.7.33",
+  "released_at": "2026-10-08T10:42:00+02:00",
+  "title": "Wohnungsinnenraum visuell weiter aufgewertet",
   "notes": [
-    "Passanten erhalten zusätzliche Jacken-, Hoodie- und Oberbekleidungsvarianten.",
-    "Rucksäcke, Umhängetaschen, Mützen und Caps sorgen für stärker unterscheidbare Silhouetten.",
-    "Wenn ein Beruf hinterlegt ist, erscheinen passende kleine Details für Werkstatt, Logistik oder Bäckerei.",
-    "Die Änderungen sind rein visuell; KI-Wege, Animationen, Multiplayer und Spielersteuerung bleiben unverändert.",
-    "Auf Mobilgeräten werden zusätzliche Schatten reduziert."
+    "Wohnzimmer erhält zusätzliche Kissen, Tischobjekte und Wandbilder.",
+    "Küche bekommt Schneidebrett, Obst, Vorratsgläser und ein offenes Wandregal.",
+    "Schlafbereich erhält Nachttischleuchten und gerahmte Bilder.",
+    "Bad erhält Spiegel, Handtuchhalter und zusätzliche Materialdetails.",
+    "Familienwohnung bekommt zusätzliche Ess-/Wohnaccessoires.",
+    "Der gesamte neue Layer ist rein visuell: Innenkamera, Türen, Wandkollisionen und Wohnungsaktionen wurden nicht verändert."
   ]
 }

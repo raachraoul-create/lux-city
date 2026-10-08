@@ -39,7 +39,8 @@ const ITEMS=[
  {t:'Stadtmöblierung: echte Bushaltestellen, Fahrradständer, Poller, Hydranten und Abfallbehälter',s:'work',release:'9.7.29'},
  {t:'Kreuzungen & Fahrbahn: Haltelinien, Richtungspfeile, Reflektoren und taktile Übergänge',s:'work',release:'9.7.30'},
  {t:'Natur & Stadtrand: gemischte Baumarten, Waldränder, Sträucher und Wieseninseln',s:'work',release:'9.7.31'},
- {t:'Passanten mit vielfältigerer Kleidung, Frisuren, Taschen und Berufsdetails',s:'work',release:'9.7.32'}
+ {t:'Passanten mit vielfältigerer Kleidung, Frisuren, Taschen und Berufsdetails',s:'work',release:'9.7.32'},
+ {t:'Wohnung visuell aufgewertet: Bilder, Kissen, Leuchten, Küchen- und Badaccessoires',s:'work',release:'9.7.33'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
