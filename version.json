@@ -1,11 +1,12 @@
 {
-  "version": "9.7.28",
-  "released_at": "2026-10-08T09:56:00+02:00",
-  "title": "Gemeinde und öffentliche Dienste visuell aufgewertet",
+  "version": "9.7.29",
+  "released_at": "2026-10-08T10:05:00+02:00",
+  "title": "Stadtmöblierung und Bushaltestellen ausgebaut",
   "notes": [
-    "Die Gemeinde besitzt jetzt einen deutlich repräsentativeren Rathaus-Eingang mit Säulen, Vorplatz, Uhr, Lampen und Pflanzbereichen.",
-    "Bank, Arbeitsamt und Wohnungsamt erhalten große klar erkennbare Eingangsschilder und beleuchtete Zugangsbereiche.",
-    "Die zusätzlichen öffentlichen Gebäudedetails reagieren auf Abend und Nacht mit warmer Beleuchtung.",
-    "Bestehende Türen, Interaktionen, Behördenfunktionen und Kollisionen bleiben unverändert."
+    "Die beiden tatsächlich genutzten Linie-1-Haltestellen besitzen jetzt Unterstände mit Glaswänden, Sitzbänken und Linieninformationen.",
+    "An öffentlichen Orten wurden zusätzliche Fahrradständer, Poller, Hydranten und Abfallbehälter ergänzt.",
+    "Auf leistungsfähigeren Geräten kommen zusätzliche Pflanzkübel als kleine Stadtdetails hinzu.",
+    "Haltestellenbeleuchtung reagiert auf Abend und Nacht.",
+    "Die neuen Elemente sind bewusst rein visuell und fügen keine zusätzlichen Kollisionshindernisse hinzu."
   ]
 }
