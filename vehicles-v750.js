@@ -1,10 +1,10 @@
 (()=>{const K='luxcity_vehicles_v160';let S=Object.assign({owned:[],active:null},JSON.parse(localStorage.getItem(K)||'{}'));const save=()=>localStorage.setItem(K,JSON.stringify(S));const DELIVERY={x:-24,z:303,rot:Math.PI/2};const cars={
-ev_compact:{name:'E-Kompaktwagen',type:'compact',fuelType:'electric',price:31000},
-petrol_compact:{name:'Kompaktwagen Benzin',type:'compact',fuelType:'petrol',price:21000},
-diesel_compact:{name:'Kompaktwagen Diesel',type:'compact',fuelType:'diesel',price:24000},
-ev_suv:{name:'E-SUV',type:'suv',fuelType:'electric',price:47000},
-petrol_suv:{name:'SUV Benzin',type:'suv',fuelType:'petrol',price:39000},
-diesel_van:{name:'Lieferwagen Diesel',type:'van',fuelType:'diesel',price:33000}};
+ev_compact:{name:'LUX E1',type:'compact',fuelType:'electric',price:31000},
+petrol_compact:{name:'Avelon C20',type:'compact',fuelType:'petrol',price:21000},
+diesel_compact:{name:'Rivon D24',type:'compact',fuelType:'diesel',price:24000},
+ev_suv:{name:'Voltaris VX',type:'suv',fuelType:'electric',price:47000},
+petrol_suv:{name:'Montaire X4',type:'suv',fuelType:'petrol',price:39000},
+diesel_van:{name:'Rivon Cargo D',type:'van',fuelType:'diesel',price:33000}};
 for(let v of S.owned){v.type=v.type||'compact';v.fuelType=v.fuelType||v.fuel_type||(v.type==='van'?'diesel':'petrol');v.energy=Number(v.energy??100);v.condition=Number(v.condition??100);if(v.parked_x!=null&&v.parkedX==null)v.parkedX=Number(v.parked_x);if(v.parked_z!=null&&v.parkedZ==null)v.parkedZ=Number(v.parked_z);if(v.parked_rot!=null&&v.parkedRot==null)v.parkedRot=Number(v.parked_rot);v.parkingType=v.parkingType||v.parking_type||null}
 function label(f){return f==='electric'?'Elektro':f==='diesel'?'Diesel':'Benzin'}function modal(html){let m=document.getElementById('modal'),b=document.getElementById('modalBody');if(!m||!b)return null;m.hidden=false;m.style.display='block';b.innerHTML=html;return b}
 async function buy(k){let m=cars[k];if(!m)return;if(window.LuxVehicleBusiness750&&!window.LuxVehicleBusiness750.nearDealer())return alert('Fahrzeuge kaufst du direkt beim Fahrzeughändler.');if(window.LuxLife&&LuxLife.state.cash<m.price)return alert('Nicht genug Privatgeld.');let rec=null,sb=window.LuxAccount?.sb,uid=window.LuxAccount?.session?.user?.id;

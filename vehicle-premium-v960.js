@@ -30,6 +30,16 @@ function init(W,PC){
     const m=new T.MeshBasicMaterial({map:labelTexture(text),side:T.DoubleSide});
     const p=A(new T.PlaneGeometry(.72,.17),m,0,.50,z,parent);p.rotation.y=front?0:Math.PI;return p
   }
+  function badge(parent,text,y,z,front=true,w=.20){
+    const m=new T.MeshBasicMaterial({map:labelTexture(text,'#11161a','#e8ecee'),side:T.DoubleSide});
+    const p=A(new T.PlaneGeometry(w,.085),m,0,y,z,parent);p.rotation.y=front?0:Math.PI;return p
+  }
+  const designFamilies=[
+    {name:'Avelon',mark:'A',accent:0xc9ced1,style:'blade'},
+    {name:'Rivon',mark:'R',accent:0xb7bcc0,style:'mesh'},
+    {name:'Montaire',mark:'M',accent:0xd2b26d,style:'lux'},
+    {name:'Voltaris',mark:'V',accent:0x7fb6cc,style:'ev'}
+  ];
   function doorLine(parent,x,y,z,h=.72){
     A(new T.BoxGeometry(.018,h,.026),M(0x080a0c,.55,.24),x,y,z,parent)
   }
@@ -79,6 +89,8 @@ function init(W,PC){
     const front=-l/2+.02,rear=l/2-.02,roofY=cls==='van'?2.02:cls==='suv'?1.64:1.48;
     const bodyColor=[0x324f68,0x842f35,0xe4e2dc,0x252a2e,0x5e7457,0xa27c3d,0x505768,0x6a625b][i%8];
     const paint=P(bodyColor,.19,.40);
+    const family=designFamilies[i%designFamilies.length],familyMetal=P(family.accent,.17,.72);
+    v.userData.fictionalBrand=family.name;
 
     // Sculpted lower body, hood and bumpers.
     A(new T.BoxGeometry(w*.94,.22,l*.78),paint,0,.61,.02,g);
@@ -103,6 +115,24 @@ function init(W,PC){
     for(const x of[-w*.36,w*.36]) A(new T.BoxGeometry(w*.13,.075,.06),dark,x,.55,front-.15,g);
     A(new T.BoxGeometry(w*.72,.025,.055),metal,0,.43,front-.16,g);
     A(new T.BoxGeometry(w*.68,.028,.05),metal,0,.45,rear+.16,g);
+    // Four original Lux City marque faces give traffic real variety without copying licensed cars.
+    if(family.style==='blade'){
+      A(new T.BoxGeometry(w*.54,.030,.070),familyMetal,0,.64,front-.175,g);
+      for(const x of[-w*.19,0,w*.19])A(new T.BoxGeometry(.030,.18,.070),familyMetal,x,.59,front-.177,g);
+    }else if(family.style==='mesh'){
+      A(new T.BoxGeometry(w*.50,.20,.065),dark,0,.58,front-.17,g);
+      for(let x=-w*.20;x<=w*.20;x+=w*.10)A(new T.BoxGeometry(.020,.15,.072),familyMetal,x,.58,front-.178,g);
+      for(let y=.53;y<=.63;y+=.05)A(new T.BoxGeometry(w*.44,.014,.072),familyMetal,0,y,front-.179,g);
+    }else if(family.style==='lux'){
+      A(new T.BoxGeometry(w*.45,.18,.064),dark,0,.60,front-.17,g);
+      A(new T.BoxGeometry(w*.48,.026,.072),familyMetal,0,.67,front-.178,g);
+      A(new T.BoxGeometry(w*.48,.026,.072),familyMetal,0,.53,front-.178,g);
+    }else{
+      A(new T.BoxGeometry(w*.48,.035,.066),familyMetal,0,.61,front-.17,g);
+      A(new T.BoxGeometry(w*.30,.018,.070),familyMetal,0,.55,front-.178,g);
+    }
+    badge(g,family.mark,.68,front-.184,true,.19);
+    badge(g,family.mark,.69,rear+.184,false,.18);
 
     // Modern lights with separate lenses and DRL strips.
     for(const x of[-w*.29,w*.29]){
@@ -114,6 +144,15 @@ function init(W,PC){
     // Light bar signature and rear reflector.
     const rearBar=A(new T.BoxGeometry(w*.56,.035,.080),tail,0,.78,rear+.13,g);premiumLights.push({m:rearBar.material,type:'tail'});
     A(new T.BoxGeometry(w*.62,.028,.078),M(0xffffff,.10,.05,0xffffff,.26),0,.82,front-.15,g);
+    if(family.style==='blade'){
+      for(const x of[-w*.38,w*.38]){const s=A(new T.BoxGeometry(w*.10,.025,.085),M(0xffffff,.08,.03,0xffffff,.36),x,.73,front-.165,g);s.rotation.z=x<0?-.28:.28}
+    }else if(family.style==='mesh'){
+      for(const x of[-w*.31,w*.31]){const s=A(new T.BoxGeometry(w*.13,.022,.086),M(0xffffff,.08,.03,0xffffff,.38),x,.86,front-.165,g);s.rotation.z=x<0?.12:-.12}
+    }else if(family.style==='lux'){
+      A(new T.BoxGeometry(w*.68,.018,.086),M(0xffffff,.08,.03,0xffffff,.33),0,.855,front-.165,g);
+    }else{
+      A(new T.BoxGeometry(w*.72,.020,.086),M(0xe9fbff,.08,.03,0xbfefff,.38),0,.84,front-.165,g);
+    }
 
     // Window surrounds and B-pillars make the side profile read as a real road car.
     for(const sx of[-1,1]){
@@ -201,8 +240,12 @@ function init(W,PC){
     plate(g,front-.17,true,'LC 840');
     plate(g,rear+.17,false,'LC 840');
     // Own-brand badge, deliberately not copying a real manufacturer's logo.
-    const badgeTex=labelTexture('LC','#15191c','#e7e9e9');
-    const badge=A(new T.PlaneGeometry(.20,.09),new T.MeshBasicMaterial({map:badgeTex,side:T.DoubleSide}),0,.79,front-.18,g);
+    const badgeTex=labelTexture('LUX E','#15191c','#e7e9e9');
+    const badge=A(new T.PlaneGeometry(.28,.09),new T.MeshBasicMaterial({map:badgeTex,side:T.DoubleSide}),0,.79,front-.18,g);
+    const rearBadge=A(new T.PlaneGeometry(.28,.085),new T.MeshBasicMaterial({map:badgeTex,side:T.DoubleSide}),0,.79,rear+.18,g);rearBadge.rotation.y=Math.PI;
+    // Flush charge-door outline and small fender camera pods keep the car unmistakably electric and original.
+    doorLine(g,-.992,.82,.98,.30);
+    for(const sx of[-1,1])A(new T.BoxGeometry(.055,.075,.10),dark,sx*.995,.88,-.72,g);
     contactShadow(g,2.18,4.52);
 
     car.traverse(o=>{
@@ -242,5 +285,5 @@ function init(W,PC){
     }
   });
 
-  window.LuxVehiclePremium960={version:'9.7.0',player:PC.car,traffic:W.cars};
+  window.LuxVehiclePremium960=window.LuxVehiclePremium980={version:'9.8.0',player:PC.car,traffic:W.cars,designFamilies};
 }

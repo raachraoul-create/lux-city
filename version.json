@@ -1,12 +1,12 @@
 {
-  "version": "9.7.12",
+  "version": "9.7.13",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Natur und Stadtrand realistischer gestaltet",
+  "title": "Fiktive Premium-Automarken erweitert",
   "notes": [
-    "Bäume besitzen jetzt Stammverjüngung, sichtbare Wurzelansätze, Äste und mehrere unregelmäßige Kronenschichten statt einfacher Kugelformen.",
-    "Die Bergkulisse wurde um weichere Vorhügel und zusätzliche Felsstruktur erweitert.",
-    "Zwischen den neuen Straßen, Gehwegen und Grünflächen liegen jetzt schmale Grünstreifen als natürlicher Übergang.",
-    "Auf Mobilgeräten bleiben die zusätzlichen Geometriedetails reduziert, damit die Darstellung flüssig bleibt.",
-    "Kollision, Steuerung, Login, Multiplayer und Wohnungslogik wurden in diesem Schritt nicht verändert."
+    "Verkehrsfahrzeuge erhalten vier eigenständige fiktive Designfamilien mit unterschiedlichen Kühler-/Frontflächen, Lichtsignaturen und Emblemen.",
+    "Avelon, Rivon, Montaire und Voltaris sind reine Lux-City-Marken ohne echte Herstellerlogos.",
+    "Der Fahrzeughandel nutzt jetzt konkrete fiktive Modellnamen statt nur generischer Fahrzeugklassen.",
+    "Das weiße Spieler-Elektroauto trägt die eigene Kennzeichnung LUX E und zusätzliche EV-Details, bleibt aber ohne reales Markenlogo.",
+    "Fahrphysik, Lenkung und mobile Steuerung wurden nicht verändert."
   ]
 }
