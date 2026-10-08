@@ -1,13 +1,13 @@
 {
-  "version": "9.7.15",
+  "version": "9.7.16",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Supermarkt und täglicher Einkauf eingebaut",
+  "title": "Bus und ÖPNV nutzbar gemacht",
   "notes": [
-    "Der Lux Markt steht jetzt als eigenes Gebäude auf einem reservierten Bauplatz mit Parkplatz und Straßenanbindung.",
-    "Der Supermarkt ist täglich von 07:00 bis 21:00 Uhr geöffnet.",
-    "Lebensmittel und Getränke werden als echter Haushaltsvorrat gekauft und im Cloud-Spielstand gespeichert.",
-    "Essen zuhause verbraucht jetzt eine gekaufte Mahlzeit; der alte automatische 4-Euro-Kühlschrankkauf entfällt.",
-    "Getränke aus dem Vorrat können zuhause getrunken werden, Leitungswasser bleibt weiterhin kostenlos.",
-    "Der Supermarkt erscheint zusätzlich als Ziel in der Stadtkarte."
+    "Linie 1 ist jetzt tatsächlich nutzbar statt nur dekorativer Stadtverkehr.",
+    "An einer geöffneten Bustür kann für 2,50 € eingestiegen werden.",
+    "Während der Fahrt folgt die Kamera dem Bus und die Spielfigur bleibt korrekt im Fahrzeug.",
+    "Ein Halt kann angefordert werden; ausgestiegen wird anschließend an der nächsten Haltestelle.",
+    "Desktop nutzt E, auf Touch-Geräten erscheint derselbe Ein-/Aussteigen-Knopf direkt im Spiel.",
+    "Die bestehende Fahrzeug- und Fußgängersteuerung wurde nicht verändert."
   ]
 }
