@@ -1,12 +1,12 @@
 {
-  "version": "9.7.29",
-  "released_at": "2026-10-08T10:05:00+02:00",
-  "title": "Stadtmöblierung und Bushaltestellen ausgebaut",
+  "version": "9.7.30",
+  "released_at": "2026-10-08T10:12:00+02:00",
+  "title": "Kreuzungen und Fahrbahn grafisch verfeinert",
   "notes": [
-    "Die beiden tatsächlich genutzten Linie-1-Haltestellen besitzen jetzt Unterstände mit Glaswänden, Sitzbänken und Linieninformationen.",
-    "An öffentlichen Orten wurden zusätzliche Fahrradständer, Poller, Hydranten und Abfallbehälter ergänzt.",
-    "Auf leistungsfähigeren Geräten kommen zusätzliche Pflanzkübel als kleine Stadtdetails hinzu.",
-    "Haltestellenbeleuchtung reagiert auf Abend und Nacht.",
-    "Die neuen Elemente sind bewusst rein visuell und fügen keine zusätzlichen Kollisionshindernisse hinzu."
+    "Signalisierte Kreuzungen besitzen jetzt klarere Haltelinien vor den Ampelbereichen.",
+    "Fahrtrichtungspfeile machen die Straßenführung vor Kreuzungen besser lesbar.",
+    "Reflektierende Straßenmarkierer geben Hauptachsen bei Dunkelheit und Regen mehr Tiefe.",
+    "Fußgängerübergänge erhalten zusätzliche taktile Randflächen.",
+    "Die Änderungen sind rein visuell; Ampellogik, Fahrphysik und Kollisionen wurden nicht verändert."
   ]
 }
