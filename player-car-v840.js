@@ -11,7 +11,7 @@ let rears=[];for(let x of[-.58,.58]){A(new T.BoxGeometry(.46,.10,.045),M(0xf8fbf
 A(new T.BoxGeometry(1.22,.11,.055),dark,0,.51,-2.36);A(new T.BoxGeometry(1.45,.12,.055),dark,0,.50,2.36);A(new T.BoxGeometry(.72,.15,.035),plate,0,.43,-2.41);A(new T.BoxGeometry(.72,.15,.035),plate,0,.43,2.41);for(let sx of[-1,1])for(let zz of[-1.48,1.48]){let arch=A(new T.TorusGeometry(.36,.034,6,20,Math.PI),M(0xf4f4f1,.18,.34),sx*.955,.43,zz);arch.rotation.y=Math.PI/2;arch.rotation.z=Math.PI}
 car.userData.wheels710=wheels;car.userData.playerCar=true;car.userData.halfW=1.06;car.userData.halfL=2.45;car.position.set(12,0,28);W.scene.add(car);let driving=false,speed=0,steer=0,currentType='compact',maxSpeed=24;
 function activeVehicle(){return window.LuxVehicles?.activeVehicle||null}function fuelType(){let v=activeVehicle();return v?.fuelType||v?.fuel_type||'electric'}function syncPowertrain(){let ft=fuelType();if(typeof chargeFlap!=='undefined')chargeFlap.visible=ft==='electric';if(typeof exhaust!=='undefined')exhaust.visible=ft!=='electric'}function applyVehicle(type){currentType=type||'compact';let cfg={compact:[.96,.96,.96,24],van:[1.05,1.15,1.10,19],suv:[1.08,1.10,1.05,22]}[currentType]||[1,1,1,24];car.scale.set(cfg[0],cfg[1],cfg[2]);maxSpeed=cfg[3];syncPowertrain()}
-function canDrive(){let v=activeVehicle();return !v||Number(v.energy??100)>0}
+function canDrive(){let v=activeVehicle();return !v||(Number(v.energy??100)>0&&!v.breakdown)}
 function setPose(x,z,rot=car.rotation.y){if(!Number.isFinite(x)||!Number.isFinite(z))return false;speed=0;steer=0;car.position.set(x,0,z);car.rotation.y=Number.isFinite(rot)?rot:0;if(driving)W.player.position.copy(car.position);return true}
 function restoreParked(v=activeVehicle()){if(!v)return false;let x=Number(v.parkedX??v.parked_x),z=Number(v.parkedZ??v.parked_z),rot=Number(v.parkedRot??v.parked_rot);if(!Number.isFinite(x)||!Number.isFinite(z))return false;return setPose(x,z,Number.isFinite(rot)?rot:0)}
 function parkAt(slot){if(!slot||!driving)return false;setPose(slot.x,slot.z,slot.rot||0);let v=activeVehicle();if(v){v.parkedX=slot.x;v.parkedZ=slot.z;v.parkedRot=slot.rot||0;v.parkingType=slot.type||'parking';v.parkingLabel=slot.label||'Stellplatz';window.LuxVehicles?.save?.()}driving=false;W.player.visible=true;let y=car.rotation.y;W.player.position.set(car.position.x-Math.cos(y)*2.0,0,car.position.z+Math.sin(y)*2.0);W.yaw=y;return true}
@@ -51,6 +51,7 @@ W.registerTick(dt=>{
   syncPowertrain();if(!driving)return;
   let k=W.keys,th=((k.w||k.arrowup)||0)-((k.s||k.arrowdown)||0),turn=((k.d||k.arrowright)||0)-((k.a||k.arrowleft)||0),v=activeVehicle(),energy=Number(v?.energy??100);
   if(energy<=0)th=Math.min(0,th);
+  if(v?.breakdown){th=0;speed*=Math.pow(.78,dt*60);if(Math.abs(speed)<.04)speed=0}
   let ft=fuelType(),acc=ft==='electric'?13.6:ft==='diesel'?10.7:11.7,revAcc=ft==='electric'?10.5:8.4,brake=17.5,drag=ft==='electric'?.986:.981;
   if(th>0){if(speed<-.35)speed+=brake*dt;else speed+=acc*dt}
   else if(th<0){if(speed>.35)speed-=brake*dt;else speed-=revAcc*dt}

@@ -1,12 +1,13 @@
 {
-  "version": "9.7.13",
+  "version": "9.7.14",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Fiktive Premium-Automarken erweitert",
+  "title": "Pannen und Abschleppdienst eingebaut",
   "notes": [
-    "Verkehrsfahrzeuge erhalten vier eigenständige fiktive Designfamilien mit unterschiedlichen Kühler-/Frontflächen, Lichtsignaturen und Emblemen.",
-    "Avelon, Rivon, Montaire und Voltaris sind reine Lux-City-Marken ohne echte Herstellerlogos.",
-    "Der Fahrzeughandel nutzt jetzt konkrete fiktive Modellnamen statt nur generischer Fahrzeugklassen.",
-    "Das weiße Spieler-Elektroauto trägt die eigene Kennzeichnung LUX E und zusätzliche EV-Details, bleibt aber ohne reales Markenlogo.",
-    "Fahrphysik, Lenkung und mobile Steuerung wurden nicht verändert."
+    "Fahrzeuge bekommen zusätzlich zum Energieverbrauch jetzt langsamen normalen Verschleiß durch gefahrene Strecke.",
+    "Bei stark schlechtem Fahrzeugzustand können echte Pannen mit verschiedenen Fehlerursachen auftreten.",
+    "Ein liegengebliebenes Fahrzeug verliert den Antrieb und kann nicht einfach normal weitergefahren werden.",
+    "Der Abschleppdienst berechnet seine Gebühr nach Entfernung und bringt das Fahrzeug direkt zur Servicebucht der Werkstatt.",
+    "Eine Reparatur in der Werkstatt beseitigt die Panne und verbessert den Fahrzeugzustand.",
+    "Lenkung, Touch-Steuerung und normale Fahrzeugkollision wurden nicht verändert."
   ]
 }
