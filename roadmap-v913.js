@@ -27,7 +27,8 @@ const ITEMS=[
  {t:'Fiktive Premium-Automarken & Tesla-artiges Spielerauto',s:'work',release:'9.7.13'},
  {t:'Pannen, Abschleppdienst & Werkstatt-Aufträge',s:'work',release:'9.7.17'},
  {t:'Supermarkt & täglicher Einkauf',s:'work',release:'9.7.15'},
- {t:'Bus & ÖPNV wirklich nutzbar machen',s:'work',release:'9.7.16'}
+ {t:'Bus & ÖPNV wirklich nutzbar machen',s:'work',release:'9.7.16'},
+ {t:'Privat- und Firmenkredite erst nach 6 Beschäftigungsmonaten',s:'work',release:'9.7.20'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

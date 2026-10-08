@@ -1,10 +1,11 @@
 {
-  "version": "9.7.19",
+  "version": "9.7.20",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Supermarkt-Parkplatz korrekt an Straße angebunden",
+  "title": "Firmenkredit und Neuanfang an Beschäftigungszeit gekoppelt",
   "notes": [
-    "Der Lux-Markt-Parkplatz liegt jetzt tatsächlich vor dem Eingang in Richtung der öffentlichen Straße.",
-    "Die Zufahrt endet sauber am Straßenrand statt seitlich am Gebäude.",
-    "Gebäude, Einkaufssystem, Öffnungszeiten und Haushaltsvorräte bleiben unverändert."
+    "Beschäftigungsmonate werden jetzt auch für die Firmen-Bankbewertung korrekt fortgeschrieben.",
+    "Ein 50.000-Euro-Firmenkredit wird erst nach mindestens 6 Beschäftigungsmonaten überhaupt geprüft.",
+    "Nach einer Insolvenz beginnt der Arbeitnehmer-Neuanfang weiterhin bei 0 Beschäftigungsmonaten und kann sich real wieder hocharbeiten.",
+    "Nach Erreichen der 6 Monate entscheidet weiterhin die Firmenbonität über Genehmigung oder Ablehnung."
   ]
 }
