@@ -1,12 +1,13 @@
 {
-  "version": "9.7.24",
-  "released_at": "2026-10-08T09:25:00+02:00",
-  "title": "Spieler und KI bewegen sich menschlicher",
+  "version": "9.7.25",
+  "released_at": "2026-10-08T09:32:00+02:00",
+  "title": "Wohnhäuser optisch weiter aufgewertet",
   "notes": [
-    "Stehende KI-Figuren frieren nicht mehr in einer halben Gehpose ein; Arme und Beine kehren weich in eine natürliche Ruheposition zurück.",
-    "Passanten erhalten zusätzliche Gewichtsverlagerung, Kopf- und Blickbewegungen im Stand.",
-    "Ein Teil der Bürger schaut auf Arbeitsweg oder in der Freizeit sichtbar auf ein eigenes neutrales Smartphone.",
-    "Der Spieler erhält subtilere Kopf-, Arm- und Standbewegungen beim Stillstehen.",
-    "Laufen, Touch-Steuerung, Tastatursteuerung und Kollisionslogik wurden nicht verändert."
+    "Wohnfassaden erhalten zusätzliche Tiefe durch ausgearbeitete Fensterlaibungen und ausgewählte warme Innenbeleuchtung.",
+    "Balkonhäuser besitzen jetzt echte Geländer mit Stäben sowie auf Desktop zusätzliche bepflanzte Blumenkästen.",
+    "Dachkanten wurden um Regenrinnen und Anschlussbögen ergänzt.",
+    "Ausgewählte Häuser erhalten kleine Dachgauben für abwechslungsreichere Silhouetten.",
+    "Fensterbeleuchtung schaltet sich abhängig von Tageszeit weich ein und aus.",
+    "Hauskollisionen, Türen und Wohnungszugang wurden nicht verändert."
   ]
 }

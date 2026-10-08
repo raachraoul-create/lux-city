@@ -1,16 +1,33 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-let q=setInterval(()=>{if(!window.LuxWorld?.houseSites?.length||!window.LuxCityServices?.buildings)return;clearInterval(q);const W=LuxWorld,S=W.scene,M=(c,r=.72,m=.04,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei}),glass=M(0x6e9eae,.16,.20),darkGlass=M(0x243943,.14,.28),metal=M(0x575e62,.38,.48),wood=M(0x75543a,.80,.05),stone=M(0xb7b1a5,.88),hedge=M(0x486c3d,.96),detailGroups=[];
+let q=setInterval(()=>{if(!window.LuxWorld?.houseSites?.length||!window.LuxCityServices?.buildings)return;clearInterval(q);const W=LuxWorld,S=W.scene,mobile=matchMedia('(pointer:coarse)').matches||innerWidth<900,M=(c,r=.72,m=.04,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei}),glass=M(0x6e9eae,.16,.20),darkGlass=M(0x243943,.14,.28),metal=M(0x575e62,.38,.48),wood=M(0x75543a,.80,.05),stone=M(0xb7b1a5,.88),hedge=M(0x486c3d,.96),detailGroups=[],litWindows=[];
 function A(g,m,x,y,z,p){let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=false;o.receiveShadow=true;p.add(o);return o}
 function mark(g){g.userData.luxDetail720=true;detailGroups.push(g);return g}
-function windowSet(g,x,y,z,w=1.55,h=1.18){A(new T.BoxGeometry(w+.18,h+.18,.08),M(0x454c50,.55,.30),x,y,z,g);A(new T.BoxGeometry(w,h,.035),glass,x,y,z+.065,g);A(new T.BoxGeometry(.055,h,.04),M(0xd6d2c8,.65),x,y,z+.09,g);A(new T.BoxGeometry(w,.055,.04),M(0xd6d2c8,.65),x,y,z+.09,g);A(new T.BoxGeometry(w+.18,.10,.28),stone,x,y-h/2-.10,z+.08,g)}
+function windowSet(g,x,y,z,w=1.55,h=1.18,lit=false){
+  A(new T.BoxGeometry(w+.18,h+.18,.08),M(0x454c50,.55,.30),x,y,z,g);
+  if(lit){let wm=M(0xf0c879,.30,.04,0xffb84d,0);litWindows.push(wm);A(new T.BoxGeometry(w*.92,h*.90,.022),wm,x,y,z+.050,g)}
+  A(new T.BoxGeometry(w,h,.035),glass,x,y,z+.065,g);A(new T.BoxGeometry(.055,h,.04),M(0xd6d2c8,.65),x,y,z+.09,g);A(new T.BoxGeometry(w,.055,.04),M(0xd6d2c8,.65),x,y,z+.09,g);A(new T.BoxGeometry(w+.18,.10,.28),stone,x,y-h/2-.10,z+.08,g)
+}
 function doorSet(g,x,z,color=0x5d4433){A(new T.BoxGeometry(1.08,2.22,.16),M(color,.65,.12),x,1.11,z,g);A(new T.BoxGeometry(1.24,2.38,.10),M(0xd0cbc0,.78),x,1.19,z-.04,g);A(new T.BoxGeometry(.035,.20,.035),M(0xc9a85f,.26,.50),x+.36,1.08,z+.10,g);A(new T.BoxGeometry(2.15,.14,1.08),M(0x484d50,.45,.30),x,2.47,z+.42,g);A(new T.BoxGeometry(1.70,.12,.78),stone,x,.07,z+.62,g)}
 W.houseSites.forEach((h,i)=>{let g=mark(new T.Group()),front=h.d/2+.30,variant=i%6,frame=M([0x565d61,0x6a5946,0x454d53,0x5f514a][i%4],.62,.22),accent=M([0x775844,0x526d5a,0x596a7a,0x725a48][i%4],.74,.10);
 A(new T.BoxGeometry(h.w*.94,.34,.18),i%4===0?M(0x896a59,.88):stone,0,.22,front,g);
-let cols=variant===0?3:2;for(let row=0;row<2;row++)for(let c=0;c<cols;c++){let span=h.w*.62,x=cols===1?0:-span/2+c*(span/(cols-1)),y=1.92+row*2.05;if(Math.abs(x)<.85&&row===0)continue;windowSet(g,x,y,front+.02,variant===3?1.30:1.55,1.12)}
+let cols=variant===0?3:2;for(let row=0;row<2;row++)for(let c=0;c<cols;c++){let span=h.w*.62,x=cols===1?0:-span/2+c*(span/(cols-1)),y=1.92+row*2.05;if(Math.abs(x)<.85&&row===0)continue;windowSet(g,x,y,front+.02,variant===3?1.30:1.55,1.12,((i+row+c)%3===0))}
 doorSet(g,0,front+.02,[0x5b4130,0x445c55,0x4b5062,0x6b513c][i%4]);
 for(let sx of[-1,1])A(new T.CylinderGeometry(.035,.045,Math.max(3.2,h.h-.25),8),metal,sx*(h.w/2-.22),Math.max(3.2,h.h-.25)/2,front+.05,g);
 A(new T.BoxGeometry(h.w-.45,.08,.10),frame,0,h.h-.18,front+.05,g);
-if(variant===0||variant===4){let b=A(new T.BoxGeometry(3.5,.16,1.25),frame,h.w*.18,3.32,front+.76,g);for(let x of[h.w*.18-1.5,h.w*.18+1.5])A(new T.CylinderGeometry(.035,.045,3.0,8),frame,x,1.50,front+1.30,g)}
+let gutter=A(new T.CylinderGeometry(.055,.055,h.w-.40,10),metal,0,h.h+.03,front+.20,g);gutter.rotation.z=Math.PI/2;
+for(let sx of[-1,1]){let elbow=A(new T.TorusGeometry(.10,.032,6,12,Math.PI/2),metal,sx*(h.w/2-.24),h.h-.02,front+.14,g);elbow.rotation.y=sx>0?0:Math.PI}
+if(!mobile&&i%3===0){
+  const dorm=new T.Group();dorm.position.set(-h.w*.18,h.h+.72,-.18);g.add(dorm);
+  A(new T.BoxGeometry(1.45,.92,1.12),M(0xd8d1c4,.78),0,.44,0,dorm);
+  let dr=A(new T.ConeGeometry(.96,.72,4),M(0x57443b,.68,.10),0,1.08,0,dorm);dr.rotation.y=Math.PI/4;
+  A(new T.BoxGeometry(.62,.48,.04),darkGlass,0,.50,.58,dorm);
+}
+if(variant===0||variant===4){
+  let bx=h.w*.18;A(new T.BoxGeometry(3.5,.16,1.25),frame,bx,3.32,front+.76,g);
+  A(new T.BoxGeometry(3.25,.055,.055),metal,bx,4.22,front+1.31,g);
+  for(let x=bx-1.45;x<=bx+1.45;x+=.48)A(new T.BoxGeometry(.035,.86,.035),metal,x,3.78,front+1.31,g);
+  if(!mobile){A(new T.BoxGeometry(1.35,.32,.30),M(0x6e513d,.82),bx-.70,3.52,front+1.38,g);for(let k=-2;k<=2;k++){let f=A(new T.SphereGeometry(.08,8,6),M(k%2?0xc95e63:0xd8a34e,.72),bx-.70+k*.20,3.78,front+1.40,g);f.scale.y=.72}}
+}
 if(variant===1){let gx=-h.w*.28;A(new T.BoxGeometry(3.0,2.25,.18),M(0x555d61,.42,.34),gx,1.18,front+.02,g);for(let y of[.70,1.16,1.62])A(new T.BoxGeometry(2.76,.04,.04),metal,gx,y,front+.14,g)}
 if(variant===2){for(let x of[-1.2,0,1.2]){let panel=A(new T.BoxGeometry(.95,.05,.72),M(0x263e51,.16,.58),x,h.h+.55,-.25,g);panel.rotation.x=-.22}}
 if(variant===3){A(new T.BoxGeometry(.58,1.15,.58),stone,h.w*.24,h.h+.55,-.30,g);A(new T.BoxGeometry(.72,.12,.72),M(0x4a4d50,.60,.22),h.w*.24,h.h+1.14,-.30,g)}
@@ -30,4 +47,4 @@ if(d.id==='bakery'||d.id==='cafe'||d.id==='pub'){let aw=A(new T.BoxGeometry(5.8,
 if(d.factory){for(let x of[-d.w*.30,0,d.w*.30])A(new T.BoxGeometry(2.5,.10,.52),metal,x,.08,front+.80,g)}
 for(let sx of[-1,1])A(new T.CylinderGeometry(.04,.05,Math.max(3.4,d.h-.3),8),metal,sx*(d.w/2-.24),Math.max(3.4,d.h-.3)/2,front+.04,g);
 g.position.set(d.x,0,d.z);S.add(g)}
-window.LuxPropertyRealism720={groups:detailGroups,windowMaterial:glass,darkWindowMaterial:darkGlass}},420);
+W.registerTick?.((dt)=>{let h=(window.LuxLife?.state?.hour??12)+(window.LuxLife?.state?.minute??0)/60,night=h>=19.5||h<6.5,dusk=(h>=18&&h<19.5)||(h>=6.5&&h<7.5);for(let m of litWindows)m.emissiveIntensity+=( (night?.85:dusk?.34:0)-m.emissiveIntensity)*Math.min(1,dt*2.2)});window.LuxPropertyRealism720=window.LuxPropertyRealism730={version:'7.3.0',groups:detailGroups,windowMaterial:glass,darkWindowMaterial:darkGlass,litWindows}},420);

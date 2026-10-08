@@ -31,7 +31,8 @@ const ITEMS=[
  {t:'Privat- und Firmenkredite erst nach 6 Beschäftigungsmonaten',s:'work',release:'9.7.20'},
  {t:'KI-Bürger mit sicheren Tagesabläufen: Arbeit, Einkauf, Freizeit und Zuhause',s:'work',release:'9.7.22'},
  {t:'KI-Autos mit Tagesrhythmus: morgens weg, abends nach Hause und nachts geparkt',s:'work',release:'9.7.23'},
- {t:'Menschlichere Animationen: Idle-Haltung, Blickbewegungen, Handy und saubere Standpose',s:'work',release:'9.7.24'}
+ {t:'Menschlichere Animationen: Idle-Haltung, Blickbewegungen, Handy und saubere Standpose',s:'work',release:'9.7.24'},
+ {t:'Wohnhäuser mit tieferen Fassaden, Balkonen, Dachrinnen und Abendbeleuchtung',s:'work',release:'9.7.25'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
