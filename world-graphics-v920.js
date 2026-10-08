@@ -145,18 +145,54 @@ function init(W){
   // Mountain ridges and layered hills instead of flat horizon.
   const hillM=[mat(0x637757,.98),mat(0x708161,.98),mat(0x5d7051,.98),mat(0x7b8869,.98)];
   const ridges=[[-485,-410,160,80],[-300,-500,145,72],[-70,-515,175,94],[180,-500,160,82],[410,-430,175,90],[505,-170,155,78],[510,150,175,95],[440,430,190,100],[170,520,175,84],[-90,525,185,94],[-360,470,195,102],[-515,165,165,88],[-510,-150,170,86]];
-  ridges.forEach((a,i)=>{const [x,z,sx,sy]=a,g=new T.Group();g.position.set(x,0,z);root.add(g);for(let k=0;k<(mobile?2:3);k++){const rock=add(new T.DodecahedronGeometry(1,mobile?1:2),hillM[(i+k)%hillM.length],(k-1)*sx*.28,sy*.30+k*5,(k%2?1:-1)*sx*.14,g);rock.scale.set(sx*(.58-k*.06),sy*(.72+k*.06),sx*(.50-k*.04));rock.castShadow=false}}
+  ridges.forEach((a,i)=>{
+    const [x,z,sx,sy]=a,g=new T.Group();g.position.set(x,0,z);root.add(g);
+    const foothill=add(new T.SphereGeometry(1,mobile?10:18,mobile?7:12),hillM[(i+1)%hillM.length],0,sy*.13,0,g);
+    foothill.scale.set(sx*.72,sy*.34,sx*.60);foothill.castShadow=false;
+    for(let k=0;k<(mobile?2:3);k++){
+      const rock=add(new T.DodecahedronGeometry(1,mobile?1:2),hillM[(i+k)%hillM.length],(k-1)*sx*.28,sy*.30+k*5,(k%2?1:-1)*sx*.14,g);
+      rock.scale.set(sx*(.58-k*.06),sy*(.72+k*.06),sx*(.50-k*.04));rock.castShadow=false;
+      if(!mobile&&k<2){
+        const cap=add(new T.DodecahedronGeometry(1,1),mat(0x8b8d84,.94),rock.position.x,rock.position.y+sy*.24,rock.position.z,g);
+        cap.scale.set(sx*.20,sy*.13,sx*.15);cap.castShadow=false;
+      }
+    }
+  });
 
   // Vegetation, street furniture and grounded small details.
   const trunkM=mat(0x65482f,.95),leaf=[mat(0x3c693a,.98),mat(0x4a7740,.98),mat(0x335d35,.98)],binM=mat(0x3f4948,.70,.18),benchM=mat(0x76543b,.78),poleM=mat(0x343b3e,.42,.28);
-  function tree(x,z,i,s=1){add(new T.CylinderGeometry(.17*s,.24*s,2.5*s,8),trunkM,x,1.25*s,z);const a=add(new T.SphereGeometry(1.25*s,mobile?9:14,mobile?7:10),leaf[i%3],x,3.0*s,z);a.scale.set(1.05,.86,1);const b=add(new T.SphereGeometry(.9*s,mobile?8:12,mobile?6:9),leaf[(i+1)%3],x+.55*s,3.15*s,z+.15*s);b.scale.set(1,.78,1)}
+  function tree(x,z,i,s=1){
+    const g=new T.Group();g.position.set(x,0,z);root.add(g);
+    add(new T.CylinderGeometry(.15*s,.27*s,2.65*s,9),trunkM,0,1.30*s,0,g);
+    for(const a of[0,Math.PI*.66,Math.PI*1.33]){
+      const r=add(new T.CylinderGeometry(.045*s,.095*s,.72*s,7),trunkM,Math.cos(a)*.16*s,.20*s,Math.sin(a)*.16*s,g);
+      r.rotation.z=Math.cos(a)*1.16;r.rotation.x=Math.sin(a)*1.16;
+    }
+    if(!mobile){
+      for(const [a,y,l] of[[.4,1.85,.82],[2.4,2.02,.72],[4.6,2.16,.68]]){
+        const br=add(new T.CylinderGeometry(.045*s,.085*s,l*s,7),trunkM,Math.cos(a)*.20*s,y*s,Math.sin(a)*.20*s,g);
+        br.rotation.z=Math.cos(a)*.88;br.rotation.x=Math.sin(a)*.88;
+      }
+    }
+    const crowns=[[0,3.05,0,1.18,.86,1.04,i],[.58,3.16,.12,.86,.72,.86,i+1],[-.52,3.28,-.18,.82,.69,.80,i+2],[.08,3.62,-.08,.76,.73,.74,i+1]];
+    for(const [cx,cy,cz,sx,sy,sz,mi] of crowns){
+      const c=add(new T.IcosahedronGeometry(1*s,mobile?1:2),leaf[mi%3],cx*s,cy*s,cz*s,g);
+      c.scale.set(sx,sy,sz);c.castShadow=!mobile;
+    }
+    const soil=add(new T.CylinderGeometry(.66*s,.72*s,.035,18),soilM,0,.025,0,g);soil.castShadow=false;
+  }
   function streetLamp(x,z,rot,i){const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);add(new T.CylinderGeometry(.065,.10,5.15,9),poleM,0,2.58,0,g);add(new T.BoxGeometry(1.15,.065,.065),poleM,.52,5.02,0,g);add(new T.BoxGeometry(.46,.15,.24),lampBulb,1.08,4.91,0,g);if(!mobile&&i%3===0){const l=new T.PointLight(0xffd28a,0,20,2.0);l.position.set(1.08,4.82,0);g.add(l);nightLights.push(l)}}
   function bench(x,z,rot=0){const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);for(const zz of[-.38,.38])add(new T.BoxGeometry(2.0,.12,.22),benchM,0,.58,zz,g);add(new T.BoxGeometry(2.0,.12,.24),benchM,0,1.0,.45,g);for(const sx of[-.8,.8]){add(new T.BoxGeometry(.10,.62,.10),metalM,sx,.30,-.3,g);add(new T.BoxGeometry(.10,.72,.10),metalM,sx,.66,.42,g)}}
   function bin(x,z){add(new T.CylinderGeometry(.30,.34,.76,12),binM,x,.38,z);add(new T.CylinderGeometry(.36,.36,.08,12),darkTrim,x,.80,z)}
   let n=0;for(let z=-285;z<=285;z+=52){tree(-300,z,n++,.95);tree(300,z,n++,.95);if(n%2===0){streetLamp(-320,z,0,n);streetLamp(320,z,Math.PI,n)}}for(let x=-285;x<=285;x+=58){tree(x,-300,n++,.95);tree(x,300,n++,.95);if(n%2===0){streetLamp(x,-320,Math.PI/2,n);streetLamp(x,320,-Math.PI/2,n)}}
   for(const [x,z,r] of [[-205,-205,0],[205,-205,Math.PI],[205,205,Math.PI],[-205,205,0],[-95,225,Math.PI/2],[105,-225,-Math.PI/2]]){bench(x,z,r);bin(x+2.1,z+.4)}
-  // Roadside bollards and hydrants.
   for(let z=-240;z<=240;z+=80){for(const x of[-236,236]){add(new T.CylinderGeometry(.10,.12,.72,10),mat(0xb7b3aa,.72),x,.36,z);const cap=add(new T.SphereGeometry(.14,9,7),mat(0xa83f33,.62,.08),x+.8,.36,z+1.3);cap.scale.y=.85}}
+
+  const vergeM=mat(0x5b7f49,.98);
+  for(const r of premiumRoads){
+    const g=new T.Group();g.position.set(r.x,0,r.z);g.rotation.y=r.rot;root.add(g);
+    for(const sx of[-1,1]){const strip=add(new T.BoxGeometry(.58,.025,r.l-.8),vergeM,sx*(r.w/2+2.45),.035,0,g);strip.castShadow=false}
+  }
 
   // Crosswalks on the expanded grid.
   function crosswalk(x,z,rot=0){const g=new T.Group();g.position.set(x,.13,z);g.rotation.y=rot;root.add(g);for(let i=-4;i<=4;i++)add(new T.BoxGeometry(.42,.025,5.7),markM,i*.75,0,0,g).castShadow=false}
@@ -180,5 +216,5 @@ function init(W){
     else{skyMat.uniforms.top.value.setHex(0x5f9fd0);skyMat.uniforms.horizon.value.setHex(0xd9e6ec);skyMat.uniforms.ground.value.setHex(0xc3c9c7)}
   });
 
-  window.LuxGraphics920=window.LuxGraphics930={root,roads:premiumRoads,newObstacles,version:'9.3.0'};
+  window.LuxGraphics920=window.LuxGraphics930=window.LuxGraphics940={root,roads:premiumRoads,newObstacles,version:'9.4.0'};
 }

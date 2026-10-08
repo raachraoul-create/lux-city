@@ -1,12 +1,12 @@
 {
-  "version": "9.7.11",
-  "released_at": "2026-10-04T09:25:00+02:00",
-  "title": "Login und Schwarzbild-Schutz bereinigt",
+  "version": "9.7.12",
+  "released_at": "2026-10-08T08:38:00+02:00",
+  "title": "Natur und Stadtrand realistischer gestaltet",
   "notes": [
-    "Eine normale Seitenaktualisierung übernimmt nicht mehr dauerhaft einen alten manuellen Login-Marker.",
-    "Beim Ausloggen werden auch die aktuellen Cloud-Reload-Marker vollständig entfernt.",
-    "Die Spiel-Canvas wird beim erfolgreichen Eintritt ausdrücklich sichtbar und beim ausgeloggten Zustand ausdrücklich ausgeblendet.",
-    "Der normale Start bleibt manuell: Eine vorhandene Sitzung allein startet das Spiel nicht automatisch.",
-    "Cloud-interne Wiederaufnahme nach einem notwendigen Sync-Neuladen bleibt erhalten."
+    "Bäume besitzen jetzt Stammverjüngung, sichtbare Wurzelansätze, Äste und mehrere unregelmäßige Kronenschichten statt einfacher Kugelformen.",
+    "Die Bergkulisse wurde um weichere Vorhügel und zusätzliche Felsstruktur erweitert.",
+    "Zwischen den neuen Straßen, Gehwegen und Grünflächen liegen jetzt schmale Grünstreifen als natürlicher Übergang.",
+    "Auf Mobilgeräten bleiben die zusätzlichen Geometriedetails reduziert, damit die Darstellung flüssig bleibt.",
+    "Kollision, Steuerung, Login, Multiplayer und Wohnungslogik wurden in diesem Schritt nicht verändert."
   ]
 }
