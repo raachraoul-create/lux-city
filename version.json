@@ -1,13 +1,12 @@
 {
-  "version": "9.7.23",
-  "released_at": "2026-10-08T09:18:00+02:00",
-  "title": "KI-Autos fahren nach Tagesrhythmus und parken realistisch",
+  "version": "9.7.24",
+  "released_at": "2026-10-08T09:25:00+02:00",
+  "title": "Spieler und KI bewegen sich menschlicher",
   "notes": [
-    "Ein Teil der KI-Fahrzeuge besitzt jetzt einen festen Wohnparkplatz und einen öffentlichen Zielparkplatz.",
-    "Je nach Bürger-Typ fahren KI-Autos morgens bzw. tagsüber los und kehren abends wieder in Wohngebiete zurück.",
-    "Nachts stehen diese Fahrzeuge überwiegend geparkt statt dauerhaft ohne Zweck durch die Stadt zu fahren.",
-    "Fahrten benutzen die vorhandenen Hauptstraßen und Kreuzungen; vor belegten Parkplätzen wird gewartet.",
-    "Der Lux Markt erhält zusätzlich einen öffentlichen Parkplatz im regulären Parksystem.",
-    "Die Spieler-Fahrsteuerung wurde nicht verändert."
+    "Stehende KI-Figuren frieren nicht mehr in einer halben Gehpose ein; Arme und Beine kehren weich in eine natürliche Ruheposition zurück.",
+    "Passanten erhalten zusätzliche Gewichtsverlagerung, Kopf- und Blickbewegungen im Stand.",
+    "Ein Teil der Bürger schaut auf Arbeitsweg oder in der Freizeit sichtbar auf ein eigenes neutrales Smartphone.",
+    "Der Spieler erhält subtilere Kopf-, Arm- und Standbewegungen beim Stillstehen.",
+    "Laufen, Touch-Steuerung, Tastatursteuerung und Kollisionslogik wurden nicht verändert."
   ]
 }

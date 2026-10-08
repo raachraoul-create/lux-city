@@ -104,7 +104,7 @@ function build(W){
     L.legs.push(leg);lowerLegs.push(ll);feet.push(ft);
   }
 
-  p.userData.limbs=L;p.userData.avatar720=true;p.userData.avatar930=true;p.userData.humanHeight=1.82;
+  p.userData.limbs=L;p.userData.avatar720=true;p.userData.avatar930=true;p.userData.avatar950=true;p.userData.humanHeight=1.82;p.userData.headRoot950=head;p.userData.lowerArms950=lowerArms;p.userData.lowerLegs950=lowerLegs;p.userData.feet950=feet;p.userData.parts950=parts;
   let prev={x:p.position.x,z:p.position.z},phase=0,idle=0,blink=0,nextBlink=2.1;
   W.registerTick(dt=>{
     const dx=p.position.x-prev.x,dz=p.position.z-prev.z,sp=Math.hypot(dx,dz)/Math.max(dt,.001);prev={x:p.position.x,z:p.position.z};idle+=dt;phase+=dt*Math.min(10.5,sp*2.42);
@@ -112,13 +112,14 @@ function build(W){
     parts.chest.scale.y=1+breath;parts.abdomen.scale.y=1+breath*.45;
     const torso=moving?Math.sin(phase)*.012:Math.sin(idle*.64)*.0035;parts.abdomen.rotation.z+=(torso-parts.abdomen.rotation.z)*Math.min(1,dt*5);parts.pelvis.position.y=.83+(moving?Math.abs(Math.sin(phase*2))*.009:Math.sin(idle*.8)*.002);
     parts.pelvis.rotation.y+=((moving?Math.sin(phase)*.024:0)-parts.pelvis.rotation.y)*Math.min(1,dt*6);
-    parts.head.position.y=1.80+(moving?Math.abs(Math.sin(phase*2))*.004:breath*.5);const look=moving?0:Math.sin(idle*.26)*.042;parts.head.rotation.y+=(look-parts.head.rotation.y)*Math.min(1,dt*3);parts.head.rotation.z+=((moving?Math.sin(phase)*.005:Math.sin(idle*.41)*.003)-parts.head.rotation.z)*Math.min(1,dt*5);
+    parts.head.position.y=1.80+(moving?Math.abs(Math.sin(phase*2))*.004:breath*.5);const look=moving?0:Math.sin(idle*.26)*.042;parts.head.rotation.y+=(look-parts.head.rotation.y)*Math.min(1,dt*3);parts.head.rotation.z+=((moving?Math.sin(phase)*.005:Math.sin(idle*.41)*.003)-parts.head.rotation.z)*Math.min(1,dt*5);parts.head.rotation.x+=((moving?0:Math.sin(idle*.23)*.018)-parts.head.rotation.x)*Math.min(1,dt*2.8);
     nextBlink-=dt;if(nextBlink<0){blink=.105;nextBlink=2.4+Math.random()*4.4}if(blink>0)blink-=dt;for(const e of eyes){const t=blink>0?.055:.62;e.scale.y+=(t-e.scale.y)*Math.min(1,dt*30)}
     for(let i=0;i<2;i++){
+      if(!moving){let idleArm=(i===0?1:-1)*Math.sin(idle*.31)*.025;L.arms[i].rotation.z+=(idleArm-L.arms[i].rotation.z)*Math.min(1,dt*2.6);L.arms[i].rotation.x+=(Math.sin(idle*.21+i)*.020-L.arms[i].rotation.x)*Math.min(1,dt*2.2);L.legs[i].rotation.x+=(0-L.legs[i].rotation.x)*Math.min(1,dt*7)}
       const ls=L.legs[i].rotation.x,as=L.arms[i].rotation.x,k=moving?Math.max(0,-ls)*(.62+.14*run):0,el=moving?Math.max(0,-as)*(.28+.07*run):.035,fo=moving?Math.max(-.14,Math.min(.19,ls*.15)):0;
       lowerLegs[i].rotation.x+=(k-lowerLegs[i].rotation.x)*Math.min(1,dt*9);lowerArms[i].rotation.x+=(el-lowerArms[i].rotation.x)*Math.min(1,dt*8);feet[i].rotation.x+=(fo-feet[i].rotation.x)*Math.min(1,dt*9);
     }
     sh.material.opacity=.16+Math.min(.08,sp*.006);
   });
-  window.LuxAvatar720=window.LuxAvatar930=window.LuxAvatar940={config:cfg,player:p,version:'9.4.0'};
+  window.LuxAvatar720=window.LuxAvatar930=window.LuxAvatar940=window.LuxAvatar950={config:cfg,player:p,version:'9.5.0'};
 }
