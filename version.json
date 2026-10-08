@@ -1,13 +1,13 @@
 {
-  "version": "9.7.25",
-  "released_at": "2026-10-08T09:32:00+02:00",
-  "title": "Wohnhäuser optisch weiter aufgewertet",
+  "version": "9.7.26",
+  "released_at": "2026-10-08T09:40:00+02:00",
+  "title": "Tag/Nacht und Wetter optisch deutlich erweitert",
   "notes": [
-    "Wohnfassaden erhalten zusätzliche Tiefe durch ausgearbeitete Fensterlaibungen und ausgewählte warme Innenbeleuchtung.",
-    "Balkonhäuser besitzen jetzt echte Geländer mit Stäben sowie auf Desktop zusätzliche bepflanzte Blumenkästen.",
-    "Dachkanten wurden um Regenrinnen und Anschlussbögen ergänzt.",
-    "Ausgewählte Häuser erhalten kleine Dachgauben für abwechslungsreichere Silhouetten.",
-    "Fensterbeleuchtung schaltet sich abhängig von Tageszeit weich ein und aus.",
-    "Hauskollisionen, Türen und Wohnungszugang wurden nicht verändert."
+    "Klare Nächte besitzen jetzt einen eigenen Sternenhimmel, der bei Wolken, Regen und Nebel automatisch ausgeblendet wird.",
+    "Straßenlampen erhalten nachts sichtbare weiche Licht-Halos statt nur heller Lampenkörper.",
+    "Bei Regen erscheinen zusätzliche feuchte Reflexstreifen auf den Straßen.",
+    "Regen erzeugt animierte Pfützenringe rund um den Spieler und stärkere atmosphärische Bodennähe.",
+    "Nebel, Regen, Schnee und Bewölkung bekommen unterschiedliche Dunststärken.",
+    "Auf iPhone/iPad werden Sterne, Halos und Pfützenanimationen reduziert, um die Leistung zu schützen."
   ]
 }
