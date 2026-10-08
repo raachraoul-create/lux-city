@@ -1,13 +1,13 @@
 {
-  "version": "9.7.14",
+  "version": "9.7.15",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Pannen und Abschleppdienst eingebaut",
+  "title": "Supermarkt und täglicher Einkauf eingebaut",
   "notes": [
-    "Fahrzeuge bekommen zusätzlich zum Energieverbrauch jetzt langsamen normalen Verschleiß durch gefahrene Strecke.",
-    "Bei stark schlechtem Fahrzeugzustand können echte Pannen mit verschiedenen Fehlerursachen auftreten.",
-    "Ein liegengebliebenes Fahrzeug verliert den Antrieb und kann nicht einfach normal weitergefahren werden.",
-    "Der Abschleppdienst berechnet seine Gebühr nach Entfernung und bringt das Fahrzeug direkt zur Servicebucht der Werkstatt.",
-    "Eine Reparatur in der Werkstatt beseitigt die Panne und verbessert den Fahrzeugzustand.",
-    "Lenkung, Touch-Steuerung und normale Fahrzeugkollision wurden nicht verändert."
+    "Der Lux Markt steht jetzt als eigenes Gebäude auf einem reservierten Bauplatz mit Parkplatz und Straßenanbindung.",
+    "Der Supermarkt ist täglich von 07:00 bis 21:00 Uhr geöffnet.",
+    "Lebensmittel und Getränke werden als echter Haushaltsvorrat gekauft und im Cloud-Spielstand gespeichert.",
+    "Essen zuhause verbraucht jetzt eine gekaufte Mahlzeit; der alte automatische 4-Euro-Kühlschrankkauf entfällt.",
+    "Getränke aus dem Vorrat können zuhause getrunken werden, Leitungswasser bleibt weiterhin kostenlos.",
+    "Der Supermarkt erscheint zusätzlich als Ziel in der Stadtkarte."
   ]
 }

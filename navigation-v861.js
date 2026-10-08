@@ -3,7 +3,7 @@ const W=()=>window.LuxWorld,H=()=>window.LuxHomes520,A=()=>window.LuxAccount,SA=
 function e(t,a={},x=''){let n=document.createElementNS(NS,t);for(const[k,v]of Object.entries(a))n.setAttribute(k,String(v));if(x)n.textContent=x;return n}
 function ownHome(){let ha=window.LuxHomeAccess840?.resolve?.();if(ha)return{...ha,kind:'home'};return null}
 function businesses(){let eco=E(),ds=S()?.doors||{};if(!eco?.myBusinesses)return[];return(eco.myBusinesses()||[]).map(id=>{let p=ds[id];return p?{id,x:p.x,z:p.z,label:eco.ECON?.nodes?.[id]?.name||id,kind:'business'}:null}).filter(Boolean)}
-function services(){let ds=S()?.doors||{};return[['townhall','Gemeinde','G'],['police','Polizei','P'],['fire','Feuerwehr','F'],['hospital','Krankenhaus','K']].map(([id,label,icon])=>ds[id]?{id,x:ds[id].x,z:ds[id].z,label,icon,kind:'service'}:null).filter(Boolean)}
+function services(){let ds=S()?.doors||{};return[['townhall','Gemeinde','G'],['supermarket','Supermarkt','S'],['police','Polizei','P'],['fire','Feuerwehr','F'],['hospital','Krankenhaus','K']].map(([id,label,icon])=>ds[id]?{id,x:ds[id].x,z:ds[id].z,label,icon,kind:'service'}:null).filter(Boolean)}
 function outsidePlayer(){let w=W(),h=H(),home=ownHome();if(!w?.player)return{x:0,z:0};if(h?.inside&&home)return{x:home.x,z:home.z};return{x:w.player.position.x,z:w.player.position.z}}
 function roadLines(g,fn,width){for(const r of W()?.roads||[]){let hx=r.l/2,hz=r.w/2,a,b;if(hz>hx){a=fn(r.x,r.z-hz);b=fn(r.x,r.z+hz)}else{a=fn(r.x-hx,r.z);b=fn(r.x+hx,r.z)}g.appendChild(e('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:'#68737c','stroke-width':width,'stroke-linecap':'round',opacity:.72}))}}
 function housePoint(i,h){return{x:h.x,z:h.z,label:'Haus '+(i+1),kind:'house'}}

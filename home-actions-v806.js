@@ -10,10 +10,10 @@ function init(H,I,G){
  body:not(.game-ready) #homeActions806{display:none!important}
  @media(max-width:900px) and (pointer:coarse){#homeActions806{left:8px;top:100px}#homeActions806>button{padding:7px 8px!important;font-size:10px!important}.panel806{width:160px!important}}
  `;document.head.appendChild(style);
- let root=document.createElement('div');root.id='homeActions806';root.innerHTML='<button>🏠 WOHNUNG</button><div class="panel806"><button data-a="fridge">🍽️ ESSEN</button><button data-a="sink">🥤 TRINKEN</button><button data-a="bed">🛏️ SCHLAFEN</button><button data-a="shower">🚿 DUSCHEN</button><button class="leave806" data-a="exit">🚪 VERLASSEN</button></div>';document.body.appendChild(root);
+ let root=document.createElement('div');root.id='homeActions806';root.innerHTML='<button>🏠 WOHNUNG</button><div class="panel806"><button data-a="fridge">🍽️ ESSEN</button><button data-a="bottle">🥤 GETRÄNK</button><button data-a="sink">🚰 WASSER</button><button data-a="bed">🛏️ SCHLAFEN</button><button data-a="shower">🚿 DUSCHEN</button><button class="leave806" data-a="exit">🚪 VERLASSEN</button></div>';document.body.appendChild(root);
  root.firstElementChild.onclick=()=>root.classList.toggle('open');
  root.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{let a=b.dataset.a;if(a==='exit'){H.leave();root.classList.remove('open');return}I.act(a);G.refreshHud?.()});
  let oldExit=document.getElementById('apartmentExit800');if(oldExit)oldExit.style.setProperty('display','none','important');
- setInterval(()=>{let on=!!H.inside&&!H.viewing;root.style.display=on?'block':'none';if(!on)root.classList.remove('open');let x=document.getElementById('apartmentExit800');if(x)x.style.setProperty('display','none','important')},160);
+ setInterval(()=>{let on=!!H.inside&&!H.viewing;root.style.display=on?'block':'none';if(!on)root.classList.remove('open');let x=document.getElementById('apartmentExit800');if(x)x.style.setProperty('display','none','important');let sm=window.LuxSupermarket800,fb=root.querySelector('[data-a="fridge"]'),db=root.querySelector('[data-a="bottle"]');if(sm&&fb)fb.textContent='🍽️ ESSEN · '+sm.state.meals;if(sm&&db)db.textContent='🥤 GETRÄNK · '+sm.state.drinks},160);
  window.LuxHomeActions806={root}
 }})();
