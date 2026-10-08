@@ -1,12 +1,12 @@
 {
-  "version": "9.7.36",
-  "released_at": "2026-10-08T10:08:00+02:00",
-  "title": "Polizei, Rettung und Krankenhaus optisch aufgewertet",
+  "version": "9.7.37",
+  "released_at": "2026-10-08T10:16:00+02:00",
+  "title": "Innenräume der Einsatzgebäude deutlich ausgebaut",
   "notes": [
-    "Die Polizeiwache erhält einen klareren gesicherten Vorplatz, Vordach, Beleuchtung, Poller und sichtbare Sicherheitsdetails.",
-    "Die Rettungswache bekommt eigene Ambulanz-Buchten, rote Fahrspuren, Vordach und 112-Kennzeichnung.",
-    "Das Krankenhaus erhält eine deutlich sichtbare Notaufnahme mit großem Anfahrtsbereich, markierten Rettungsspuren und Eingangsvordach.",
-    "Abend- und Nachtbeleuchtung reagiert auf die Tageszeit.",
-    "Bestehende Türen, Einsatzfahrzeuge, Dispatch-Logik und Kollisionen wurden nicht verändert."
+    "Die Polizeiwache erhält zusätzliche Arbeitsplätze, Monitore, Schließfächer, Informationswand und Sicherheitsdetails.",
+    "Die Rettungswache bekommt Materialschränke, Bereitschaftsausrüstung, Sauerstoffflaschen und sichtbare Trage-/Trolley-Details.",
+    "Die Krankenhaus-Notaufnahme erhält erweiterten Wartebereich, Triage-/Empfangsmonitore und zusätzliche Behandlungsgeräte.",
+    "Die neue Ausstattung ist rein visuell und verändert weder Innenraumkollisionen noch Türen oder Einsatzlogik.",
+    "Auf Mobilgeräten werden sehr kleine Zusatzdetails reduziert."
   ]
 }
