@@ -21,9 +21,9 @@ function init(){
  // loading/service side
  A(new T.BoxGeometry(6.3,3.4,.14),dark,-8.2,1.75,-P.d/2-.08,root);for(let y=.7;y<3.1;y+=.52)A(new T.BoxGeometry(5.9,.05,.04),M(0x666d70,.38,.42),-8.2,y,-P.d/2-.18,root);
  // parking lot toward the road, plus connection to x=125 road
- const lot=new T.Group();lot.position.set(-P.d/2-9.0,0,0);root.add(lot);A(new T.BoxGeometry(18,.08,24),asphalt,0,.05,0,lot);
+ const lot=new T.Group();lot.position.set(0,0,P.d/2+9.0);root.add(lot);A(new T.BoxGeometry(18,.08,24),asphalt,0,.05,0,lot);
  for(let z=-9;z<=9;z+=4.5){for(const x of[-5.2,5.2])A(new T.BoxGeometry(.10,.025,3.8),white,x,.105,z,lot)}
- A(new T.BoxGeometry(19,.07,7.0),asphalt,-13.5,.045,0,root);
+ A(new T.BoxGeometry(10,.07,4.2),asphalt,0,.045,P.d/2+22.0,root);
  // shopping carts
  for(let i=0;i<5;i++){let g=new T.Group();g.position.set(-9.0+i*.72,.25,front+2.4);root.add(g);A(new T.BoxGeometry(.62,.42,.82),M(0xaeb5b8,.30,.60),0,.32,0,g);for(const x of[-.24,.24])for(const z of[-.28,.28])A(new T.CylinderGeometry(.06,.06,.045,10),dark,x,.06,z,g).rotation.z=Math.PI/2}
  // collision shell with door opening
@@ -52,5 +52,5 @@ function init(){
  let hint=document.createElement('div');hint.id='supermarketHint800';hint.style='position:fixed;left:50%;bottom:124px;transform:translateX(-50%);z-index:60;background:#0b111de8;color:#fff;border:1px solid #ffffff2c;border-radius:9px;padding:8px 11px;font:bold 11px Arial;display:none;pointer-events:none';document.body.appendChild(hint);
  addEventListener('keydown',e=>{if((e.code==='KeyE'||String(e.key).toLowerCase()==='e')&&!e.repeat&&near()){e.preventDefault();e.stopImmediatePropagation();open()}},{capture:true});
  setInterval(()=>{let n=near();hint.style.display=n?'block':'none';if(n)hint.textContent=openNow()?'E · LUX MARKT · EINKAUFEN':'LUX MARKT GESCHLOSSEN · 07:00–21:00'},160);
- window.LuxSupermarket800={version:'8.0.0',state,position:P,door,near,open,buy,consumeMeal,consumeDrink,save}
+ window.LuxSupermarket800=window.LuxSupermarket801={version:'8.0.1',state,position:P,door,near,open,buy,consumeMeal,consumeDrink,save}
 }

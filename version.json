@@ -1,12 +1,10 @@
 {
-  "version": "9.7.18",
+  "version": "9.7.19",
   "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Bankkredite auf 6 Beschäftigungsmonate vereinheitlicht",
+  "title": "Supermarkt-Parkplatz korrekt an Straße angebunden",
   "notes": [
-    "Privatkredite werden jetzt erst nach mindestens 6 vollständigen Beschäftigungsmonaten geprüft.",
-    "Die Bank zeigt den Fortschritt bis zur Kreditfreigabe direkt als X/6 Monate an.",
-    "Kreditangebote bleiben bis zur Mindestbeschäftigungsdauer sichtbar, sind aber noch gesperrt.",
-    "Nach 6 Monaten gelten weiterhin Bonität, regelmäßiges Einkommen und bestehende Schulden als zusätzliche Prüfung.",
-    "Die Konto-Funktion canCredit verwendet jetzt dieselbe 6-Monats-Regel wie die Bank."
+    "Der Lux-Markt-Parkplatz liegt jetzt tatsächlich vor dem Eingang in Richtung der öffentlichen Straße.",
+    "Die Zufahrt endet sauber am Straßenrand statt seitlich am Gebäude.",
+    "Gebäude, Einkaufssystem, Öffnungszeiten und Haushaltsvorräte bleiben unverändert."
   ]
 }
