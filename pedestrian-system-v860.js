@@ -23,6 +23,6 @@ function init(){
  function assignSafe(p,i){let rt=routes[i%routes.length],idx=((i*17)+(p.userData.routeIndex||0))%rt.length;p.userData.route=rt;p.userData.routeIndex=idx;p.userData.walkSpeed=p.userData.walkSpeed||(.98+(i%5)*.07);p.userData.routineExcluded=true;p.userData.safePed860=true}
  W.npcs.forEach(assignSafe);
  // Reassert only if another legacy routine tries to replace the safe route.
- setInterval(()=>W.npcs.forEach((p,i)=>{if(!p.userData.safePed860||!routes.includes(p.userData.route))assignSafe(p,i)}),1200);
- window.LuxPedestrians860={routes,get count(){return W.npcs.length}}
+ setInterval(()=>W.npcs.forEach((p,i)=>{let safeCustom=p.userData?.safeDerived880&&Array.isArray(p.userData.route);if(!p.userData.safePed860||(!routes.includes(p.userData.route)&&!safeCustom))assignSafe(p,i)}),1200);
+ window.LuxPedestrians860=window.LuxPedestrians861={version:'8.6.1',routes,assignSafe,get count(){return W.npcs.length}}
 }

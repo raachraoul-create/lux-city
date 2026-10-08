@@ -1,11 +1,13 @@
 {
-  "version": "9.7.21",
-  "released_at": "2026-10-08T08:38:00+02:00",
-  "title": "Handy-Versicherungen und Rechnungen in Cloud-Sync aufgenommen",
+  "version": "9.7.22",
+  "released_at": "2026-10-08T09:10:00+02:00",
+  "title": "KI-Bürger mit sicheren echten Tagesabläufen",
   "notes": [
-    "Der benutzerspezifische Handy-Speicher wird jetzt zusammen mit dem restlichen Spielstand zwischen Geräten synchronisiert.",
-    "Ausgewählte Kfz-Versicherungen, offene und bezahlte Rechnungen sowie erzeugte Monatsabrechnungen gehören damit zum Account statt nur zum Gerät.",
-    "Beim Wechsel zwischen Accounts bleibt jeder Handy-Spielstand weiterhin sauber nach Benutzer getrennt.",
-    "Geld-, Fahrzeug- und Wohnungs-Synchronisation bleiben unverändert."
+    "Die sichere Gehweg- und Zebrastreifenführung bleibt bestehen und akzeptiert jetzt zusätzlich daraus abgeleitete lokale Bürger-Routen.",
+    "KI-Bürger wechseln abhängig von Uhrzeit zwischen Zuhause, Arbeitsweg, Arbeit, Mittagspause, Einkauf, Freizeit und Heimweg.",
+    "Einkaufende Bürger orientieren sich am Lux Markt und tragen sichtbar Einkaufstaschen; bei Mittag und Freizeit erscheinen Getränke.",
+    "Nachts verschwinden Bürger in ihren Wohnungen statt rund um die Uhr ziellos durch die Stadt zu laufen.",
+    "Gespräche mit Bürgern reagieren jetzt auf deren aktuelle Tätigkeit.",
+    "Spielersteuerung, Fahrzeugsteuerung und Wohnungslogik wurden nicht verändert."
   ]
 }
