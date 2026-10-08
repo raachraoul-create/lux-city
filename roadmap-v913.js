@@ -37,7 +37,8 @@ const ITEMS=[
  {t:'Geschäfte & Betriebe mit eigenen Fassaden, Schaufenstern und Außenbereichen',s:'work',release:'9.7.27'},
  {t:'Gemeinde, Bank, Arbeitsamt und Wohnungsamt visuell klarer und hochwertiger',s:'work',release:'9.7.28'},
  {t:'Stadtmöblierung: echte Bushaltestellen, Fahrradständer, Poller, Hydranten und Abfallbehälter',s:'work',release:'9.7.29'},
- {t:'Kreuzungen & Fahrbahn: Haltelinien, Richtungspfeile, Reflektoren und taktile Übergänge',s:'work',release:'9.7.30'}
+ {t:'Kreuzungen & Fahrbahn: Haltelinien, Richtungspfeile, Reflektoren und taktile Übergänge',s:'work',release:'9.7.30'},
+ {t:'Natur & Stadtrand: gemischte Baumarten, Waldränder, Sträucher und Wieseninseln',s:'work',release:'9.7.31'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

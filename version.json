@@ -1,12 +1,13 @@
 {
-  "version": "9.7.30",
-  "released_at": "2026-10-08T10:12:00+02:00",
-  "title": "Kreuzungen und Fahrbahn grafisch verfeinert",
+  "version": "9.7.31",
+  "released_at": "2026-10-08T10:22:00+02:00",
+  "title": "Natur und Stadtrand deutlich natürlicher gestaltet",
   "notes": [
-    "Signalisierte Kreuzungen besitzen jetzt klarere Haltelinien vor den Ampelbereichen.",
-    "Fahrtrichtungspfeile machen die Straßenführung vor Kreuzungen besser lesbar.",
-    "Reflektierende Straßenmarkierer geben Hauptachsen bei Dunkelheit und Regen mehr Tiefe.",
-    "Fußgängerübergänge erhalten zusätzliche taktile Randflächen.",
-    "Die Änderungen sind rein visuell; Ampellogik, Fahrphysik und Kollisionen wurden nicht verändert."
+    "Der Stadtrand erhält jetzt unregelmäßige Baumgruppen statt gleichmäßiger Reihen.",
+    "Laub- und Nadelbäume werden gemischt und mit unterschiedlichen Größen und Kronenformen verteilt.",
+    "Sträucher, kleine Gehölzgruppen, Wieseninseln und auf Desktop zusätzlich Wildblumen machen Grünflächen abwechslungsreicher.",
+    "Vegetation wird automatisch von Straßen, Häusern und wichtigen Gebäuden ferngehalten.",
+    "Die neue Natur ist rein visuell und erzeugt keine zusätzlichen Kollisionen.",
+    "Auf Mobilgeräten wird die Vegetationsdichte reduziert."
   ]
 }
