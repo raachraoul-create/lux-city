@@ -1,13 +1,13 @@
 {
-  "version": "9.7.26",
-  "released_at": "2026-10-08T09:40:00+02:00",
-  "title": "Tag/Nacht und Wetter optisch deutlich erweitert",
+  "version": "9.7.27",
+  "released_at": "2026-10-08T09:48:00+02:00",
+  "title": "Geschäfte und Betriebe optisch voneinander getrennt",
   "notes": [
-    "Klare Nächte besitzen jetzt einen eigenen Sternenhimmel, der bei Wolken, Regen und Nebel automatisch ausgeblendet wird.",
-    "Straßenlampen erhalten nachts sichtbare weiche Licht-Halos statt nur heller Lampenkörper.",
-    "Bei Regen erscheinen zusätzliche feuchte Reflexstreifen auf den Straßen.",
-    "Regen erzeugt animierte Pfützenringe rund um den Spieler und stärkere atmosphärische Bodennähe.",
-    "Nebel, Regen, Schnee und Bewölkung bekommen unterschiedliche Dunststärken.",
-    "Auf iPhone/iPad werden Sterne, Halos und Pfützenanimationen reduziert, um die Leistung zu schützen."
+    "Bäckerei, Café, Kneipe, Post und Produktionsbetriebe besitzen jetzt deutlich individuellere Fassaden statt derselben Grundfront.",
+    "Die Bäckerei erhält große Schaufenster und ein markanteres Vordach, das Café eine sichtbare Außenterrasse.",
+    "Die Kneipe bekommt warme Außenlaternen und Holzdetails, die Post einen klareren Logistik- und Ladebereich.",
+    "Mühle, Zucker- und Getränkebetrieb erhalten zusätzliche Industrie-, Rohr- und Ladehofdetails.",
+    "Abendliche Schaufenster- und Außenbeleuchtung reagiert auf die Tageszeit.",
+    "Türen, Öffnungszeiten, Interaktionen und Gebäudekollisionen wurden nicht verändert."
   ]
 }
