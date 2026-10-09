@@ -1,12 +1,12 @@
 {
-  "version": "9.7.45",
-  "released_at": "2026-10-09T07:08:00+02:00",
-  "title": "Bus und ÖPNV deutlich hochwertiger gestaltet",
+  "version": "9.7.46",
+  "released_at": "2026-10-09T07:16:00+02:00",
+  "title": "Lux Kolosseum als echter Veranstaltungsort aufgebaut",
   "notes": [
-    "Der Linie-1-Bus erhält eine detailliertere Front und Heckpartie mit großen Scheiben und Zielanzeigen.",
-    "Seitliche Fensterbänder, Pfeiler, Spiegel und Radkasten-Details verbessern die Fahrzeugform.",
-    "Im Innenraum sind Sitze, Kopfstützen, Haltestangen und Handgriffe sichtbar.",
-    "Front-, Heck- und Türbeleuchtung reagieren auf Tageszeit und Haltestopp.",
-    "Linie, Haltezeiten, Ticketpreis, Ein-/Aussteigen und Fahrlogik wurden nicht verändert."
+    "Das Kolosseum erhält erstmals eine vollständige sichtbare Außenarchitektur um den bestehenden Eingang.",
+    "Ein elliptischer Rundbau mit Steinpfeilern, Bögen und oberen Gesimsringen ersetzt die bisher praktisch leere Außenwirkung.",
+    "Der vorhandene Eingang wird durch ein großes Portal, Treppen und LUX-COLOSSEUM-Beschilderung hervorgehoben.",
+    "Vor dem Gebäude entstehen gepflasterter Vorplatz, Eventtafeln, Fahnen, Absperrungen, Pflanzbereiche und Abendbeleuchtung.",
+    "Der bestehende Zugangspunkt, Innenraum, Türen und Interaktionslogik wurden nicht verändert."
   ]
 }
