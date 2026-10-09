@@ -1,13 +1,12 @@
 {
-  "version": "9.7.48",
-  "released_at": "2026-10-09T07:31:00+02:00",
-  "title": "Spielercharakter im Nahbereich weiter verfeinert",
+  "version": "9.7.49",
+  "released_at": "2026-10-09T16:50:00+02:00",
+  "title": "Minimap und Stadtkarte optisch modernisiert",
   "notes": [
-    "Kleidung erhält zusätzliche Nähte, Taschen, Bündchen, Gürtel- und Stoffdetails.",
-    "Hände bekommen auf leistungsfähigeren Geräten feinere Finger-/Nageldetails und eine dezente Armbanduhr.",
-    "Schuhe erhalten klarere Sohlen, Zehenkappe und feinere Schnürung.",
-    "Gesicht und Haare werden durch Augenlicht, Lid-/Ohrdetails und zusätzliche Haarsträhnen plastischer.",
-    "Die bestehenden Avatarfarben und gewählten Charaktermerkmale bleiben erhalten.",
-    "Animationen, Laufsteuerung und Kollision wurden nicht verändert."
+    "Die Minimap erhält einen klareren Radar-Look, stärkere Kontraste und einen zusätzlichen Kompassring.",
+    "Vollkarte und Seitenbereiche wurden visuell vereinheitlicht und besser lesbar gestaltet.",
+    "Eine kompakte Kartenlegende und zusätzliche Navigationshilfe machen Zuhause, Firmen und öffentliche Orte schneller verständlich.",
+    "Die mobile Darstellung wurde kompakter und klarer strukturiert.",
+    "Wegpunkte, Kartenpositionen, Blickrichtung und Navigation wurden funktional nicht verändert."
   ]
 }
