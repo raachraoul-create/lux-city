@@ -1,11 +1,12 @@
 {
-  "version": "9.7.44",
-  "released_at": "2026-10-08T22:18:00+02:00",
-  "title": "Öffentliche Innenräume deutlich hochwertiger",
+  "version": "9.7.45",
+  "released_at": "2026-10-09T07:08:00+02:00",
+  "title": "Bus und ÖPNV deutlich hochwertiger gestaltet",
   "notes": [
-    "Die Lux City Bank erhält zusätzliche Schalter, Beratungsplätze, Wartebereiche, Geldautomaten und einen sichtbaren Tresorbereich.",
-    "Arbeitsamt und Wohnungsamt bekommen klarere Schalterzonen, Wartebereiche und Informationsflächen.",
-    "Die Gemeinde erhält Bürgerbüro-Plätze, Sitzungstisch, Informationskiosk und repräsentativere Verwaltungsdetails.",
-    "Die neuen Elemente sind rein visuell und verändern weder Behördenfunktionen noch Innenraumkollisionen oder Türen."
+    "Der Linie-1-Bus erhält eine detailliertere Front und Heckpartie mit großen Scheiben und Zielanzeigen.",
+    "Seitliche Fensterbänder, Pfeiler, Spiegel und Radkasten-Details verbessern die Fahrzeugform.",
+    "Im Innenraum sind Sitze, Kopfstützen, Haltestangen und Handgriffe sichtbar.",
+    "Front-, Heck- und Türbeleuchtung reagieren auf Tageszeit und Haltestopp.",
+    "Linie, Haltezeiten, Ticketpreis, Ein-/Aussteigen und Fahrlogik wurden nicht verändert."
   ]
 }
