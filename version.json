@@ -1,12 +1,12 @@
 {
-  "version": "9.7.51",
-  "released_at": "2026-10-09T17:06:00+02:00",
-  "title": "Feuerwehr-Innenraum deutlich ausgebaut",
+  "version": "9.7.52",
+  "released_at": "2026-10-09T17:15:00+02:00",
+  "title": "Wohngebiete und Grundstücke deutlich individueller",
   "notes": [
-    "Die Feuerwehr erhält eine große Spind- und Einsatzkleidungswand mit Helmen und Reflexstreifen.",
-    "Atemschutzflaschen, Schlauch-/Geräteregale und Werkstattdetails machen den Einsatzbereich glaubwürdiger.",
-    "Eine eigene Leitstelle mit mehreren Monitoren und Einsatzübersicht ergänzt die Wache.",
-    "Bereitschaftsbereich, Bänke, Arbeitsflächen und Bodenmarkierungen strukturieren den Innenraum.",
-    "Feuerwehreinsätze, Türen, Fahrzeuglogik, Kollision und bestehende Interaktionen wurden nicht verändert."
+    "Wohnhäuser erhalten seitlich versetzte Einfahrten, Briefkästen und Mülltonnen, ohne den bestehenden Hauseingang zu blockieren.",
+    "Je nach Haus entstehen unterschiedliche Terrassen, Gartensitzplätze, Pergolen, Zäune oder kleine Nebengebäude.",
+    "Pflanzkästen, Hecken, Außentapeten-/Schlauchdetails und individuelle Gartenbereiche reduzieren Wiederholungen im Wohngebiet.",
+    "Porch-Beleuchtung reagiert auf Tageszeit; auf Mobilgeräten werden kleine Gartenobjekte reduziert.",
+    "Hauszugänge, Wohnungslogik, Türen und Kollisionen wurden nicht verändert."
   ]
 }

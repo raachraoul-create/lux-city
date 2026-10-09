@@ -58,7 +58,8 @@ const ITEMS=[
  {t:'Spielercharakter im Nahbereich verfeinert: Kleidung, Hände, Schuhe, Augen und Haarstruktur',s:'work',release:'9.7.48'},
  {t:'Minimap & Stadtkarte modernisiert: bessere Kontraste, Kompassring, Icons und mobile Darstellung',s:'work',release:'9.7.49'},
  {t:'Ingame-Handy optisch verfeinert: App-Kacheln, Statusleiste, Karten und mobile Lesbarkeit',s:'work',release:'9.7.50'},
- {t:'Feuerwehr innen: Einsatzkleidung, Atemschutz, Leitstelle, Werkbank und Bereitschaftsbereich',s:'work',release:'9.7.51'}
+ {t:'Feuerwehr innen: Einsatzkleidung, Atemschutz, Leitstelle, Werkbank und Bereitschaftsbereich',s:'work',release:'9.7.51'},
+ {t:'Wohngebiete individueller: Einfahrten, Briefkästen, Mülltonnen, Terrassen, Zäune und Gartenmöbel',s:'work',release:'9.7.52'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
