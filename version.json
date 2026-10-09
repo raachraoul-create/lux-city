@@ -1,12 +1,12 @@
 {
-  "version": "9.7.46",
-  "released_at": "2026-10-09T07:16:00+02:00",
-  "title": "Lux Kolosseum als echter Veranstaltungsort aufgebaut",
+  "version": "9.7.47",
+  "released_at": "2026-10-09T07:23:00+02:00",
+  "title": "Kolosseum innen als richtige Event-Arena ausgebaut",
   "notes": [
-    "Das Kolosseum erhält erstmals eine vollständige sichtbare Außenarchitektur um den bestehenden Eingang.",
-    "Ein elliptischer Rundbau mit Steinpfeilern, Bögen und oberen Gesimsringen ersetzt die bisher praktisch leere Außenwirkung.",
-    "Der vorhandene Eingang wird durch ein großes Portal, Treppen und LUX-COLOSSEUM-Beschilderung hervorgehoben.",
-    "Vor dem Gebäude entstehen gepflasterter Vorplatz, Eventtafeln, Fahnen, Absperrungen, Pflanzbereiche und Abendbeleuchtung.",
-    "Der bestehende Zugangspunkt, Innenraum, Türen und Interaktionslogik wurden nicht verändert."
+    "Der Innenraum erhält mehrere abgestufte Tribünenringe mit farblich unterschiedlichen Sitzbereichen.",
+    "Arena-Barriere, Geländer, Treppenbereiche und Mittelmarkierung geben dem Innenraum deutlich mehr Struktur.",
+    "Lichttraversen, große Anzeigetafel, Lautsprecher und Eingangstunnel schaffen eine echte Veranstaltungsatmosphäre.",
+    "Auf leistungsfähigeren Geräten kommen zusätzliche Kameras und VIP-Geländer hinzu.",
+    "Innenraumtür, Ausgang, Kollision und Interaktionslogik wurden nicht verändert."
   ]
 }
