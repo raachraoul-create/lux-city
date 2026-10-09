@@ -1,12 +1,12 @@
 {
-  "version": "9.7.52",
-  "released_at": "2026-10-09T17:15:00+02:00",
-  "title": "Wohngebiete und Grundstücke deutlich individueller",
+  "version": "9.7.53",
+  "released_at": "2026-10-09T17:24:00+02:00",
+  "title": "Werkstatt und Servicehof deutlich detaillierter",
   "notes": [
-    "Wohnhäuser erhalten seitlich versetzte Einfahrten, Briefkästen und Mülltonnen, ohne den bestehenden Hauseingang zu blockieren.",
-    "Je nach Haus entstehen unterschiedliche Terrassen, Gartensitzplätze, Pergolen, Zäune oder kleine Nebengebäude.",
-    "Pflanzkästen, Hecken, Außentapeten-/Schlauchdetails und individuelle Gartenbereiche reduzieren Wiederholungen im Wohngebiet.",
-    "Porch-Beleuchtung reagiert auf Tageszeit; auf Mobilgeräten werden kleine Gartenobjekte reduziert.",
-    "Hauszugänge, Wohnungslogik, Türen und Kollisionen wurden nicht verändert."
+    "Die Werkstatt erhält drei klar erkennbare Hebebühnen mit markierten Servicebuchten.",
+    "Diagnoseplatz, Monitore, Serviceannahme, Werkzeugwand und Reifenlager machen den Innenraum glaubwürdiger.",
+    "Kompressor, Schläuche, Fässer, Ersatzteilflächen und zusätzliche Werkstattdetails ergänzen die Arbeitsbereiche.",
+    "Der Außenhof bekommt markierte Stellflächen, Paletten und Arbeitsbeleuchtung.",
+    "Reparaturen, Pannen, Abschleppdienst, Mechaniker-Aufträge, Türen und Kollisionen wurden nicht verändert."
   ]
 }
