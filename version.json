@@ -1,12 +1,12 @@
 {
-  "version": "9.7.50",
-  "released_at": "2026-10-09T16:58:00+02:00",
-  "title": "Ingame-Handy optisch weiter verfeinert",
+  "version": "9.7.51",
+  "released_at": "2026-10-09T17:06:00+02:00",
+  "title": "Feuerwehr-Innenraum deutlich ausgebaut",
   "notes": [
-    "Glass OS und Droid UI erhalten eine deutlich hochwertigere Geräteoberfläche mit Statusleiste und Hardwaredetails.",
-    "App-Kacheln, Kontostand, Versicherungen, Rechnungen und Transaktionskarten wurden visuell klarer strukturiert.",
-    "Offene Rechnungen erhalten auf der Startseite eine gut sichtbare Benachrichtigungsmarke.",
-    "Die Darstellung auf kleinen Smartphone-Bildschirmen wurde kompakter und besser lesbar.",
-    "Banküberweisungen, Versicherungen, Steuern, Rechnungen und gespeicherte Handy-Auswahl wurden funktional nicht verändert."
+    "Die Feuerwehr erhält eine große Spind- und Einsatzkleidungswand mit Helmen und Reflexstreifen.",
+    "Atemschutzflaschen, Schlauch-/Geräteregale und Werkstattdetails machen den Einsatzbereich glaubwürdiger.",
+    "Eine eigene Leitstelle mit mehreren Monitoren und Einsatzübersicht ergänzt die Wache.",
+    "Bereitschaftsbereich, Bänke, Arbeitsflächen und Bodenmarkierungen strukturieren den Innenraum.",
+    "Feuerwehreinsätze, Türen, Fahrzeuglogik, Kollision und bestehende Interaktionen wurden nicht verändert."
   ]
 }
