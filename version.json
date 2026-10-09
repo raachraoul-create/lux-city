@@ -1,12 +1,12 @@
 {
-  "version": "9.7.49",
-  "released_at": "2026-10-09T16:50:00+02:00",
-  "title": "Minimap und Stadtkarte optisch modernisiert",
+  "version": "9.7.50",
+  "released_at": "2026-10-09T16:58:00+02:00",
+  "title": "Ingame-Handy optisch weiter verfeinert",
   "notes": [
-    "Die Minimap erhält einen klareren Radar-Look, stärkere Kontraste und einen zusätzlichen Kompassring.",
-    "Vollkarte und Seitenbereiche wurden visuell vereinheitlicht und besser lesbar gestaltet.",
-    "Eine kompakte Kartenlegende und zusätzliche Navigationshilfe machen Zuhause, Firmen und öffentliche Orte schneller verständlich.",
-    "Die mobile Darstellung wurde kompakter und klarer strukturiert.",
-    "Wegpunkte, Kartenpositionen, Blickrichtung und Navigation wurden funktional nicht verändert."
+    "Glass OS und Droid UI erhalten eine deutlich hochwertigere Geräteoberfläche mit Statusleiste und Hardwaredetails.",
+    "App-Kacheln, Kontostand, Versicherungen, Rechnungen und Transaktionskarten wurden visuell klarer strukturiert.",
+    "Offene Rechnungen erhalten auf der Startseite eine gut sichtbare Benachrichtigungsmarke.",
+    "Die Darstellung auf kleinen Smartphone-Bildschirmen wurde kompakter und besser lesbar.",
+    "Banküberweisungen, Versicherungen, Steuern, Rechnungen und gespeicherte Handy-Auswahl wurden funktional nicht verändert."
   ]
 }
