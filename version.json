@@ -1,12 +1,12 @@
 {
-  "version": "9.7.53",
-  "released_at": "2026-10-09T17:24:00+02:00",
-  "title": "Werkstatt und Servicehof deutlich detaillierter",
+  "version": "9.7.54",
+  "released_at": "2026-10-09T17:32:00+02:00",
+  "title": "Fahrzeughändler und Showroom deutlich aufgewertet",
   "notes": [
-    "Die Werkstatt erhält drei klar erkennbare Hebebühnen mit markierten Servicebuchten.",
-    "Diagnoseplatz, Monitore, Serviceannahme, Werkzeugwand und Reifenlager machen den Innenraum glaubwürdiger.",
-    "Kompressor, Schläuche, Fässer, Ersatzteilflächen und zusätzliche Werkstattdetails ergänzen die Arbeitsbereiche.",
-    "Der Außenhof bekommt markierte Stellflächen, Paletten und Arbeitsbeleuchtung.",
-    "Reparaturen, Pannen, Abschleppdienst, Mechaniker-Aufträge, Türen und Kollisionen wurden nicht verändert."
+    "Die ausgestellten Fahrzeuge stehen jetzt auf beleuchteten Präsentationspodesten.",
+    "Beratungstische, Empfang, Lounge, Fahrzeug-Infotafeln und Zubehörwand machen den Innenraum glaubwürdiger.",
+    "Die Deckenbeleuchtung hebt die Showroom-Fahrzeuge deutlich stärker hervor.",
+    "Außen entstehen markierte Präsentationsflächen, Fahnen und ein großer LUX-CITY-AUTO-Schaukasten.",
+    "Fahrzeugkauf, Fahrzeugbestand, Händler-Öffnungszeiten, Türen und Kollisionen wurden nicht verändert."
   ]
 }

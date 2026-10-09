@@ -60,7 +60,8 @@ const ITEMS=[
  {t:'Ingame-Handy optisch verfeinert: App-Kacheln, Statusleiste, Karten und mobile Lesbarkeit',s:'work',release:'9.7.50'},
  {t:'Feuerwehr innen: Einsatzkleidung, Atemschutz, Leitstelle, Werkbank und Bereitschaftsbereich',s:'work',release:'9.7.51'},
  {t:'Wohngebiete individueller: Einfahrten, Briefkästen, Mülltonnen, Terrassen, Zäune und Gartenmöbel',s:'work',release:'9.7.52'},
- {t:'Werkstatt & Servicehof: Hebebühnen, Diagnoseplatz, Werkzeugwand, Reifenlager und Annahme',s:'work',release:'9.7.53'}
+ {t:'Werkstatt & Servicehof: Hebebühnen, Diagnoseplatz, Werkzeugwand, Reifenlager und Annahme',s:'work',release:'9.7.53'},
+ {t:'Fahrzeughändler aufgewertet: Showroom, Präsentationspodeste, Beratung und Außenfläche',s:'work',release:'9.7.54'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
