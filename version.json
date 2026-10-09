@@ -1,12 +1,13 @@
 {
-  "version": "9.7.47",
-  "released_at": "2026-10-09T07:23:00+02:00",
-  "title": "Kolosseum innen als richtige Event-Arena ausgebaut",
+  "version": "9.7.48",
+  "released_at": "2026-10-09T07:31:00+02:00",
+  "title": "Spielercharakter im Nahbereich weiter verfeinert",
   "notes": [
-    "Der Innenraum erhält mehrere abgestufte Tribünenringe mit farblich unterschiedlichen Sitzbereichen.",
-    "Arena-Barriere, Geländer, Treppenbereiche und Mittelmarkierung geben dem Innenraum deutlich mehr Struktur.",
-    "Lichttraversen, große Anzeigetafel, Lautsprecher und Eingangstunnel schaffen eine echte Veranstaltungsatmosphäre.",
-    "Auf leistungsfähigeren Geräten kommen zusätzliche Kameras und VIP-Geländer hinzu.",
-    "Innenraumtür, Ausgang, Kollision und Interaktionslogik wurden nicht verändert."
+    "Kleidung erhält zusätzliche Nähte, Taschen, Bündchen, Gürtel- und Stoffdetails.",
+    "Hände bekommen auf leistungsfähigeren Geräten feinere Finger-/Nageldetails und eine dezente Armbanduhr.",
+    "Schuhe erhalten klarere Sohlen, Zehenkappe und feinere Schnürung.",
+    "Gesicht und Haare werden durch Augenlicht, Lid-/Ohrdetails und zusätzliche Haarsträhnen plastischer.",
+    "Die bestehenden Avatarfarben und gewählten Charaktermerkmale bleiben erhalten.",
+    "Animationen, Laufsteuerung und Kollision wurden nicht verändert."
   ]
 }

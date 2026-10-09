@@ -54,7 +54,8 @@ const ITEMS=[
  {t:'Bank, Arbeitsamt, Wohnungsamt und Gemeinde innen deutlich hochwertiger',s:'work',release:'9.7.44'},
  {t:'Bus & ÖPNV grafisch aufgewertet: Innenraum, Anzeigen, Fenster, Spiegel und Beleuchtung',s:'work',release:'9.7.45'},
  {t:'Kolosseum außen als richtiger Veranstaltungsort mit Rundbau, Portal, Platz und Beleuchtung',s:'work',release:'9.7.46'},
- {t:'Kolosseum innen: Tribünen, Lichttraversen, Arena-Barriere, Anzeigetafel und Eventdetails',s:'work',release:'9.7.47'}
+ {t:'Kolosseum innen: Tribünen, Lichttraversen, Arena-Barriere, Anzeigetafel und Eventdetails',s:'work',release:'9.7.47'},
+ {t:'Spielercharakter im Nahbereich verfeinert: Kleidung, Hände, Schuhe, Augen und Haarstruktur',s:'work',release:'9.7.48'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
