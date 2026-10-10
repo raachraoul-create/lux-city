@@ -5,14 +5,14 @@ function init(W){
  let quality=mobile?'balanced':'balanced',frames=0,last=performance.now(),bad=0,good=0,lodAt=0,shadowFrame=0;
  const decorativeRoots=['LuxResidentialYards1040','LuxIndustrial950','LuxCommercial790','LuxUrban810','LuxCitySquare900','LuxParkingVisual920','LuxRoadWear870','LuxEmergencyBuildings880','LuxMarketVisual940','LuxFuelVisual930','LuxDealerYard1060','LuxWorkshopYard1050'];
  const shadowless=['LuxNature830','LuxAtmosphere780','LuxIntersection820','LuxTransitVisual970','LuxArena980','LuxPremium940','LuxVisual970'];
- function ratio(level){return level==='low'?(mobile?.62:.76):level==='balanced'?(mobile?.74:.90):(mobile?.88:1.04)}
+ function ratio(level){return level==='low'?(mobile?.62:.72):level==='balanced'?(mobile?.74:.84):(mobile?.88:.94)}
  function shadowSize(level){return level==='low'?(mobile?384:640):level==='balanced'?(mobile?512:1024):(mobile?768:1280)}
  function apply(level){
    quality=level;
    R.setPixelRatio(Math.min(devicePixelRatio||1,ratio(level)));
    R.setSize(innerWidth,innerHeight,false);
    if(R.shadowMap){
-     R.shadowMap.enabled=level!=='low';
+     R.shadowMap.enabled=mobile&&level!=='low';
      R.shadowMap.autoUpdate=false;
      R.shadowMap.needsUpdate=true;
    }
@@ -50,6 +50,6 @@ function init(W){
  });
  addEventListener('resize',()=>apply(quality));
  apply(quality);
- window.LuxSmooth1080={version:'10.8.0',get quality(){return quality},lastFps:0,apply}
+ window.LuxSmooth1080={version:'10.8.1',get quality(){return quality},lastFps:0,apply}
 }
 })();
