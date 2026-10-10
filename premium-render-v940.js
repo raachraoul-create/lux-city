@@ -9,10 +9,10 @@ function init(W){
 
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.02:1.07;
-  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.42:2.0));
+  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?.90:1.08));
   if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
   if(W.sun){
-    W.sun.shadow.mapSize.set(mobile?1024:3072,mobile?1024:3072);
+    W.sun.shadow.mapSize.set(mobile?768:1536,mobile?768:1536);
     W.sun.shadow.bias=-.00016;W.sun.shadow.normalBias=.014;
     W.sun.shadow.camera.left=-250;W.sun.shadow.camera.right=250;W.sun.shadow.camera.top=250;W.sun.shadow.camera.bottom=-250;
     W.sun.shadow.camera.updateProjectionMatrix();
