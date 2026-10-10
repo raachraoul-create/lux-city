@@ -53,7 +53,7 @@ async function sell(i){
  let v=S.owned[Number(i)];if(!v)return;let price=resaleValue(v);
  if(!confirm(v.name+' für '+money(price)+' an den Händler verkaufen?'))return;
  let sb=window.LuxAccount?.sb,uid=window.LuxAccount?.session?.user?.id;if(v.serverId&&sb&&uid){let {error}=await sb.from('player_vehicles').delete().eq('id',v.serverId).eq('owner',uid);if(error)return alert('Verkauf konnte nicht abgeschlossen werden.')}
- if(window.LuxLife)LuxLife.addRevenue?.(price)||LuxLife.addIncome?.(price);
+ if(window.LuxLife){if(typeof LuxLife.addRevenue==='function')LuxLife.addRevenue(price);else if(typeof LuxLife.addIncome==='function')LuxLife.addIncome(price)}
  let was=S.active===v.id;S.owned.splice(Number(i),1);if(was)S.active=S.owned[0]?.id||null;save();
  let pc=window.LuxPlayerCar750||window.LuxPlayerCar740;if(was&&S.active){let n=S.owned[0];pc?.applyVehicle?.(n.type);pc?.restoreParked?.(n)}else if(was&&pc?.car){pc.car.visible=false}
  await window.LuxServerAssets740?.refresh?.();openDealer()
