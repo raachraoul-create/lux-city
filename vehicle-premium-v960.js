@@ -87,7 +87,7 @@ function init(W,PC){
     const cls=v.userData.vehicleClass||'sedan',w=(v.userData.halfW||.94)*2,l=(v.userData.halfL||2.3)*2;
     const g=new T.Group();g.name='VehiclePremium960';v.add(g);
     const front=-l/2+.02,rear=l/2-.02,roofY=cls==='van'?2.02:cls==='suv'?1.64:1.48;
-    const bodyColor=[0x324f68,0x842f35,0xe4e2dc,0x252a2e,0x5e7457,0xa27c3d,0x505768,0x6a625b][i%8];
+    const bodyColor=[0x324f68,0x842f35,0xe4e2dc,0x252a2e,0x5e7457,0xa27c3d,0x505768,0x6a625b,0x1d6d70,0xa8562e,0x6e3d7d,0xc9c4b8,0x27476e,0x7a2134,0x9da8b0,0x405f48][i%16];
     const paint=P(bodyColor,.19,.40);
     const family=designFamilies[i%designFamilies.length],familyMetal=P(family.accent,.17,.72);
     v.userData.fictionalBrand=family.name;

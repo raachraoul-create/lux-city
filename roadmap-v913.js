@@ -65,7 +65,11 @@ const ITEMS=[
  {t:'Login/Registrierung sofort klickbar: Servercheck blockiert Startseite nicht mehr',s:'work',release:'9.7.55'},
  {t:'Performance: dynamische Auflösung, reduzierte Deko-Schatten und Distanz-LOD für flüssigeres Spiel',s:'work',release:'9.8.0'},
  {t:'Fahrzeughandel: Neu- und Gebrauchtwagen mit Kilometerstand, Zustand und Wiederverkauf',s:'work',release:'9.8.0'},
- {t:'Firmenkredit mit echter Restschuld, Zins, Monatsrate und 60-Monats-Laufzeit',s:'work',release:'9.8.0'}
+ {t:'Firmenkredit mit echter Restschuld, Zins, Monatsrate und 60-Monats-Laufzeit',s:'work',release:'9.8.0'},
+ {t:'Straßennetz massiv erweitert: Außenring, Schnellstraße/Autobahn, Zubringer und zusätzliche Kreuzungen',s:'work',release:'9.9.0'},
+ {t:'Verkehr massiv dichter: mehr KI-Autos auf Stadt-, Ring- und Autobahnrouten',s:'work',release:'9.9.0'},
+ {t:'Fahrzeugvielfalt: Limousine, Hatchback, SUV, Coupé, Kombi, Pickup und Van mit deutlich mehr Farben',s:'work',release:'9.9.0'},
+ {t:'PC-Performance: statische Welt einfrieren, Echtzeit-Schatten reduzieren und doppelten Verkehrsabstand entfernen',s:'work',release:'9.9.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
