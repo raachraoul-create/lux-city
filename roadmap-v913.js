@@ -72,7 +72,9 @@ const ITEMS=[
  {t:'PC-Performance: statische Welt einfrieren, Echtzeit-Schatten reduzieren und doppelten Verkehrsabstand entfernen',s:'work',release:'9.9.0'},
  {t:'Autobahnring geschlossen: A-LUX 1/2 plus Ost-/West-Autobahn und acht Zubringer',s:'work',release:'10.0.0'},
  {t:'Autos Generation 2: Sportwagen und Crossover, 24 Lackfarben, 3 Felgendesigns und 6 fiktive Marken',s:'work',release:'10.0.0'},
- {t:'Fahrzeug-LOD: volle Details nur im Nahbereich, damit dichter Verkehr flüssiger bleibt',s:'work',release:'10.0.0'}
+ {t:'Fahrzeug-LOD: volle Details nur im Nahbereich, damit dichter Verkehr flüssiger bleibt',s:'work',release:'10.0.0'},
+ {t:'Fahrzeughändler erweitert: 12 kaufbare Modelle, 14 Lackfarben und sichtbare Modellstile am eigenen Auto',s:'work',release:'10.1.0'},
+ {t:'Gebrauchtwagen erhalten ebenfalls individuelle Farbe und Karosserievariante',s:'work',release:'10.1.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

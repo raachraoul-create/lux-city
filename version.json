@@ -1,16 +1,14 @@
 {
-  "version": "10.0.0",
-  "released_at": "2026-10-10T20:12:00+02:00",
-  "title": "Autobahnring und Fahrzeuge Generation 2",
+  "version": "10.1.0",
+  "released_at": "2026-10-10T20:22:00+02:00",
+  "title": "Fahrzeughändler mit Modell- und Farbauswahl",
   "notes": [
-    "Der äußere Autobahnring ist jetzt vollständig: südliche A-LUX 1, nördliche A-LUX 2 sowie Ost- und Westautobahn schließen die Stadt großräumig ein.",
-    "Zusätzliche Zubringer verbinden den Stadtring mit dem Autobahnring; neue Autobahnrouten verteilen den KI-Verkehr auf das komplette Netz.",
-    "Auf Desktop werden bis zu 26 zusätzliche KI-Fahrzeuge erzeugt, auf mobilen Geräten bis zu 14.",
-    "Die Fahrzeugpalette wurde um Sportwagen und Crossover erweitert; insgesamt gibt es jetzt mehr deutlich unterschiedliche Karosserieprofile.",
-    "Die Lackpalette wurde auf 24 Farben erweitert, dazu kommen drei Felgenmuster und sechs eigenständige fiktive Markenfamilien.",
-    "Sportwagen und Coupés erhalten eigene niedrigere Dachlinien und Heckspoiler; SUV, Crossover, Kombi und Van erhalten passendere Dachdetails.",
-    "Ein neues Fahrzeug-LOD blendet teure Premium- und Innenraumdetails nur bei weiter Entfernung aus, während die Autos selbst sichtbar bleiben.",
-    "Fußgängerüberwege werden nicht mehr an reinen Autobahnanschlüssen erzeugt.",
-    "Steuerung, Wohnung, Türen und gespeicherte Fahrzeugdaten wurden nicht verändert."
+    "Der Fahrzeughändler bietet jetzt zwölf kaufbare Modelle statt sechs.",
+    "Zusätzlich zu Limousine, SUV und Van gibt es kaufbare Sport-, Kombi-, Hatchback- und Crossover-Varianten auf der bestehenden Fahrphysik.",
+    "Neuwagen können beim Kauf in vierzehn Lackfarben gewählt werden.",
+    "Gebrauchtwagen erhalten automatisch eine individuelle Farbe und Karosserievariante.",
+    "Farbe und Modellstil werden dauerhaft am eigenen Fahrzeug gespeichert.",
+    "Das Spielerfahrzeug übernimmt die gewählte Lackfarbe sichtbar; Sport-, Kombi-, Crossover-/SUV- und Hatchback-Varianten erhalten zusätzliche optische Unterschiede.",
+    "Fahrphysik, Steuerung, Kilometerstand, Zustand und Wiederverkauf bleiben erhalten."
   ]
 }

@@ -189,7 +189,7 @@ function init(W,PC){
     if(car.userData.vehiclePremium960)return;
     car.userData.vehiclePremium960=true;
     const g=new T.Group();g.name='PlayerCarPremium960';car.add(g);
-    const paint=P(0xf3f3ef,.15,.46),carbon=P(0x171b1e,.18,.68),accent=P(0x9aa0a4,.16,.72);
+    const active=window.LuxVehicles?.activeVehicle,paint=P(Number(active?.colorHex??0xf3f3ef),.15,.46),carbon=P(0x171b1e,.18,.68),accent=P(0x9aa0a4,.16,.72);
     const front=-2.42,rear=2.42;
 
     // Cleaner modern EV-like body detailing, using only original Lux City design language.
@@ -258,7 +258,7 @@ function init(W,PC){
       }
     });
 
-    g.userData.screen=centerScreen;g.userData.cluster=cluster;
+    g.userData.screen=centerScreen;g.userData.cluster=cluster;g.userData.paintMaterial=paint;
   }
 
   W.cars.forEach((v,i)=>upgradeTraffic(v,i));
@@ -281,7 +281,7 @@ function init(W,PC){
     }
     const pg=PC.car.getObjectByName('PlayerCarPremium960');
     if(pg){
-      const s=pg.userData.screen,c=pg.userData.cluster,on=PC.driving;
+      const av=window.LuxVehicles?.activeVehicle;if(pg.userData.paintMaterial?.color)pg.userData.paintMaterial.color.setHex(Number(av?.colorHex??0xf3f3ef));const s=pg.userData.screen,c=pg.userData.cluster,on=PC.driving;
       if(s)s.material.emissiveIntensity+=( (on?.72:.08)-s.material.emissiveIntensity)*Math.min(1,dt*5);
       if(c)c.material.emissiveIntensity+=( (on?.58:.06)-c.material.emissiveIntensity)*Math.min(1,dt*5);
     }
