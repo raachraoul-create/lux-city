@@ -1,16 +1,16 @@
 {
-  "version": "9.9.0",
-  "released_at": "2026-10-10T18:44:00+02:00",
-  "title": "Großer Straßen-, Verkehrs- und Fahrzeugausbau",
+  "version": "10.0.0",
+  "released_at": "2026-10-10T20:12:00+02:00",
+  "title": "Autobahnring und Fahrzeuge Generation 2",
   "notes": [
-    "Das Straßennetz wurde um einen großen Außenring, verlängerte Stadtachsen, zusätzliche Zubringer und eine vierspurige A-LUX-Schnellstraße südlich der Stadt erweitert.",
-    "Die neue Straßenstruktur wird automatisch in Minimap und Stadtkarte übernommen.",
-    "Je nach Gerät kommen 12 bis 20 zusätzliche KI-Fahrzeuge hinzu; vorhandene und neue Fahrzeuge werden auf zwölf unterschiedliche Stadt-, Ring- und Autobahnrouten verteilt.",
-    "Die Tages-Verkehrsdichte wurde deutlich angehoben, damit Straßen nicht mehr leer wirken.",
-    "KI-Fahrzeuge gibt es jetzt als Limousine, Hatchback, SUV, Coupé, Kombi, Pickup und Van.",
-    "Die Farbpalette wurde auf deutlich mehr Lackfarben erweitert; die Fahrzeuge unterscheiden sich zusätzlich über Modellklasse und Karosserieprofil.",
-    "Der doppelte O(n²)-Abstandscheck aus dem Wetter-Verkehrssystem wurde entfernt; die eigentliche Abstandslogik bleibt zentral in der Verkehrs-KI.",
-    "Auf Desktop werden statische Weltobjekte nach dem Aufbau eingefroren und teure Echtzeit-Schatten standardmäßig deaktiviert; Kontakt- und Materialschatten bleiben sichtbar.",
-    "Spielersteuerung, Auto-Lenkung, Wohnung, Türen und Cloud-Spielstand wurden nicht verändert."
+    "Der äußere Autobahnring ist jetzt vollständig: südliche A-LUX 1, nördliche A-LUX 2 sowie Ost- und Westautobahn schließen die Stadt großräumig ein.",
+    "Zusätzliche Zubringer verbinden den Stadtring mit dem Autobahnring; neue Autobahnrouten verteilen den KI-Verkehr auf das komplette Netz.",
+    "Auf Desktop werden bis zu 26 zusätzliche KI-Fahrzeuge erzeugt, auf mobilen Geräten bis zu 14.",
+    "Die Fahrzeugpalette wurde um Sportwagen und Crossover erweitert; insgesamt gibt es jetzt mehr deutlich unterschiedliche Karosserieprofile.",
+    "Die Lackpalette wurde auf 24 Farben erweitert, dazu kommen drei Felgenmuster und sechs eigenständige fiktive Markenfamilien.",
+    "Sportwagen und Coupés erhalten eigene niedrigere Dachlinien und Heckspoiler; SUV, Crossover, Kombi und Van erhalten passendere Dachdetails.",
+    "Ein neues Fahrzeug-LOD blendet teure Premium- und Innenraumdetails nur bei weiter Entfernung aus, während die Autos selbst sichtbar bleiben.",
+    "Fußgängerüberwege werden nicht mehr an reinen Autobahnanschlüssen erzeugt.",
+    "Steuerung, Wohnung, Türen und gespeicherte Fahrzeugdaten wurden nicht verändert."
   ]
 }

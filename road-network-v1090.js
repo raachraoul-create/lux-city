@@ -35,28 +35,33 @@ function init(W){
  for(const x of[-125,125]){laneRoad(x,-282.5,11,95,0);laneRoad(x,282.5,11,95,0)}
  // Extend east/west streets to the ring.
  for(const z of[-135,135]){laneRoad(-267.5,z,11,185,Math.PI/2);laneRoad(267.5,z,11,185,Math.PI/2)}
- // Clear motorway south of town, plus two feeder roads.
- laneRoad(0,-430,24,920,Math.PI/2,'highway');
+ // Full outer motorway ring around town.
+ laneRoad(0,-430,24,920,Math.PI/2,'highway');laneRoad(0,430,24,920,Math.PI/2,'highway');
+ laneRoad(-460,0,24,860,0,'highway');laneRoad(460,0,24,860,0,'highway');
+ // Feeder roads between the urban ring and motorway ring.
  laneRoad(-240,-380,12,100,0,'feeder');laneRoad(240,-380,12,100,0,'feeder');
+ laneRoad(-240,380,12,100,0,'feeder');laneRoad(240,380,12,100,0,'feeder');
+ laneRoad(-410,-210,12,100,Math.PI/2,'feeder');laneRoad(-410,210,12,100,Math.PI/2,'feeder');
+ laneRoad(410,-210,12,100,Math.PI/2,'feeder');laneRoad(410,210,12,100,Math.PI/2,'feeder');
  // On/off ramps: visual geometry, kept out of W.roads so map stays clean.
  function ramp(x1,z1,x2,z2){
    const dx=x2-x1,dz=z2-z1,len=Math.hypot(dx,dz),g=A(new T.BoxGeometry(8,.075,len),asphalt2,(x1+x2)/2,.07,(z1+z2)/2);g.rotation.y=Math.atan2(dx,dz);
    for(const off of[-2.8,2.8]){let e=A(new T.BoxGeometry(.10,.02,len-2),white,(x1+x2)/2,.12,(z1+z2)/2);e.rotation.y=Math.atan2(dx,dz);e.position.x+=Math.cos(e.rotation.y)*off;e.position.z-=Math.sin(e.rotation.y)*off}
  }
- ramp(-240,-330,-285,-430);ramp(240,-330,285,-430);
+ ramp(-240,-330,-285,-430);ramp(240,-330,285,-430);ramp(-240,330,-285,430);ramp(240,330,285,430);ramp(-360,-210,-460,-250);ramp(-360,210,-460,250);ramp(360,-210,460,-250);ramp(360,210,460,250);
  // Highway signs.
  function sign(text,x,z,rot=0){
    const c=document.createElement('canvas');c.width=700;c.height=260;const cx=c.getContext('2d');cx.fillStyle='#24543d';cx.fillRect(0,0,700,260);cx.strokeStyle='#fff';cx.lineWidth=12;cx.strokeRect(12,12,676,236);cx.fillStyle='#fff';cx.font='900 54px Arial';cx.textAlign='center';cx.fillText(text,350,105);cx.font='800 35px Arial';cx.fillText('LUX CITY · ZENTRUM',350,175);let tx=new T.CanvasTexture(c);tx.colorSpace=T.SRGBColorSpace;
    const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);A(new T.CylinderGeometry(.07,.09,5.4,8),barrier,-2.7,2.7,0,g);A(new T.CylinderGeometry(.07,.09,5.4,8),barrier,2.7,2.7,0,g);A(new T.PlaneGeometry(6.0,2.25),new T.MeshBasicMaterial({map:tx,toneMapped:false}),0,5.2,0,g)
  }
- sign('A-LUX 1',-300,-418,Math.PI);sign('A-LUX 1',300,-442,0);
+ sign('A-LUX 1',-300,-418,Math.PI);sign('A-LUX 1',300,-442,0);sign('A-LUX 2',-300,442,Math.PI);sign('A-LUX 2',300,418,0);
  // Lightweight extra traffic shells; vehicle-rebuild upgrades them later.
  const extraColors=[0x244f78,0xa23d3b,0xe8e6df,0x262b30,0x50724d,0xc28b37,0x6c4f83,0xb9b5ab,0x1f6b68,0xcf6a34,0x6f1f36,0x8da2b0];
  function trafficSeed(i){
    const g=new T.Group(),van=i%9===0;A(new T.BoxGeometry(van?2.35:2.02,van?1.45:.72,van?5.0:4.25),M(extraColors[i%extraColors.length],.34,.20),0,van?1.08:.68,0,g);g.userData={speed:5.2+(i%5)*.55,r:van?2.75:2.3,halfW:van?1.18:1.02,halfL:van?2.5:2.15,roadNetwork1090:true};g.visible=true;S.add(g);W.cars.push(g);return g
  }
- const addCount=mobile?12:20;for(let i=0;i<addCount;i++)trafficSeed(i);
+ const addCount=mobile?14:26;for(let i=0;i<addCount;i++)trafficSeed(i);
  // Make road detection include the new network.
  W.onRoad=(x,z,pad=5)=>{for(const r of W.roads){const dx=x-r.x,dz=z-r.z,cs=Math.cos(-(r.rot||0)),sn=Math.sin(-(r.rot||0)),lx=dx*cs-dz*sn,lz=dx*sn+dz*cs;const width=r.highway?24:(r.l<r.w?r.l:r.w),length=r.highway?920:(r.l>r.w?r.l:r.w);if(Math.abs(lx)<=width/2+pad&&Math.abs(lz)<=length/2+pad)return true}return false};
- window.LuxRoadNetwork1090={version:'10.9.0',root,addedCars:addCount}
+ window.LuxRoadNetwork1090=window.LuxRoadNetwork1100={version:'11.0.0',root,addedCars:addCount}
 }

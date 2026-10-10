@@ -69,7 +69,10 @@ const ITEMS=[
  {t:'Straßennetz massiv erweitert: Außenring, Schnellstraße/Autobahn, Zubringer und zusätzliche Kreuzungen',s:'work',release:'9.9.0'},
  {t:'Verkehr massiv dichter: mehr KI-Autos auf Stadt-, Ring- und Autobahnrouten',s:'work',release:'9.9.0'},
  {t:'Fahrzeugvielfalt: Limousine, Hatchback, SUV, Coupé, Kombi, Pickup und Van mit deutlich mehr Farben',s:'work',release:'9.9.0'},
- {t:'PC-Performance: statische Welt einfrieren, Echtzeit-Schatten reduzieren und doppelten Verkehrsabstand entfernen',s:'work',release:'9.9.0'}
+ {t:'PC-Performance: statische Welt einfrieren, Echtzeit-Schatten reduzieren und doppelten Verkehrsabstand entfernen',s:'work',release:'9.9.0'},
+ {t:'Autobahnring geschlossen: A-LUX 1/2 plus Ost-/West-Autobahn und acht Zubringer',s:'work',release:'10.0.0'},
+ {t:'Autos Generation 2: Sportwagen und Crossover, 24 Lackfarben, 3 Felgendesigns und 6 fiktive Marken',s:'work',release:'10.0.0'},
+ {t:'Fahrzeug-LOD: volle Details nur im Nahbereich, damit dichter Verkehr flüssiger bleibt',s:'work',release:'10.0.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

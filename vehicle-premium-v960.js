@@ -38,7 +38,9 @@ function init(W,PC){
     {name:'Avelon',mark:'A',accent:0xc9ced1,style:'blade'},
     {name:'Rivon',mark:'R',accent:0xb7bcc0,style:'mesh'},
     {name:'Montaire',mark:'M',accent:0xd2b26d,style:'lux'},
-    {name:'Voltaris',mark:'V',accent:0x7fb6cc,style:'ev'}
+    {name:'Voltaris',mark:'V',accent:0x7fb6cc,style:'ev'},
+    {name:'Korven',mark:'K',accent:0xa9b6c7,style:'blade'},
+    {name:'Selune',mark:'S',accent:0xc7a87d,style:'lux'}
   ];
   function doorLine(parent,x,y,z,h=.72){
     A(new T.BoxGeometry(.018,h,.026),M(0x080a0c,.55,.24),x,y,z,parent)
@@ -86,7 +88,7 @@ function init(W,PC){
     v.userData.vehiclePremium960=true;
     const cls=v.userData.vehicleClass||'sedan',w=(v.userData.halfW||.94)*2,l=(v.userData.halfL||2.3)*2;
     const g=new T.Group();g.name='VehiclePremium960';v.add(g);
-    const front=-l/2+.02,rear=l/2-.02,roofY=cls==='van'?2.02:cls==='suv'?1.64:1.48;
+    const front=-l/2+.02,rear=l/2-.02,roofY=cls==='van'?2.02:(cls==='suv'||cls==='crossover')?1.64:(cls==='sport'||cls==='coupe')?1.38:1.48;
     const bodyColor=[0x324f68,0x842f35,0xe4e2dc,0x252a2e,0x5e7457,0xa27c3d,0x505768,0x6a625b,0x1d6d70,0xa8562e,0x6e3d7d,0xc9c4b8,0x27476e,0x7a2134,0x9da8b0,0x405f48][i%16];
     const paint=P(bodyColor,.19,.40);
     const family=designFamilies[i%designFamilies.length],familyMetal=P(family.accent,.17,.72);
@@ -285,5 +287,5 @@ function init(W,PC){
     }
   });
 
-  window.LuxVehiclePremium960=window.LuxVehiclePremium980={version:'9.8.0',player:PC.car,traffic:W.cars,designFamilies};
+  window.LuxVehiclePremium960=window.LuxVehiclePremium980=window.LuxVehiclePremium1000={version:'10.0.0',player:PC.car,traffic:W.cars,designFamilies};
 }
