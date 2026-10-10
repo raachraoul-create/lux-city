@@ -1,12 +1,13 @@
 {
-  "version": "9.7.54",
-  "released_at": "2026-10-09T17:32:00+02:00",
-  "title": "Fahrzeughändler und Showroom deutlich aufgewertet",
+  "version": "9.7.55",
+  "released_at": "2026-10-10T18:08:00+02:00",
+  "title": "Login und Registrierung wieder sofort bedienbar",
   "notes": [
-    "Die ausgestellten Fahrzeuge stehen jetzt auf beleuchteten Präsentationspodesten.",
-    "Beratungstische, Empfang, Lounge, Fahrzeug-Infotafeln und Zubehörwand machen den Innenraum glaubwürdiger.",
-    "Die Deckenbeleuchtung hebt die Showroom-Fahrzeuge deutlich stärker hervor.",
-    "Außen entstehen markierte Präsentationsflächen, Fahnen und ein großer LUX-CITY-AUTO-Schaukasten.",
-    "Fahrzeugkauf, Fahrzeugbestand, Händler-Öffnungszeiten, Türen und Kollisionen wurden nicht verändert."
+    "Anmelden, Registrieren und Passwort vergessen werden jetzt sofort beim Laden der Seite verdrahtet.",
+    "Ein langsamer oder hängender Sitzungscheck kann die Startseite nicht mehr komplett unbedienbar machen.",
+    "Der Registrieren-Tab funktioniert unabhängig vom Servercheck sofort.",
+    "Die Login-Karte liegt zuverlässig über dem Update-Kasten und nimmt alle Maus-/Touch-Eingaben an.",
+    "Bei Verbindungsproblemen erscheint jetzt eine klare Meldung statt einer scheinbar eingefrorenen Seite.",
+    "Spielsteuerung, Cloud-Spielstand, Grafik und Wirtschaft wurden nicht verändert."
   ]
 }
