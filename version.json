@@ -1,6 +1,6 @@
 {
   "version": "9.8.0",
-  "released_at": "2026-10-10T18:18:00+02:00",
+  "released_at": "2026-10-10T18:24:00+02:00",
   "title": "Performance-Paket und kompletter Neu-/Gebrauchtwagenmarkt",
   "notes": [
     "Die Renderauflösung wird jetzt deutlich aggressiver an die echte Bildrate angepasst; Premium-Grafik überschreibt den Performance-Regler nicht mehr.",
@@ -10,6 +10,8 @@
     "Gebrauchtwagen unterscheiden sich in Kilometerstand, Zustand, Energie/Füllstand und Preis.",
     "Eigene Fahrzeuge können beim Händler wieder verkauft werden; Kilometerstand und Zustand bestimmen den Händlerwert.",
     "Bestehende Fahrzeuge werden automatisch in das neue System übernommen.",
-    "Fahrphysik, Lenkung, Kollision und bestehende Cloud-Spielstände bleiben erhalten."
+    "Fahrphysik, Lenkung, Kollision und bestehende Cloud-Spielstände bleiben erhalten.",
+    "Der 50.000-€-Firmenkredit besitzt jetzt echte Restschuld, 6,25 % Zins, feste Monatsrate und 60 Monate Laufzeit.",
+    "Die Firmenkreditrate wird automatisch in der Monatsabrechnung abgezogen und kann das Firmenkonto ins Minus drücken."
   ]
 }
