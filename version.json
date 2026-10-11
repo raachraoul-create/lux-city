@@ -13,6 +13,8 @@
     "Die Tankstelle steht auf einem eigenen Servicegrundstück bei der südöstlichen Zufahrt und nicht mehr auf einer Durchgangsfahrbahn.",
     "Benzin, Diesel, AC 11 kW und DC 150 kW haben sichtbare markierte Stellflächen und funktionierende Interaktionspunkte.",
     "Auf Touch-Geräten kann der Tank-/Ladehinweis direkt angetippt werden; Tastatur E funktioniert weiterhin.",
-    "Wohnung, Spielersteuerung, Besitz, Kilometerstand und Cloud-Spielstand wurden nicht verändert."
+    "Wohnung, Spielersteuerung, Besitz, Kilometerstand und Cloud-Spielstand wurden nicht verändert.",
+    "Die Fahrzeugkarosserien wurden erneut grundlegend überarbeitet: Unterbau, Haube/Heck und Kabine sind jetzt getrennt modelliert statt als ein durchgehender Körper.",
+    "Limousine, Hatchback, SUV, Crossover, Coupé, Sportwagen, Kombi, Pickup und Van besitzen deutlich unterschiedliche Kabinen-, Dach-, Hauben- und Heckproportionen."
   ]
 }

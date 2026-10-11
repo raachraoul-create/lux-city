@@ -1,7 +1,7 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-import {createCarBody} from './vehicle-shell-v1200.js';
+import {createCarBody} from './vehicle-shell-v1200.js?b=1210';
 let q=setInterval(()=>{if(!window.LuxWorld)return;clearInterval(q);const W=LuxWorld,M=(c,r=.28,m=.28,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei}),car=new T.Group(),A=(g,m,x,y,z,p=car)=>{let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;p.add(o);return o};
-function shell(){const p=[[-2.38,.48],[-2.25,.70],[-1.70,.86],[-1.18,.94],[-.72,1.37],[-.28,1.48],[.55,1.45],[1.10,1.12],[1.72,.88],[2.25,.73],[2.38,.48]];const body=createCarBody(1.88,p,0xf4f4f1,1.48,.36);body.userData.playerPaint=true;car.add(body)}
+function shell(){const p=[[-2.38,.48],[-2.25,.70],[-1.70,.86],[-1.18,.94],[-.72,1.37],[-.28,1.48],[.55,1.45],[1.10,1.12],[1.72,.88],[2.25,.73],[2.38,.48]];const body=createCarBody(1.88,p,0xf4f4f1,1.48,.36,'sedan');body.userData.playerPaint=true;car.add(body)}
 function wheel(x,z,front){let g=new T.Group();g.position.set(x,.39,z);car.add(g);let tire=A(new T.TorusGeometry(.275,.085,10,26),M(0x101214,.78,.02),0,0,0,g);tire.rotation.y=Math.PI/2;let disc=A(new T.CylinderGeometry(.18,.18,.035,22),M(0x888d90,.3,.55),0,0,0,g);disc.rotation.z=Math.PI/2;A(new T.CylinderGeometry(.065,.065,.05,16),M(0xc2c6c9,.2,.76),0,0,0,g).rotation.z=Math.PI/2;for(let k=0;k<5;k++){let sp=A(new T.BoxGeometry(.025,.29,.035),M(0xbfc4c7,.2,.72),0,0,0,g);sp.rotation.x=k*Math.PI/5}g.userData.front=front;return g}
 shell();let visual720=new T.Group();car.add(visual720);let addV=(g,m,x,y,z)=>A(g,m,x,y,z,visual720);
 addV(new T.BoxGeometry(1.55,.09,.06),M(0x1c2226,.20,.48),0,.50,-2.38);for(let x of[-.45,-.15,.15,.45])addV(new T.BoxGeometry(.018,.08,.035),M(0xb8bec2,.18,.62),x,.51,-2.42);
