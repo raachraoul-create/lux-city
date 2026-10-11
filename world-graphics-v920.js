@@ -162,6 +162,7 @@ function init(W){
   // Vegetation, street furniture and grounded small details.
   const trunkM=mat(0x65482f,.95),leaf=[mat(0x3c693a,.98),mat(0x4a7740,.98),mat(0x335d35,.98)],binM=mat(0x3f4948,.70,.18),benchM=mat(0x76543b,.78),poleM=mat(0x343b3e,.42,.28);
   function tree(x,z,i,s=1){
+    if(W.onRoad?.(x,z,8))return;
     const g=new T.Group();g.position.set(x,0,z);root.add(g);
     add(new T.CylinderGeometry(.15*s,.27*s,2.65*s,9),trunkM,0,1.30*s,0,g);
     for(const a of[0,Math.PI*.66,Math.PI*1.33]){
@@ -194,10 +195,6 @@ function init(W){
     for(const sx of[-1,1]){const strip=add(new T.BoxGeometry(.58,.025,r.l-.8),vergeM,sx*(r.w/2+2.45),.035,0,g);strip.castShadow=false}
   }
 
-  // Crosswalks on the expanded grid.
-  function crosswalk(x,z,rot=0){const g=new T.Group();g.position.set(x,.13,z);g.rotation.y=rot;root.add(g);for(let i=-4;i<=4;i++)add(new T.BoxGeometry(.42,.025,5.7),markM,i*.75,0,0,g).castShadow=false}
-  for(const x of[-245,245])for(const z of[-245,245])crosswalk(x,z,0);
-
   // Procedural sky dome for more depth.
   const skyGeo=new T.SphereGeometry(900,mobile?18:28,mobile?12:18);
   const skyMat=new T.ShaderMaterial({side:T.BackSide,depthWrite:false,uniforms:{top:{value:new T.Color(0x5f9fd0)},horizon:{value:new T.Color(0xd9e6ec)},ground:{value:new T.Color(0xc3c9c7)}},vertexShader:`varying vec3 vP;void main(){vP=normalize(position);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,fragmentShader:`varying vec3 vP;uniform vec3 top;uniform vec3 horizon;uniform vec3 ground;void main(){float h=smoothstep(-0.05,.70,vP.y);vec3 c=mix(horizon,top,h);float g=smoothstep(-.32,-.05,vP.y);c=mix(ground,c,g);gl_FragColor=vec4(c,1.0);}`});
@@ -216,5 +213,5 @@ function init(W){
     else{skyMat.uniforms.top.value.setHex(0x5f9fd0);skyMat.uniforms.horizon.value.setHex(0xd9e6ec);skyMat.uniforms.ground.value.setHex(0xc3c9c7)}
   });
 
-  window.LuxGraphics920=window.LuxGraphics930=window.LuxGraphics940={root,roads:premiumRoads,newObstacles,version:'9.4.0'};
+  window.LuxGraphics920=window.LuxGraphics930=window.LuxGraphics940=window.LuxGraphics950={root,roads:premiumRoads,newObstacles,version:'9.5.0'};
 }

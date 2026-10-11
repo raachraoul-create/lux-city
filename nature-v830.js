@@ -15,10 +15,11 @@ function init(){
    for(const h of W.houseSites||[]){let rr=Math.max(h.w||10,h.d||10)*.62+margin;if(Math.hypot(x-h.x,z-h.z)<rr)return true}
    for(const d of window.LuxCityServices?.buildings||[]){let rr=Math.max(d.w||12,d.l||12)*.60+margin;if(Math.hypot(x-d.x,z-d.z)<rr)return true}
    let sm=window.LuxSupermarket801||window.LuxSupermarket800;if(sm?.position&&Math.hypot(x-sm.position.x,z-sm.position.z)<28)return true;
+   let fs=window.LuxFuelStation710?.group;if(fs&&Math.hypot(x-fs.position.x,z-fs.position.z)<40)return true;
    return false
  }
  function nearRoad(x,z){
-   if(W.onRoad?.(x,z,4))return true;
+   if(W.onRoad?.(x,z,9))return true;
    for(const r of W.roads||[]){let gp=r.mesh?.geometry?.parameters||{},cx=r.mesh?.position?.x??r.x??0,cz=r.mesh?.position?.z??r.z??0,w=(gp.width||12)/2+6,l=(gp.depth||40)/2+6,rot=r.mesh?.rotation?.y||0,dx=x-cx,dz=z-cz,c=Math.cos(-rot),s=Math.sin(-rot),lx=dx*c-dz*s,lz=dx*s+dz*c;if(Math.abs(lx)<w&&Math.abs(lz)<l)return true}
    return false
  }
@@ -56,5 +57,5 @@ function init(){
 
  // Gentle wind sway only on desktop: move root subgroups by tiny rotations, instanced geometry remains stable on mobile.
  if(!mobile){let t=0;W.registerTick?.((dt)=>{t+=dt;root.rotation.z=Math.sin(t*.18)*.0008;root.rotation.x=Math.cos(t*.15)*.0005})}
- window.LuxNature830={version:'8.3.0',root,treeCount:ti,shrubCount:si}
+ window.LuxNature830=window.LuxNature840={version:'8.4.0',root,treeCount:ti,shrubCount:si}
 }

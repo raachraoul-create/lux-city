@@ -1,12 +1,14 @@
 {
-  "version": "10.4.1",
-  "released_at": "2026-10-11T12:56:00+02:00",
-  "title": "Store-Release-Paket vorbereitet",
+  "version": "10.5.0",
+  "released_at": "2026-10-11T13:18:00+02:00",
+  "title": "Stadtbereinigung und Autos Generation 4",
   "notes": [
-    "Öffentliche Datenschutzseite für App Store und Google Play ergänzt.",
-    "Deutsche Store-Texte für Apple App Store und Google Play vorbereitet.",
-    "Automatischer Release-Workflow für signierte Android-Bundles und Google-Play-Upload vorbereitet.",
-    "Automatischer iOS-Signier-, IPA-Export- und TestFlight-Upload-Workflow vorbereitet.",
-    "Die Veröffentlichung wartet nur noch auf die einmalige Hinterlegung der Apple- und Google-Entwicklerzugänge bzw. Signierschlüssel."
+    "Die Tankstelle wurde von der Ringstraße auf ein eigenes Grundstück bei der Ostseite versetzt und besitzt eine eigene Zufahrt zur Straße.",
+    "Zapf- und Ladepunkte wurden an den neuen Standort angepasst.",
+    "Vier alte, fest platzierte Zebrastreifen bei ±245/±245 wurden vollständig entfernt; Fußgängerquerungen stammen nur noch aus dem eigentlichen Verkehrs-/Kreuzungssystem.",
+    "Natur- und ältere Grafikschichten prüfen jetzt mit größerem Sicherheitsabstand gegen das aktuelle Straßennetz, bevor Bäume platziert werden.",
+    "Ein zusätzlicher Laufzeit-Schutz blendet alte Baumobjekte aus, falls sie nach späteren Straßenerweiterungen doch in einer Fahrbahn landen.",
+    "Die KI-Autos besitzen jetzt einen neuen verjüngten 3D-Grundkörper: Dach, Front und Heck sind schmaler als die Fahrzeugmitte statt überall gleich breit.",
+    "Fahrphysik, Kollision, Spurführung, Wohnung und Steuerung bleiben unverändert."
   ]
 }

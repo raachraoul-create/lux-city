@@ -82,7 +82,10 @@ const ITEMS=[
  {t:'Autobahn weiter ausgebaut: Mitteltrennung, Randstreifen, Notfallbuchten, Schilderbrücken, Reflektoren und Ausfahrtspfeile',s:'work',release:'10.3.0'},
  {t:'Native App-Grundlage: iOS/Android-Verpackung, Querformat-Pflicht, Vollbild und Safe-Areas',s:'work',release:'10.4.0'},
  {t:'Mobile Store-Builds über Capacitor und GitHub Actions vorbereitet',s:'work',release:'10.4.0'},
- {t:'Store-Veröffentlichung vorbereitet: Datenschutzseite, Store-Texte, Signierung und TestFlight/Play-Upload-Workflow',s:'work',release:'10.4.1'}
+ {t:'Store-Veröffentlichung vorbereitet: Datenschutzseite, Store-Texte, Signierung und TestFlight/Play-Upload-Workflow',s:'work',release:'10.4.1'},
+ {t:'Stadtbereinigung: Tankstelle von der Ringstraße auf eigenes Grundstück mit Zufahrt versetzt',s:'work',release:'10.5.0'},
+ {t:'Falsche Alt-Zebrastreifen entfernt und Bäume aus allen Fahrbahn-Sperrzonen gehalten',s:'work',release:'10.5.0'},
+ {t:'Autos Generation 4: verjüngte, rundere Karosserie statt gleichbreiter Kasten-Grundform',s:'work',release:'10.5.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
