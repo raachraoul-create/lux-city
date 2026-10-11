@@ -5,7 +5,7 @@ function init(W){
  let quality=mobile?'balanced':'balanced',frames=0,last=performance.now(),bad=0,good=0,lodAt=0,shadowFrame=0;
  const decorativeRoots=['LuxResidentialYards1040','LuxIndustrial950','LuxCommercial790','LuxUrban810','LuxCitySquare900','LuxParkingVisual920','LuxRoadWear870','LuxEmergencyBuildings880','LuxMarketVisual940','LuxFuelVisual930','LuxDealerYard1060','LuxWorkshopYard1050'];
  const shadowless=['LuxNature830','LuxAtmosphere780','LuxIntersection820','LuxTransitVisual970','LuxArena980','LuxPremium940','LuxVisual970'];
- function ratio(level){return level==='low'?(mobile?.62:.72):level==='balanced'?(mobile?.74:.84):(mobile?.88:.94)}
+ function ratio(level){return level==='low'?(mobile?.88:.72):level==='balanced'?(mobile?1.05:.84):(mobile?1.22:.94)}
  function shadowSize(level){return level==='low'?(mobile?384:640):level==='balanced'?(mobile?512:1024):(mobile?768:1280)}
  function apply(level){
    quality=level;
@@ -43,13 +43,13 @@ function init(W){
    if(R.shadowMap?.enabled&&shadowFrame>=(quality==='high'?4:7)){R.shadowMap.needsUpdate=true;shadowFrame=0}
    const now=performance.now();lod(now);if(now-last<1800)return;
    const fps=frames*1000/(now-last);frames=0;last=now;
-   if(fps<(mobile?40:48)){bad++;good=0}else if(fps>(mobile?52:57)){good++;bad=0}else{bad=Math.max(0,bad-1);good=Math.max(0,good-1)}
+   if(fps<(mobile?34:48)){bad++;good=0}else if(fps>(mobile?52:57)){good++;bad=0}else{bad=Math.max(0,bad-1);good=Math.max(0,good-1)}
    if(bad>=2){if(quality==='high')apply('balanced');else if(quality==='balanced')apply('low');bad=0}
    else if(good>=4){if(quality==='low')apply('balanced');else if(quality==='balanced')apply('high');good=0}
    window.LuxSmooth1080.lastFps=Math.round(fps);
  });
  addEventListener('resize',()=>apply(quality));
  apply(quality);
- window.LuxSmooth1080={version:'10.8.1',get quality(){return quality},lastFps:0,apply}
+ window.LuxSmooth1080={version:'10.8.2',get quality(){return quality},lastFps:0,apply}
 }
 })();

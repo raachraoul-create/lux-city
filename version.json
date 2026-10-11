@@ -1,14 +1,16 @@
 {
-  "version": "10.1.0",
-  "released_at": "2026-10-10T20:22:00+02:00",
-  "title": "Fahrzeughändler mit Modell- und Farbauswahl",
+  "version": "10.2.0",
+  "released_at": "2026-10-11T07:31:00+02:00",
+  "title": "Scharfes Mobilbild und sauberer Spurverkehr",
   "notes": [
-    "Der Fahrzeughändler bietet jetzt zwölf kaufbare Modelle statt sechs.",
-    "Zusätzlich zu Limousine, SUV und Van gibt es kaufbare Sport-, Kombi-, Hatchback- und Crossover-Varianten auf der bestehenden Fahrphysik.",
-    "Neuwagen können beim Kauf in vierzehn Lackfarben gewählt werden.",
-    "Gebrauchtwagen erhalten automatisch eine individuelle Farbe und Karosserievariante.",
-    "Farbe und Modellstil werden dauerhaft am eigenen Fahrzeug gespeichert.",
-    "Das Spielerfahrzeug übernimmt die gewählte Lackfarbe sichtbar; Sport-, Kombi-, Crossover-/SUV- und Hatchback-Varianten erhalten zusätzliche optische Unterschiede.",
-    "Fahrphysik, Steuerung, Kilometerstand, Zustand und Wiederverkauf bleiben erhalten."
+    "Die mobile WebGL-Darstellung verwendet jetzt Antialiasing statt es auf Touch-Geräten komplett abzuschalten.",
+    "Die mobile Renderauflösung wurde von rund 74–76 % im normalen Modus auf rund 105 % angehoben; bei sehr guter Leistung sind bis zu 122 % vorgesehen.",
+    "Die Qualitätsautomatik reduziert auf Mobilgeräten erst bei deutlich niedrigeren FPS, damit ein flüssiges Gerät nicht unnötig unscharf gerendert wird.",
+    "Der KI-Verkehr wurde auf neue Fahrspur-Mittellinien umgestellt; die fehlerhaften Routen direkt am Rand von Ring- und Autobahnfahrbahnen wurden ersetzt.",
+    "Kurven werden als geglättete Routen gefahren statt als harte 90-Grad-Sprünge.",
+    "Eine zusätzliche Spurkorrektur zieht versetzte KI-Fahrzeuge sanft zur aktuellen Fahrspur zurück.",
+    "Mehr Verkehr bleibt tagsüber gleichzeitig sichtbar.",
+    "Kreuzungsflächen, Richtungspfeile und Autobahnreflektoren wurden ergänzt.",
+    "Spielersteuerung, Wohnung, Türen und Fahrzeugbesitz wurden nicht verändert."
   ]
 }

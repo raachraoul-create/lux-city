@@ -74,7 +74,10 @@ const ITEMS=[
  {t:'Autos Generation 2: Sportwagen und Crossover, 24 Lackfarben, 3 Felgendesigns und 6 fiktive Marken',s:'work',release:'10.0.0'},
  {t:'Fahrzeug-LOD: volle Details nur im Nahbereich, damit dichter Verkehr flüssiger bleibt',s:'work',release:'10.0.0'},
  {t:'Fahrzeughändler erweitert: 12 kaufbare Modelle, 14 Lackfarben und sichtbare Modellstile am eigenen Auto',s:'work',release:'10.1.0'},
- {t:'Gebrauchtwagen erhalten ebenfalls individuelle Farbe und Karosserievariante',s:'work',release:'10.1.0'}
+ {t:'Gebrauchtwagen erhalten ebenfalls individuelle Farbe und Karosserievariante',s:'work',release:'10.1.0'},
+ {t:'Mobile Bildqualität repariert: Antialiasing und deutlich höhere Renderauflösung statt 74%-Pixelmodus',s:'work',release:'10.2.0'},
+ {t:'KI-Verkehr neu auf Fahrspur-Mittellinien mit geglätteten Kurven und automatischer Spurkorrektur',s:'work',release:'10.2.0'},
+ {t:'Straßen weiter verfeinert: saubere Kreuzungsflächen, Richtungspfeile und Autobahn-Reflektoren',s:'work',release:'10.2.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
