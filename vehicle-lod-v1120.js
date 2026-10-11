@@ -9,6 +9,7 @@ function init(W){
      let d=Math.hypot(c.position.x-p.x,c.position.z-p.z);
      let premium=c.getObjectByName?.('VehiclePremium960'),cab=c.getObjectByName?.('VehicleCabin860');
      if(premium)premium.visible=d<near;
+     const body=c.getObjectByName?.('VehicleBody1200');if(body)body.visible=true;
      if(cab)cab.visible=d<cabin;
      for(const w of c.userData?.wheels720||[]){let rim=w.getObjectByName?.('PremiumRim960');if(rim)rim.visible=d<near*.72}
    }
