@@ -1,0 +1,25 @@
+{
+  "name": "lux-city-mobile",
+  "version": "10.4.0",
+  "private": true,
+  "description": "Lux City native iOS/Android wrapper",
+  "scripts": {
+    "mobile:build": "node scripts/build-mobile.mjs",
+    "native:init": "npm run mobile:build && npx cap add android && npx cap add ios && node scripts/configure-native.mjs && npx cap sync",
+    "native:sync": "npm run mobile:build && npx cap sync && node scripts/configure-native.mjs",
+    "android:open": "npm run native:sync && npx cap open android",
+    "ios:open": "npm run native:sync && npx cap open ios",
+    "assets": "npx capacitor-assets generate --iconBackgroundColor '#10151b' --iconBackgroundColorDark '#10151b' --splashBackgroundColor '#10151b' --splashBackgroundColorDark '#10151b'"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/ios": "^7.0.0",
+    "@capacitor/splash-screen": "^7.0.0",
+    "@capacitor/status-bar": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.0",
+    "@capacitor/cli": "^7.0.0"
+  }
+}

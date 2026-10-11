@@ -1,0 +1,21 @@
+{
+  "appId": "lu.luxcity.game",
+  "appName": "Lux City",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "launchAutoHide": true,
+      "backgroundColor": "#10151b",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "overlaysWebView": true,
+      "backgroundColor": "#10151b"
+    }
+  }
+}

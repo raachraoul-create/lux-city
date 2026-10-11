@@ -1,13 +1,16 @@
 {
-  "version": "10.3.0",
-  "released_at": "2026-10-11T10:55:00+02:00",
-  "title": "Autos Generation 3 und Autobahn-Detailausbau",
+  "version": "10.4.0",
+  "released_at": "2026-10-11T12:42:00+02:00",
+  "title": "iOS- und Android-App-Grundlage mit festem Querformat",
   "notes": [
-    "KI-Fahrzeuge erhalten zusätzliche realistische Karosseriedetails: tiefere Stoßfänger, Türfugen, Fensterrahmen, Hauben-/Kofferraumlinien und klarere Leuchtflächen.",
-    "Sportwagen, Coupés, Kombis, Pickups, Vans, SUVs und Crossover erhalten jeweils eigene zusätzliche Formdetails.",
-    "Die neuen Fahrzeugdetails werden nur im Nahbereich eingeblendet, damit dichter Verkehr nicht unnötig Leistung kostet.",
-    "Der Autobahnring erhält Mitteltrennung, Randstreifen und durchgehende Leitplanken.",
-    "Notfallbuchten, größere Schilderbrücken, Reflektorpfosten und Ausfahrtspfeile machen die Autobahn klarer lesbar.",
-    "Verkehrslogik, Fahrspuren, Spielersteuerung und gespeicherte Fahrzeuge wurden nicht verändert."
+    "Lux City besitzt jetzt einen eigenen App-Shell-Modus für Smartphones und Tablets.",
+    "Auf Mobilgeräten wird Hochformat blockiert und ein klarer Dreh-Hinweis angezeigt; gespielt wird ausschließlich im Querformat.",
+    "Safe-Areas von iPhone und Android werden für HUD, Joystick, Aktionsknöpfe, Karte, Modale und Ingame-Handy berücksichtigt.",
+    "PWA-Manifest und Vollbilddarstellung wurden auf Landscape angepasst.",
+    "Capacitor-Konfiguration für die native App-ID lu.luxcity.game wurde ergänzt.",
+    "Build-Skripte erzeugen ein natives Web-Bundle und konfigurieren Android sowie iOS automatisch auf Querformat.",
+    "Ein GitHub-Actions-Workflow baut Android APK/AAB sowie ein unsigniertes iOS-Archiv.",
+    "App-Icon- und Splash-Screen-Quellen wurden als eigene Lux-City-Grafiken ergänzt.",
+    "Spielsteuerung, Login, Cloud-Spielstand und Gameplay wurden nicht verändert."
   ]
 }

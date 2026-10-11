@@ -1,1 +1,24 @@
-{"name":"Lux City","short_name":"Lux City","start_url":"./","scope":"./","display":"standalone","orientation":"any","background_color":"#10151b","theme_color":"#10151b","description":"Lux City – Life & Business Simulator"}
+{
+  "name": "Lux City",
+  "short_name": "Lux City",
+  "id": "./",
+  "start_url": "./?app=1",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "landscape",
+  "background_color": "#10151b",
+  "theme_color": "#10151b",
+  "description": "Lux City – Life & Business Simulator",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
