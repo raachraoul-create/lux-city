@@ -1,16 +1,13 @@
 {
-  "version": "10.2.0",
-  "released_at": "2026-10-11T07:31:00+02:00",
-  "title": "Scharfes Mobilbild und sauberer Spurverkehr",
+  "version": "10.3.0",
+  "released_at": "2026-10-11T10:55:00+02:00",
+  "title": "Autos Generation 3 und Autobahn-Detailausbau",
   "notes": [
-    "Die mobile WebGL-Darstellung verwendet jetzt Antialiasing statt es auf Touch-Geräten komplett abzuschalten.",
-    "Die mobile Renderauflösung wurde von rund 74–76 % im normalen Modus auf rund 105 % angehoben; bei sehr guter Leistung sind bis zu 122 % vorgesehen.",
-    "Die Qualitätsautomatik reduziert auf Mobilgeräten erst bei deutlich niedrigeren FPS, damit ein flüssiges Gerät nicht unnötig unscharf gerendert wird.",
-    "Der KI-Verkehr wurde auf neue Fahrspur-Mittellinien umgestellt; die fehlerhaften Routen direkt am Rand von Ring- und Autobahnfahrbahnen wurden ersetzt.",
-    "Kurven werden als geglättete Routen gefahren statt als harte 90-Grad-Sprünge.",
-    "Eine zusätzliche Spurkorrektur zieht versetzte KI-Fahrzeuge sanft zur aktuellen Fahrspur zurück.",
-    "Mehr Verkehr bleibt tagsüber gleichzeitig sichtbar.",
-    "Kreuzungsflächen, Richtungspfeile und Autobahnreflektoren wurden ergänzt.",
-    "Spielersteuerung, Wohnung, Türen und Fahrzeugbesitz wurden nicht verändert."
+    "KI-Fahrzeuge erhalten zusätzliche realistische Karosseriedetails: tiefere Stoßfänger, Türfugen, Fensterrahmen, Hauben-/Kofferraumlinien und klarere Leuchtflächen.",
+    "Sportwagen, Coupés, Kombis, Pickups, Vans, SUVs und Crossover erhalten jeweils eigene zusätzliche Formdetails.",
+    "Die neuen Fahrzeugdetails werden nur im Nahbereich eingeblendet, damit dichter Verkehr nicht unnötig Leistung kostet.",
+    "Der Autobahnring erhält Mitteltrennung, Randstreifen und durchgehende Leitplanken.",
+    "Notfallbuchten, größere Schilderbrücken, Reflektorpfosten und Ausfahrtspfeile machen die Autobahn klarer lesbar.",
+    "Verkehrslogik, Fahrspuren, Spielersteuerung und gespeicherte Fahrzeuge wurden nicht verändert."
   ]
 }

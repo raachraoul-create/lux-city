@@ -77,7 +77,9 @@ const ITEMS=[
  {t:'Gebrauchtwagen erhalten ebenfalls individuelle Farbe und Karosserievariante',s:'work',release:'10.1.0'},
  {t:'Mobile Bildqualität repariert: Antialiasing und deutlich höhere Renderauflösung statt 74%-Pixelmodus',s:'work',release:'10.2.0'},
  {t:'KI-Verkehr neu auf Fahrspur-Mittellinien mit geglätteten Kurven und automatischer Spurkorrektur',s:'work',release:'10.2.0'},
- {t:'Straßen weiter verfeinert: saubere Kreuzungsflächen, Richtungspfeile und Autobahn-Reflektoren',s:'work',release:'10.2.0'}
+ {t:'Straßen weiter verfeinert: saubere Kreuzungsflächen, Richtungspfeile und Autobahn-Reflektoren',s:'work',release:'10.2.0'},
+ {t:'Autos Generation 3: realistischere Front/Heckformen, Türfugen, Fensterrahmen und modellabhängige Karosseriedetails',s:'work',release:'10.3.0'},
+ {t:'Autobahn weiter ausgebaut: Mitteltrennung, Randstreifen, Notfallbuchten, Schilderbrücken, Reflektoren und Ausfahrtspfeile',s:'work',release:'10.3.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
