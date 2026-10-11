@@ -1,4 +1,5 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+import {batchStatic} from './graphics-static-batch-v970.js';
 
 let boot=setInterval(()=>{
   const W=window.LuxWorld;
@@ -16,14 +17,14 @@ function init(W){
   R.outputColorSpace=T.SRGBColorSpace;
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.04:1.10;
-  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.35:1.85));
+  if(!window.LuxPerformance740)R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.15:1.5));
   if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
   S.background=new T.Color(0xa6c8df);
-  S.fog=new T.FogExp2(0xa9c7d8,mobile?.00118:.00092);
+  S.fog=new T.Fog(0xa9c7d8,300,760);
   if(W.sun){
     W.sun.intensity=2.45;W.sun.shadow.bias=-.00022;W.sun.shadow.normalBias=.018;
     W.sun.shadow.mapSize.set(mobile?1024:2048,mobile?1024:2048);
-    W.sun.shadow.camera.left=-470;W.sun.shadow.camera.right=470;W.sun.shadow.camera.top=470;W.sun.shadow.camera.bottom=-470;W.sun.shadow.camera.far=650;W.sun.shadow.camera.updateProjectionMatrix();
+    W.sun.shadow.camera.left=-90;W.sun.shadow.camera.right=90;W.sun.shadow.camera.top=90;W.sun.shadow.camera.bottom=-90;W.sun.shadow.camera.far=650;W.sun.shadow.camera.updateProjectionMatrix();
   }
 
   const maxAniso=Math.min(8,R.capabilities.getMaxAnisotropy?.()||1);
@@ -54,11 +55,19 @@ function init(W){
     const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.colorSpace=T.SRGBColorSpace;t.anisotropy=maxAniso;return t;
   }
   function cloneTex(base,rx=1,ry=1){const t=base.clone();t.needsUpdate=true;t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(rx,ry);t.anisotropy=maxAniso;return t}
+  function surface(material,map,depth){
+    material.map=map;const bump=map.clone();bump.colorSpace=T.NoColorSpace;bump.needsUpdate=true;
+    material.bumpMap=bump;material.bumpScale=depth;material.needsUpdate=true;return material;
+  }
+  function roofGeometry(w,d,height){
+    const shape=new T.Shape();shape.moveTo(-w/2,0);shape.lineTo(0,height);shape.lineTo(w/2,0);shape.closePath();
+    const geo=new T.ExtrudeGeometry(shape,{depth:d,bevelEnabled:false,steps:1});geo.translate(0,0,-d/2);return geo;
+  }
   const asphaltTex=tex(0x34383b,'asphalt',384),paverTex=tex(0xa9a49b,'paver',256),grassTex=tex(0x6b8e55,'grass',320);
   const plaster=[0xe2d3c0,0xcbd8cd,0xd7c5b8,0xe4ddd0,0xc8d2dc,0xdec8b6].map(c=>tex(c,'plaster',256));
   const roofTex=[0x633f34,0x4a4d50,0x765044].map(c=>tex(c,'roof',256));
-  W.ground.material.map=cloneTex(grassTex,85,85);W.ground.material.color.setHex(0xffffff);W.ground.material.roughness=.97;W.ground.material.needsUpdate=true;
-  for(const rd of W.roads||[]){if(!rd?.mesh)continue;const gp=rd.mesh.geometry?.parameters||{},rx=Math.max(1,(gp.width||10)/8),ry=Math.max(1,(gp.depth||40)/8);rd.mesh.material.map=cloneTex(asphaltTex,rx,ry);rd.mesh.material.color.setHex(0xffffff);rd.mesh.material.roughness=.89;rd.mesh.material.metalness=.015;rd.mesh.material.needsUpdate=true}
+  W.ground.material.map=cloneTex(grassTex,85,85);W.ground.material.color.setHex(0xffffff);W.ground.material.roughness=.97;W.ground.material.needsUpdate=true;surface(W.ground.material,W.ground.material.map,.045);
+  for(const rd of W.roads||[]){if(!rd?.mesh)continue;const gp=rd.mesh.geometry?.parameters||{},rx=Math.max(1,(gp.width||10)/8),ry=Math.max(1,(gp.depth||40)/8);rd.mesh.material.map=cloneTex(asphaltTex,rx,ry);rd.mesh.material.color.setHex(0xffffff);rd.mesh.material.roughness=.89;rd.mesh.material.metalness=.015;rd.mesh.material.needsUpdate=true;surface(rd.mesh.material,rd.mesh.material.map,.016)}
 
   const mat=(color,rough=.72,metal=.02,extra={})=>new T.MeshStandardMaterial({color,roughness:rough,metalness:metal,...extra});
   const add=(geo,material,x,y,z,parent=root)=>{const m=new T.Mesh(geo,material);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m};
@@ -71,8 +80,10 @@ function init(W){
   // High-detail re-skin for the original playable houses. Collision remains untouched.
   function reskinHouse(site,i){
     if(!site)return;const {x,z,w,d,h,rot=0,style=0}=site,g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);
+    const original=S.children.find(o=>o.isGroup&&o!==root&&Math.abs(o.position.x-x)<.01&&Math.abs(o.position.z-z)<.01&&o.children.some(c=>c.geometry?.type==='BoxGeometry'&&Math.abs(c.geometry.parameters.width-w)<.01&&Math.abs(c.geometry.parameters.height-h)<.01));
+    if(original)for(const c of original.children)if(c.geometry?.type==='ConeGeometry')c.visible=false;
     const wallMap=cloneTex(plaster[i%plaster.length],Math.max(1,w/4),Math.max(1,h/3));
-    const wm=new T.MeshStandardMaterial({map:wallMap,color:0xffffff,roughness:.86,metalness:0});
+    const wm=new T.MeshStandardMaterial({map:wallMap,color:0xffffff,roughness:.86,metalness:0});surface(wm,wallMap,.024);
     const front=d/2+.075,back=-d/2-.075;
     add(new T.BoxGeometry(w-.12,h-.35,.07),wm,0,h/2,front,g);add(new T.BoxGeometry(w-.12,h-.35,.07),wm,0,h/2,back,g);
     add(new T.BoxGeometry(.07,h-.35,d-.10),wm,w/2+.075,h/2,0,g);add(new T.BoxGeometry(.07,h-.35,d-.10),wm,-w/2-.075,h/2,0,g);
@@ -83,8 +94,20 @@ function init(W){
     // Better windows with frames, sill, inset glass and warm interior panel.
     const ys=h>8?[2.15,4.55,6.85]:[2.1,4.45];
     for(const yy of ys){for(const xx of[-w*.29,w*.29]){
-      const ww=1.72,wh=1.33;add(new T.BoxGeometry(ww+.24,wh+.22,.08),trimM,xx,yy,front+.075,g);add(new T.BoxGeometry(ww,wh,.10),glass,xx,yy,front+.135,g);const glow=add(new T.BoxGeometry(ww-.20,wh-.20,.025),windowGlow,xx,yy,front+.195,g);glow.castShadow=false;nightLights.push(glow);add(new T.BoxGeometry(.055,wh,.14),darkTrim,xx,yy,front+.205,g);add(new T.BoxGeometry(ww,.055,.14),darkTrim,xx,yy,front+.205,g);add(new T.BoxGeometry(ww+.38,.10,.32),trimM,xx,yy-wh*.56,front+.19,g)
+      const ww=1.72,wh=1.33;add(new T.BoxGeometry(ww+.24,wh+.22,.08),trimM,xx,yy,front+.075,g);add(new T.BoxGeometry(ww,wh,.10),glass,xx,yy,front+.225,g);const glow=add(new T.BoxGeometry(ww-.20,wh-.20,.025),windowGlow,xx,yy,front+.145,g);glow.castShadow=false;nightLights.push(glow);add(new T.BoxGeometry(.055,wh,.14),darkTrim,xx,yy,front+.29,g);add(new T.BoxGeometry(ww,.055,.14),darkTrim,xx,yy,front+.29,g);add(new T.BoxGeometry(ww+.38,.10,.32),trimM,xx,yy-wh*.56,front+.19,g)
     }}
+    for(const yy of ys){
+      for(const xx of[-w*.29,w*.29]){
+        add(new T.BoxGeometry(1.96,1.55,.08),trimM,xx,yy,back-.07,g);
+        add(new T.BoxGeometry(1.72,1.33,.04),glass,xx,yy,back-.13,g);
+        add(new T.BoxGeometry(.055,1.33,.05),darkTrim,xx,yy,back-.17,g);
+      }
+      for(const side of[-1,1])for(const zz of[-d*.26,d*.26]){
+        add(new T.BoxGeometry(.08,1.55,1.89),trimM,side*(w/2+.14),yy,zz,g);
+        add(new T.BoxGeometry(.04,1.33,1.65),glass,side*(w/2+.20),yy,zz,g);
+        add(new T.BoxGeometry(.05,1.33,.055),darkTrim,side*(w/2+.24),yy,zz,g);
+      }
+    }
     // Realer front door assembly.
     add(new T.BoxGeometry(2.05,3.0,.12),trimM,0,1.5,front+.08,g);add(new T.BoxGeometry(1.72,2.72,.16),woodM,0,1.40,front+.17,g);add(new T.BoxGeometry(.48,.68,.025),glass,0,2.20,front+.27,g);add(new T.SphereGeometry(.055,10,8),metalM,.56,1.32,front+.30,g);
     add(new T.BoxGeometry(2.65,.14,1.05),mat(0xb1aba1,.92),0,.08,front+.58,g);
@@ -92,8 +115,8 @@ function init(W){
     if(i%3===0&&h>6.8){add(new T.BoxGeometry(3.8,.18,1.18),mat(0xa6a39c,.83),0,3.65,front+.60,g);for(const xx of[-1.65,-1.1,-.55,0,.55,1.1,1.65])add(new T.BoxGeometry(.045,.82,.045),metalM,xx,4.05,front+1.13,g);add(new T.BoxGeometry(3.35,.055,.055),metalM,0,4.45,front+1.13,g)}
     if(i%5===1){add(new T.BoxGeometry(3.3,2.2,.12),mat(0x62686a,.66,.18),w*.26,1.15,front+.16,g);for(let yy=.45;yy<2.0;yy+=.42)add(new T.BoxGeometry(3.0,.045,.04),darkTrim,w*.26,yy,front+.24,g)}
     // Roof overlay with textured tiles, fascia and chimney cap.
-    const rm=new T.MeshStandardMaterial({map:cloneTex(roofTex[i%roofTex.length],4,3),color:0xffffff,roughness:.89});
-    if(style===2){add(new T.BoxGeometry(w+.62,.52,d+.62),rm,0,h+.25,0,g)}else{const rr=add(new T.ConeGeometry(Math.max(w,d)*.73,style===1?3.7:4.7,4),rm,0,h+(style===1?1.86:2.36),0,g);rr.rotation.y=Math.PI/4}
+    const rm=new T.MeshStandardMaterial({map:cloneTex(roofTex[i%roofTex.length],.33,.33),color:0xffffff,roughness:.89});surface(rm,rm.map,.035);
+    if(style===2){add(new T.BoxGeometry(w+.62,.52,d+.62),rm,0,h+.25,0,g)}else{add(roofGeometry(w+.7,d+.7,style===1?3.7:4.7),rm,0,h,0,g)}
     add(new T.BoxGeometry(w+.65,.14,.22),darkTrim,0,h+.06,front+.02,g);
     if(i%3!==1){add(new T.BoxGeometry(.78,1.65,.82),mat(0x836858,.91),w*.27,h+.86,-d*.18,g);add(new T.BoxGeometry(.96,.14,1.02),darkTrim,w*.27,h+1.72,-d*.18,g)}
     // Garden / façade grounding.
@@ -110,27 +133,43 @@ function init(W){
   const premiumRoads=[];
   function street(x,z,w,l,rot=0,name=''){
     const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;g.name=name;root.add(g);
-    const asphalt=add(new T.BoxGeometry(w,.095,l),roadMat.clone(),0,.048,0,g);asphalt.castShadow=false;asphalt.material.map=cloneTex(asphaltTex,Math.max(1,w/7),Math.max(1,l/7));asphalt.material.needsUpdate=true;
-    for(const sx of[-1,1]){const side=add(new T.BoxGeometry(2.15,.11,l),paveMat.clone(),sx*(w/2+1.12),.085,0,g);side.castShadow=false;side.material.map=cloneTex(paverTex,2.5,Math.max(1,l/6));side.material.needsUpdate=true;add(new T.BoxGeometry(.20,.24,l),curbM,sx*(w/2+.12),.13,0,g).castShadow=false}
-    for(let zz=-l/2+8;zz<l/2-5;zz+=15){add(new T.BoxGeometry(.14,.026,6.2),markM,-w*.24,.112,zz,g).castShadow=false;add(new T.BoxGeometry(.14,.026,6.2),markM,w*.24,.112,zz,g).castShadow=false}
-    if(w>=12)add(new T.BoxGeometry(.10,.026,l-4),amberM,0,.114,0,g).castShadow=false;
-    premiumRoads.push({g,x,z,w,l,rot});
+    const asphalt=add(new T.BoxGeometry(w,.095,l),roadMat.clone(),0,.048,0,g);asphalt.castShadow=false;asphalt.userData.keepIndividual=true;asphalt.material.map=cloneTex(asphaltTex,Math.max(1,w/7),Math.max(1,l/7));asphalt.material.needsUpdate=true;
+    surface(asphalt.material,asphalt.material.map,.016);premiumRoads.push({g,x,z,w,l,rot,mesh:asphalt});
   }
   street(-330,0,13,720,0,'Westallee');street(330,0,13,720,0,'Ostallee');street(0,-330,13,720,Math.PI/2,'Suedring');street(0,330,13,720,Math.PI/2,'Nordring');
   street(-245,0,10,620,0,'Westviertel');street(245,0,10,620,0,'Ostviertel');street(0,-245,10,620,Math.PI/2,'Suedviertel');street(0,245,10,620,Math.PI/2,'Nordviertel');
   street(-330,245,10,170,Math.PI/2);street(330,-245,10,170,Math.PI/2);street(-330,-245,10,170,Math.PI/2);street(330,245,10,170,Math.PI/2);
 
+  function onCrossing(rd,zz){
+    const wx=rd.x+Math.sin(rd.rot)*zz,wz=rd.z+Math.cos(rd.rot)*zz;
+    return premiumRoads.some(other=>{
+      if(other===rd||Math.abs(Math.sin(other.rot-rd.rot))<.5)return false;
+      const dx=wx-other.x,dz=wz-other.z;
+      return Math.abs(dx*Math.cos(other.rot)-dz*Math.sin(other.rot))<other.w/2+3&&Math.abs(dx*Math.sin(other.rot)+dz*Math.cos(other.rot))<other.l/2+1;
+    });
+  }
+  for(const rd of premiumRoads)for(let zz=-rd.l/2+7;zz<rd.l/2-7;zz+=12){
+    if(onCrossing(rd,zz-3)||onCrossing(rd,zz)||onCrossing(rd,zz+3))continue;
+    add(new T.BoxGeometry(.12,.012,5.5),markM,0,.103,zz,rd.g).castShadow=false;
+  }
+  for(const rd of premiumRoads)for(let zz=-rd.l/2+2;zz<rd.l/2;zz+=4){
+    if(onCrossing(rd,zz-2)||onCrossing(rd,zz+2))continue;
+    for(const side of[-1,1]){
+      add(new T.BoxGeometry(2.15,.11,4),paveMat,side*(rd.w/2+1.12),.085,zz,rd.g).castShadow=false;
+      add(new T.BoxGeometry(.20,.24,4),curbM,side*(rd.w/2+.12),.13,zz,rd.g).castShadow=false;
+    }
+  }
   // More detailed new houses around the expanded roads.
   const newObstacles=[];
   function premiumHouse(x,z,face,i){
     const g=new T.Group();g.position.set(x,0,z);g.rotation.y=face;root.add(g);
     const w=11.4+(i%4)*1.35,d=9.2+(i%3)*1.25,h=6.8+(i%4)*.72,front=d/2+.08;
-    const wm=new T.MeshStandardMaterial({map:cloneTex(plaster[i%plaster.length],3.2,2.6),color:0xffffff,roughness:.86});
+    const wm=new T.MeshStandardMaterial({map:cloneTex(plaster[i%plaster.length],3.2,2.6),color:0xffffff,roughness:.86});surface(wm,wm.map,.024);
     add(new T.BoxGeometry(w,h,d),wm,0,h/2,0,g);add(new T.BoxGeometry(w+.30,.36,d+.30),mat(0x8e8b84,.9),0,.18,0,g);
-    const rm=new T.MeshStandardMaterial({map:cloneTex(roofTex[i%roofTex.length],4,3),color:0xffffff,roughness:.88});
-    if(i%4===2){add(new T.BoxGeometry(w+.55,.48,d+.55),rm,0,h+.24,0,g)}else{const r=add(new T.ConeGeometry(Math.max(w,d)*.74,3.8+(i%2)*.65,4),rm,0,h+1.95,0,g);r.rotation.y=Math.PI/4}
+    const rm=new T.MeshStandardMaterial({map:cloneTex(roofTex[i%roofTex.length],.33,.33),color:0xffffff,roughness:.88});surface(rm,rm.map,.035);
+    if(i%4===2){add(new T.BoxGeometry(w+.55,.48,d+.55),rm,0,h+.24,0,g)}else{add(roofGeometry(w+.7,d+.7,3.8+(i%2)*.65),rm,0,h,0,g)}
     for(const sx of[-1,1])add(new T.BoxGeometry(.19,h,.19),trimM,sx*(w/2+.05),h/2,front-.05,g);
-    const ys=h>8.2?[2.1,4.45,6.75]:[2.1,4.45];for(const yy of ys){for(const xx of[-w*.30,0,w*.30]){if(yy<2.5&&Math.abs(xx)<.3)continue;add(new T.BoxGeometry(1.55,1.24,.08),trimM,xx,yy,front+.07,g);add(new T.BoxGeometry(1.38,1.08,.10),glass,xx,yy,front+.135,g);const gl=add(new T.BoxGeometry(1.18,.88,.02),windowGlow,xx,yy,front+.205,g);gl.castShadow=false;nightLights.push(gl);add(new T.BoxGeometry(.045,1.10,.12),darkTrim,xx,yy,front+.205,g);add(new T.BoxGeometry(1.40,.045,.12),darkTrim,xx,yy,front+.205,g)}}
+    const ys=h>8.2?[2.1,4.45,6.75]:[2.1,4.45];for(const yy of ys){for(const xx of[-w*.30,0,w*.30]){if(yy<2.5&&Math.abs(xx)<.3)continue;add(new T.BoxGeometry(1.55,1.24,.08),trimM,xx,yy,front+.07,g);add(new T.BoxGeometry(1.38,1.08,.10),glass,xx,yy,front+.225,g);const gl=add(new T.BoxGeometry(1.18,.88,.02),windowGlow,xx,yy,front+.145,g);gl.castShadow=false;nightLights.push(gl);add(new T.BoxGeometry(.045,1.10,.12),darkTrim,xx,yy,front+.29,g);add(new T.BoxGeometry(1.40,.045,.12),darkTrim,xx,yy,front+.29,g)}}
     add(new T.BoxGeometry(1.85,2.75,.15),woodM,0,1.38,front+.17,g);add(new T.BoxGeometry(2.6,.13,1.0),mat(0xb5afa5,.91),0,.07,front+.55,g);
     if(i%2===0){add(new T.BoxGeometry(3.7,.17,1.12),mat(0xa9a69e,.84),0,3.72,front+.56,g);for(let q=-1.55;q<=1.55;q+=.52)add(new T.BoxGeometry(.04,.78,.04),metalM,q,4.10,front+1.08,g);add(new T.BoxGeometry(3.25,.05,.05),metalM,0,4.48,front+1.08,g)}
     add(new T.BoxGeometry(w+3,.72,.66),hedgeM,0,.38,-d/2-1.85,g);for(const sx of[-1,1])add(new T.BoxGeometry(2.2,.62,.62),hedgeM,sx*(w*.34),.34,front+1.7,g);
@@ -140,16 +179,27 @@ function init(W){
   const spots=[];
   for(let z=-205,i=0;z<=205;z+=52,i++){spots.push([-222,z,-Math.PI/2,i],[-268,z,Math.PI/2,i+1],[222,z,Math.PI/2,i+2],[268,z,-Math.PI/2,i+3])}
   for(let x=-205,i=0;x<=205;x+=58,i++){spots.push([x,-222,0,i+30],[x,-268,Math.PI,i+31],[x,222,Math.PI,i+32],[x,268,0,i+33])}
-  const limit=mobile?22:38;spots.slice(0,limit).forEach(a=>premiumHouse(...a));
+  const limit=38;spots.slice(0,limit).forEach(a=>premiumHouse(...a));
 
   // Mountain ridges and layered hills instead of flat horizon.
   const hillM=[mat(0x637757,.98),mat(0x708161,.98),mat(0x5d7051,.98),mat(0x7b8869,.98)];
   const ridges=[[-485,-410,160,80],[-300,-500,145,72],[-70,-515,175,94],[180,-500,160,82],[410,-430,175,90],[505,-170,155,78],[510,150,175,95],[440,430,190,100],[170,520,175,84],[-90,525,185,94],[-360,470,195,102],[-515,165,165,88],[-510,-150,170,86]];
-  ridges.forEach((a,i)=>{const [x,z,sx,sy]=a,g=new T.Group();g.position.set(x,0,z);root.add(g);for(let k=0;k<(mobile?2:3);k++){const rock=add(new T.DodecahedronGeometry(1,mobile?1:2),hillM[(i+k)%hillM.length],(k-1)*sx*.28,sy*.30+k*5,(k%2?1:-1)*sx*.14,g);rock.scale.set(sx*(.58-k*.06),sy*(.72+k*.06),sx*(.50-k*.04));rock.castShadow=false}}
+  ridges.forEach((a,i)=>{const [x,z,sx,sy]=a,g=new T.Group();g.position.set(x,0,z);root.add(g);for(let k=0;k<(mobile?2:3);k++){const rock=add(new T.SphereGeometry(1,mobile?12:22,mobile?8:14),hillM[(i+k)%hillM.length],(k-1)*sx*.28,sy*.30+k*5,(k%2?1:-1)*sx*.14,g);rock.scale.set(sx*(.58-k*.06),sy*(.72+k*.06),sx*(.50-k*.04));rock.castShadow=false}});
 
   // Vegetation, street furniture and grounded small details.
   const trunkM=mat(0x65482f,.95),leaf=[mat(0x3c693a,.98),mat(0x4a7740,.98),mat(0x335d35,.98)],binM=mat(0x3f4948,.70,.18),benchM=mat(0x76543b,.78),poleM=mat(0x343b3e,.42,.28);
-  function tree(x,z,i,s=1){add(new T.CylinderGeometry(.17*s,.24*s,2.5*s,8),trunkM,x,1.25*s,z);const a=add(new T.SphereGeometry(1.25*s,mobile?9:14,mobile?7:10),leaf[i%3],x,3.0*s,z);a.scale.set(1.05,.86,1);const b=add(new T.SphereGeometry(.9*s,mobile?8:12,mobile?6:9),leaf[(i+1)%3],x+.55*s,3.15*s,z+.15*s);b.scale.set(1,.78,1)}
+  const crownCache=new Map();
+  function crown(radius,variant=0){
+    const key=radius+':'+variant;if(crownCache.has(key))return crownCache.get(key);
+    const geo=new T.SphereGeometry(radius,mobile?12:18,mobile?9:13),pos=geo.attributes.position;
+    for(let i=0;i<pos.count;i++){
+      const x=pos.getX(i)/radius,y=pos.getY(i)/radius,z=pos.getZ(i)/radius;
+      const k=1+.11*Math.sin(x*7+variant)*Math.cos(z*6-y*3)+.07*Math.sin(y*9+z*4);
+      pos.setXYZ(i,x*radius*k,y*radius*k,z*radius*k);
+    }
+    geo.computeVertexNormals();crownCache.set(key,geo);return geo;
+  }
+  function tree(x,z,i,s=1){add(new T.CylinderGeometry(.17*s,.24*s,2.5*s,8),trunkM,x,1.25*s,z);const a=add(crown(1.25*s,i%3),leaf[i%3],x,3.0*s,z);a.scale.set(1.05,.86,1);const b=add(crown(.9*s,(i+1)%3),leaf[(i+1)%3],x+.55*s,3.15*s,z+.15*s);b.scale.set(1,.78,1)}
   function streetLamp(x,z,rot,i){const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);add(new T.CylinderGeometry(.065,.10,5.15,9),poleM,0,2.58,0,g);add(new T.BoxGeometry(1.15,.065,.065),poleM,.52,5.02,0,g);add(new T.BoxGeometry(.46,.15,.24),lampBulb,1.08,4.91,0,g);if(!mobile&&i%3===0){const l=new T.PointLight(0xffd28a,0,20,2.0);l.position.set(1.08,4.82,0);g.add(l);nightLights.push(l)}}
   function bench(x,z,rot=0){const g=new T.Group();g.position.set(x,0,z);g.rotation.y=rot;root.add(g);for(const zz of[-.38,.38])add(new T.BoxGeometry(2.0,.12,.22),benchM,0,.58,zz,g);add(new T.BoxGeometry(2.0,.12,.24),benchM,0,1.0,.45,g);for(const sx of[-.8,.8]){add(new T.BoxGeometry(.10,.62,.10),metalM,sx,.30,-.3,g);add(new T.BoxGeometry(.10,.72,.10),metalM,sx,.66,.42,g)}}
   function bin(x,z){add(new T.CylinderGeometry(.30,.34,.76,12),binM,x,.38,z);add(new T.CylinderGeometry(.36,.36,.08,12),darkTrim,x,.80,z)}
@@ -160,7 +210,7 @@ function init(W){
 
   // Crosswalks on the expanded grid.
   function crosswalk(x,z,rot=0){const g=new T.Group();g.position.set(x,.13,z);g.rotation.y=rot;root.add(g);for(let i=-4;i<=4;i++)add(new T.BoxGeometry(.42,.025,5.7),markM,i*.75,0,0,g).castShadow=false}
-  for(const x of[-245,245])for(const z of[-245,245])crosswalk(x,z,0);
+  // Crossings are provided by the traffic system; do not overlay extra crossings here.
 
   // Procedural sky dome for more depth.
   const skyGeo=new T.SphereGeometry(900,mobile?18:28,mobile?12:18);
@@ -168,17 +218,22 @@ function init(W){
   const sky=new T.Mesh(skyGeo,skyMat);sky.frustumCulled=false;root.add(sky);
   const fill=new T.HemisphereLight(0xdcefff,0x445640,mobile?.15:.24);S.add(fill);
 
+  const skyTop=new T.Color(),skyHorizon=new T.Color(),skyGround=new T.Color();
   W.registerTick?.((dt)=>{
+    sky.position.copy(W.camera.position);
     const h=(window.LuxLife?.state?.hour??12)+(window.LuxLife?.state?.minute??0)/60;
-    const night=h>=20||h<6,dusk=(h>=18&&h<20)||(h>=5.5&&h<7.5),rain=(window.LuxWeather560||window.LuxWeather470)?.state==='rain';
+    const night=h>=20||h<6,dusk=(h>=18&&h<20)||(h>=5.5&&h<7.5),rain=(window.LuxWeather770||window.LuxWeather560||window.LuxWeather470)?.state==='rain';
     const lamp=night?1.55:dusk?.62:0;
     for(const l of nightLights){if(l?.isLight)l.intensity=lamp}
     windowGlow.emissiveIntensity=night?.70:dusk?.27:.025;lampBulb.emissiveIntensity=night?1.35:dusk?.65:.16;
-    roadMat.roughness+=( (rain?.48:.87)-roadMat.roughness)*Math.min(1,dt*1.3);
-    if(h>=20||h<5.5){skyMat.uniforms.top.value.setHex(0x101a2a);skyMat.uniforms.horizon.value.setHex(0x31465d);skyMat.uniforms.ground.value.setHex(0x18211f)}
-    else if(h>=18||h<7.5){skyMat.uniforms.top.value.setHex(0x577fa2);skyMat.uniforms.horizon.value.setHex(0xe0a17e);skyMat.uniforms.ground.value.setHex(0x8a8476)}
-    else{skyMat.uniforms.top.value.setHex(0x5f9fd0);skyMat.uniforms.horizon.value.setHex(0xd9e6ec);skyMat.uniforms.ground.value.setHex(0xc3c9c7)}
+    for(const rd of premiumRoads)rd.mesh.material.roughness+=((rain?.40:.87)-rd.mesh.material.roughness)*Math.min(1,dt*1.3);
+    if(h>=20||h<5.5){skyTop.setHex(0x101a2a);skyHorizon.setHex(0x31465d);skyGround.setHex(0x18211f)}
+    else if(h>=18||h<7.5){skyTop.setHex(0x577fa2);skyHorizon.setHex(0xe0a17e);skyGround.setHex(0x8a8476)}
+    else{skyTop.setHex(0x5f9fd0);skyHorizon.setHex(0xd9e6ec);skyGround.setHex(0xc3c9c7)}
+    const blend=1-Math.exp(-Math.max(0,dt)*.6);
+    skyMat.uniforms.top.value.lerp(skyTop,blend);skyMat.uniforms.horizon.value.lerp(skyHorizon,blend);skyMat.uniforms.ground.value.lerp(skyGround,blend);
   });
 
-  window.LuxGraphics920=window.LuxGraphics930={root,roads:premiumRoads,newObstacles,version:'9.3.0'};
+  const batching=batchStatic(root);
+  window.LuxGraphics920=window.LuxGraphics930={root,batching,roads:premiumRoads,newObstacles,version:'9.7.0'};
 }

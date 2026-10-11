@@ -1,4 +1,5 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+import {batchStatic} from './graphics-static-batch-v970.js';
 
 let q=setInterval(()=>{if(!window.LuxWorld?.scene||!window.LuxWorld?.player)return;clearInterval(q);init(window.LuxWorld)},220);
 
@@ -9,12 +10,12 @@ function init(W){
 
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.02:1.07;
-  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.42:2.0));
+  if(!window.LuxPerformance740)R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.15:1.5));
   if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
   if(W.sun){
-    W.sun.shadow.mapSize.set(mobile?1024:3072,mobile?1024:3072);
+    W.sun.shadow.mapSize.set(mobile?1024:2048,mobile?1024:2048);
     W.sun.shadow.bias=-.00016;W.sun.shadow.normalBias=.014;
-    W.sun.shadow.camera.left=-250;W.sun.shadow.camera.right=250;W.sun.shadow.camera.top=250;W.sun.shadow.camera.bottom=-250;
+    W.sun.shadow.camera.left=-90;W.sun.shadow.camera.right=90;W.sun.shadow.camera.top=90;W.sun.shadow.camera.bottom=-90;
     W.sun.shadow.camera.updateProjectionMatrix();
   }
 
@@ -52,7 +53,7 @@ function init(W){
   const shTex=new T.CanvasTexture(shCanvas),shMat=new T.MeshBasicMaterial({map:shTex,transparent:true,depthWrite:false,opacity:.62});
   function contactShadow(target,w,l,y=.018){
     const p=new T.Mesh(new T.PlaneGeometry(w,l),shMat.clone());p.rotation.x=-Math.PI/2;p.position.y=y;p.renderOrder=1;root.add(p);
-    return()=>{if(!target?.position)return;p.position.x=target.position.x;p.position.z=target.position.z;p.rotation.z=-(target.rotation?.y||0)}
+    return()=>{if(!target?.position)return;p.visible=target.visible!==false;p.position.x=target.position.x;p.position.z=target.position.z;p.rotation.z=-(target.rotation?.y||0)}
   }
   const shadowTicks=[contactShadow(W.player,1.25,.82,.022)];
   for(const c of (W.cars||[]).slice(0,mobile?14:28))shadowTicks.push(contactShadow(c,(c.userData?.halfW||1.05)*2.05,(c.userData?.halfL||2.2)*1.88,.021));
@@ -66,7 +67,7 @@ function init(W){
     // foundation blocks
     for(let xx=-w/2+.55;xx<w/2;xx+=1.1)A(new T.BoxGeometry(.9,.28,.18),stone,xx,.18,front,g).castShadow=false;
     // lintels and window planters
-    const rows=h>8?[2.15,4.45,6.7]:[2.15,4.45];
+    const rows=h>8?[2.15,4.55,6.85]:[2.1,4.45];
     for(const yy of rows)for(const xx of[-w*.29,w*.29]){
       A(new T.BoxGeometry(2.0,.13,.30),stone,xx,yy+.78,front+.03,g);
       if((i+Math.round(yy))%2===0){
@@ -85,8 +86,8 @@ function init(W){
     A(new T.BoxGeometry(.16,.32,.16),warm,.76,2.22,front+.26,g);
     // garden fence/posts
     if(i%2===0){
-      for(let xx=-w*.46;xx<=w*.46;xx+=1.35)A(new T.BoxGeometry(.10,.78,.10),wood,xx,.39,front+2.45,g);
-      A(new T.BoxGeometry(w*.92,.08,.08),wood,0,.68,front+2.45,g);
+      for(let xx=-w*.46;xx<=w*.46;xx+=1.35)if(Math.abs(xx)>1.7)A(new T.BoxGeometry(.10,.78,.10),wood,xx,.39,front+2.45,g);
+      for(const side of[-1,1])A(new T.BoxGeometry((w*.92-3.4)/2,.08,.08),wood,side*(w*.92+3.4)/4,.68,front+2.45,g);
     }
   }
   (W.houseSites||[]).forEach(facade);
@@ -131,7 +132,7 @@ function init(W){
     [-190,-392,0],[-80,-392,0],[30,-392,0],[140,-392,0],[250,-392,0],
     [-190,392,Math.PI],[-80,392,Math.PI],[30,392,Math.PI],[140,392,Math.PI],[250,392,Math.PI]
   ];
-  blocks.slice(0,mobile?12:20).forEach((b,i)=>block(b[0],b[1],b[2],i));
+  blocks.slice(0,20).forEach((b,i)=>block(b[0],b[1],b[2],i));
 
   // Grass clusters and rocks at the town edge using instancing.
   const grassGeo=new T.ConeGeometry(.05,.55,5),grassMat=M(0x4e783f,.98),grassCount=mobile?240:560,grassInst=new T.InstancedMesh(grassGeo,grassMat,grassCount),dummy=new T.Object3D();
@@ -151,10 +152,11 @@ function init(W){
     const weather=(window.LuxWeather560||window.LuxWeather470)?.state,h=(window.LuxLife?.state?.hour??12)+(window.LuxLife?.state?.minute??0)/60;
     const rain=weather==='rain',night=h>=20||h<6,dusk=(h>=18&&h<20)||(h>=5.5&&h<7.5);
     for(const m of glassTargets)if('envMapIntensity' in m)m.envMapIntensity+=( (night?.75:.52)-m.envMapIntensity)*Math.min(1,dt);
-    if(W.sun){const target=night?.10:dusk?1.35:2.20;W.sun.intensity+=(target-W.sun.intensity)*Math.min(1,dt*.55)}
+    // The day/night cycle owns sun intensity and colour.
     const roadMeshes=[...(W.roads||[]).map(x=>x.mesh).filter(Boolean)];
     for(const m of roadMeshes.map(o=>o.material).filter(Boolean)){m.roughness+=( (rain?.48:.88)-m.roughness)*Math.min(1,dt*.7);if('envMapIntensity' in m)m.envMapIntensity=rain?.58:.22}
   });
 
-  window.LuxPremium940={root,version:'9.4.0',blocks:blocks.length,facades:details.length};
+  const batching=batchStatic(root);
+  window.LuxPremium940={root,batching,version:'9.7.0',blocks:blocks.length,facades:details.length};
 }
