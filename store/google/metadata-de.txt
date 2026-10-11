@@ -1,0 +1,23 @@
+title: Lux City
+short_description: Baue dir dein Leben in einer offenen Stadt auf.
+full_description: |
+  Lux City ist eine offene Life-&-Business-Simulation für Smartphones und Tablets.
+
+  Erkunde eine lebendige Stadt im Querformat, arbeite, verdiene Geld, gründe Unternehmen, kaufe Fahrzeuge und entwickle deinen eigenen Alltag.
+
+  FEATURES
+  • Arbeiten und Geld verdienen
+  • Unternehmen und Wirtschaft
+  • Wohnungen und Immobilien
+  • Neu- und Gebrauchtwagen
+  • Kilometerstand, Zustand und Wiederverkauf
+  • Stadtverkehr, Straßen und Autobahnring
+  • Öffentliche Verkehrsmittel
+  • Ingame-Handy mit Bank, Rechnungen und Versicherungen
+  • Cloud-Spielstand
+  • Touch-Steuerung im Querformat
+
+  Lux City wird regelmäßig weiterentwickelt und um neue Bereiche, Fahrzeuge und Spielsysteme ergänzt.
+category: GAME_SIMULATION
+privacy_policy: https://raachraoul-create.github.io/lux-city/privacy.html
+website: https://raachraoul-create.github.io/lux-city/

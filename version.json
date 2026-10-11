@@ -1,16 +1,12 @@
 {
-  "version": "10.4.0",
-  "released_at": "2026-10-11T12:42:00+02:00",
-  "title": "iOS- und Android-App-Grundlage mit festem Querformat",
+  "version": "10.4.1",
+  "released_at": "2026-10-11T12:56:00+02:00",
+  "title": "Store-Release-Paket vorbereitet",
   "notes": [
-    "Lux City besitzt jetzt einen eigenen App-Shell-Modus für Smartphones und Tablets.",
-    "Auf Mobilgeräten wird Hochformat blockiert und ein klarer Dreh-Hinweis angezeigt; gespielt wird ausschließlich im Querformat.",
-    "Safe-Areas von iPhone und Android werden für HUD, Joystick, Aktionsknöpfe, Karte, Modale und Ingame-Handy berücksichtigt.",
-    "PWA-Manifest und Vollbilddarstellung wurden auf Landscape angepasst.",
-    "Capacitor-Konfiguration für die native App-ID lu.luxcity.game wurde ergänzt.",
-    "Build-Skripte erzeugen ein natives Web-Bundle und konfigurieren Android sowie iOS automatisch auf Querformat.",
-    "Ein GitHub-Actions-Workflow baut Android APK/AAB sowie ein unsigniertes iOS-Archiv.",
-    "App-Icon- und Splash-Screen-Quellen wurden als eigene Lux-City-Grafiken ergänzt.",
-    "Spielsteuerung, Login, Cloud-Spielstand und Gameplay wurden nicht verändert."
+    "Öffentliche Datenschutzseite für App Store und Google Play ergänzt.",
+    "Deutsche Store-Texte für Apple App Store und Google Play vorbereitet.",
+    "Automatischer Release-Workflow für signierte Android-Bundles und Google-Play-Upload vorbereitet.",
+    "Automatischer iOS-Signier-, IPA-Export- und TestFlight-Upload-Workflow vorbereitet.",
+    "Die Veröffentlichung wartet nur noch auf die einmalige Hinterlegung der Apple- und Google-Entwicklerzugänge bzw. Signierschlüssel."
   ]
 }
