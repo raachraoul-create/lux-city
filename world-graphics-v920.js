@@ -116,9 +116,7 @@ function init(W){
     if(w>=12)add(new T.BoxGeometry(.10,.026,l-4),amberM,0,.114,0,g).castShadow=false;
     premiumRoads.push({g,x,z,w,l,rot});
   }
-  street(-330,0,13,720,0,'Westallee');street(330,0,13,720,0,'Ostallee');street(0,-330,13,720,Math.PI/2,'Suedring');street(0,330,13,720,Math.PI/2,'Nordring');
-  street(-245,0,10,620,0,'Westviertel');street(245,0,10,620,0,'Ostviertel');street(0,-245,10,620,Math.PI/2,'Suedviertel');street(0,245,10,620,Math.PI/2,'Nordviertel');
-  street(-330,245,10,170,Math.PI/2);street(330,-245,10,170,Math.PI/2);street(-330,-245,10,170,Math.PI/2);street(330,245,10,170,Math.PI/2);
+  // v11: alte rechteckige Premium-Straßen deaktiviert; LuxRoadNetwork1200 ist die einzige Straßenquelle.
 
   // More detailed new houses around the expanded roads.
   const newObstacles=[];
@@ -213,5 +211,5 @@ function init(W){
     else{skyMat.uniforms.top.value.setHex(0x5f9fd0);skyMat.uniforms.horizon.value.setHex(0xd9e6ec);skyMat.uniforms.ground.value.setHex(0xc3c9c7)}
   });
 
-  window.LuxGraphics920=window.LuxGraphics930=window.LuxGraphics940=window.LuxGraphics950={root,roads:premiumRoads,newObstacles,version:'9.5.0'};
+  window.LuxGraphics920=window.LuxGraphics930=window.LuxGraphics940=window.LuxGraphics950={root,roads:premiumRoads,newObstacles,version:'9.6.0'};
 }

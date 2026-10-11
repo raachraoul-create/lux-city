@@ -85,7 +85,12 @@ const ITEMS=[
  {t:'Store-Veröffentlichung vorbereitet: Datenschutzseite, Store-Texte, Signierung und TestFlight/Play-Upload-Workflow',s:'work',release:'10.4.1'},
  {t:'Stadtbereinigung: Tankstelle von der Ringstraße auf eigenes Grundstück mit Zufahrt versetzt',s:'work',release:'10.5.0'},
  {t:'Falsche Alt-Zebrastreifen entfernt und Bäume aus allen Fahrbahn-Sperrzonen gehalten',s:'work',release:'10.5.0'},
- {t:'Autos Generation 4: verjüngte, rundere Karosserie statt gleichbreiter Kasten-Grundform',s:'work',release:'10.5.0'}
+ {t:'Autos Generation 4: verjüngte, rundere Karosserie statt gleichbreiter Kasten-Grundform',s:'work',release:'10.5.0'},
+ {t:'Straßennetz komplett neu: eine Spur je Richtung in der Stadt, natürliche Kurven und asymmetrischer Verlauf',s:'work',release:'11.0.0'},
+ {t:'Alte doppelte Straßen-/Linienmodule entfernt; nur noch eine Straßenquelle im Spiel',s:'work',release:'11.0.0'},
+ {t:'Autobahn neu geordnet: geteilter, gerundeter Außenring mit zwei Spuren je Richtung und klaren Zubringern',s:'work',release:'11.0.0'},
+ {t:'Zebrastreifen stark reduziert und nur noch an vier sinnvollen innerstädtischen Querungen',s:'work',release:'11.0.0'},
+ {t:'Tankstelle auf eigenes Servicegrundstück versetzt; Benzin, Diesel, AC- und DC-Ladepunkte sichtbar und nutzbar',s:'work',release:'11.0.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

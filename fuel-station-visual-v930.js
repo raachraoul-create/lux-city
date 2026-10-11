@@ -14,13 +14,14 @@ function init(F){
  A(new T.BoxGeometry(15.3,.18,7.8),dark,-2,3.96,-2);
  for(const z of[-4.5,-2,0.5])for(const x of[-6.3,-2,2.3]){let lm=M(0xffe6bc,.26,.03,0xffca75,0);warm.push(lm);A(new T.BoxGeometry(1.7,.08,.34),lm,x,3.49,z)}
  // pump islands + hoses
- const pumps=[[-6,-2,0x3f704b,'BENZIN'],[-1,-2,0x4b5661,'DIESEL'],[4,-2,0x3b78a5,'11 kW'],[8,-2,0x245f9b,'150 kW']];
+ const pumps=[[-6,-2,0x3f704b,'BENZIN'],[-1,-2,0x4b5661,'DIESEL'],[4,-2,0x3b78a5,'AC 11 kW'],[8,-2,0x245f9b,'DC 150 kW']];
  for(let i=0;i<pumps.length;i++){
    const [x,z,c,label]=pumps[i];
+   A(new T.BoxGeometry(3.5,.028,5.2),i<2?M(0x575b5d,.92):green,x,.12,z+.25);
    A(new T.BoxGeometry(2.05,.15,1.35),M(0x8a8d89,.82),x,.08,z);
    A(new T.BoxGeometry(.78,1.85,.66),M(c,.38,.30),x,.95,z);
    glow(x,1.30,z+.35,.48,.27,i<2?0x6fb7dc:0x66d6a1);
-   A(new T.BoxGeometry(.62,.12,.05),white,x,1.62,z+.36);
+   A(new T.BoxGeometry(.62,.12,.05),white,x,1.62,z+.36);let bay=new T.Mesh(new T.PlaneGeometry(2.6,.64),new T.MeshBasicMaterial({map:tex(label,i<2?'#30383d':'#2e6949','#fff'),toneMapped:false,transparent:true}));bay.rotation.x=-Math.PI/2;bay.position.set(x,.145,z+1.62);root.add(bay);
    // hose and nozzle
    let hose=A(new T.TorusGeometry(.33,.025,7,18,Math.PI*1.65),dark,x+.42,.92,z-.02);hose.rotation.z=.36;
    let noz=A(new T.BoxGeometry(.12,.34,.09),metal,x+.58,.68,z-.22);noz.rotation.z=-.28;
@@ -60,5 +61,5 @@ function init(F){
    for(const x of[11.8,15.4])for(let z=-6.3;z<=-3.7;z+=.52){let br=A(new T.CylinderGeometry(.10,.10,.42,8),M(z%1?0x3e75a2:0x2f5c80,.64),x,1.85,z);br.rotation.z=Math.PI/2}
  }
  W.registerTick?.((dt)=>{let h=(+L.state.hour||0)+(+L.state.minute||0)/60,night=h>=19.2||h<6.2,dusk=(h>=18&&h<19.2)||(h>=6.2&&h<7.2);for(const m of warm)m.emissiveIntensity+=( (night?1.0:dusk?.42:.08)-m.emissiveIntensity)*Math.min(1,dt*2.4);for(const m of screens)m.emissiveIntensity+=( (night?.48:.24)-m.emissiveIntensity)*Math.min(1,dt*3)});
- window.LuxFuelVisual930={version:'9.3.0',root}
+ window.LuxFuelVisual930={version:'9.4.0',root}
 }

@@ -1,14 +1,18 @@
 {
-  "version": "10.5.0",
-  "released_at": "2026-10-11T13:18:00+02:00",
-  "title": "Stadtbereinigung und Autos Generation 4",
+  "version": "11.0.0",
+  "released_at": "2026-10-11T20:44:00+02:00",
+  "title": "Straßennetz komplett neu aufgebaut",
   "notes": [
-    "Die Tankstelle wurde von der Ringstraße auf ein eigenes Grundstück bei der Ostseite versetzt und besitzt eine eigene Zufahrt zur Straße.",
-    "Zapf- und Ladepunkte wurden an den neuen Standort angepasst.",
-    "Vier alte, fest platzierte Zebrastreifen bei ±245/±245 wurden vollständig entfernt; Fußgängerquerungen stammen nur noch aus dem eigentlichen Verkehrs-/Kreuzungssystem.",
-    "Natur- und ältere Grafikschichten prüfen jetzt mit größerem Sicherheitsabstand gegen das aktuelle Straßennetz, bevor Bäume platziert werden.",
-    "Ein zusätzlicher Laufzeit-Schutz blendet alte Baumobjekte aus, falls sie nach späteren Straßenerweiterungen doch in einer Fahrbahn landen.",
-    "Die KI-Autos besitzen jetzt einen neuen verjüngten 3D-Grundkörper: Dach, Front und Heck sind schmaler als die Fahrzeugmitte statt überall gleich breit.",
-    "Fahrphysik, Kollision, Spurführung, Wohnung und Steuerung bleiben unverändert."
+    "Die alten übereinanderliegenden Straßen- und Markierungsschichten wurden aus dem Ladeablauf entfernt.",
+    "Innenstadtstraßen haben jetzt genau eine Fahrspur je Richtung. Zusätzliche falsche Spurteilungen wurden entfernt.",
+    "Nord-Süd- und Ost-West-Straßen verlaufen leicht geschwungen und bewusst asymmetrisch statt als rechteckiges Raster.",
+    "Der Stadtring ist unregelmäßig gerundet und hat ebenfalls nur eine Spur je Richtung.",
+    "Die Autobahn wurde als klar getrennter, gerundeter Außenring mit zwei Spuren je Richtung, Mittelstreifen und nur zwei großen Zubringern neu aufgebaut.",
+    "KI-Fahrzeuge benutzen exakt die neuen Spurmittellinien; Spurkorrektur zieht versetzte Fahrzeuge enger zurück.",
+    "Zebrastreifen wurden auf vier sinnvolle innerstädtische Querungen reduziert. Auf Ring, Zubringern und Autobahn gibt es keine Zebrastreifen.",
+    "Die Tankstelle steht auf einem eigenen Servicegrundstück bei der südöstlichen Zufahrt und nicht mehr auf einer Durchgangsfahrbahn.",
+    "Benzin, Diesel, AC 11 kW und DC 150 kW haben sichtbare markierte Stellflächen und funktionierende Interaktionspunkte.",
+    "Auf Touch-Geräten kann der Tank-/Ladehinweis direkt angetippt werden; Tastatur E funktioniert weiterhin.",
+    "Wohnung, Spielersteuerung, Besitz, Kilometerstand und Cloud-Spielstand wurden nicht verändert."
   ]
 }
