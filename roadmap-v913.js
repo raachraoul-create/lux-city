@@ -92,7 +92,10 @@ const ITEMS=[
  {t:'Zebrastreifen stark reduziert und nur noch an vier sinnvollen innerstädtischen Querungen',s:'work',release:'11.0.0'},
  {t:'Tankstelle auf eigenes Servicegrundstück versetzt; Benzin, Diesel, AC- und DC-Ladepunkte sichtbar und nutzbar',s:'work',release:'11.0.0'},
  {t:'Autos Generation 5: klare Unterkarosserie, Motorhaube/Heck und eigene Kabinenformen statt Blob-Körper',s:'work',release:'11.0.0'},
- {t:'Fahrzeugtypen unterscheiden sich jetzt auch in Dachhöhe, Kabinenlänge, Haubenlänge und Heckform',s:'work',release:'11.0.0'}
+ {t:'Fahrzeugtypen unterscheiden sich jetzt auch in Dachhöhe, Kabinenlänge, Haubenlänge und Heckform',s:'work',release:'11.0.0'},
+ {t:'Autos Generation 6: neue Karosserieflächen, realistischere SUV-/Kombi-/Sportwagen-Silhouetten und Fenster im richtigen Winkel',s:'work',release:'11.1.0'},
+ {t:'Eigenes Fahrzeug übernimmt beim Modellwechsel jetzt die echte SUV-/Van-/Coupé-Karosserie statt nur die Skalierung',s:'work',release:'11.1.0'},
+ {t:'Vier unterschiedliche Front-, Kühlergrill- und Rückleuchten-Designs im Straßenverkehr',s:'work',release:'11.1.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

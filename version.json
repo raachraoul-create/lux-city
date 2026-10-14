@@ -1,20 +1,13 @@
 {
-  "version": "11.0.0",
-  "released_at": "2026-10-11T20:44:00+02:00",
-  "title": "Straßennetz komplett neu aufgebaut",
+  "version": "11.1.0",
+  "released_at": "2026-10-14T17:28:00+02:00",
+  "title": "Fahrzeugdesigns Generation 6",
   "notes": [
-    "Die alten übereinanderliegenden Straßen- und Markierungsschichten wurden aus dem Ladeablauf entfernt.",
-    "Innenstadtstraßen haben jetzt genau eine Fahrspur je Richtung. Zusätzliche falsche Spurteilungen wurden entfernt.",
-    "Nord-Süd- und Ost-West-Straßen verlaufen leicht geschwungen und bewusst asymmetrisch statt als rechteckiges Raster.",
-    "Der Stadtring ist unregelmäßig gerundet und hat ebenfalls nur eine Spur je Richtung.",
-    "Die Autobahn wurde als klar getrennter, gerundeter Außenring mit zwei Spuren je Richtung, Mittelstreifen und nur zwei großen Zubringern neu aufgebaut.",
-    "KI-Fahrzeuge benutzen exakt die neuen Spurmittellinien; Spurkorrektur zieht versetzte Fahrzeuge enger zurück.",
-    "Zebrastreifen wurden auf vier sinnvolle innerstädtische Querungen reduziert. Auf Ring, Zubringern und Autobahn gibt es keine Zebrastreifen.",
-    "Die Tankstelle steht auf einem eigenen Servicegrundstück bei der südöstlichen Zufahrt und nicht mehr auf einer Durchgangsfahrbahn.",
-    "Benzin, Diesel, AC 11 kW und DC 150 kW haben sichtbare markierte Stellflächen und funktionierende Interaktionspunkte.",
-    "Auf Touch-Geräten kann der Tank-/Ladehinweis direkt angetippt werden; Tastatur E funktioniert weiterhin.",
-    "Wohnung, Spielersteuerung, Besitz, Kilometerstand und Cloud-Spielstand wurden nicht verändert.",
-    "Die Fahrzeugkarosserien wurden erneut grundlegend überarbeitet: Unterbau, Haube/Heck und Kabine sind jetzt getrennt modelliert statt als ein durchgehender Körper.",
-    "Limousine, Hatchback, SUV, Crossover, Coupé, Sportwagen, Kombi, Pickup und Van besitzen deutlich unterschiedliche Kabinen-, Dach-, Hauben- und Heckproportionen."
+    "Eigenständige 3D-Karosserieformen für Limousine, Hatchback, SUV, Crossover, Coupé, Sportwagen, Kombi, Pickup und Van.",
+    "Neu geformte Karosserie-Unterteile, Dachlinien, Motorhauben, Heckbereiche und eingelassene Fenster für besser erkennbare Fahrzeugklassen.",
+    "Vier unterschiedliche Kühlergrill-, Scheinwerfer- und Rücklichtstile für den KI-Straßenverkehr statt immer gleicher Fronten.",
+    "Beim Wechsel des gekauften Modells passt sich nun auch die eigentliche Karosserie des Spielerautos an den Fahrzeugtyp an, nicht nur die Skalierung.",
+    "Fahrzeuglack, Fahrphysik, Steuerung, Kilometerstand, Zustand, Fahrzeugbesitz und Cloud-Spielstand bleiben erhalten.",
+    "Sichtprüfung und FPS-Messung im laufenden Spiel sind noch erforderlich."
   ]
 }

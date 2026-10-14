@@ -1,5 +1,5 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-import {createCarBody} from './vehicle-shell-v1200.js?b=1210';
+import {createCarBody} from './vehicle-shell-v1200.js?b=1220';
 let q=setInterval(()=>{if(!window.LuxWorld?.cars?.length||!window.LuxTraffic570)return;clearInterval(q);const W=LuxWorld,M=(c,r=.30,m=.28,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei});
 function A(g,m,x,y,z,p){let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=false;o.receiveShadow=true;p.add(o);return o}
 function shell(width,profile,color,wb,r,style){return createCarBody(width,profile,color,wb,r,style)}
@@ -16,12 +16,45 @@ for(const sx of[-1,1]){
  for(const zz of[-c.l*.10,c.l*.11])A(new T.BoxGeometry(.026,.035,.18),trim,sx*(c.w/2-.018),.88,zz,v);
  A(new T.BoxGeometry(.016,.40,.016),dark,sx*(c.w/2-.006),.67,c.l*.02,v);
 }
-let grille=A(new T.BoxGeometry(c.w*.54,.22,.035),fuel==='electric'?M(body,.24,.34):dark,0,.56,front-.05,v);if(fuel!=='electric')for(let x=-.42;x<=.42;x+=.21)A(new T.BoxGeometry(.018,.18,.025),trim,x,.56,front-.075,v);
-let tails=[];for(let x of[-c.w*.30,c.w*.30]){A(new T.BoxGeometry(c.w*.20,.09,.040),M(0xf5f3e9,.11,.1,0xffffff,.34),x,.72,front-.04,v);tails.push(A(new T.BoxGeometry(c.w*.20,.10,.040),M(0x8a141b,.13,.08,0xff1119,.16),x,.69,rear+.04,v));A(new T.BoxGeometry(.070,.05,.035),amber,x,.64,front-.055,v)}
-A(new T.BoxGeometry(.70,.135,.030),plate,0,.43,front-.07,v);A(new T.BoxGeometry(.70,.135,.030),plate,0,.43,rear+.07,v);A(new T.BoxGeometry(c.w*.70,.105,.050),dark,0,.50,rear+.03,v);
+let tails=[],frontSignature=i%4,grilleWidth=(cls==='sport'||cls==='coupe'?.69:cls==='van'?.65:cls==='suv'||cls==='pickup'?.56:.46)*c.w;
+const bumperHeight=(cls==='suv'||cls==='pickup'||cls==='van')?.62:.55;
+const grilleM=fuel==='electric'?M(body,.23,.34):dark;
+let grille=A(new T.BoxGeometry(grilleWidth,frontSignature===2?.32:.21,.038),grilleM,0,bumperHeight,front-.045,v);
+if(fuel!=='electric'){
+ const lines=frontSignature===1?3:frontSignature===2?6:4;
+ for(let k=0;k<lines;k++){
+   const xx=(k-(lines-1)/2)*(grilleWidth/(lines+.4));
+   A(new T.BoxGeometry(.023,.15,.025),trim,xx,bumperHeight,front-.075,v)
+ }
+}
+const lampStyle=frontSignature===0?'blade':frontSignature===1?'block':frontSignature===2?'split':'stripe';
+for(let sx of[-1,1]){
+ let headW=c.w*(lampStyle==='blade'?.25:lampStyle==='split'?.15:.19);
+ let headY=cls==='suv'||cls==='van'?.94:cls==='sport'?.67:.77;
+ let hl=A(new T.BoxGeometry(headW,lampStyle==='block'?.17:.095,.045),M(0xe7f3f8,.14,.12,0xb4dbff,.2),sx*c.w*.30,headY,front-.06,v);
+ hl.rotation.z=sx*(lampStyle==='blade'?.17:lampStyle==='stripe'?.09:0);
+ if(lampStyle==='split')A(new T.BoxGeometry(headW*.72,.06,.042),M(0xffcc83,.18,.1,0xffb25b,.22),sx*c.w*.30,headY-.16,front-.065,v);
+ const ry=cls==='suv'||cls==='van'?.84:.72;
+ const tail=A(new T.BoxGeometry(c.w*(lampStyle==='stripe'?.21:.18),lampStyle==='block'?.19:.11,.042),M(0x991e2a,.18,.12,0xff1726,.25),sx*c.w*.31,ry,rear+.06,v);
+ tails.push(tail);
+ A(new T.BoxGeometry(.067,.05,.032),amber,sx*c.w*.34,.62,front-.07,v)
+}
+if(fuel==='electric'||cls==='sport'){
+ const strip=A(new T.BoxGeometry(c.w*.59,.029,.034),M(0x8b1e25,.22,.12,0xff2734,.14),0,cls==='sport'?.72:.75,rear+.064,v);
+ tails.push(strip)
+}
+A(new T.BoxGeometry(.70,.135,.032),plate,0,.43,front-.08,v);
+A(new T.BoxGeometry(.70,.135,.032),plate,0,.43,rear+.08,v);
+A(new T.BoxGeometry(c.w*.74,.085,.048),dark,0,.45,rear+.04,v);
+if(['suv','crossover','pickup'].includes(cls)){
+ for(const sx of[-1,1]){
+  A(new T.BoxGeometry(.045,.13,c.l*.61),dark,sx*c.w*.48,.47,0,v);
+  A(new T.BoxGeometry(.055,.05,c.l*.30),trim,sx*c.w*.39,cls==='suv'?1.75:1.62,0,v)
+ }
+}
 let wheels=[];for(let sx of[-1,1]){let spokes=[5,7,9][i%3];wheels.push(wheel(v,sx*(c.w/2+.032),-c.wb,c.r,true,spokes),wheel(v,sx*(c.w/2+.032),c.wb,c.r,false,spokes));for(let zz of[-c.wb,c.wb]){let arch=A(new T.TorusGeometry(c.r*.97,.032,6,22,Math.PI),M(body,.23,.32),sx*(c.w/2+.015),c.r+.08,zz,v);arch.rotation.y=Math.PI/2;arch.rotation.z=0}}
 if(fuel!=='electric'){let ex=A(new T.CylinderGeometry(.035,.045,.25,10),M(0x777d80,.28,.62),c.w*.31,.36,rear+.12,v);ex.rotation.x=Math.PI/2}else{A(new T.BoxGeometry(.32,.20,.018),M(0x2b4d63,.16,.48),-c.w*.34,.83,rear+.035,v)}
 if(cls==='suv'||cls==='van'||cls==='crossover'||cls==='wagon')for(let x of[-c.w*.31,c.w*.31])A(new T.BoxGeometry(.050,.060,c.l*.42),dark,x,cls==='van'?2.04:(cls==='suv'||cls==='crossover'?1.67:1.58),0,v);if(cls==='sport'||cls==='coupe'){A(new T.BoxGeometry(c.w*.58,.055,.30),dark,0,.91,rear+.12,v);A(new T.BoxGeometry(.05,.20,.05),dark,-c.w*.23,.81,rear+.04,v);A(new T.BoxGeometry(.05,.20,.05),dark,c.w*.23,.81,rear+.04,v)}
 v.userData.wheels720=wheels;v.userData.tailLights=tails;v.userData.detail720=true}
 function pRemove(p,ch){p.remove(ch);ch.geometry?.dispose?.();Array.isArray(ch.material)?ch.material.forEach(m=>m.dispose?.()):ch.material?.dispose?.()}
-W.cars.forEach(build);let prev=new WeakMap();W.registerTick(dt=>{for(let v of W.cars){if(v.visible===false)continue;let pr=prev.get(v)||{x:v.position.x,z:v.position.z,y:v.rotation.y},sp=Math.hypot(v.position.x-pr.x,v.position.z-pr.z)/Math.max(dt,.001),dy=v.rotation.y-pr.y;while(dy>Math.PI)dy-=Math.PI*2;while(dy<-Math.PI)dy+=Math.PI*2;prev.set(v,{x:v.position.x,z:v.position.z,y:v.rotation.y});for(let w of v.userData.wheels720||[]){w.rotation.x-=sp*dt*2.45;if(w.userData.front)w.rotation.y+=(Math.max(-.40,Math.min(.40,dy/Math.max(dt,.001)*.10))-w.rotation.y)*Math.min(1,dt*8)}let braking=(v.userData.speedNow??0)<.30;for(let l of v.userData.tailLights||[])l.material.emissiveIntensity=braking?1.65:.16}});window.LuxVehicleRebuild720=window.LuxVehicleRebuild730=window.LuxVehicleRebuild740=window.LuxVehicleRebuild750={version:'7.6.0',active:true}},360);
+W.cars.forEach(build);let prev=new WeakMap();W.registerTick(dt=>{for(let v of W.cars){if(v.visible===false)continue;let pr=prev.get(v)||{x:v.position.x,z:v.position.z,y:v.rotation.y},sp=Math.hypot(v.position.x-pr.x,v.position.z-pr.z)/Math.max(dt,.001),dy=v.rotation.y-pr.y;while(dy>Math.PI)dy-=Math.PI*2;while(dy<-Math.PI)dy+=Math.PI*2;prev.set(v,{x:v.position.x,z:v.position.z,y:v.rotation.y});for(let w of v.userData.wheels720||[]){w.rotation.x-=sp*dt*2.45;if(w.userData.front)w.rotation.y+=(Math.max(-.40,Math.min(.40,dy/Math.max(dt,.001)*.10))-w.rotation.y)*Math.min(1,dt*8)}let braking=(v.userData.speedNow??0)<.30;for(let l of v.userData.tailLights||[])l.material.emissiveIntensity=braking?1.65:.16}});window.LuxVehicleRebuild720=window.LuxVehicleRebuild730=window.LuxVehicleRebuild740=window.LuxVehicleRebuild750={version:'7.7.0',active:true}},360);
