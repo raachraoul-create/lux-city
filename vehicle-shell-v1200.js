@@ -40,7 +40,7 @@ export function createCarBody(width,profile,color,wheelbase=1.48,radius=.36,styl
  const length=2*Math.max(...profile.map(p=>Math.abs(p[0])));
  const group=new T.Group();group.name='VehicleBody1200';group.userData.structuralBody=true;group.userData.bodyStyle=style;
  const paint=sharedPaint||new T.MeshPhysicalMaterial({color,roughness:.24,metalness:.24,clearcoat:.7,clearcoatRoughness:.18});
- paint.color.setHex(color);group.userData.bodyPaint=paint;
+ paint.color.setHex(color);paint.side=T.DoubleSide;group.userData.bodyPaint=paint;
  const glass=new T.MeshStandardMaterial({color:0x253b49,roughness:.16,metalness:.26,side:T.DoubleSide});
  const seal=new T.MeshStandardMaterial({color:0x161b20,roughness:.40,metalness:.13});
  const low=style==='suv'||style==='van'||style==='pickup'?1.00:.88;
