@@ -98,7 +98,10 @@ const ITEMS=[
  {t:'Vier unterschiedliche Front-, Kühlergrill- und Rückleuchten-Designs im Straßenverkehr',s:'work',release:'11.1.0'},
  {t:'Fahrzeuge Generation 7: sechs unterschiedliche Felgentypen, klassenabhängige Frontschürzen und Lichtsignaturen',s:'work',release:'11.2.0'},
  {t:'Premium-Autodetails werden nur im Nahbereich erzeugt und angezeigt – weniger Last bei viel Verkehr',s:'work',release:'11.2.0'},
- {t:'Eigene Fahrzeugfelgen wechseln passend zur SUV-, Sport-, Kombi- oder Van-Karosserie',s:'work',release:'11.2.0'}
+ {t:'Eigene Fahrzeugfelgen wechseln passend zur SUV-, Sport-, Kombi- oder Van-Karosserie',s:'work',release:'11.2.0'},
+ {t:'Cockpit-Upgrade: modellabhängige Sitze, Lenkrad, Armaturenbrett und schönere Innenräume',s:'work',release:'11.3.0'},
+ {t:'Auto-Cockpit zeigt live Geschwindigkeit, Energie und Kilometerstand',s:'work',release:'11.3.0'},
+ {t:'Optionale Fahreransicht mit Taste C und mobilem Knopf, bisherige Außenkamera bleibt Standard',s:'work',release:'11.3.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];

@@ -1,63 +1,82 @@
 import * as T from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-let q=setInterval(()=>{let W=window.LuxWorld,PC=window.LuxPlayerCar840||window.LuxPlayerCar750||window.LuxPlayerCar720;if(!W?.cars?.length||!PC?.car||( !window.LuxVehiclePremium980 && !window.LuxVehiclePremium960))return;clearInterval(q);init(W,PC)},420);
+let q=setInterval(()=>{let W=window.LuxWorld,PC=window.LuxPlayerCar840||window.LuxPlayerCar750;if(!W?.cars||!PC?.car||!window.LuxVehiclePremium960)return;clearInterval(q);init(W,PC)},360);
 function init(W,PC){
  const mobile=matchMedia('(pointer:coarse)').matches||innerWidth<900;
- const M=(c,r=.55,m=.08,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei});
- const P=(c,r=.42,m=.08)=>new T.MeshPhysicalMaterial({color:c,roughness:r,metalness:m,clearcoat:.16,clearcoatRoughness:.65});
- const A=(g,m,x,y,z,p)=>{let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=false;o.receiveShadow=true;p.add(o);return o};
- const leather=[P(0x17191b,.50,.06),P(0x342d28,.58,.05),P(0xd7d2c8,.62,.03),P(0x262d31,.52,.08)],trim=[M(0x343a3e,.34,.38),M(0x8e7550,.62,.12),M(0xa9afb2,.28,.62)];
- const screens=[];
- function uiTexture(type='dash',accent='#5fb7e8'){
-   let c=document.createElement('canvas');c.width=512;c.height=240;let x=c.getContext('2d');x.fillStyle='#071018';x.fillRect(0,0,c.width,c.height);
-   x.strokeStyle=accent;x.lineWidth=5;x.globalAlpha=.88;
-   if(type==='cluster'){for(const cx of[150,362]){x.beginPath();x.arc(cx,128,70,-Math.PI*.8,Math.PI*.8);x.stroke()}x.font='700 44px Arial';x.fillStyle='#e8f4fb';x.textAlign='center';x.fillText('0',150,142);x.fillText('READY',362,142)}
-   else{x.fillStyle='#102634';x.fillRect(24,26,464,188);x.fillStyle=accent;x.fillRect(42,48,182,72);x.fillRect(246,48,222,18);x.fillStyle='#dce9ef';x.font='700 28px Arial';x.fillText('LUX CITY',356,102);x.fillStyle='#6f8997';for(let y=142;y<202;y+=22)x.fillRect(48,y,410,5)}
-   let t=new T.CanvasTexture(c);t.colorSpace=T.SRGBColorSpace;return t
- }
- function seat(g,x,z,mat,scale=1){
-   A(new T.BoxGeometry(.44*scale,.18*scale,.50*scale),mat,x,.73,z,g);
-   let back=A(new T.BoxGeometry(.43*scale,.66*scale,.16*scale),mat,x,1.06,z+.17*scale,g);back.rotation.x=-.12;
-   A(new T.BoxGeometry(.30*scale,.13*scale,.16*scale),mat,x,1.43,z+.22*scale,g);
-   let seam=M(0x72777a,.62);A(new T.BoxGeometry(.018,.52*scale,.015),seam,x,1.07,z+.265*scale,g);
-   for(const sx of[-1,1])A(new T.BoxGeometry(.024,.44*scale,.018),seam,x+sx*.15*scale,1.02,z+.26*scale,g)
+ const M=(c,r=.5,m=.08)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m});
+ const leather=[M(0x191c21,.66),M(0x342d27,.68),M(0xd6d1c9,.68),M(0x333b3d,.66)],black=M(0x151c22),metal=M(0xb1bac0,.28,.56),seam=M(0x7b8084,.72),wood=M(0x64513c,.65,.2);
+ const geom=new Map();
+ function box(w,h,d){let key=[w,h,d].join(':');if(!geom.has(key))geom.set(key,new T.BoxGeometry(w,h,d));return geom.get(key)}
+ function A(parent,g,m,x,y,z){let o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=false;o.receiveShadow=false;parent.add(o);return o}
+ const B=(parent,w,h,d,m,x,y,z)=>A(parent,box(w,h,d),m,x,y,z);
+ function seat(g,x,z,m,k=1){
+  B(g,.48*k,.16,.52*k,m,x,.73,z);
+  let back=B(g,.45*k,.60,.14,m,x,1.06,z+.19*k);back.rotation.x=-.10;
+  B(g,.27*k,.14,.13,m,x,1.40,z+.20*k);
+  B(g,.016,.46,.014,seam,x,1.04,z+.265*k)
  }
  function wheel(g,x,y,z){
-   let rim=A(new T.TorusGeometry(.16,.021,8,24),M(0x171a1d,.35,.32),x,y,z,g);rim.rotation.y=Math.PI/2;
-   A(new T.CylinderGeometry(.045,.045,.07,14),M(0x343a3f,.35,.38),x,y,z,g).rotation.z=Math.PI/2;
-   for(const a of[-.85,0,.85]){let s=A(new T.BoxGeometry(.018,.11,.025),M(0x343a3f,.35,.38),x,y-.03,z,g);s.rotation.x=a}
+  let grp=new T.Group();grp.position.set(x,y,z);g.add(grp);grp.name='SteeringWheel860';
+  let rim=A(grp,new T.TorusGeometry(.17,.023,8,24),black,0,0,0);rim.rotation.y=Math.PI/2;
+  let hub=A(grp,new T.CylinderGeometry(.048,.048,.065,12),metal,0,0,0);hub.rotation.z=Math.PI/2;
+  for(let a=0;a<3;a++){const sp=B(grp,.022,.135,.029,metal,0,-.015,0);sp.rotation.x=a*2*Math.PI/3}
+  return grp
  }
- function addTraffic(car,i){
-   if(!car||car.userData.vehicleCabin860||car.userData.emergency500)return;car.userData.vehicleCabin860=true;
-   const cls=car.userData.vehicleClass||'sedan',w=(car.userData.halfW||.94)*2,l=(car.userData.halfL||2.3)*2,g=new T.Group();g.name='VehicleCabin860';car.add(g);
-   const mat=leather[i%leather.length],t=trim[i%trim.length],front=-l/2+.02;
-   seat(g,-w*.20,-.22,mat,cls==='van'?1.04:.95);seat(g,w*.20,-.22,mat,cls==='van'?1.04:.95);
-   if(cls!=='van'){seat(g,-w*.20,.62,mat,.92);seat(g,w*.20,.62,mat,.92)}
-   A(new T.BoxGeometry(w*.65,.15,.44),M(0x191d20,.42,.16),0,1.03,front+l*.31,g);
-   A(new T.BoxGeometry(.20,.22,.76),t,0,.77,.18,g);
-   wheel(g,-w*.19,1.17,front+l*.36);
-   let cluster=A(new T.PlaneGeometry(.31,.12),new T.MeshBasicMaterial({map:uiTexture('cluster',i%2?'#d8b46a':'#78c6e9'),toneMapped:false}),-.17,1.20,front+l*.335,g);cluster.rotation.x=-.10;screens.push(cluster.material);
-   if(!mobile&&i%2===0){let center=A(new T.PlaneGeometry(.25,.16),new T.MeshBasicMaterial({map:uiTexture('dash','#8bd0ea'),toneMapped:false}),.10,1.16,front+l*.34,g);center.rotation.x=-.12;screens.push(center.material)}
-   for(const sx of[-1,1]){A(new T.BoxGeometry(.035,.35,l*.30),M(0x202427,.56,.12),sx*(w/2-.08),1.02,.18,g);A(new T.BoxGeometry(.022,.06,l*.24),t,sx*(w/2-.055),1.18,.18,g)}
+ function fleetTexture(){
+  let cv=document.createElement('canvas');cv.width=256;cv.height=128;let x=cv.getContext('2d');x.fillStyle='#09141b';x.fillRect(0,0,256,128);x.fillStyle='#8adcf1';x.fillRect(12,10,232,6);x.font='bold 25px Arial';x.fillStyle='#f0f7f9';x.fillText('LUX CITY',20,56);x.fillStyle='#46697a';x.fillRect(20,80,175,7);x.fillRect(20,98,211,6);let tx=new T.CanvasTexture(cv);tx.colorSpace=T.SRGBColorSpace;return tx
  }
- function addPlayer(car){
-   if(!car||car.userData.vehicleCabin860)return;car.userData.vehicleCabin860=true;
-   const g=new T.Group();g.name='PlayerCabin860';car.add(g),mat=P(0xe7e5df,.58,.03),black=M(0x121619,.32,.28),metal=M(0x9ea5aa,.24,.66);
-   for(const z of[-.20,.72])for(const x of[-.40,.40])seat(g,x,z,mat,.98);
-   A(new T.BoxGeometry(1.48,.16,.44),black,0,1.03,-.62,g);
-   A(new T.BoxGeometry(1.15,.025,.055),metal,0,1.14,-.80,g);
-   A(new T.BoxGeometry(.24,.22,1.05),black,0,.78,.24,g);
-   A(new T.BoxGeometry(.20,.035,.64),metal,0,.94,.16,g);
-   wheel(g,-.39,1.17,-.60);
-   const scrMat=new T.MeshBasicMaterial({map:uiTexture('dash','#63c9f1'),toneMapped:false});
-   let screen=A(new T.PlaneGeometry(.52,.31),scrMat,.02,1.24,-.76,g);screen.rotation.x=-.15;screens.push(scrMat);
-   const clMat=new T.MeshBasicMaterial({map:uiTexture('cluster','#7ad8ff'),toneMapped:false});
-   let cluster=A(new T.PlaneGeometry(.34,.14),clMat,-.39,1.22,-.735,g);cluster.rotation.x=-.12;screens.push(clMat);
-   for(const sx of[-1,1]){A(new T.BoxGeometry(.035,.40,1.65),black,sx*.89,1.02,.10,g);A(new T.BoxGeometry(.020,.05,1.40),metal,sx*.875,1.18,.10,g)}
-   if(!mobile){for(const x of[-.52,.52]){A(new T.BoxGeometry(.22,.025,.20),metal,x,.98,.16,g);for(let k=-2;k<=2;k++)A(new T.BoxGeometry(.016,.015,.14),black,x+k*.035,.996,.16,g)}}
-   g.userData.screen=screen;g.userData.cluster=cluster;
+ const sharedScreen=new T.MeshBasicMaterial({map:fleetTexture(),toneMapped:false});
+ function trafficCar(car,i){
+  if(!car||car.userData?.emergency500||car.getObjectByName('VehicleCabin860'))return;
+  const style=car.userData.vehicleClass||'sedan',w=(car.userData.halfW||.94)*2,l=(car.userData.halfL||2.3)*2,mat=leather[i%leather.length];
+  const g=new T.Group();g.name='VehicleCabin860';car.add(g);
+  const k=style==='sport'||style==='coupe'?.87:style==='van'?1.04:.95;
+  for(const x of[-w*.20,w*.20])seat(g,x,-.22,mat,k);
+  if(!['van','pickup'].includes(style))for(const x of[-w*.20,w*.20])seat(g,x,.57,mat,.89);
+  B(g,w*.72,.15,.40,black,0,1.04,-l*.24);
+  B(g,.19,.17,.56,['suv','wagon'].includes(style)?wood:metal,0,.83,.08);
+  wheel(g,-w*.19,1.16,-l*.20);
+  let screen=A(g,new T.PlaneGeometry(.37,.18),sharedScreen,.03,1.21,-l*.25);screen.rotation.x=-.12;
+  g.visible=Math.hypot(car.position.x-W.player.position.x,car.position.z-W.player.position.z)<(mobile?28:50)
  }
- W.cars.forEach((c,i)=>addTraffic(c,i));addPlayer(PC.car);
- let known=W.cars.length;setInterval(()=>{if(W.cars.length!==known){W.cars.forEach((c,i)=>addTraffic(c,i));known=W.cars.length}},1800);
- W.registerTick?.((dt)=>{let h=(window.LuxLife?.state?.hour??12)+(window.LuxLife?.state?.minute??0)/60,night=h>=19||h<7,on=!!PC.driving;for(const m of screens)m.opacity=1;let pg=PC.car.getObjectByName('PlayerCabin860');if(pg){let s=pg.userData.screen,c=pg.userData.cluster;if(s)s.material.opacity=on?1:.72;if(c)c.material.opacity=on?1:.75}});
- window.LuxVehicleCabin860={version:'8.6.0',player:PC.car,traffic:W.cars}
+ function createPlayer(){
+  const car=PC.car,old=car.getObjectByName('PlayerCabin860');if(old)return old;
+  const g=new T.Group();g.name='PlayerCabin860';car.add(g);
+  const mat=leather[2];
+  for(const z of[-.21,.67])for(const x of[-.40,.40])seat(g,x,z,mat,.98);
+  B(g,1.49,.17,.43,black,0,1.05,-.67);B(g,1.20,.027,.05,wood,0,1.14,-.79);
+  B(g,.24,.18,.94,black,0,.80,.19);B(g,.18,.027,.59,metal,0,.95,.15);
+  const steering=wheel(g,-.40,1.19,-.66);
+  const cv=document.createElement('canvas');cv.width=512;cv.height=256;
+  const texture=new T.CanvasTexture(cv);texture.colorSpace=T.SRGBColorSpace;
+  const screenMat=new T.MeshBasicMaterial({map:texture,toneMapped:false,side:T.DoubleSide});
+  const scr=A(g,new T.PlaneGeometry(.57,.32),screenMat,.025,1.25,-.76);scr.rotation.x=-.12;
+  const cluster=A(g,new T.PlaneGeometry(.29,.145),screenMat,-.4,1.24,-.75);cluster.rotation.x=-.08;
+  for(const sx of[-1,1]){B(g,.039,.36,1.50,black,sx*.87,1.03,.12);B(g,.02,.04,1.40,metal,sx*.86,1.18,.12)}
+  g.userData.live860={ctx:cv.getContext('2d'),texture,steering};return g
+ }
+ const cabin=createPlayer();let timer=0,nearTick=0,lastStyle='';
+ function display(){
+  const d=cabin.userData.live860;if(!d)return;
+  const x=d.ctx,v=window.LuxVehicles?.activeVehicle,n=Math.round(Math.abs(PC.speed||0)*3.6),energy=Math.max(0,Math.min(100,Number(v?.energy??100)));
+  x.fillStyle='#071419';x.fillRect(0,0,512,256);x.fillStyle='#60c7e4';x.fillRect(0,0,512,9);
+  x.fillStyle='#e7f5fb';x.font='bold 27px Arial';x.fillText(v?.name||'LUX CITY',22,46);
+  x.font='bold 87px Arial';x.fillText(String(n),22,150);x.font='bold 23px Arial';x.fillText('km/h',215,142);
+  x.fillStyle='#b4d4dc';x.font='bold 19px Arial';x.fillText((v?.fuelType==='electric'?'AKKU':'TANK')+' '+Math.round(energy)+'%',24,200);
+  x.fillText(Math.round(Number(v?.mileageKm||0)).toLocaleString('de-DE')+' km',320,144);
+  x.fillStyle='#274651';x.fillRect(24,220,460,12);x.fillStyle=energy<15?'#f0806b':'#72d7b9';x.fillRect(24,220,460*energy/100,12);
+  d.texture.needsUpdate=true
+ }
+ W.registerTick(dt=>{
+  timer+=dt;nearTick+=dt;
+  if(nearTick>.85){nearTick=0;for(let i=0;i<W.cars.length;i++){
+   const c=W.cars[i];if(c?.visible!==false&&Math.hypot(c.position.x-W.player.position.x,c.position.z-W.player.position.z)<(mobile?29:51))trafficCar(c,i)
+  }
+  const style=window.LuxVehicles?.activeVehicle?.bodyStyle||'sedan';
+  if(style!==lastStyle){lastStyle=style;const m=['suv','van','crossover'].includes(style)?leather[1]:['sport','coupe'].includes(style)?leather[0]:leather[2];
+   cabin.traverse(o=>{if(o.isMesh&&leather.includes(o.material))o.material=m})}
+  }
+  if(cabin.userData.live860?.steering){const k=W.keys||{},turn=((k.d||k.arrowright)||0)-((k.a||k.arrowleft)||0),sw=cabin.userData.live860.steering;sw.rotation.z+=(turn*.32-sw.rotation.z)*Math.min(1,dt*6)}
+  if(timer>.25){timer=0;display()}
+ });
+ window.LuxVehicleCabin860=window.LuxVehicleCabin1230={version:'12.3.0',player:PC.car,traffic:W.cars}
 }

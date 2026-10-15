@@ -1,13 +1,13 @@
 {
-  "version": "11.2.0",
-  "released_at": "2026-10-15T04:49:00+02:00",
-  "title": "Fahrzeuge Generation 7: Felgen, Fronten und Nahbereich",
+  "version": "11.3.0",
+  "released_at": "2026-10-15T06:14:00+02:00",
+  "title": "Cockpit und Fahreransicht",
   "notes": [
-    "Sechs unterschiedliche Felgendesigns: Touring, Split-Speichen, Sport, Turbine, Offroad und Stahl.",
-    "Klassenabhängige Frontschürzen und Kühlergrills für SUV, Van, Limousine, Kombi und Sportwagen.",
-    "Vier unterschiedliche Tagfahrlicht- und Rücklichtsignaturen auch in der Premium-Detailebene.",
-    "Das eigene Fahrzeug übernimmt beim Wechsel zwischen Fahrzeugklassen passende Premium-Optik und Felgen.",
-    "Premium-Autodetails werden für entfernte KI-Fahrzeuge nicht mehr vorsorglich erstellt; sie erscheinen im Nahbereich und bleiben bei Entfernung ausgeblendet.",
-    "Lenkung, Fahrzeugkollision, Spielstände, Besitz und Kilometerstand bleiben unverändert."
+    "Innenräume der Autos neu mit Sitzen, Kopfstützen, unterschiedlichen Materialien, Lenkrad und Mittelkonsole.",
+    "Cockpit-Instrumente zeigen im Spielerauto live Geschwindigkeit, Akku/Tank und Kilometerstand.",
+    "Innenräume von KI-Autos werden für bessere Leistung nur in Spielnähe erzeugt.",
+    "Optionale Fahrerperspektive mit Taste C auf PC und Knopf auf Smartphones; vertraute Außenkamera ist Standard.",
+    "Fahrmechanik, Tastaturbelegung, Wohnung, Eigentum und gespeicherte Daten bleiben unverändert.",
+    "Interaktive Sicht- und FPS-Prüfung im laufenden Spiel steht noch aus."
   ]
 }
