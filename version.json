@@ -1,13 +1,13 @@
 {
-  "version": "11.3.0",
-  "released_at": "2026-10-15T06:14:00+02:00",
-  "title": "Cockpit und Fahreransicht",
+  "version": "11.4.0",
+  "released_at": "2026-10-16T07:08:00+02:00",
+  "title": "Nächtlicher Lichtschalter-Login",
   "notes": [
-    "Innenräume der Autos neu mit Sitzen, Kopfstützen, unterschiedlichen Materialien, Lenkrad und Mittelkonsole.",
-    "Cockpit-Instrumente zeigen im Spielerauto live Geschwindigkeit, Akku/Tank und Kilometerstand.",
-    "Innenräume von KI-Autos werden für bessere Leistung nur in Spielnähe erzeugt.",
-    "Optionale Fahrerperspektive mit Taste C auf PC und Knopf auf Smartphones; vertraute Außenkamera ist Standard.",
-    "Fahrmechanik, Tastaturbelegung, Wohnung, Eigentum und gespeicherte Daten bleiben unverändert.",
-    "Interaktive Sicht- und FPS-Prüfung im laufenden Spiel steht noch aus."
+    "Eigenständige animierte Startseite mit nächtlicher Lux-City-Skyline, Straßenlaterne und warmem Lichtkegel.",
+    "Mit einem Stromschalter werden die beleuchteten Häuser und die Anmeldung eingeschaltet; die Login-Felder sind vorher nicht bedienbar.",
+    "Nach erfolgreicher Anmeldung geht das Licht aus und eine kurze Schwarzblende führt ins Spiel.",
+    "Desktop- und Smartphone-Querformat passen sich an; alte Authentifizierung und Cloud-Spielstände bleiben unverändert.",
+    "Kein fremdes Layout aus dem Beispielvideo übernommen.",
+    "Ein interaktiver Test mit echten Logindaten steht aus."
   ]
 }

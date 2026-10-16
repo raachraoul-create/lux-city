@@ -101,7 +101,10 @@ const ITEMS=[
  {t:'Eigene Fahrzeugfelgen wechseln passend zur SUV-, Sport-, Kombi- oder Van-Karosserie',s:'work',release:'11.2.0'},
  {t:'Cockpit-Upgrade: modellabhängige Sitze, Lenkrad, Armaturenbrett und schönere Innenräume',s:'work',release:'11.3.0'},
  {t:'Auto-Cockpit zeigt live Geschwindigkeit, Energie und Kilometerstand',s:'work',release:'11.3.0'},
- {t:'Optionale Fahreransicht mit Taste C und mobilem Knopf, bisherige Außenkamera bleibt Standard',s:'work',release:'11.3.0'}
+ {t:'Optionale Fahreransicht mit Taste C und mobilem Knopf, bisherige Außenkamera bleibt Standard',s:'work',release:'11.3.0'},
+ {t:'Animierte nächtliche Stadt-Startseite: eigene Skyline mit Leuchtfenstern, Straßenlaterne und Lichtstrahl',s:'work',release:'11.4.0'},
+ {t:'Stromschalter gibt Anmeldung frei; nach erfolgreichem Login geht das Licht aus und das Spiel beginnt',s:'work',release:'11.4.0'},
+ {t:'Optimiertes Lichtschalter-Login für Computer und Querformat-Handys, vorhandene Konten bleiben erhalten',s:'work',release:'11.4.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
