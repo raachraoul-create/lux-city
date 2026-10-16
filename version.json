@@ -1,13 +1,14 @@
 {
-  "version": "11.4.0",
-  "released_at": "2026-10-16T07:08:00+02:00",
-  "title": "Nächtlicher Lichtschalter-Login",
+  "version": "11.5.0",
+  "released_at": "2026-10-16T07:17:00+02:00",
+  "title": "Stadttor-Login mit Lichthebel",
   "notes": [
-    "Eigenständige animierte Startseite mit nächtlicher Lux-City-Skyline, Straßenlaterne und warmem Lichtkegel.",
-    "Mit einem Stromschalter werden die beleuchteten Häuser und die Anmeldung eingeschaltet; die Login-Felder sind vorher nicht bedienbar.",
-    "Nach erfolgreicher Anmeldung geht das Licht aus und eine kurze Schwarzblende führt ins Spiel.",
-    "Desktop- und Smartphone-Querformat passen sich an; alte Authentifizierung und Cloud-Spielstände bleiben unverändert.",
-    "Kein fremdes Layout aus dem Beispielvideo übernommen.",
-    "Ein interaktiver Test mit echten Logindaten steht aus."
+    "Bisherige nächtliche Skyline-Anmeldung durch eine eigene futuristische Zugangshalle ersetzt.",
+    "Ein großer mechanischer Lichthebel öffnet zwei Schiebetore, aktiviert die Beleuchtung und gibt das Login frei.",
+    "Vor Betätigung des Hebels bleiben Login und Registrierung gesperrt; beim Ausschalten wieder gesperrt.",
+    "Nach erfolgreichem Login wird das Licht ausgeschaltet und ein Übergang zum Spiel gezeigt.",
+    "Konten, Hausordnung, Anmeldung, Passwort-Reset, Spielsteuerung und Spielstände bleiben unverändert.",
+    "Responsive Darstellung für PC und mobile Geräte im Querformat; reduziert bewegte Animationen bei entsprechender Systemeinstellung.",
+    "Syntax der neuen Oberfläche geprüft; reale Interaktion mit Login noch nicht überprüft."
   ]
 }

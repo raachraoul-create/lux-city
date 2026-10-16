@@ -104,7 +104,10 @@ const ITEMS=[
  {t:'Optionale Fahreransicht mit Taste C und mobilem Knopf, bisherige Außenkamera bleibt Standard',s:'work',release:'11.3.0'},
  {t:'Animierte nächtliche Stadt-Startseite: eigene Skyline mit Leuchtfenstern, Straßenlaterne und Lichtstrahl',s:'work',release:'11.4.0'},
  {t:'Stromschalter gibt Anmeldung frei; nach erfolgreichem Login geht das Licht aus und das Spiel beginnt',s:'work',release:'11.4.0'},
- {t:'Optimiertes Lichtschalter-Login für Computer und Querformat-Handys, vorhandene Konten bleiben erhalten',s:'work',release:'11.4.0'}
+ {t:'Optimiertes Lichtschalter-Login für Computer und Querformat-Handys, vorhandene Konten bleiben erhalten',s:'work',release:'11.4.0'},
+ {t:'Neues Login-Tor mit zwei beweglichen Türflügeln statt der bisherigen Skyline',s:'work',release:'11.5.0'},
+ {t:'Großer Stromhebel aktiviert das Stadttor und schaltet die Anmeldung frei; Licht aus nach Login',s:'work',release:'11.5.0'},
+ {t:'Eigenständiges futuristisches Portal-Design für Computer und Querformat-Handys',s:'work',release:'11.5.0'}
 ];
 const visible=ITEMS.filter(x=>QA||!x.release||!gte(current(),x.release));
 const GOALS=['Grafik und Stadtbild jede Stunde realistischer machen','Spieler und KI menschlicher modellieren und animieren','Häuser, Bäume, Straßen und Fahrzeuge detaillierter gestalten','KI mit stärkerem Eigenleben: wohnen, arbeiten, einkaufen, fahren, parken und Freizeit','Wirtschaft, Steuern, Versicherungen, Rechnungen und Banken miteinander verbinden'];
