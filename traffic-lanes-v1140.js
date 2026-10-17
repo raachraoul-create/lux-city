@@ -12,11 +12,12 @@ function init(W,R){
  let known=W.cars.length;setInterval(()=>{if(W.cars.length!==known){W.cars.forEach((v,i)=>{if(!v.userData.route||v.userData.roadNetwork1090)assign(v,i)});known=W.cars.length}},1200);
  let acc=0;W.registerTick?.((dt)=>{acc+=dt;if(acc<.18)return;acc=0;
    for(const v of W.cars){let rt=v.userData?.route;if(!rt||v.visible===false||v.userData?.parkingManaged760||v.userData?.dailyActivity880)continue;
+     if((v.userData.speedNow??1)<.18||(v.userData.staticBlockUntil||0)>performance.now())continue;
      let i=v.userData.routeIndex||0,a=rt[i],b=rt[(i+1)%rt.length],dx=b[0]-a[0],dz=b[1]-a[1],l2=dx*dx+dz*dz||1,t=((v.position.x-a[0])*dx+(v.position.z-a[1])*dz)/l2;t=Math.max(0,Math.min(1,t));
-     let px=a[0]+dx*t,pz=a[1]+dz*t,off=Math.hypot(v.position.x-px,v.position.z-pz);
-     if(off>1.25){let pull=Math.min(.62,.12+(off-1.25)*.12);v.position.x+=(px-v.position.x)*pull;v.position.z+=(pz-v.position.z)*pull}
+     let px=a[0]+dx*t,pz=a[1]+dz*t,ox=v.position.x-px,oz=v.position.z-pz,off=Math.hypot(ox,oz);
+     if(off>1.35){let pull=Math.min(.24,.06+(off-1.35)*.06);v.position.x-=ox*pull;v.position.z-=oz*pull}
    }
  });
- const api=window.LuxTraffic861||window.LuxTraffic860;api.laneRoutes1140=routes.map(r=>r.points);api.version='9.0.1';window.LuxTrafficLanes1140=window.LuxTrafficLanes1200={version:'12.0.0',routes}
+ const api=window.LuxTraffic861||window.LuxTraffic860;api.laneRoutes1140=routes.map(r=>r.points);api.version='9.0.2';window.LuxTrafficLanes1140=window.LuxTrafficLanes1200={version:'12.0.0',routes}
 }
 })();
