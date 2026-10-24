@@ -32,12 +32,23 @@ function init(W){
    const segs=closed?n:n-1;for(let i=0;i<segs;i++){let j=(i+1)%n,a=i*2,b=j*2;idx.push(a,a+1,b+1,a,b+1,b)}
    const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(vs,3));g.setIndex(idx);g.computeVertexNormals();const o=new T.Mesh(g,mat);o.receiveShadow=true;o.castShadow=false;parent.add(o);return o
  }
+ // Batch all markings from one road into a single indexed mesh instead of thousands of tiny box meshes.
  function markSegments(pts,off=0,dashed=true,closed=false,mat=white,width=.11){
-   const p=offsetPath(pts,off,closed),n=p.length,segs=closed?n:n-1;
+   const p=offsetPath(pts,off,closed),n=p.length,segs=closed?n:n-1,verts=[],faces=[],half=width/2;
    for(let i=0;i<segs;i++){
-     if(dashed&&(i%3!==0))continue;let a=p[i],b=p[(i+1)%n],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<.2)continue;
-     let o=A(new T.BoxGeometry(width,.018,dashed?Math.min(len*.84,4.2):len+.15),mat,(a[0]+b[0])/2,.137,(a[1]+b[1])/2);o.rotation.y=Math.atan2(dx,dz)
+     if(dashed&&i%3!==0)continue;
+     const a=p[i],b=p[(i+1)%n],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);
+     if(len<.2)continue;
+     const length=dashed?Math.min(len*.84,4.2):len+.15,ex=dx/len*length/2,ez=dz/len*length/2,nx=dz/len*half,nz=-dx/len*half;
+     const mx=(a[0]+b[0])/2,mz=(a[1]+b[1])/2,j=verts.length/3;
+     verts.push(mx-ex+nx,.148,mz-ez+nz,mx-ex-nx,.148,mz-ez-nz,mx+ex+nx,.148,mz+ez+nz,mx+ex-nx,.148,mz+ez-nz);
+     faces.push(j,j+1,j+3,j,j+3,j+2);
    }
+   if(!faces.length)return;
+   const geo=new T.BufferGeometry();
+   geo.setAttribute('position',new T.Float32BufferAttribute(verts,3));
+   geo.setIndex(faces);geo.computeVertexNormals();
+   const mesh=new T.Mesh(geo,mat);mesh.castShadow=false;mesh.receiveShadow=false;root.add(mesh)
  }
  function pushRoadRecords(pts,width,kind,closed=false){
    const n=pts.length,segs=closed?n:n-1;
@@ -107,7 +118,33 @@ function init(W){
  // Kurvenbasierte Fahrbahnprüfung, damit Bäume/Gebäude/Deko nicht auf die neue Straße gesetzt werden.
  const allSurfaces=[...roadPaths.map(r=>({pts:r.pts,width:r.width,closed:r.closed})),{pts:offsetPath(mw,sep,true),width:carriage,closed:true},{pts:offsetPath(mw,-sep,true),width:carriage,closed:true}];
  function segDist(px,pz,a,b){let dx=b[0]-a[0],dz=b[1]-a[1],l2=dx*dx+dz*dz||1,t=((px-a[0])*dx+(pz-a[1])*dz)/l2;t=Math.max(0,Math.min(1,t));return Math.hypot(px-(a[0]+dx*t),pz-(a[1]+dz*t))}
- W.onRoad=(x,z,pad=5)=>{for(const r of allSurfaces){let n=r.pts.length,segs=r.closed?n:n-1;for(let i=0;i<segs;i++)if(segDist(x,z,r.pts[i],r.pts[(i+1)%n])<=r.width/2+pad)return true}return false};
+ // Spatial lookup: nearby road segments only, rather than scanning every road on each placement/collision query.
+ const roadCellSize=24,roadIndexPad=12,roadCells=new Map();
+ for(const r of allSurfaces){
+   const n=r.pts.length,count=r.closed?n:n-1;
+   for(let i=0;i<count;i++){
+     const a=r.pts[i],b=r.pts[(i+1)%n],margin=r.width/2+roadIndexPad;
+     const seg={a,b,halfWidth:r.width/2,minX:Math.min(a[0],b[0]),maxX:Math.max(a[0],b[0]),minZ:Math.min(a[1],b[1]),maxZ:Math.max(a[1],b[1])};
+     const x0=Math.floor((seg.minX-margin)/roadCellSize),x1=Math.floor((seg.maxX+margin)/roadCellSize);
+     const z0=Math.floor((seg.minZ-margin)/roadCellSize),z1=Math.floor((seg.maxZ+margin)/roadCellSize);
+     for(let ix=x0;ix<=x1;ix++)for(let iz=z0;iz<=z1;iz++){
+       const key=ix+','+iz;let bucket=roadCells.get(key);
+       if(!bucket){bucket=[];roadCells.set(key,bucket)}bucket.push(seg)
+     }
+   }
+ }
+ W.onRoad=(x,z,pad=5)=>{
+   const ix=Math.floor(x/roadCellSize),iz=Math.floor(z/roadCellSize),range=Math.ceil(Math.max(0,pad-roadIndexPad)/roadCellSize),seen=range?new Set():null;
+   for(let ox=-range;ox<=range;ox++)for(let oz=-range;oz<=range;oz++){
+     for(const seg of roadCells.get((ix+ox)+','+(iz+oz))||[]){
+       if(seen){if(seen.has(seg))continue;seen.add(seg)}
+       const limit=seg.halfWidth+pad;
+       if(x<seg.minX-limit||x>seg.maxX+limit||z<seg.minZ-limit||z>seg.maxZ+limit)continue;
+       if(segDist(x,z,seg.a,seg.b)<=limit)return true
+     }
+   }
+   return false
+ };
 
  // Klare Autobahnbeschilderung statt Schild-Chaos.
  function sign(text,sub,x,z,rot=0){
@@ -116,5 +153,5 @@ function init(W){
  }
  sign('A-LUX 1','WEST · ZENTRUM',-300,-392,Math.PI*.08);sign('A-LUX 1','OST · TANKEN/LADEN',315,-382,-Math.PI*.10);
 
- window.LuxRoadNetwork1090=window.LuxRoadNetwork1100=window.LuxRoadNetwork1200={version:'12.0.0',root,roadPaths,trafficRoutes,junctions,station:{x:350,z:-350,drive:stationDrive},motorway:mw,addedCars:addCount}
+ window.LuxRoadNetwork1090=window.LuxRoadNetwork1100=window.LuxRoadNetwork1200={version:'12.0.1',root,roadPaths,trafficRoutes,junctions,station:{x:350,z:-350,drive:stationDrive},motorway:mw,addedCars:addCount}
 }
