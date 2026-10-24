@@ -16,8 +16,8 @@ function init(W){
   R.outputColorSpace=T.SRGBColorSpace;
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.04:1.10;
-  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.35:1.85));
-  if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
+  if(!window.LuxSmooth1080)R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.05:.84));
+  if(R.shadowMap){R.shadowMap.enabled=mobile;R.shadowMap.type=T.PCFSoftShadowMap}
   S.background=new T.Color(0xa6c8df);
   S.fog=new T.FogExp2(0xa9c7d8,mobile?.00118:.00092);
   if(W.sun){

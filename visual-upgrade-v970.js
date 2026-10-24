@@ -16,7 +16,7 @@ function init(W){
   R.outputColorSpace=T.SRGBColorSpace;
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.045:1.085;
-  if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
+  if(R.shadowMap){R.shadowMap.enabled=mobile;R.shadowMap.type=T.PCFSoftShadowMap}
 
   const M=(c,r=.78,m=.02,e=0,ei=0)=>new T.MeshStandardMaterial({color:c,roughness:r,metalness:m,emissive:e,emissiveIntensity:ei});
   const A=(g,m,x,y,z,p=root)=>{const o=new T.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;p.add(o);return o};

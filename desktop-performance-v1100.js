@@ -5,7 +5,7 @@ function init(W){
  const R=W.renderer,S=W.scene;
  // Desktop was doing much more shadow work than mobile. Keep contact/lighting but remove the expensive realtime shadow map by default.
  if(R.shadowMap){R.shadowMap.enabled=false;R.shadowMap.autoUpdate=false}
- R.setPixelRatio(Math.min(devicePixelRatio||1,.92));R.setSize(innerWidth,innerHeight,false);
+ if(window.LuxSmooth1080)window.LuxSmooth1080.apply(window.LuxSmooth1080.quality);
  const dynamic=new Set(),mark=o=>{if(!o)return;o.traverse?.(x=>dynamic.add(x));dynamic.add(o)};
  mark(W.player);for(const c of W.cars)mark(c);for(const p of W.npcs||[])mark(p);mark((window.LuxPlayerCar840||window.LuxPlayerCar750)?.car);mark(window.LuxCityActivity570?.bus);
  const avoid=/Weather|Atmosphere|Rain|Snow|Vehicle|Traffic|Player|Citizen|People|Bus|Transit/i;
@@ -15,8 +15,6 @@ function init(W){
    window.LuxDesktopPerformance1100.frozen=frozen
  }
  setTimeout(freezeStatic,800);setTimeout(freezeStatic,3500);
- // Do not let an older performance layer turn expensive shadows back on.
- const oldApply=window.LuxPerformance740?.apply;if(oldApply)window.LuxPerformance740.apply=(level)=>{oldApply(level);if(R.shadowMap)R.shadowMap.enabled=false;R.setPixelRatio(Math.min(devicePixelRatio||1,level==='low'?.72:level==='medium'?.84:.94))};
  window.LuxDesktopPerformance1100={version:'11.0.0',mobile:false,frozen:0,freezeStatic}
 }
 })();

@@ -9,8 +9,8 @@ function init(W){
 
   R.toneMapping=T.ACESFilmicToneMapping;
   R.toneMappingExposure=mobile?1.02:1.07;
-  R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?.90:1.08));
-  if(R.shadowMap){R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap}
+  if(!window.LuxSmooth1080)R.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.05:.84));
+  if(R.shadowMap){R.shadowMap.enabled=mobile;R.shadowMap.type=T.PCFSoftShadowMap}
   if(W.sun){
     W.sun.shadow.mapSize.set(mobile?768:1536,mobile?768:1536);
     W.sun.shadow.bias=-.00016;W.sun.shadow.normalBias=.014;
